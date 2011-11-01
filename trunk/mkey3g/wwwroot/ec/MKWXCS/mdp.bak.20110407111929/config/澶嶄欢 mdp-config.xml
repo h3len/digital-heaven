@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdp:configuration debug="true" xmlns:mdp="http://mdp.d-heaven.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mdp.d-heaven.com
+ mdp-config.xsd">
+	<mdp:authorization>
+		<mdp:allow source="*"/>
+	</mdp:authorization>
+	<mdp:bs-config source="oa.gdyd.com" encoding="gb2312">
+		<!--单点登录-->
+		<mdp:sso sysid="hd">
+			<mdp:request id="login" name="login">
+				<mdp:url>http://oa.gdyd.com/names.nsf?Login</mdp:url>
+				<mdp:params>%%ModDate=00000000001850C0&amp;reasonType=0&amp;Username={username}&amp;Password={password}&amp;RedirectTo=/indishare/securtrac.nsf/agttrac?openagent&amp;url=/indishare/office.nsf/(frame)/index</mdp:params>
+				<mdp:method>POST</mdp:method>
+				<mdp:encoding>gb2312</mdp:encoding>
+			</mdp:request>
+		</mdp:sso>
+		<!--登录成功后跳转-->
+		<mdp:bs-page url="^http://oa.gdyd.com/indishare/securtrac.nsf/agttrac\?openagent$" redirectUrl="http://oa.gdyd.com/indishare/office.nsf/pgNavigator?openpage"/>
+		<mdp:bs-page url="^http://oa.gdyd.com/indishare/office.nsf/pgNavigator\?openpage$" responseTemplate="response_catagrary.xsl"/>
+		<mdp:bs-page url="^http://oa.gdyd.com/indishare/office.nsf/\(frame\)/startup$" responseTemplate="response_catagrary.xsl">
+			<mdp:bs-frame url="http://oa.gdyd.com/indishare/office.nsf/frmLogo?openform"/>
+		</mdp:bs-page>
+		<!--push
+		<mdp:push enterpriseCode="hd" sysid="hd">
+			<mdp:request id="hd" name="请示报告" loopExpression="0 0/20 * * * *" denpendentRequest="login">
+				<mdp:url>http://oa.gdyd.com/gdyd/dep1/qsbg_1.nsf/dbgwview?openform&amp;view=vwdbgw&amp;db=sac/dep1/qsbg_1.nsf&amp;count=20&amp;push=yes</mdp:url>
+				<mdp:params/>
+				<mdp:method>GET</mdp:method>
+				<mdp:encoding>gb2312</mdp:encoding>
+			</mdp:request>
+		</mdp:push>
+		-->
+		<!--轮训地址是会调用一个下行模板
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep1/qsbg_1.nsf/dbgwview\?openform&amp;view=vwdbgw&amp;db=sac/dep1/qsbg_1.nsf&amp;count=20&amp;push=yes$" responseTemplate="response_push.xsl"/>
+		-->
+    
+    <!--待办事项-->
+
+    <mdp:bs-page url="http://oa.gdyd.com/gdyd/persontasks.nsf$" responseTemplate="response_redirect_daiban.xsl"   target="_blank">
+      <mdp:bs-rule type="regex" regex="document.location.href=document.getElementById\(&quot;\w+&quot;\).getAttribute\(&quot;href&quot;\)\+&quot;([^&quot;]+)&quot;" mode="add" template="&lt;input id=&quot;href&quot; name=&quot;href&quot; value=&quot;$1&quot;/&gt;"></mdp:bs-rule>
+    </mdp:bs-page>
+    
+    
+		<!--跳转到发文里的代办-->
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd%5Cdep9%5Cswgl_9.nsf$" redirectUrl="http://oa.gdyd.com/gdyd/dep9/swgl_9.nsf/dbgwview?openform&amp;view=vwdbgw&amp;db=gdyd/dep9/swgl_9.nsf&amp;count=20" encodeUrl="false"/>
+		<!--待办列表-->
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep(9|292)/swgl_(9|292).nsf/dbgwview\?openform&amp;view=vwdbgw&amp;db=gdyd/dep(9|292)/swgl_(9|292).nsf.*" responseTemplate="demo/response_list_todo.xsl"/>
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep(1|292)/fwgl_(1|292).nsf/dbgwview\?openform&amp;view=vwdbgw&amp;db=gdyd/dep(1|292)/fwgl_(1|292).nsf.*" responseTemplate="demo/response_list_todo.xsl"/>
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep(1|292)/qsbg_(1|292).nsf/dbgwview\?openform&amp;view=vwdbgw&amp;db=gdyd/dep(1|292)/qsbg_(1|292).nsf.*" responseTemplate="demo/response_list_todo.xsl"/>
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep(1|292)/swgl_(1|292).nsf/dbgwview\?openform&amp;view=vwdbgw&amp;db=gdyd/dep(1|292)/swgl_(1|292).nsf.*" responseTemplate="demo/response_list_todo.xsl"/>
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep(9|292)/fwgl_(9|292).nsf/dbgwview\?openform&amp;view=vwdbgw&amp;db=gdyd/dep(9|292)/fwgl_(9|292).nsf.*" responseTemplate="demo/response_list_todo.xsl"/>
+		<!--并发转向-->
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep\d+/(swgl|fwgl|qsbg)_\d+.nsf/agtOpenEdit\?openagent&amp;.*" responseTemplate="demo/response_cont_bingfa.xsl">	
+			<mdp:bs-rule type="regex" regex="&lt;script[^&gt;]*&gt;" mode="remove"/>
+			<mdp:bs-rule type="regex" regex="&lt;/script&gt;" mode="remove"/>
+			<mdp:bs-rule type="regex" regex="window.location.href=&quot;" mode="remove"/>
+			<mdp:bs-rule type="regex" regex="&quot;;" mode="remove"/>
+		</mdp:bs-page>
+		<!--收文内容-->
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep\d+/swgl_\d+.nsf/.*\?(opendocument|editdocument)" responseTemplate="demo/response_shouwen.xsl" requestTemplate="demo/request_shouwen.xsl" encodeUrl="false">
+			<mdp:bs-rule type="tag" mode="add" startTag="&lt;body" endTag="&lt;/body&gt;">
+				<mdp:bs-rule type="regex" mode="replace" regex="完&amp;nbsp;成" replacement="完成"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="撤&amp;nbsp;回" replacement="撤回"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="退&amp;nbsp;回" replacement="退回"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="暂&amp;nbsp;存" replacement="暂存"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="关&amp;nbsp;闭" replacement="关闭"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="密级（" replacement="密级:"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="缓急（" replacement="缓急:"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="常用语" replacement="审批操作"/>
+				<mdp:bs-rule type="regex" mode="remove" regex="添&amp;nbsp;加"/>
+				<mdp:bs-rule type="regex" regex="(\s)*选(\s)*择(\s)*" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="选&amp;nbsp;择" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;b&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;/b&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;font[^&gt;]*&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;hr/&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;/font&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;script[^&gt;]*&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;/script&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="editdocument\(\).?" replacement="&lt;div id='Flag_bingfa'&gt;editdocument&lt;/div&gt;" mode="replace"/>
+			</mdp:bs-rule>
+			<mdp:bs-rule type="regex" mode="replace" regex="src=" replacement="srct="/>
+			<mdp:bs-rule type="regex" mode="add" regex="&lt;\!([\d+])\!&gt;(.+)&lt;/\!([\d+])\!&gt;">
+				<!-- 将非html节点，转化为html节点 -->
+				<mdp:bs-rule type="regex" mode="replace" regex="(&lt;[/]?)([^&gt;]+)(&gt;)" replacement="$1p id=&quot;$2&quot;$3"/>
+			</mdp:bs-rule>
+		</mdp:bs-page>
+		<!--签报内容-->
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep\d+/qsbg_\d+.nsf/.*\?(opendocument|editdocument)" responseTemplate="demo/response_qianbao.xsl" requestTemplate="demo/request_qianbao.xsl" encodeUrl="false">
+			<mdp:bs-rule type="tag" mode="add" startTag="&lt;body" endTag="&lt;/body&gt;">
+				<mdp:bs-rule type="regex" mode="replace" regex="完&amp;nbsp;成" replacement="完成"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="撤&amp;nbsp;回" replacement="撤回"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="退&amp;nbsp;回" replacement="退回"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="暂&amp;nbsp;存" replacement="暂存"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="关&amp;nbsp;闭" replacement="关闭"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="密级（" replacement="密级:"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="缓急（" replacement="缓急:"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="常用语" replacement="审批操作"/>
+				<mdp:bs-rule type="regex" mode="remove" regex="添&amp;nbsp;加"/>
+				<mdp:bs-rule type="regex" regex="(\s)*选(\s)*择(\s)*" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="选&amp;nbsp;择" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;b&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;/b&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;font[^&gt;]*&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;hr/&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;/font&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;script&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;/script&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="window.attachEvent" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="\(&quot;onload&quot;,editdocument\)" replacement="&lt;div id='Flag_bingfa'&gt;editdocument&lt;/div&gt;" mode="replace"/>
+			</mdp:bs-rule>
+			<mdp:bs-rule type="regex" mode="replace" regex="src=" replacement="srct="/>
+			<mdp:bs-rule type="regex" mode="add" regex="&lt;\!([\d+])\!&gt;(.+)&lt;/\!([\d+])\!&gt;">
+				<!-- 将非html节点，转化为html节点 -->
+				<mdp:bs-rule type="regex" mode="replace" regex="(&lt;[/]?)([^&gt;]+)(&gt;)" replacement="$1p id=&quot;$2&quot;$3"/>
+			</mdp:bs-rule>
+		</mdp:bs-page>
+		<!--收文列表-->
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/persontasks.nsf/.*/.*\?OpenDocument" responseTemplate="demo/response_shouwen_jumptoshow.xsl"/>
+		<!--发文内容-->
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep\d+/fwgl_\d+.nsf/.*\?(opendocument|editdocument)" responseTemplate="demo/response_fawen.xsl" requestTemplate="demo/request_fawen.xsl" encodeUrl="false">
+			<mdp:bs-rule type="tag" mode="add" startTag="&lt;body" endTag="&lt;/body&gt;">
+				<mdp:bs-rule type="regex" mode="replace" regex="完&amp;nbsp;成" replacement="完成"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="撤&amp;nbsp;回" replacement="撤回"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="退&amp;nbsp;回" replacement="退回"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="暂&amp;nbsp;存" replacement="暂存"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="关&amp;nbsp;闭" replacement="关闭"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="密级（" replacement="密级:"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="缓急（" replacement="缓急:"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="常用语" replacement="审批操作"/>
+				<mdp:bs-rule type="regex" mode="remove" regex="添&amp;nbsp;加"/>
+				<mdp:bs-rule type="regex" regex="(\s)*选(\s)*择(\s)*" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="选&amp;nbsp;择" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;b&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;/b&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;font[^&gt;]*&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;hr/&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;/font&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;script&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;/script&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="window.attachEvent" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="\(&quot;onload&quot;,editdocument\)" replacement="&lt;div id='Flag_bingfa'&gt;editdocument&lt;/div&gt;" mode="replace"/>
+			</mdp:bs-rule>
+			<mdp:bs-rule type="regex" mode="replace" regex="src=" replacement="srct="/>
+			<mdp:bs-rule type="regex" mode="add" regex="&lt;\!([\d+])\!&gt;(.+)&lt;/\!([\d+])\!&gt;">
+				<!-- 将非html节点，转化为html节点 -->
+				<mdp:bs-rule type="regex" mode="replace" regex="(&lt;[/]?)([^&gt;]+)(&gt;)" replacement="$1p id=&quot;$2&quot;$3"/>
+			</mdp:bs-rule>
+		</mdp:bs-page>
+		<!--发文内容-->
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep\d+/fwgl_\d+.nsf/.*\?(opendocument|editdocument)" responseTemplate="demo/response_fawen.xsl" requestTemplate="demo/request_fawen.xsl" encodeUrl="false">
+			<mdp:bs-rule type="tag" mode="add" startTag="&lt;body" endTag="&lt;/body&gt;">
+				<mdp:bs-rule type="regex" mode="replace" regex="完&amp;nbsp;成" replacement="完成"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="撤&amp;nbsp;回" replacement="撤回"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="退&amp;nbsp;回" replacement="退回"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="暂&amp;nbsp;存" replacement="暂存"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="关&amp;nbsp;闭" replacement="关闭"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="密级（" replacement="密级:"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="缓急（" replacement="缓急:"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="常用语" replacement="审批操作"/>
+				<mdp:bs-rule type="regex" mode="remove" regex="添&amp;nbsp;加"/>
+				<mdp:bs-rule type="regex" regex="(\s)*选(\s)*择(\s)*" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="选&amp;nbsp;择" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;b&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;/b&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;font[^&gt;]*&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;hr/&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;/font&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;script&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;/script&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="window.attachEvent" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="\(&quot;onload&quot;,editdocument\)" replacement="&lt;div id='Flag_bingfa'&gt;editdocument&lt;/div&gt;" mode="replace"/>
+			</mdp:bs-rule>
+			<mdp:bs-rule type="regex" mode="replace" regex="src=" replacement="srct="/>
+			<mdp:bs-rule type="regex" mode="add" regex="&lt;\!([\d+])\!&gt;(.+)&lt;/\!([\d+])\!&gt;">
+				<!-- 将非html节点，转化为html节点 -->
+				<mdp:bs-rule type="regex" mode="replace" regex="(&lt;[/]?)([^&gt;]+)(&gt;)" replacement="$1p id=&quot;$2&quot;$3"/>
+			</mdp:bs-rule>
+		</mdp:bs-page>
+		<!--代理结束，关闭页面-->
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep\d+/swgl_\d+.nsf/agtIfIsOver\?openagent&amp;unid=.*$" responseTemplate="closepage.xsl"/>
+		<!--公告通知-->
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/ioboard.nsf/myview\?openform&amp;view=vwPubliced&amp;count=20$" responseTemplate="notice/response_list_ggtz.xsl"/>
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/ioboard.nsf/.*OpenDocument$" responseTemplate="notice/response_cont_ggtz.xsl">
+			<mdp:bs-rule type="tag" mode="add" startTag="&lt;body" endTag="&lt;/body&gt;"/>
+			<mdp:bs-rule type="regex" mode="remove" regex="/gdyd"/>
+		</mdp:bs-page>	       
+		<!--Branch-->
+		<mdp:bs-page url="http://oa.gdyd.com/gdyd/dep\d+/(fwgl|swgl|qsbg)_\d+.nsf/frmBranchSelecter\?openform&amp;unid=.*" responseTemplate="flow/response_page_branch.xsl" requestTemplate="flow/request_page_branch.xsl"/>
+		<!--驳回-->
+		<mdp:bs-page url="http://oa.gdyd.com/gdyd/dep\d+/(fwgl|swgl|wgsp|qsbg)_\d+.nsf/frmDenySubmit\?openform&amp;unid=.*&amp;node=\d+$" responseTemplate="response_page_deny.xsl" requestTemplate="request_page_deny.xsl">
+			<mdp:bs-rule type="regex" mode="remove" regex="确 定"/>
+			<mdp:bs-rule type="regex" mode="remove" regex="取 消"/>
+		</mdp:bs-page>
+		<!--Submitpage-->
+		<mdp:bs-page url="http://oa.gdyd.com/gdyd/dep\d+/(fwgl|swgl|qsbg)_\d+.nsf/frmSubmitPage\?.*unid=.*" responseTemplate="flow/response_page_submitpage.xsl" requestTemplate="flow/request_page_submitpage.xsl">
+			<mdp:bs-rule type="tag" mode="add" startTag="&lt;body" endTag="&lt;/body&gt;">
+				<mdp:bs-rule type="regex" mode="remove" regex="查&amp;nbsp;找"/>
+				<mdp:bs-rule type="regex" mode="remove" regex="确 定"/>
+				<mdp:bs-rule type="regex" mode="remove" regex="取 消"/>
+				<mdp:bs-rule type="regex" regex="&lt;font [^&gt;]*&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;/font&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;b&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" regex="&lt;/b&gt;" mode="remove"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="下一环节审批人：" replacement="下一环节审批人：&lt;br/&gt;"/>
+				<mdp:bs-rule type="regex" mode="replace" regex="是否邮件" replacement="&lt;br/&gt;是否邮件"/>
+				
+			</mdp:bs-rule>
+		</mdp:bs-page>
+		<!--选择部门人员-->
+		<mdp:bs-page url="^http://oa.gdyd.com/indishare/addresstree.nsf/vwdepbyparentcode\?readviewentries&amp;count=\d+&amp;startkey=\d+&amp;UntilKey=\d+&amp;rel=userselect$" responseTemplate="userselect/response_tree_deplistchild.xsl" encoding="utf8"/>
+		<mdp:bs-page url="^http://oa.gdyd.com/indishare/addresstree.nsf/vwUserBydepPath\?readviewentries&amp;restricttocategory=_\d+_&amp;count=500$" responseTemplate="userselect/response_tree_person.xsl" encoding="utf8"/>
+		<!--选择给定范围的人员-->
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep\d+/(fwgl|swgl|qsbg)_\d+.nsf/\(wAddressAdv\)\?OpenForm&amp;unid=.*&amp;node=\d+$" responseTemplate="userselect/response_tree_personAdv.xsl"/>
+		<!--提交结果-->
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep\d+/(fwgl|swgl|qsbg|wgsp)_\d+.nsf/frmSubmitPage\?OpenForm&amp;Seq=1&amp;unid=.*seluser=.*$" responseTemplate="flow/response_result.xsl"/>
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep\d+/(fwgl|swgl|qsbg|wgsp)_\d+.nsf/frmBranchSelecter\?OpenForm&amp;Seq=\d+&amp;unid=.*$" responseTemplate="flow/response_result.xsl"/>
+		<!--跳转-->
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep\d+/qsbg_\d+.nsf$" redirectUrl="http://oa.gdyd.com/gdyd/persontasks.nsf/frmPage?openform&amp;view=db"/>
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep\d+/wgsp_\d+.nsf$" redirectUrl="http://oa.gdyd.com/gdyd/persontasks.nsf/frmPage?openform&amp;view=db"/>
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep\d+/qsbg_\d+.nsf$" redirectUrl="http://oa.gdyd.com/gdyd/persontasks.nsf/frmPage?openform&amp;view=db"/>
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep\d+/swgl_\d+.nsf$" redirectUrl="http://oa.gdyd.com/gdyd/persontasks.nsf/frmPage?openform&amp;view=db"/>
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep\d+/fwgl_\d+.nsf$" redirectUrl="http://oa.gdyd.com/gdyd/persontasks.nsf/frmPage?openform&amp;view=db"/>
+		<!--关闭页面并刷新列表-->
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/persontasks.nsf/frmPage\?openform&amp;view=db$" responseTemplate="closepage.xsl"/>
+		<mdp:bs-page url="^http://oa.gdyd.com/gdyd/dep\d+/fwgl_\d+.nsf/frmDenySubmit\?OpenForm&amp;Seq=\d+&amp;unid=.*&amp;node=NaN$" responseTemplate="msg.xsl"/>
+
+
+    <mdp:bs-page url="^http://oa.gdyd.com/gdyd/gwyl.nsf/myview\?openform&amp;view=vwUnReadDocByList&amp;start=1_1&amp;RestrictToCategory=.+&amp;count=\d+$" responseTemplate="response_gongwen_yl.xsl">
+     
+    </mdp:bs-page>
+
+  </mdp:bs-config>
+</mdp:configuration>

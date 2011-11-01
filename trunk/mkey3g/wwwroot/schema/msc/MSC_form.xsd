@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"  elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:annotation>
+		<xsd:documentation><![CDATA[ 数字天堂 MSC 标签定义文件 v1.0 ]]></xsd:documentation>
+	</xsd:annotation>
+	<!--定义根节点-->
+	<xsd:element name="msc">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="body" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:attribute name="title" type="xsd:string" use="required" />
+			<xsd:attribute name="statusbar_caption" type="xsd:string" use="required" />
+			<xsd:attribute name="type" type="xsd:string" use="required" fixed="form"/>
+			<xsd:attribute name="action" type="xsd:string"/>
+			<xsd:attribute name="background" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--定义body元素-->
+	<xsd:element name="body">
+		<xsd:complexType mixed="true">
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="font" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="input" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="select" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="a" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="textarea" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="br" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="hr" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="img" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="object" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="fileset" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:choice>
+			<xsd:attribute name="fullbody" type="xsd:boolean"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--body内部元素-->
+	<xsd:element name="br">
+		<xsd:complexType>
+			<xsd:sequence/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="img">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute name="src" type="xsd:string" use="required" />
+			<xsd:attribute name="width" type="xsd:int" use="required" />
+			<xsd:attribute name="height" type="xsd:int" use="required" />
+			<xsd:attribute name="href" type="xsd:string"/>
+			<xsd:attribute name="target" type="ETarget"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="hr">
+	</xsd:element>
+	<xsd:element name="textarea">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:string">
+					<xsd:attribute name="name" type="xsd:string"/>
+					<xsd:attribute name="line" type="xsd:unsignedInt" use="required" />
+					<xsd:attribute name="readonly" type="xsd:boolean"/>
+					<xsd:attribute name="caption" type="xsd:string" use="required" />
+					<xsd:attribute name="commonphrase" type="xsd:string" use="required" />
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<!--	定义文本类型-->
+	<xsd:element name="font">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:string">
+					<xsd:attribute name="color" type="PColor"/>
+					<xsd:attribute name="size" type="ESize"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<!--	定义input类型-->
+	<xsd:element name="input">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute name="type" type="EInputType" use="required" />
+			<xsd:attribute name="value" type="xsd:string"/>
+			<xsd:attribute name="name" type="xsd:string"/>
+			<xsd:attribute name="caption" type="xsd:string" use="required" />
+			<xsd:attribute name="format" type="EFormat" />
+			<xsd:attribute name="readonly" type="xsd:boolean"/>
+			<xsd:attribute name="href" type="xsd:string"/>
+			<xsd:attribute name="target" type="ETarget"/>
+			<xsd:attribute name="checked" type="xsd:boolean"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--	定义选择框-->
+	<xsd:element name="select">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="option" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute name="name" type="xsd:string"/>
+			<xsd:attribute name="writeable" type="xsd:boolean"/>
+			<xsd:attribute name="readonly" type="xsd:boolean"/>
+			<xsd:attribute name="value" type="xsd:boolean"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="option">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:string">
+					<xsd:attribute name="value" type="xsd:string"/>
+					<xsd:attribute name="href" type="xsd:string"/>
+					<xsd:attribute name="target" type="ETarget"/>
+					<xsd:attribute name="selected" type="xsd:boolean"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<!--	定义超级链接-->
+	<xsd:element name="a">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:string">
+					<xsd:attribute name="href" type="xsd:string"/>
+					<xsd:attribute name="target" type="ETarget"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="object">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:choice>
+					<xsd:element ref="item"/>
+				</xsd:choice>
+			</xsd:sequence>
+			<xsd:attribute name="style" type="xsd:string" use="required" />
+			<xsd:attribute name="extendlevel" type="xsd:string"/>
+			<xsd:attribute name="caption" type="xsd:string" use="required" />
+			<xsd:attribute name="value" type="xsd:string"/>
+			<xsd:attribute name="type" type="EObjectType" use="required" />
+			<xsd:attribute name="name" type="xsd:string"/>
+			<xsd:attribute name="checkbox" type="xsd:boolean"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="item">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="item" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute name="caption" type="xsd:string" use="required" />
+			<xsd:attribute name="value" type="xsd:string"/>
+			<xsd:attribute name="selected" type="xsd:boolean"/>
+			<xsd:attribute name="childurl" type="xsd:string"/>
+			<xsd:attribute name="href" type="xsd:string"/>
+			<xsd:attribute name="target" type="ETarget"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="fileset">
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="item">
+					<xsd:complexType>
+						<xsd:sequence/>
+						<xsd:attribute name="text" type="xsd:string" use="required" />
+						<xsd:attribute name="ft" type="xsd:string" use="required" />
+						<xsd:attribute name="size" type="xsd:string" use="required" />
+						<xsd:attribute name="href" type="xsd:string" use="required" />
+						<xsd:attribute name="lm" type="xsd:string" use="required" />
+					</xsd:complexType>
+				</xsd:element>
+				<!--
+				<xsd:element ref="item" minOccurs="0" maxOccurs="unbounded"/>
+			-->
+			</xsd:choice>
+			<xsd:attribute name="cp" type="xsd:string" use="required" />
+			<xsd:attribute name="eu" type="xsd:boolean"/>
+			<xsd:attribute name="er" type="xsd:boolean"/>
+			<xsd:attribute name="ed" type="xsd:boolean"/>
+			<xsd:attribute name="em" type="xsd:boolean"/>
+			<xsd:attribute name="ecnf" type="xsd:boolean"/>
+			<xsd:attribute name="ipc" type="xsd:boolean" use="required" />
+		</xsd:complexType>
+	</xsd:element>
+	<!--自定义数据类型-->
+	<xsd:simpleType name="EInputType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="text"/>
+			<xsd:enumeration value="button"/>
+			<xsd:enumeration value="password"/>
+			<xsd:enumeration value="hidden"/>
+			<xsd:enumeration value="radio"/>
+			<xsd:enumeration value="checkbox"/>
+			<xsd:enumeration value="submit"/>
+			<xsd:enumeration value="reset"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ETarget">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="_blank"/>
+			<xsd:enumeration value="_self"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="EFormat">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="email"/>
+			<xsd:enumeration value="phonenum"/>
+			<xsd:enumeration value="numeric"/>
+			<xsd:enumeration value="url"/>
+			<xsd:enumeration value="uneditable"/>
+			<xsd:enumeration value="decimal"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PColor">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(#|0x)?[0-9A-Fa-f]{6}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ESize">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="small"/>
+			<xsd:enumeration value="normal"/>
+			<xsd:enumeration value="large"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="EObjectType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="multiselect"/>
+			<xsd:enumeration value="time"/>
+			<xsd:enumeration value="date"/>
+			<xsd:enumeration value="date_time"/>
+			<xsd:enumeration value="login"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

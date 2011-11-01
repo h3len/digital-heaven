@@ -1,0 +1,17 @@
+<msc type="form" statusbar_caption="写邮件" title="即时沟通" action="?action=postMail@mail">
+<body>
+<input type="text" caption="收件人" name="to"/><br/>
+<input type="text" caption="抄送人" name="cc"/><br/>
+<input type="text" caption="密送人" name="bcc"/><br/>
+<input type="text" caption="主题" name="subject"/><br/>
+<textarea caption="内容" name="content"/><br/>
+<select name="priority" caption="优先级">
+<option value="3" selected="true">普通</option>
+<option value="5">最低</option>
+<option value="1">最高</option>
+</select><br/>
+<input type="checkbox" caption="是否需要收条" name="needReceipt"/><br/>
+<input type="submit" caption="确认"/> 
+<input type="submit" caption="存入草稿箱" value="true" name="movetotempbox"/>
+</body>
+</msc>

@@ -1,0 +1,107 @@
+.calcell
+{
+	font-size:40px;
+	font-family:Arial;
+	font-weight:bolder;
+	color:#999999;
+	text-align:center;
+}
+.isNotWork
+{
+	background:Red;
+    text-align:center;
+    font-size:10px;
+}
+
+td.negDate  a
+{
+    color: #32779C;
+	text-align:center;
+	font-size:10px;
+}
+.negDate
+{
+	color:#999;
+	text-align:center;
+	font-size:10px;
+	cursor:pointer;
+}
+td.posDate
+{
+	color:#000000;
+	font-size:10px;
+	text-align:center;
+	cursor:pointer;
+}
+.calendar 
+{      
+	padding-left: 4px;
+ 	padding-right: 4px;
+ 	text-align:center;
+
+}
+
+.calendar table 
+{
+       border-bottom: solid 0px #557799;
+       text-align: center;
+       padding: 0;
+}
+
+.calendar table a 
+{
+       color: black;
+		text-align:center;	
+}
+
+.calendar td {
+       padding: 4px;
+       font-size: 10px;
+       font-weight: lighter;
+       text-align:center;
+}
+
+.calendarhd 
+{
+       color: #000;
+       text-transform: uppercase;
+       text-align:center;
+       font-size:12px;
+       background-color:#b9daea;
+       font-weight:bolder;
+}
+
+.calendarDays 
+{
+
+       border-bottom:1px #557799 solid;;
+	   width:13%;
+	   text-align:center;
+       background-color:#BEDCEB;
+	   color: #32779C;
+       padding: 0;
+       margin: 0;
+       font-size:10px;
+       cursor:pointer;
+}
+
+.selectedDate {
+      background:yellow;
+      text-align:center;
+      font-size:10px;
+      cursor:pointer;
+}
+
+.hasTaskDay {
+      background:#b9daea;
+      text-align:center;
+      font-size:10px;
+      cursor:pointer;
+}
+
+.selectedDate a {
+
+       color: white !important;
+}
+
+

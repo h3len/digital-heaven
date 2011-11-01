@@ -1,0 +1,119 @@
+/*************MSC3 WAP2.0 CSS by wzc*****************/
+
+.gridDiv_2{ float:left; width:50%;}
+.gridDiv_2 img{height:64px;width:64px;}
+
+.gridDiv_3{ float:left;width:33%;}
+.gridImg_3{width:32px;height:32px;}
+
+
+.gridDiv_1{ float:left;width:100%;}
+.gridImg_1{width:32px;height:32px;}
+
+/* fileset css */
+.fileset{ border:1px #ccc solid; padding:5px;}
+.wfull{ width:100%;}
+.tree{ border:1px #ccc solid; padding:5px;}
+.app { clear:both;  width:100%; border-bottom:1px #E7EFFF solid; margin-top:5px; }
+.app img { width:40px; height:40px;}
+.app #left{float:left; width:20%;}
+.app #right{float:right; width:80%;}
+.app #right font{ color:#999999; font-weight:bold; }
+hr{ border:0px; border-bottom:1px #E7EFFF solid; height:1px; }
+
+.bottomMenu { clear:both; float:left; font-size:12px; width:100%; text-align:center;}
+.bottomMenu hr{ border:0px; border-bottom:1px #003366 solid; height:1px; width:100%;}
+.bottomMenu a{ font-size:12px; }
+.bottomMenu a:hover{ font-size:12px; }
+.bottomMenu a:visit{ font-size:12px; }
+
+#listitem
+{
+	border:0px; 
+	border-bottom:1px #FFFFFF solid; 
+	height:1px; 
+}
+
+#divList
+{
+	background-color:#E7EFFF;
+	width:100%;
+}
+.listCaption
+{
+	width:100%;
+	float:left;
+	background-color:inherit;
+}
+
+.listCaptionLeft
+{
+	float:left;
+}
+
+.listSubCaption
+{
+	float:right;
+	font-size:11;
+	width:40%;
+}
+
+.listSndCaption
+{
+	width:100%;
+	float:left;
+	background-color:inherit;
+}
+
+.listDigest
+{
+	width:100%;
+	float:left;
+	padding:5px 5 5 20;
+	background-color:inherit;
+	font-size:11;
+}
+
+.xs{font-size:x-small;}
+.s{font-size:smaller;}
+.l{font-size:larger;}
+.xl{font-size:x-large;}
+.m{font-size:medium;}
+.listImg{width:16px;height:16px;}
+
+
+.button
+{
+	color:inherit;border-color:inherit;border-style:outset;
+}
+
+
+.numeric
+{
+	-wap-input-format:"*N";	
+}
+
+
+
+
+
+
+#clear
+{
+	width:100%;
+	clear:both;
+}
+
+
+/*--------Commons--------*/
+.w50{ width:50px;}
+.w100{ width:100px;}
+.w150{ width:150px;}
+.w200{ width:200px;}
+
+.al{ text-align:left;}
+.ac{ text-align:center;}
+.ar{ text-align:right;}
+
+
+

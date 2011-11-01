@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.directwebremoting.org/schema/spring-dwr http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd" >
+
+    <!-- Multi-Action 用来标识method的变量名定义-->
+    <bean id="methodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+        <property name="paramName">
+            <value>action</value>
+        </property>
+        <property name="defaultMethodName">
+            <value>index</value>
+        </property>
+    </bean>
+    
+    <!-- spring对Servlet和JSP的视图解析器 -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+
+    <!-- one of the properties available; the maximum file size in bytes -->   
+  <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	    <property name="maxUploadSize" value="500000000"/>
+	</bean>
+	
+	<bean id="exceptionResolver" 
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver"> 
+		<property name="exceptionMappings"> 
+			<props> 
+				<!-- 上传文件大于最大尺寸后转向出错页面 --> 
+				<prop key="org.springframework.web.multipart.MaxUploadSizeExceededException"> 
+				/upload/uploadError.jsp 
+				</prop> 
+			</props> 
+		</property> 
+	</bean>
+
+   <bean id="handlerMapping" class="com.dheaven.mip.plugin.web.SimpleUrlHandlerMappingExt">
+		<property name="mappings">
+	      <props>
+	      	<prop key="/catalog.do">catalog</prop>
+	      	<prop key="/aidcomm.do">aidcomm</prop>
+			<prop key="/masuser.do">masuser</prop>
+			<prop key="/contactuser.do">contactuser</prop>
+			<prop key="/contactcatalog.do">contactcatalog</prop>
+			<prop key="/rnd.do">rnd</prop>
+			<prop key="/mobiletype.do">mobiletype</prop>
+			<prop key="/role.do">role</prop>
+			<prop key="/importUser.do">importUser</prop>
+			<prop key="/importUserFax.do">importUserFax</prop>
+			<prop key="/config.do">config</prop>
+			<prop key="/debug.do">mipdebugServlet</prop>
+			<prop key="/uploadxxx.do">uploadxxx</prop>
+			<prop key="/logs.do">logs</prop>
+			<prop key="/socketwrapper.do">socketwrapper</prop>
+ 			<prop key="/group.do">group</prop>
+ 			<prop key="/personal.do">personal</prop>
+ 			<prop key="/userupload.do">userUploadServlet</prop>
+ 			<prop key="/userimport.do">userimportServlet</prop>
+ 			<prop key="/importsysuser.do">importsysuserServlet</prop>
+ 			<prop key="/wapnotify.do">wapPushRequestorController</prop>
+ 			<prop key="/userextention.do">userExtention</prop>
+ 			<prop key="/userPhotoUpload.do">userPhotoUpload</prop>
+ 			<prop key="/userPhotoDownload.do">userPhotoDownload</prop>
+ 			<prop key="/wapdown.do">wapdownload</prop>
+ 			<prop key="/packetupload.do">packetUploadServlet</prop>
+ 			<prop key="/userstatistic.do">userstatistic</prop>
+ 			<prop key="/exportUserStatistics.do">exportUserStatistics</prop>
+ 			<prop key="/importappuser.do">importAppUseServlet</prop>
+ 			<prop key="/singleLoginToMkey.do">singleLoginToMkey</prop>
+ 			<prop key="/singleLoginToOSS.do">singleLoginToOSS</prop>
+ 			<prop key="/certimport.do">certimportServlet</prop>
+ 			<prop key="/UpgradeUploadServlet.do">upgradeUploadServlet</prop>
+ 			<prop key="upgrade.do">upgrade</prop>
+ 			<prop key="/getUpgradeLogs.do">getUpgradeLogs</prop>
+ 			<prop key="/upgradeLogsShow.do">upgradeLogsShow</prop>
+	  </props>
+		</property>
+   </bean>
+    <bean name="userPhotoDownload" class="com.dheaven.mip.web.UserPhotoAction" autowire="byName"/>
+    <bean id="userExtention" class="com.dheaven.mip.web.UserExtention" autowire="byName"/>
+	<bean name="aidcomm" class="com.dheaven.mip.web.AidComm" autowire="byName"/>   
+	<bean name="catalog" class="com.dheaven.mip.web.Catalog" autowire="byName"/>
+	<bean name="masuser" class="com.dheaven.mip.web.MasUser" autowire="byName"/>
+	<bean name="contactuser" class="com.dheaven.mip.web.ContactUser" autowire="byName"/>
+	<bean name="contactcatalog" class="com.dheaven.mip.web.ContactCatalog" autowire="byName"/>
+	<bean name="rnd" class="com.dheaven.mip.web.RND" autowire="byName"/>
+	<bean name="mobiletype" class="com.dheaven.mip.web.MobileType" autowire="byName"/>
+	<bean name="role" class="com.dheaven.mip.web.Role" autowire="byName"/> 
+	<bean id="config" class="com.dheaven.mip.web.Config" autowire="byName"/>
+	
+	<!-- single login -->
+	<bean id="singleLoginToMkey" class="com.dheaven.mip.web.SingleLoginToMkey" autowire="byName"/>
+	<bean id="singleLoginToOSS"  class="com.dheaven.mip.web.SingleLoginToOSS" autowire="byName"/>
+	
+	<bean id="importUser" class="com.dheaven.mip.web.ImportUser" >
+		<property name="commandClass" value="com.dheaven.mip.web.FileUploadBean"/>
+		<property name="successView" value=""/>
+		<property name="user" ref="masuser"></property>
+	</bean>
+	<bean id="importUserFax" class="com.dheaven.mip.web.ImportUserFax" >
+		<property name="commandClass" value="com.dheaven.mip.web.FileUploadBean"/>
+		<property name="successView" value=""/>
+		<property name="user" ref="masuser"></property>
+	</bean>
+	<bean id="uploadxxx" class="com.dheaven.mip.web.Upload">
+		<property name="commandClass" value="com.dheaven.mip.web.FileUploadBean"/>
+		<property name="successView" value=""/>
+	</bean>
+	<bean id="packetUploadServlet" class="com.dheaven.mip.web.PacketFileUploadController">
+   		<property name="commandClass" value="com.dheaven.mip.web.FileUploadBean"/>
+	</bean>
+	<bean name="mipdebugServlet" class="com.dheaven.mip.web.MipDebugServlet" autowire="byName"/>
+	<bean id="logs" class="com.dheaven.mip.web.Logs" autowire="byName"/>
+	<bean id="socketwrapper" class="com.dheaven.mip.web.socketwrapper.SocketWrapper" autowire="byName"/>
+	<bean id="group" class="com.dheaven.mip.web.Group" autowire="byName"/>
+	<bean id="personal" class="com.dheaven.mip.web.PersonalUser" autowire="byName"/>
+	<bean id="wapdownload" class="com.dheaven.mip.web.WAPDownload" autowire="byName"/>
+	<bean id="importAppUseServlet" class="com.dheaven.mip.web.ImportAppUseServlet" autowire="byName">
+		<property name="commandClass" value="com.dheaven.mip.web.FileUploadBean"/>
+	</bean>
+	<bean id="userUploadServlet" class="com.dheaven.mip.web.PsersonalUserImportUploadController">
+	   <property name="commandClass" value="com.dheaven.mip.web.FileUploadBean"/>
+	</bean> 
+	<bean id="userimportServlet" class="com.dheaven.mip.web.UserImportUploadController">
+	   <property name="commandClass" value="com.dheaven.mip.web.FileUploadBean"/>
+	</bean> 
+	<bean id="certimportServlet" class="com.dheaven.mip.web.CertImportUploadController">
+	   <property name="commandClass" value="com.dheaven.mip.web.FileUploadBean"/>
+	</bean> 
+	<bean id="importsysuserServlet" class="com.dheaven.mip.web.ImportSysuserServlet">
+   <property name="commandClass" value="com.dheaven.mip.web.FileUploadBean"/>
+   </bean> 
+	<!-- 上传联系人照片 -->
+	
+	<bean id="userPhotoUpload" class="com.dheaven.mip.web.UserPhotoUploadController">
+	   <property name="commandClass" value="com.dheaven.mip.web.FileUploadBean"/>
+	</bean> 
+	<!-- 活跃用户统计 -->
+	<bean id="userstatistic" class="com.dheaven.mip.web.UserStatisticsChart" autowire="byName"/>
+	<bean id="exportUserStatistics" class="com.dheaven.mip.web.ExportUserStatistics" autowire="byName"/>
+	<bean id="wapPushRequestorController"
+		class="org.springframework.web.servlet.mvc.ServletWrappingController">
+		<property name="servletClass">
+			<value>com.dheaven.mip.wireless.wap.WapPushRequestor</value>
+		</property>
+		<property name="servletName">
+			<value>wapPushRequestor</value>
+		</property>
+		<property name="initParameters">
+			<props>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- 自助升级 -->
+	<bean id="upgrade" class="com.dheaven.mip.plugin.upgrade.web.Upgrade" autowire="byName" />
+	<bean id="upgradeUploadServlet" class="com.dheaven.mip.plugin.upgrade.web.UpgradeImportUploadController">
+		<property name="commandClass" value="com.dheaven.mip.plugin.upgrade.web.FileUploadBean" />
+	</bean>
+	<bean id="getUpgradeLogs" class="com.dheaven.mip.plugin.upgrade.web.GetUpgradeLogs" autowire="byName" />
+	<bean id="upgradeLogsShow" class="com.dheaven.mip.plugin.upgrade.util.UpgradeLogsShow" autowire="byName" />
+	
+</beans>

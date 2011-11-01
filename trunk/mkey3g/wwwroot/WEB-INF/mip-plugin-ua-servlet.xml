@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans default-merge="true">
+	<bean id="uaexa" class="com.dheaven.mip.plugin.portalifs.web.MipUAExa">
+	</bean>
+	<bean id="importcsvimport" class="com.dheaven.mip.plugin.portalifs.web.MipDeviceUAController">
+        <property name="commandClass" value="com.dheaven.mip.web.FileUploadBean"/>
+     	 <property name="formView" value=""/>
+  		 <property name="successView" value=""/>
+   </bean>
+   
+</beans>

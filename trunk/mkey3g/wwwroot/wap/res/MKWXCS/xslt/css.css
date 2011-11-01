@@ -1,0 +1,21 @@
+/*************MSC WAP2.0 CSS by yesun*****************/
+html{ background-color:#f8f8f8;}
+body{ background-color:#f8f8f8; padding:0px;margin:2px;vertical-align:top;}
+ul {list-style-type: none; margin:0px; padding:auto;}
+
+.grid{float:left;width:100%;margin:0px; padding:0px;}
+.grid ul{ margin:0px;margin:0px;}
+.grid li{ float:left;width:100px; text-align:center;}
+
+div, p, form, ul, li{ list-style-type:none; padding:0px;margin:0px;}
+.clear{clear:both;}
+.navigation{margin:auto;margin:auto; background-color:#BAE8EC;}
+hr{border:0px #BAE8EC solid;border-bottom:1px #BAE8EC solid;}
+
+.al{ text-align:left;}
+.ac{ text-align:center;}
+.ar{ text-align:right;}
+
+.btn{ width:50px; }
+
+textarea{height:80px;}

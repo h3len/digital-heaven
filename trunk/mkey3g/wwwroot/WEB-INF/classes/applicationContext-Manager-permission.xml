@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+	xmlns:dwra="http://www.directwebremoting.org/schema/spring-dwr-annotations"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+          http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+          http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+          http://www.directwebremoting.org/schema/spring-dwr http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd
+          http://www.directwebremoting.org/schema/spring-dwr-annotations http://www.d-heaven.com/ad/spring-dwr-annotations.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+	default-autowire="byName" default-lazy-init="true">
+
+	<bean id="MipAdminUser" class="com.dheaven.mip.plugin.permission.web.MipAdminUserAction"
+		autowire="byName">
+		<dwr:remote javascript="MipAdminUser" />
+	</bean>
+	
+	<bean id="AdminUserLogin" class="com.dheaven.mip.web.AdminUserLogin"
+		autowire="byName">
+		<dwr:remote javascript="AdminUserLogin" />
+	</bean>
+
+	<dwr:configuration>
+		<dwr:convert type="bean"
+		class="com.dheaven.mip.plugin.permission.database.vo.MipAdminUser" />
+	</dwr:configuration>
+	
+
+</beans>

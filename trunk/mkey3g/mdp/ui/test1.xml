@@ -1,0 +1,8 @@
+﻿<msc type="form" action="" xmlns="http://msc_form.d-heaven.com">
+	<head>
+		<title>自定义MSC界面</title>
+	</head>
+	<body>
+		<font color="red" bolder="true">自定义MSC界面</font>
+	</body>
+</msc>

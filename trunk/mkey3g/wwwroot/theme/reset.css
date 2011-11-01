@@ -1,0 +1,161 @@
+/* -------------------------------------------------------------- 
+   reset.css
+   * Resets default browser CSS 浏览器默认表现样式表
+   
+   Based on work by gaojingliang@d-heaven and xujing@d-heaven
+   * Date  : 2008-06-12
+   * Version: alpha 1.5
+-------------------------------------------------------------- */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0; font-size:12px;}
+/* table{border-collapse:collapse;border-spacing:0;} */
+fieldset,img{border:0;}
+a img { border: none; }
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+abbr,acronym {border:0;font-variant:normal;}
+ul{list-style-type:none}
+li{ line-height:180%; list-style:none;}
+
+body { font: 12px Arial, Helvetica, sans-serif; }
+
+a, a:link { color: #000; text-decoration: none; }
+a:hover { color: #f60; text-decoration: underline; }
+
+h1,h2,h3,h4,h5,h6,strong { font-weight: 400; }
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.3em; }
+h4 { font-size: 1.2em; }
+h5 { font-size: 1em; }
+h6 { font-size: .875em; }
+p { line-height: 1.8em; font-size:14px; }
+span { line-height: 1.8em;}
+
+em,i { font-style:italic; }
+pre, code {	font-family: "Courier New", Courier, monospace; }
+address { font-style:normal; line-height: 1.5em; margin: 0 0 1em 0; }
+abbr,acronym { border-bottom: 1px dotted #000; cursor: help; } 
+
+/* base form 基础表单元素 */
+textarea { padding: 2px; border: 1px solid #8db2e3; }
+input.button{ cursor: pointer; height: 24px; padding: 1px 5px; line-height: 17px; font-size: 12px;}
+input.image { border: none; width: auto; }
+input.readonly { background-color: transparent; border: none; }
+fieldset { padding: 10px; }
+legend { font-size: 14px; color: #666; font-weight: 700; }
+label { cursor: pointer; }
+
+.input_text { border: 1px solid #484848; line-height: 18px; height: 18px; width:120px; }
+.input_text_long { border: 1px solid #484848; line-height: 18px; height: 18px; width:200px; }
+.input_text_height { border: 1px solid #484848; height: 100px; width:380px; }
+.input_text_short { border: 1px solid #484848; height: 18px; width:60px; }
+
+.input_title { border: 1px solid #484848; line-height: 18px; height: 18px; width:500px; }
+.input_title_h60 { border: 1px solid #484848; line-height: 18px; height: 18px; width:500px;  height: 60px;}
+.input_title_h160 { border: 1px solid #484848; line-height: 18px; height: 18px; width:500px;  height: 160px;}
+
+/* base button 基础按钮 后缀为按钮内文字数 */
+.button_1{ background:url(images/button_50.gif); height:23px; text-align:center; width:50px;cursor:pointer;; border:0px;line-height:22px; }
+.button_2{ background:url(images/button_60.gif); height:23px; text-align:center; width:60px;cursor:pointer;; border:0px;line-height:22px; }
+.button_3{ background:url(images/button_70.gif); height:23px; text-align:center; width:70px;cursor:pointer;; border:0px;line-height:22px; }
+.button_4{ background:url(images/button_80.gif); height:23px; text-align:center; width:80px;cursor:pointer;; border:0px;line-height:22px; }
+.button_5{ background:url(images/button_90.gif); height:23px; text-align:center; width:90px;cursor:pointer;; border:0px;line-height:22px; }
+.button_6{ background:url(images/button_100.gif); height:23px; text-align:center; width:100px;cursor:pointer;; border:0px;line-height:22px; }
+.button_7{ background:url(images/button_110.gif); height:23px; text-align:center; width:110px;cursor:pointer;; border:0px;line-height:22px; }
+.button_8{ background:url(images/button_120.gif); height:23px; text-align:center; width:120px;cursor:pointer;; border:0px;line-height:22px; }
+.button_9{ background:url(images/button_130.gif); height:23px; text-align:center; width:130px;cursor:pointer;; border:0px;line-height:22px; }
+.button_10{ background:url(images/button_140.gif); height:23px; text-align:center; width:140px;cursor:pointer;; border:0px;line-height:22px; }
+.button_11{ background:url(images/button_150.gif); height:23px; text-align:center; width:150px;cursor:pointer;; border:0px;line-height:22px; }
+.button_12{ background:url(images/button_160.gif); height:23px; text-align:center; width:160px;cursor:pointer;; border:0px;line-height:22px; }
+
+.button_white {background-color: #FEFEFE; border: #666666; height: 20px; border: 1px double}
+.button_red { background-color: #C50000; height: 20px; color: #FFFFFF; border: 1px #e1c486 outset}
+
+/* clearing 清除样式 */
+.clear { clear: both; }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+* html > body .clearfix { display: inline-block; width: 100%; }
+
+/* replace 替换样式 */
+.replace { display: block; background-repeat: no-repeat; background-position: left top; background-color: transparent; font-size: 1px; }
+.replace * { text-indent: -10000px; display: block; background-repeat: no-repeat; background-position: left top; background-color: transparent; }
+.replace a { text-indent: 0; }
+.replace, .replace a span { text-indent: -10000px; }
+
+/* hide 隐藏元素 */
+.hidden { display: none; visibility: hidden; }
+
+/* break 间距 */
+.break{
+	white-space: pre; /* CSS2 */
+	white-space:-moz-pre-wrap; /* Mozilla */
+	white-space:pre-wrap; /* CSS 2.1 */
+	word-wrap:break-word;overflow:hidden; /* IE 可能不兼容FF */
+}
+
+.text_align_left{ text-align: left; }
+.text_align_center{ text-align: center; }
+.div_center{ width:100%;text-align: center; border-top:1px solid #BECEDA;padding-top:1px;}
+.text_align_right { text-align: right; }
+
+/* position 元素位置 */
+.float_left { float: left; }
+.float_right { float: right; }
+.margin_auto { margin: 0 auto; }
+
+.margin_top_5 { margin-top: 5px; }
+.margin_top_10 { margin-top: 10px; }
+.margin_top_15 { margin-top: 15px; }
+.margin_top_20 { margin-top: 20px; }
+.margin_top_100 { margin-top: 100px; }
+
+.margin_left_5 { margin-left: 5px; }
+.margin_left_10 { margin-left: 10px; }
+.margin_left_15 { margin-left: 15px; }
+.margin_left_20 { margin-left: 20px; }
+.margin_left_50 { margin-left: 50px; }
+.margin_left_100 { margin-left: 100px; }
+
+.margin_bottom_5 { margin-bottom: 5px; }
+.margin_bottom_10 { margin-bottom: 10px; }
+.margin_bottom_15 { margin-bottom: 15px; }
+.margin_bottom_20 { margin-bottom: 20px; }
+
+.margin_right_5 { margin-right: 5px; }
+.margin_right_10 { margin-right: 10px; }
+.margin_right_15 { margin-right: 15px; }
+.margin_right_20 { margin-right: 20px; }
+
+.mar_lr_10{margin:0px 10px;}
+
+.padding_top_5{padding-top:5px;} 
+.padding_top_10{padding-top:10px;} 
+
+.padding_left_5{padding-left:5px;} 
+
+.padding_bottom_2{padding-bottom:2px;}
+.padding_bottom_3{padding-bottom:3px;}
+.padding_bottom_5{padding-bottom:5px;}
+
+.padding_5 { padding: 5px; }
+.padding_10 { padding: 10px; }
+
+.relative { position: relative; top: 0; left: 0; }
+.rel{position:relative;}
+
+.div_1000{ width: 1000px; margin: 0px auto; clear:both;}
+.div_left_150{ width: 150px; float:left;}
+
+/* tools */
+.hand{ cursor:pointer; }
+.boder {border-bottom:1px solid #f1f1f1;}
+
+.border_blue{border:1px solid #9db3c5;}
+
+  /* 其他 */
+input,img,select{ vertical-align:middle;}
+.title{background:url(images/title_bg.gif) repeat-x;height:25px; font-weight:bold;padding:3px 0px 2px 6px;}
+
+.height25{height:25px!important;}

@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mdp="http://mdp.d-heaven.com" targetNamespace="http://mdp.d-heaven.com" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:annotation>
+		<xsd:documentation><![CDATA[ 数字天堂 mdp产品配置文件规范 v2.0 ]]></xsd:documentation>
+	</xsd:annotation>
+	<!--定义mdp配置-->
+	<xsd:element name="configuration">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ 定义mdp配置 ]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:choice maxOccurs="unbounded">
+				<!--访问策略-->
+				<xsd:element ref="mdp:authorization"/>
+				<!--多数据源支持-->
+				<xsd:element ref="mdp:bs-config" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="mdp:ftp-config" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="mdp:db-config" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="mdp:mail-config" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:choice>
+			<xsd:attribute name="debug" type="xsd:boolean"/>
+			<xsd:attribute name="outValidate" type="xsd:boolean"/>
+			<xsd:attribute name="exNotify" type="xsd:boolean"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--定义mdp访问策略-->
+	<xsd:element name="authorization">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ 
+			定义mdp访问策略,allow表示允许访问的数据源；denny表示禁止访问的数据源；如allow="*"表示允许访问所有数据源
+			]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="mdp:allow" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="mdp:deny" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+	<!--定义允许访问的数据源-->
+	<xsd:element name="allow">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ 定义允许访问的数据源 ]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="source" type="xsd:string" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--定义禁止访问的数据源-->
+	<xsd:element name="deny">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ 定义禁止访问的数据源 ]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="source" type="xsd:string" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--定义数据源配置-->
+	<!--BS数据源 Start-->
+	<xsd:element name="bs-config">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[
+			定义数据源配置,每一个数据源对应一个bs-config,每个bs-config下可以有多个bs-page,每个bs-page下可以有多个bs-rule 
+			]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="mdp:httpHeader" minOccurs="0"/>
+				<xsd:element ref="mdp:proxy" minOccurs="0"/>
+				<xsd:element ref="mdp:ssl" minOccurs="0"/>
+				<xsd:element ref="mdp:login" minOccurs="0"/>
+				<xsd:element ref="mdp:sso" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="mdp:push" minOccurs="0"/>
+				<xsd:element ref="mdp:loginext" minOccurs="0"/>
+				<xsd:element ref="mdp:bs-page" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:choice>
+			<xsd:attribute name="source" type="xsd:string"/>
+			<xsd:attribute name="encoding" default="gb2312">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="gb2312"/>
+						<xsd:enumeration value="gb18030"/>
+						<xsd:enumeration value="utf-8"/>
+						<xsd:enumeration value="big5"/>
+						<xsd:enumeration value="iso-8859-1"/>
+						<xsd:enumeration value="gbk"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="outType" default="MSC">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="MSC"/>
+						<xsd:enumeration value="MSC3"/>
+						<xsd:enumeration value="HTML"/>
+						<xsd:enumeration value="DB"/>
+						<xsd:enumeration value="WAP1"/>
+						<xsd:enumeration value="WAP2"/>
+						<xsd:enumeration value="RSS"/>
+						<xsd:enumeration value="MAIL"/>
+						<xsd:enumeration value="WEBSERVICE"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="header" type="xsd:string"/>
+			<xsd:attribute name="footer" type="xsd:string"/>
+			<xsd:attribute name="cookiePolicy" default="compatibility">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="compatibility"/>
+						<xsd:enumeration value="netscape"/>
+						<xsd:enumeration value="rfc2109"/>
+						<xsd:enumeration value="rfc2965"/>
+						<xsd:enumeration value="ignoreCookies"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="doAuthentication" type="xsd:boolean"/>
+			<xsd:attribute name="followRedirects" type="xsd:boolean"/>
+			<xsd:attribute name="http11" type="xsd:boolean"/>
+			<xsd:attribute name="strictMode" type="xsd:boolean"/>
+			<xsd:attribute name="singleCookieHeader" type="xsd:boolean"/>
+			<xsd:attribute name="timeout" type="xsd:int"/>
+			<xsd:attribute name="encodeParameter" type="xsd:boolean" default="true"/>
+			<xsd:attribute name="encodeUrl" type="xsd:boolean" default="false"/>
+			<!--http报头相关设置-->
+		</xsd:complexType>
+	</xsd:element>
+	<!--httpHeader-->
+	<xsd:element name="httpHeader">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="mdp:header" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--Header-->
+	<xsd:element name="header">
+		<xsd:complexType>
+			<xsd:attribute name="key" use="required">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Host"/>
+						<xsd:enumeration value="Referer"/>
+						<xsd:enumeration value="User-Agent"/>
+						<xsd:enumeration value="Accept"/>
+						<xsd:enumeration value="Connection"/>
+						<xsd:enumeration value="Content-Type"/>
+						<xsd:enumeration value="Accept-Charset"/>
+						<xsd:enumeration value="Accept-Encoding"/>
+						<xsd:enumeration value="If-Match"/>
+						<xsd:enumeration value="If-Modified-Since"/>
+						<xsd:enumeration value="If-None-Match"/>
+						<xsd:enumeration value="If-Range"/>
+						<xsd:enumeration value="If-Unmodified-Since"/>
+						<xsd:enumeration value="Max-Forwards"/>
+						<xsd:enumeration value="TE"/>
+						<xsd:enumeration value="Pragma"/>
+						<xsd:enumeration value="Cache-Control"/>
+						<xsd:enumeration value="Date"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="value" type="xsd:string" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--登录配置-->
+	<xsd:element name="login">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="mdp:request" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--登录扩展配置-->
+	<xsd:element name="loginext">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="mdp:request" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--采集规则集合-->
+	<xsd:element name="bs-page">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ 定义采集规则集合 ]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="mdp:httpHeader" minOccurs="0"/>
+				<xsd:element ref="mdp:bs-rule" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="mdp:bs-frame" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="mdp:bs-upload" minOccurs="0"/>
+			</xsd:choice>
+			<xsd:attribute name="url" type="xsd:string" use="required"/>
+			<xsd:attribute name="encoding" default="gb2312">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="gb2312"/>
+						<xsd:enumeration value="gb18030"/>
+						<xsd:enumeration value="gbk"/>
+						<xsd:enumeration value="utf-8"/>
+						<xsd:enumeration value="big5"/>
+						<xsd:enumeration value="iso8859_1"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="title" type="xsd:string"/>
+			<xsd:attribute name="isMultiPage" type="xsd:boolean"/>
+			<xsd:attribute name="dhmi" type="xsd:string"/>
+			<xsd:attribute name="redirectUrl" type="xsd:string"/>
+			<xsd:attribute name="requestTemplate" type="xsd:string"/>
+			<xsd:attribute name="responseTemplate" type="xsd:string"/>
+			<xsd:attribute name="target">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="_self"/>
+						<xsd:enumeration value="_blank"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="action" type="xsd:string"/>
+			<xsd:attribute name="method" type="xsd:string"/>
+			<xsd:attribute name="decodeRedirectUrl" type="xsd:boolean"/>
+			<xsd:attribute name="enctype">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="www"/>
+						<xsd:enumeration value="multipart"/>
+						<xsd:enumeration value="dwr"/>
+						<xsd:enumeration value="string"/>
+						<xsd:enumeration value="text"/>
+						<xsd:enumeration value="xml"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="escape">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="encode|decode"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="page" type="xsd:string"/>
+			<xsd:attribute name="cookiePolicy" type="xsd:string"/>
+			<xsd:attribute name="doAuthentication" type="xsd:boolean"/>
+			<xsd:attribute name="followRedirects" type="xsd:boolean"/>
+			<xsd:attribute name="http11" type="xsd:boolean"/>
+			<xsd:attribute name="strictMode" type="xsd:boolean"/>
+			<xsd:attribute name="singleCookieHeader" type="xsd:boolean"/>
+			<xsd:attribute name="timeout" type="xsd:int"/>
+			<xsd:attribute name="encodeParameter" type="xsd:boolean" default="true"/>
+			<xsd:attribute name="encodeUrl" type="xsd:boolean" default="false"/>
+			<xsd:attribute name="isFile" type="xsd:boolean" default="false"/>
+			<xsd:attribute name="isDownload" type="xsd:boolean" default="false"/>
+			<!--http报头相关设置-->
+			<!--url和参数是否编码-->
+			<!--文档解析相关-->
+		</xsd:complexType>
+	</xsd:element>
+	<!--框架，采集指定框架的数据-->
+	<xsd:element name="bs-frame">
+		<xsd:complexType>
+			<xsd:attribute name="url" type="xsd:string" use="required"/>
+			<xsd:attribute name="regex" type="xsd:string"/>
+			<xsd:attribute name="encoding" default="gb2312">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="gb2312"/>
+						<xsd:enumeration value="gb18030"/>
+						<xsd:enumeration value="gbk"/>
+						<xsd:enumeration value="utf-8"/>
+						<xsd:enumeration value="big5"/>
+						<xsd:enumeration value="iso8859_1"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<!--上传-->
+	<xsd:element name="bs-upload">
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="mdp:bs-file" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+	<!--上传，file-->
+	<xsd:element name="bs-file">
+		<xsd:complexType>
+			<xsd:attribute name="name" type="xsd:string" use="required"/>
+			<xsd:attribute name="contentType" type="xsd:string"/>
+			<xsd:attribute name="transferEncoding" type="xsd:string"/>
+			<xsd:attribute name="encoding" default="gb2312">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="gb2312"/>
+						<xsd:enumeration value="gb18030"/>
+						<xsd:enumeration value="gbk"/>
+						<xsd:enumeration value="utf-8"/>
+						<xsd:enumeration value="big5"/>
+						<xsd:enumeration value="iso8859_1"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<!--单点登录-->
+	<xsd:element name="sso">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="mdp:request" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute name="enterpriseCode" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--自动PUSH-->
+	<xsd:element name="push">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="mdp:request" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute name="enterpriseCode" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--代理配置-->
+	<xsd:element name="proxy">
+		<xsd:complexType>
+			<xsd:attribute name="ip" type="xsd:string" use="required"/>
+			<xsd:attribute name="port" type="xsd:int" use="required"/>
+			<xsd:attribute name="username" type="xsd:string"/>
+			<xsd:attribute name="password" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--SSL-->
+	<xsd:element name="ssl">
+		<xsd:complexType>
+			<xsd:attribute name="authType" default="single">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="single"/>
+						<xsd:enumeration value="double"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="sslProtocol" default="SSL">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="SSL"/>
+						<xsd:enumeration value="TLS"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="keystoreUrl" type="xsd:string"/>
+			<xsd:attribute name="keystorePass" type="xsd:string"/>
+			<xsd:attribute name="truststoreUrl" type="xsd:string"/>
+			<xsd:attribute name="truststorePass" type="xsd:string"/>
+			<xsd:attribute name="keystoreType" default="PKCS12">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="PKCS12"/>
+						<xsd:enumeration value="JKS"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="truststoreType" default="PKCS12">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="PKCS12"/>
+						<xsd:enumeration value="JKS"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<!--认证方式-->
+			<!--SSL协议类型，TLS是传输层安全协议，而SSL是安全套接层-->
+			<!--双向认证时的相关-->
+		</xsd:complexType>
+	</xsd:element>
+	<!--HttpRequest-->
+	<xsd:element name="request">
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="url"/>
+				<xsd:element name="params"/>
+				<xsd:element name="method" default="GET">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="POST"/>
+							<xsd:enumeration value="GET"/>
+							<xsd:enumeration value="HEAD"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="encoding" default="gb2312">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="gb2312"/>
+							<xsd:enumeration value="gb18030"/>
+							<xsd:enumeration value="gbk"/>
+							<xsd:enumeration value="utf-8"/>
+							<xsd:enumeration value="big5"/>
+							<xsd:enumeration value="iso8859_1"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+			</xsd:choice>
+			<xsd:attribute name="id" type="xsd:string"/>
+			<xsd:attribute name="name" type="xsd:string"/>
+			<xsd:attribute name="sysid" type="xsd:string"/>
+			<xsd:attribute name="loopExpression" type="xsd:string"/>
+			<xsd:attribute name="denpendentRequest" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--采集规则-->
+	<xsd:element name="bs-rule">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ 定义采集规则 ]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="mdp:bs-rule" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute name="id" type="xsd:string"/>
+			<xsd:attribute name="type" use="required">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="regex"/>
+						<xsd:enumeration value="tag"/>
+						<xsd:enumeration value="java"/>
+						<xsd:enumeration value="javascript"/>
+						<xsd:enumeration value="import"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="mode">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="add"/>
+						<xsd:enumeration value="remove"/>
+						<xsd:enumeration value="replace"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="caption" type="xsd:string"/>
+			<xsd:attribute name="ref" type="xsd:string"/>
+			<xsd:attribute name="replacement" type="xsd:string"/>
+			<xsd:attribute name="isTable" type="xsd:boolean"/>
+			<xsd:attribute name="template" type="xsd:string"/>
+			<xsd:attribute name="escape" type="xsd:string"/>
+			<xsd:attribute name="regex" type="xsd:string"/>
+			<xsd:attribute name="startTag" type="xsd:string"/>
+			<xsd:attribute name="endTag" type="xsd:string"/>
+			<xsd:attribute name="className" type="xsd:string"/>
+			<xsd:attribute name="method" type="xsd:string"/>
+			<xsd:attribute name="filePath" type="xsd:string"/>
+			<xsd:attribute name="insertAt" type="xsd:string"/>
+			<xsd:attribute name="fromIndex" type="xsd:string"/>
+			<xsd:attribute name="html" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--FTP数据源 Start-->
+	<xsd:element name="ftp-config">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ FTP SOURCE ]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="mdp:account" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:attribute name="source" type="xsd:string"/>
+			<xsd:attribute name="username" type="xsd:string"/>
+			<xsd:attribute name="password" type="xsd:string"/>
+			<xsd:attribute name="protocal" type="xsd:string"/>
+			<xsd:attribute name="mode" default="active">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="active"/>
+						<xsd:enumeration value="passive"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="encoding" default="gb2312">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="gb2312"/>
+						<xsd:enumeration value="gb18030"/>
+						<xsd:enumeration value="utf-8"/>
+						<xsd:enumeration value="big5"/>
+						<xsd:enumeration value="iso-8859-1"/>
+						<xsd:enumeration value="gbk"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="outType" default="msc">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="msc"/>
+						<xsd:enumeration value="msc3"/>
+						<xsd:enumeration value="html"/>
+						<xsd:enumeration value="db"/>
+						<xsd:enumeration value="wap1"/>
+						<xsd:enumeration value="wap2"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<!--Account-->
+	<xsd:element name="account">
+		<xsd:complexType/>
+	</xsd:element>
+	<!--FTP数据源 End-->
+	<!--DB数据源 Start-->
+	<xsd:element name="db-config">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ FTP SOURCE ]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="source" type="xsd:string"/>
+			<xsd:attribute name="encoding" default="gb2312">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="gb2312"/>
+						<xsd:enumeration value="gb18030"/>
+						<xsd:enumeration value="utf-8"/>
+						<xsd:enumeration value="big5"/>
+						<xsd:enumeration value="iso-8859-1"/>
+						<xsd:enumeration value="gbk"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="outType" default="msc">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="msc"/>
+						<xsd:enumeration value="msc3"/>
+						<xsd:enumeration value="html"/>
+						<xsd:enumeration value="db"/>
+						<xsd:enumeration value="wap1"/>
+						<xsd:enumeration value="wap2"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<!--DB数据源 End-->
+	<!--Mail数据源 Start-->
+	<xsd:element name="mail-config">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ FTP SOURCE ]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="source" type="xsd:string"/>
+			<xsd:attribute name="encoding" default="gb2312">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="gb2312"/>
+						<xsd:enumeration value="gb18030"/>
+						<xsd:enumeration value="utf-8"/>
+						<xsd:enumeration value="big5"/>
+						<xsd:enumeration value="iso-8859-1"/>
+						<xsd:enumeration value="gbk"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="outType" default="msc">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="msc"/>
+						<xsd:enumeration value="msc3"/>
+						<xsd:enumeration value="html"/>
+						<xsd:enumeration value="db"/>
+						<xsd:enumeration value="wap1"/>
+						<xsd:enumeration value="wap2"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<!--Mail数据源 End-->
+</xsd:schema>

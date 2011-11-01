@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:element name="msc">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element ref="login" minOccurs="0"/>
+					<xsd:element ref="home" minOccurs="0"/>
+					<xsd:element ref="defaulturl" minOccurs="0"/>
+					<xsd:element ref="defaultapn" minOccurs="0"/>
+					<!--					<xsd:element ref="system" minOccurs="0"/>
+					<xsd:element ref="secure" minOccurs="0"/>-->
+					<xsd:element ref="icon"/>
+					<xsd:element ref="support"/>
+					<xsd:element ref="shortcuts"/>
+				</xsd:choice>
+			</xsd:sequence>
+			<xsd:attribute name="appname" type="xsd:string"/>
+			<xsd:attribute name="customername" type="xsd:string"/>
+			<xsd:attribute name="appid" type="PAPPID"/>
+			<xsd:attribute name="appver" type="xsd:string"/>
+			<xsd:attribute name="partnerid" type="PSIID"/>
+			<xsd:attribute name="partnername" type="xsd:string"/>
+			<xsd:attribute name="debug" type="xsd:boolean"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="login">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute name="href" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="home">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute name="href" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="defaulturl">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute name="url" type="xsd:string"/>
+			<xsd:attribute name="readonly" type="xsd:boolean"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="defaultapn">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute name="dialtype" type="xsd:string"/>
+			<xsd:attribute name="username" type="xsd:string"/>
+			<xsd:attribute name="password" type="xsd:string"/>
+			<xsd:attribute name="domain" type="xsd:string"/>
+			<xsd:attribute name="apn" type="xsd:string"/>
+			<xsd:attribute name="readonly" type="xsd:boolean"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--
+	<xsd:element name="system">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute name="applist" type="xsd:boolean"/>
+			<xsd:attribute name="themename" type="xsd:string"/>
+			<xsd:attribute name="fontsize" type="ESystemFontSize"/>
+			<xsd:attribute name="switchpsbutton" type="ELR"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="secure">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute name="type" type="ESecureType"/>
+			<xsd:attribute name="readonly" type="xsd:boolean"/>
+			<xsd:attribute name="cerfile" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:simpleType name="ESecureType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ssl"/>
+			<xsd:enumeration value="aes"/>
+			<xsd:enumeration value="none"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+-->
+	<xsd:simpleType name="PSIID">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z0-9]*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PAPPID">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z0-9]*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="icon">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute name="appicon" type="xsd:string"/>
+			<xsd:attribute name="helpicon" type="xsd:string"/>
+			<xsd:attribute name="smallicon" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="support">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:string">
+					<xsd:attribute name="tel" type="xsd:string"/>
+					<xsd:attribute name="website" type="xsd:string"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="shortcuts">
+		<xsd:complexType>
+			<xsd:choice maxOccurs="unbounded">
+				<xsd:element ref="item"/>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:simpleType name="ESystemFontSize">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="big"/>
+			<xsd:enumeration value="normal"/>
+			<xsd:enumeration value="small"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ELR">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="left"/>
+			<xsd:enumeration value="right"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="item">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute name="href" type="xsd:string"/>
+			<xsd:attribute name="target" type="ETarget"/>
+			<xsd:attribute name="icon" type="xsd:string"/>
+			<xsd:attribute name="caption" type="xsd:string"/>
+			<xsd:attribute name="rights" type="xsd:unsignedInt"/>
+			<xsd:attribute name="id" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:simpleType name="ETarget">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="_blank"/>
+			<xsd:enumeration value="_self"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,6 @@
+﻿<msc type="form" title="form1" action="?action=submit@mdp">
+<body>
+    <font color="red" bolder="true">TEST3</font>
+    
+  </body>
+</msc>

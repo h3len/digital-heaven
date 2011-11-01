@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT msc ( (login, home, defaulturl, defaultapn, secure, systemmenu) )>
+<!ATTLIST msc
+	appid CDATA #REQUIRED
+	appname CDATA #REQUIRED
+	appver CDATA #REQUIRED
+	customname CDATA #IMPLIED
+	debug (true | false) "false"
+	siid CDATA #REQUIRED
+>
+<!ELEMENT systemmenu EMPTY>
+<!ATTLIST systemmenu
+	applist (true | false) "false"
+	favourite (true | false) "false"
+>
+<!ELEMENT secure EMPTY>
+<!ATTLIST secure
+	cerfile CDATA #IMPLIED
+	readonly (true | false) "false"
+	value (aes | ssl | none) "none"
+>
+<!ELEMENT login EMPTY>
+<!ATTLIST login
+	href CDATA #REQUIRED
+>
+<!ELEMENT home EMPTY>
+<!ATTLIST home
+	href CDATA #REQUIRED
+>
+<!ELEMENT defaulturl EMPTY>
+<!ATTLIST defaulturl
+	readonly (true | false) "false"
+	url CDATA #REQUIRED
+>
+<!ELEMENT defaultapn EMPTY>
+<!ATTLIST defaultapn
+	apn CDATA "cmnet"
+	readonly (true | false) "false"
+>

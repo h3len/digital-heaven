@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT msc ((msg))>
+<!ATTLIST msc
+	isactionsucces (0 | 1) "1"
+	type CDATA #FIXED "returnmsg"
+	userservertime CDATA #IMPLIED
+	value CDATA #IMPLIED
+>
+
+<!ELEMENT msg (#PCDATA)>
+<!ATTLIST msg
+	isshow (0 | 1) "1"
+	nextaction CDATA #REQUIRED
+>

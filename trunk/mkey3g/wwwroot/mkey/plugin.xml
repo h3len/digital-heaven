@@ -1,0 +1,21 @@
+<category>
+  <id>mkey</id>
+  <categoryname>MKey</categoryname>
+  <comment>MKey无线中间件</comment>
+  <iplugin>com.dheaven.mip.plugin.mkey.MipMKeyPlugin</iplugin>
+  <ui>
+  <enable>false</enable>
+ </ui>
+ <socketprefix>
+    <prefix>mkey</prefix>
+    <dispatcher>com.dheaven.mip.plugin.mkey.socket.MKeyCommandNode</dispatcher>
+  </socketprefix>
+  <dep>
+  </dep>
+  <vos>   
+  </vos>
+  <permissions>
+  </permissions>
+  <servletsmapping>
+  </servletsmapping>
+</category>

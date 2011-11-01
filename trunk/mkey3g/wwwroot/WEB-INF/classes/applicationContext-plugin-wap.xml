@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-merge="true">
+	<bean id="mipDeviceManager" class="com.dheaven.mip.plugin.wap.dataaccess.manager.MipDeviceManager" autowire="byName"/>
+	
+	<bean id="mipDeviceServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean class="com.dheaven.mip.plugin.wap.service.impl.MipDeviceServiceImpl" autowire="byName"/>
+		</property>
+	</bean>
+	<!-- WAP HTTP 
+	<bean id="wapServletController"
+		class="org.springframework.web.servlet.mvc.ServletWrappingController">
+		<property name="servletClass">
+			<value>com.dheaven.mip.plugin.wap.web.WapHttpInteface</value>
+		</property>
+		<property name="servletName">
+			<value>WapHttpInteface</value>
+		</property>
+		<property name="initParameters">
+			<props></props>
+		</property>
+	</bean>-->
+</beans>

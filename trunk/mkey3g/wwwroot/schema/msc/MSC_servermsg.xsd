@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"  elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:element name="msc">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="msg"/>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element ref="ext" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:choice>
+			</xsd:sequence>
+			<xsd:attribute name="type" type="xsd:string" use="required"  fixed="servermsg"  />
+			<xsd:attribute name="isactionsuccess" type="ZO" use="required" />
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="msg"  >
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:string">
+					<xsd:attribute name="isshow" type="ZO" use="required" />
+					<xsd:attribute name="nextaction" type="xsd:string" use="required" />
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ext">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute name="name" type="xsd:string" use="required" />
+			<xsd:attribute name="href" type="xsd:string"/>
+			<xsd:attribute name="hash" type="PBase64MD5" use="required" />
+			<xsd:attribute name="data" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:simpleType name="PBase64MD5">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-zA-Z0-9+/=]{64}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ZO">
+		<xsd:restriction base="xsd:int">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mdp="http://mdp.d-heaven.com" targetNamespace="http://mdp.d-heaven.com" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:annotation>
+		<xsd:documentation><![CDATA[ 数字天堂 mdp产品配置文件规范 v1.0 ]]></xsd:documentation>
+	</xsd:annotation>
+	<!--定义mdp配置-->
+	<xsd:element name="configuration">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ 定义mdp配置 ]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<!--访问策略-->
+				<xsd:element ref="mdp:authorization"/>
+				<!--多数据源支持-->
+				<xsd:element ref="mdp:bs-config" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="mdp:db-config" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="mdp:file-config" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="mdp:ftp-config" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute name="debug" type="xsd:boolean"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--定义mdp访问策略-->
+	<xsd:element name="authorization">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ 
+			定义mdp访问策略,allow表示允许访问的数据源；denny表示禁止访问的数据源；如allow="*"表示允许访问所有数据源
+			]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="mdp:allow" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="mdp:deny" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+	<!--定义允许访问的数据源-->
+	<xsd:element name="allow">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ 定义允许访问的数据源 ]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="source" type="xsd:string" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--定义禁止访问的数据源-->
+	<xsd:element name="deny">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ 定义禁止访问的数据源 ]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:attribute name="source" type="xsd:string" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--定义数据源配置-->
+	<!--BS数据源 Start-->
+	<xsd:element name="bs-config">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[
+			定义数据源配置,每一个数据源对应一个bs-config,每个bs-config下可以有多个bs-page,每个bs-page下可以有多个bs-rule 
+			]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="mdp:sso" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="mdp:push" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="mdp:bs-page" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute name="source" type="xsd:string"/>
+			<xsd:attribute name="encoding" default="gb2312">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="gb2312"/>
+						<xsd:enumeration value="utf-8"/>
+						<xsd:enumeration value="big5"/>
+						<xsd:enumeration value="iso8859_1"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="header" type="xsd:string"/>
+			<xsd:attribute name="footer" type="xsd:string"/>
+			<xsd:attribute name="proxyip" type="xsd:string"/>
+			<xsd:attribute name="proxyport" type="xsd:int"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--采集规则集合-->
+	<xsd:element name="bs-page">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ 定义采集规则集合 ]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="mdp:bs-rule" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="mdp:bs-frame" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="mdp:bs-params" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:choice>
+			<xsd:attribute name="url" type="xsd:string" use="required"/>
+			<xsd:attribute name="encoding" default="gb2312">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="gb2312"/>
+						<xsd:enumeration value="utf-8"/>
+						<xsd:enumeration value="big5"/>
+						<xsd:enumeration value="iso8859_1"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="title" type="xsd:string"/>
+			<xsd:attribute name="isMultiPage" type="xsd:boolean"/>
+			<xsd:attribute name="redirectUrl" type="xsd:string"/>
+			<xsd:attribute name="accessoryTag" type="xsd:string"/>
+			<xsd:attribute name="requestTemplate" type="xsd:string"/>
+			<xsd:attribute name="responseTemplate" type="xsd:string"/>
+			<xsd:attribute name="target">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="_self|_blank"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="action" type="xsd:string"/>
+			<xsd:attribute name="method" type="xsd:string"/>
+			<xsd:attribute name="enctype" type="xsd:string"/>
+			<xsd:attribute name="page" type="xsd:string"/>
+			<xsd:attribute name="decodeRedirectUrl" type="xsd:string"/>
+			<xsd:attribute name="escape">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="encode|decode"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<!--框架，采集指定框架的数据-->
+	<xsd:element name="bs-frame">
+	
+		<xsd:complexType>
+			<xsd:attribute name="url" type="xsd:string" use="required"/>
+			<xsd:attribute name="encoding" default="gb2312">
+			<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="gb2312"/>
+						<xsd:enumeration value="utf-8"/>
+						<xsd:enumeration value="big5"/>
+						<xsd:enumeration value="iso8859_1"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="regex" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--单点登录-->
+	<xsd:element name="sso">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="mdp:request" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute name="sysid" type="xsd:string" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--自动PUSH-->
+	<xsd:element name="push">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="mdp:request" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute name="sysid" type="xsd:string" use="required"/>
+			<xsd:attribute name="enterpriseid" type="xsd:string" use="required"/>
+			<xsd:attribute name="noticeMsg" type="xsd:string"/>
+			<xsd:attribute name="nextAction" type="xsd:string"/>
+			<xsd:attribute name="pushType">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="first"/>
+						<xsd:enumeration value="all"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<!-- @date:2008-10-18 @author:王志坤-->
+		</xsd:complexType>
+	</xsd:element>
+	<!--HttpRequest-->
+	<xsd:element name="request">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="url"/>
+				<xsd:element name="params"/>
+				<xsd:element name="method" default="GET">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="POST"/>
+							<xsd:enumeration value="GET"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="encoding" default="gb2312">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="gb2312"/>
+							<xsd:enumeration value="utf-8"/>
+							<xsd:enumeration value="big5"/>
+							<xsd:enumeration value="iso8859_1"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="id" type="xsd:string" use="required"/>
+			<xsd:attribute name="name" type="xsd:string" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--变量，解决有些网站登录后生成随机码-->
+	<xsd:element name="bs-params">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="mdp:bs-param" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--变量，解决有些网站登录后生成随机码-->
+	<xsd:element name="bs-param">
+		<xsd:complexType>
+			<xsd:attribute name="name" type="xsd:string" use="required"/>
+			<xsd:attribute name="value" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--采集规则-->
+	<xsd:element name="bs-rule">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ 定义采集规则 ]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="mdp:bs-rule" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attributeGroup ref="mdp:bs-BaseRuleAttribute"/>
+			<xsd:attributeGroup ref="mdp:bs-RegexRuleAttribute"/>
+			<xsd:attributeGroup ref="mdp:bs-TagRuleAttribute"/>
+			<xsd:attributeGroup ref="mdp:bs-ImportRuleAttribute"/>
+			<xsd:attributeGroup ref="mdp:bs-JavaRuleAttribute"/>
+			<xsd:attributeGroup ref="mdp:bs-JavaScriptRuleAttribute"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--采集规则基类属性-->
+	<xsd:attributeGroup name="bs-BaseRuleAttribute">
+		<xsd:attribute name="id" type="xsd:string"/>
+		<xsd:attribute name="type" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="regex"/>
+					<xsd:enumeration value="tag"/>
+					<xsd:enumeration value="java"/>
+					<xsd:enumeration value="javascript"/>
+					<xsd:enumeration value="import"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="mode">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="add"/>
+					<xsd:enumeration value="remove"/>
+					<xsd:enumeration value="replace"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="caption" type="xsd:string"/>
+		<xsd:attribute name="ref" type="xsd:string"/>
+		<xsd:attribute name="replacement" type="xsd:string"/>
+		<xsd:attribute name="isTable" type="xsd:boolean"/>
+		<xsd:attribute name="template" type="xsd:string"/>
+		<xsd:attribute name="escape" type="xsd:string"/>
+	</xsd:attributeGroup>
+	<!--正则采集规则所有属性-->
+	<xsd:attributeGroup name="bs-RegexRuleAttribute">
+		<xsd:attribute name="regex" type="xsd:string"/>
+	</xsd:attributeGroup>
+	<!--标签采集规则所有属性-->
+	<xsd:attributeGroup name="bs-TagRuleAttribute">
+		<xsd:attribute name="startTag" type="xsd:string"/>
+		<xsd:attribute name="endTag" type="xsd:string"/>
+	</xsd:attributeGroup>
+	<!--java插件支持规则所有属性-->
+	<xsd:attributeGroup name="bs-JavaRuleAttribute">
+		<xsd:attribute name="className" type="xsd:string"/>
+		<xsd:attribute name="method" type="xsd:string"/>
+	</xsd:attributeGroup>
+	<!--javascript插件支持规则所有属性-->
+	<xsd:attributeGroup name="bs-JavaScriptRuleAttribute">
+		<xsd:attribute name="filePath" type="xsd:string"/>
+		<!--
+		<xsd:attribute name="method" type="xsd:string"/>-->
+	</xsd:attributeGroup>
+	<!--插入规则所有属性-->
+	<xsd:attributeGroup name="bs-ImportRuleAttribute">
+		<xsd:attribute name="insertAt" type="xsd:string"/>
+		<xsd:attribute name="fromIndex" type="xsd:string"/>
+		<xsd:attribute name="html" type="xsd:string"/>
+	</xsd:attributeGroup>
+	<!--BS数据源 End-->
+	<!--DB数据源 Start-->
+	<xsd:element name="db-config">
+		<!--// TODO -->
+	</xsd:element>
+	<!--DB数据源 End-->
+	<!--File数据源 Start-->
+	<xsd:element name="file-config">
+		<!--// TODO -->
+	</xsd:element>
+	<!--File数据源 End-->
+	<!--FTP数据源 Start-->
+	<xsd:element name="ftp-config">
+		<!--// TODO -->
+	</xsd:element>
+	<!--FTP数据源 End-->
+</xsd:schema>

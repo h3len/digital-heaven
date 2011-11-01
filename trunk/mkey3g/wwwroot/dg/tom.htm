@@ -1,0 +1,1816 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn">
+<head>
+<title>TOM.COM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-cn" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="keywords" content="" />
+<meta name="description" content="TOM网为用户24小时提供全面及时的中文资讯，内容覆盖国内外突发新闻事件、体坛赛事、娱乐时尚、实用信息等，设有新闻、体育、娱乐、汽车等多个内容频道，其中体育内容更加精彩详实，包括围棋、篮球大本营（uhoop）、NBA、奥神官网、NBL官网、WCBA官网等详细信息报道。" />
+<link rel="stylesheet" href="http://www.tom.com/style/2010/index2010_v20101101.css" type="text/css" media="all" />
+<script type="text/javascript" src="http://www.tom.com/script/2010/tabs.js"></script>
+
+<script type="text/javascript" src="http://sc.tom.com/app/hp/TomFlashAdHp.js"></script>
+<script type="text/javascript" src="http://sc.tom.com/app/hp/FullAD.js"></script>
+
+
+</head>
+<body>
+<!--{start fullscreenad-->
+<div id="fullscreenad" style="display:none;text-align:center"></div>
+<script type="text/javascript" src="http://js.pub.tom.com/09-hp/09hp-full.js"></script>
+<!--}end fullscreenad-->
+<!--{start header-->
+<script>
+function SetHome(obj,vrl){
+        try{
+                obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+        }
+        catch(e){
+                if(window.netscape) {
+                        try {
+                                netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");  
+                        }  
+                        catch (e) 
+ { 
+                                alert("抱歉！您的浏览器不支持直接设为首页。请在浏览器地址栏输入“about:config”并回车然后将[signed.applets.codebase_principal_support]设置为“true”，点击“加入收藏”后忽略安全提示，即可设置成功。");  
+                        }
+                        var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                        prefs.setCharPref('browser.startup.homepage',vrl);
+                 }
+        }
+}
+</script>
+<div id="tomheader">
+	<ul class="topnav" >
+
+		<li class="specify" ><a href="http://mytom.tom.com/mytom.html" target="_blank" title="定制我的TOM">定制我的TOM</a></li>
+		<li class="login" >
+			<!--{start 未登录-->
+			<div id="nologin" style="display:none">
+				<form id="loginForm" method="post" action="http://pass.tom.com/dologin.php" onsubmit="return PassUtils.checkLogin();">
+					<span class="title">通行证</span><input type="text" class="passtxt" name="tomid" id="tomid" value="输入邮箱" style="color:gray;" onfocus="if(this.value=='输入邮箱')this.value='';this.style.color='black';" onblur="PassUtils.autoComplete('tomid')"/>
+					<span class="title">密码</span><input type="password" class="passtxt" name="tompwd" id="tompwd" value="输入密码" style="color:gray;" onfocus="if(this.value=='输入密码')this.value='';this.style.color='black';" />
+					<button type="submit" name="" class="bnlogin" >登录</button>
+					<a href="http://pass.tom.com/register.php?svcid=47&backurl=http://www.tom.com/index.html" target="_blank" class="reg" >注册</a><span class="extra">|</span><a href="http://pass.tom.com/recover.php" target="_blank" class="getpass">忘记密码</a><span class="extra">|</span><a href="http://mail.tom.com/" target="_blank" class="tomail">进入邮箱</a>
+				<input type="hidden" name="svcid" value="47" />
+				<input type="hidden" name="backurl" id="backurl" value="http://www.tom.com/" />
+				</form>
+			</div>
+			<!--}end 未登录-->
+			<!--{start 已登录-->
+ 			<div class="welcome" style="display:none" id="login">
+				<h3><a id="username"></a>，您好！</h3>
+				<a href="http://pass.tom.com/logout.php?goto=http://www.tom.com/" class="logout">退出</a>
+				<a href="http://mail.tom.com/" target="_blank" class="tomail">进入邮箱</a>
+			</div>
+			<!--}end 已登录-->
+
+		</li>
+		<li class="buyskype" ><strong><a href="http://skype.tom.com" target="_blank">购买 Skype 电话卡</a></strong></li>
+		<li class="fns" ><a href="http://tangyuan.tom.com/" target="_blank" class="makeit" >汤元支付</a><a href="javascript:void(0)" onClick="SetHome(this,window.location)" target="_top" class="makemp" >设为主页</a><a href="http://nav2.tom.com/sitemap.html" target="_blank" class="tonav" >导航</a></li>
+	</ul>
+
+<script type="text/javascript" src="http://news.tom.com/uldf/2010/0325/liangchunxia/chlogin_go.js"></script>
+
+<!-- 导航 -->
+<style>
+#tomheader .nav{padding:7px 0 0 0;height:50px;overflow:hidden;}
+#tomheader .nav h1 a{margin-right:0;}
+#tomheader .nav ul{float:left;height:44px;overflow:hidden;padding-left:1px;background:url(http://i6.tomoimg.cn/images/2010/line.gif) repeat-y;}
+#tomheader .nav li{padding-left:15px;white-space:nowrap;line-height:24px;height:24px;overflow:hidden;}
+#tomheader .nav li.fix{ padding-left:18px; }
+#tomheader .nav li.fix2{ padding-left:20px; }
+#tomheader .nav a{margin-right:13px;color:#333; font-family:Arial,"宋体"}
+#tomheader .nav a.uhoop{margin-left:-4px;zoom:1;margin-right:11px;}
+#tomheader .nav a.wbh{margin-right:19px;}
+#tomheader .nav a.nba{margin-right:14px;}
+#tomheader .nav a.nbl{margin-right:11px;}
+#tomheader .nav a.it{ margin-left:7px; }
+#tomheader .nav a.army{ margin-right:19px; }
+#tomheader .nav a.fifa{position:relative;left:-6px;margin:0 5px 0 0;}
+#tomheader .nav a.turkey{margin-right:19px;color:#f00;}
+#tomheader .nav a.topnews{margin-right:18px;}
+#tomheader .navmod1{width:315px;}
+#tomheader .navmod2{width:309px;}
+#tomheader .navmod3{width:132px;}
+</style>
+<div class="nav">
+<style>h1 a{display:block;position:relative;top:-5px;text-indent:-999em;height:100%;cursor:pointer;background:url(http://www.tom.com/images/2010/tomlogo.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale,src="http://www.tom.com/images/2010/tomlogo.png");}</style><h1><a href="http://www.tom.com">tom.com</a></h1>
+
+<ul class="navmod1">
+
+<li><a href="http://news.tom.com/" target="_blank" class="topnews">新闻</a><a href="http://sports.tom.com/" target="_blank">体育</a><a href="http://cba.sports.tom.com/hoop/index.html" target="_blank">篮球</a><a 
+href="http://yc.sports.tom.com/" target="_blank"><font style="color:#f00">英超</font></a><a
+href="http://yule.tom.com/" target="_blank">娱乐</a><a href="http://yingshi.tom.com/" target="_blank">影视</a><a href="http://she.tom.com/" target="_blank">女性</a><a href="http://game.tom.com/" target="_blank">游戏</a></li>
+
+<li><a href="http://uhoop.tom.com/" class="uhoop" target="_blank">uhoop</a><a href="http://nba.tom.com/" target="_blank" class="nba"><font style="color:#f00">NBA</font></a><a href="http://auto.tom.com/" target="_blank" class="car">汽车</a><a href="http://html.hjsm.tom.com/" target="_blank">小说</a><a href="http://html.dushu.tom.com/" target="_blank">读书</a><a href="http://music.yule.tom.com/" target="_blank">音乐</a><a href="http://weiqi.sports.tom.com/" target="_blank" class="chess">围棋</a><a href="http://it.tom.com/" target="_blank" class="it">IT</a></li>
+
+</ul>
+
+<ul class="navmod2">
+<li><a href="http://skype.tom.com/" target="_blank">Skype</a><a href="http://story.news.tom.com/" target="_blank">故事</a><a href="http://news.tom.com/pics/" target="_blank">图吧</a><a href="http://social.news.tom.com/" target="_blank">社会</a><a href="http://club.tom.com/" class="" target="_blank">社区</a><a href="http://tv.tom.com" target="_blank"><font style="color:#f00">视频酷</font></a><a href="http://hao.tom.com" target="_blank">网址站</a></li>
+
+<li class="fix"><a href="http://tom.news.huanqiu.com/" target="_blank" class="army">军事</a><a href="http://dgbest.tom.com/" target="_blank">数码</a><a href="http://show.news.tom.com/" target="_blank">爱秀</a><a href="http://discovery.tom.com/" target="_blank">探索</a><a href="http://test.tom.com/" class="" target="_blank">测试</a><a href="http://addpic.news.tom.com/html/tasklist_0_1.html" target="_blank">征集令</a><a href="http://m.tom.com/" target="_blank">短彩信</a></li>
+</ul>
+<ul class="navmod3">
+<li><a href="http://nbl.tom.com/" target="_blank" class="nbl">NBL官网</a><a href="http://kfc3on3.
+tom.com/
+" target="_blank">KFC3on3</a></li>
+<li class="fix2"><a href="http://2010aba.tom.com/" target="_blank">亚俱杯</a><a href="http://cba.sports.tom.com/cbay/index.html" target="_blank" style="padding-left:4px; margin-right:0px; ">青年联赛</a></li>
+
+</ul>
+
+
+</div>
+<!-- 导航 -->
+
+</div>
+<!--}end header-->
+
+
+<!--{start adrow-->
+<div class="tomadrow">
+<!-- 通栏1 开始 -->
+<script src="http://js.pub.tom.com/09-hp/tomhp-fc1.js"></script>
+</div>
+<!--}end adrow-->
+
+<!--{start main-->
+<div id="tommain">
+
+	<!--{start toprow-->
+<!--include virtual="/static/P/007P/61DHHQLF.html"-->
+<div class="tomtoprow">
+<div class="maincon">
+<div class="weather" id="weather_cms"></div>
+<h2 class="hot">今日焦点</h2>
+<div class="cola">
+<!--include virtual="/static/D/008D/61BH0H8Q.html"-->
+<div class="focus" id="focus" >
+<div>
+<a href="http://sports.tom.com/?source=HP_NEWSPIC" target="_blank"><img src="http://sports.tom.com/uldf/2010/1113/jichao/280.jpg" alt="武术长拳袁晓超卫冕 中国夺亚运首金" width="280" height="220" /></a>
+<p><a href="http://sports.tom.com/?source=HP_NEWSPIC" target="_blank">武术长拳袁晓超卫冕 中国夺亚运首金</a></p>
+</div>
+<div style="display:none">
+<a href="http://post.news.tom.com/s/4C000A8F2886.html?source=HP_NEWSPIC" target="_blank"><img src="http://news.tom.com/uldf/2010/1112/zhangchenglei/20101112013.jpg" alt="成都“选秀门”女主角回应：为对抗潜规则(图)" /></a><p><a href="http://post.news.tom.com/s/4C000A8F2886.html?source=HP_NEWSPIC" target="_blank">成都选秀门女主角回应：对抗潜规则</a></p>
+</div>
+<div style="display:none">
+<a href="http://yule.tom.com/?source=HP_YLPIC" target="_blank"><img src="http://yule.tom.com/uldf/2010/1113/caiyingzhe/280.jpg"  alt="毛阿敏孙楠献唱亚运主题曲《重逢》"  /></a><p><a href="http://yule.tom.com/?source=HP_YLPIC" target="_blank">毛阿敏孙楠献唱亚运主题曲《重逢》</a></p>
+</div>
+<div style="display:none"> 
+<a href="http://slides.auto.tom.com/vw/232248-1.html#picchange?source=HP_QCPIC" target="_blank"><img src="http://auto.tom.com/uldf/2010/1113/fengsongmeng/11.jpg"  alt="贝嫂再登Vogue封面 豪车内秀美腿"  /></a><p><a href="http://slides.auto.tom.com/vw/232248-1.html#picchange?source=HP_QCPIC" target="_blank">贝嫂再登Vogue封面 豪车内秀美腿</a></p>
+</div>
+<div style="display:none">
+<a href="http://news.tom.com/static/2/OKT2/51NCB8VQ.html?source=HP_NEWSPIC" target="_blank"><img src="http://i1.tomoimg.cn/uldf/2010/1113/yanjing/89.jpg"  alt="818历届被疑人造的美艳韩国小姐"  /></a><p><a href="http://news.tom.com/static/2/OKT2/51NCB8VQ.html?source=HP_NEWSPIC" target="_blank">818历届被疑人造的美艳韩国小姐</a></p>
+</div>
+<ul class="count">
+<li class="">1<span></span></li>
+<li>2<span></span></li>
+<li>3<span></span></li>
+<li>4<span></span></li>
+<li>5<span></span></li>
+</ul>
+</div>
+<script type="text/javascript">new tabs({id:'focus',focus:1})</script>
+<ul class="listnews" >
+<li>·<a href="http://news.tom.com/static/2/OKT2/51NCB8VQ.html?source=HP_NPIC"  target="_blank">英惊现“吸血鬼”兄弟</a> <a href="http://slideshow.news.tom.com/vw/232342-1.html?source=HP_NPIC" target="_blank">阿根廷火辣钢管舞大赛</a></li>
+<li>·<a href=" http://news.tom.com/china/tupian/index.html?source=HP_NPIC"  target="_blank">情侣包下飞机空中结婚</a> <a href="http://news.tom.com/world/tupian/index.html?source=HP_NPIC" target="_blank">非洲男与猎豹成好伙伴</a></li>
+<li>·<a href="http://social.news.tom.com/?source=HP_NPIC" target="_blank">网友实拍人体彩绘现场</a> <a href="http://discovery.tom.com/static/L/002L/4QHQHOU8.html?source=HP_NPIC" target="_blank">性感内衣秀火爆上演</a> </li>
+<li>·<a href="http://show.tom.com/list.php?source=HP_NPIC"
+target="_blank">可怜早衰儿酷似外星人</a> 
+<a href="http://story.news.tom.com/piclist-3-0.html?source=HP_NPIC" target="_blank">传说中的“十三姨”</a> </li>
+</ul>
+<div class="tomgame">
+<h3><a href="http://news.tom.com/pics?source=HP_XXYX" target="_blank">新视点</a></h3>
+<ul class="games">
+
+<li><a href="http://addpic.news.tom.com/vw-task/4837-0.html?source=HP_XXYX" target="_blank"><img src="http://i1.tomoimg.cn/uldf/2010/1113/yanjing/90.jpg" alt="兽兽亮相大露春光" /></a></li></ul>
+<ul class="list">
+	<li>·<a href="http://addpic.news.tom.com/vw-task/4821-0.html?source=HP_XXYX" target="_blank">明星隐私大曝光 原来这样</a></li>
+         <li>·<a href="http://addpic.news.tom.com/vw-task/4840-0.html?source=HP_XXYX" target="_blank">杯具啊 娱乐圈的平胸女王们</a></li>
+	<li>·<a href="http://show.tom.com/vw/28596-1.html?source=HP_XXYX" target="_blank">实拍广西北海海底洗浴服务</a></li>
+	<li>·<a href="http://show.tom.com/vw/28590-1.html?source=HP_XXYX" target="_blank">黄立行与众女星的火辣合影</a></li>
+
+</ul>
+</div>
+</div>
+<div class="colb">
+
+<ul>
+<h2> <a href="http://sports.tom.com/2010asian/?source=HP_TOPIC" 
+  target="_blank">温家宝宣布亚运会开幕</a> <a href="http://post.sports.tom.com/s/48000AD73522.html%20?source=HP_TOPIC" 
+  target="_blank"  >袁晓超获首金</a></h2>
+<li>　<a href="http://news.tom.com/2010-11-13/OKV9/84728976.html?source=HP_TOPIC" target="_blank">开幕式总开销约3.8亿</a> <a href="http://news.tom.com/2010-11-12/OKV9/54332455.html?source=HP_TOPIC" target="_blank"      >开幕式表演揭秘</a> <a href="http://post.sports.tom.com/s/00000B293595.html?source=HP_TOPIC" target="_blank">国奥前瞻:出线无忧</a></li>
+<li>·<a href="http://news.tom.com/2010-11-13/OKV9/09195130.html?source=HP_TOPIC" target="_blank">胡锦涛出席APEC领导人峰会并发表演讲</a> <a href="http://post.sports.tom.com/s/0A000AD83671.html?source=HP_TOPIC" target="_blank">央视采访奥巴马</a> <a href="http://post.news.tom.com/s/25000A893007.html?source=HP_TOPIC" target="_blank"                                       ></a></li>
+<li>·<a href="http://post.news.tom.com/s/28000ADD2915.html?source=HP_TOPIC"  target="_blank">巴拿马籍货轮在阿拉伯海遭海盗劫持 载有29名中国船员</a> <a href="http://news.tom.com/2010-11-12/OKV9/20201333.html?source=HP_TOPIC"  target="_blank"            ></a></li>
+<li>·<a href="http://post.news.tom.com/s/B000090C3553.html?source=HP_TOPIC" target="_blank">A股创年内最大跌幅重回“2时代”</a> <a href="http://post.news.tom.com/s/CC000A7D3589.html?source=HP_TOPIC" target="_blank">财政部辟谣上调印花税</a> <a href="http://post.news.tom.com/s/4C0008E04583.html?source=HP_TOPIC" target="_blank"            ></a></li>
+<li>·<a href="http://post.news.tom.com/s/E4000AEB3094.html?source=HP_TOPIC" target="_blank">首例艾滋就业歧视案原告败诉</a>·<a href="http://news.tom.com/2010-11-13/OKVA/85147469.html?source=HP_TOPIC" target="_blank">全国市场537种中药84%涨价</a> </li>
+<li>·<a href="http://news.tom.com/2010-11-13/OKVF/84361282.html?source=HP_TOPIC" target="_blank">俄战略轰炸机遭遇日韩战机</a>·<a href="http://news.tom.com/2010-11-13/OKVF/04156971.html?source=HP_TOPIC" target="_blank">金正恩陪同金正日视察人民军</a></li>
+
+
+<style type="text/css">
+<!--
+.STYLE1 {color: #FF0000}
+-->
+</style>
+<li>·<span class="STYLE1"><a href="http://yc.sports.tom.com/?source=HP_OG" target="_blank" class="STYLE1">20:45视频直播维拉VS曼联 林良锋解说</a> <a href="http://yc.sports.tom.com/2010-11-12/0OC7/18481852.html?source=HP_OG" target="_blank" class="STYLE1">23点曼城-伯明翰</a> <a href="http://tv.tom.com/App_User_Video.php?video_id=10362" target="_blank" class="STYLE1"    ></a></span></li>
+<li>·<a href="http://cba.sports.tom.com/2010asian/nanlan/index.html?source=HP_OG" target="_blank" >胡加时亲自率男篮飞赴广州</a> <a href="http://nba.tom.com/?source=HP_OG" target="_blank">米勒23分火箭客场胜步行者</a></li>
+<li>·<a href="http://post.news.tom.com/s/1E0008F14082.html?source=HP_TOPIC" target="_blank">居民晒账本 质疑垄断企业</a>·<a href="http://post.news.tom.com/s/8000095C3027.html?source=HP_TOPIC" target="_blank">调价听证会92%代表同意涨价</a> </li>
+</ul>
+
+<ul>
+<li>·<a href="http://post.news.tom.com/s/520009513217.html?source=HP_TOPIC" target="_blank">中国货轮在日本海域沉没20人生死不明 运输公司否认超载</a> <a href="http://post.news.tom.com/s/93000AA73005.html?source=HP_TOPIC" target="_blank"             ></a></li>
+<li>·<a href="http://post.news.tom.com/s/74000B073004.html?source=HP_TOPIC" target="_blank">网络热词“给力”登上人民日报头版头条系年轻编辑所拟</a> <a href="http://news.tom.com/2010-11-11/OKV9/01185843.html?source=HP_TOPIC" target="_blank"                ></a></li>
+<li>·<a href="http://news.tom.com/2010-11-13/OKV9/00553679.html?source=HP_TOPIC" target="_blank">乾隆瓷瓶拍出4300万英镑天价 传买家来自中国大陆(图)</a></li>
+<li>·<a href="http://post.news.tom.com/s/7E000AC94038.html?source=HP_TOPIC" target="_blank">湖南一村庄54年间出现98对双胞胎 村民称与井水有关(图)</a> <a href="http://post.news.tom.com/s/CB0009393630.html?source=HP_TOPIC" target="_blank"    ></a></li>
+<li>·<a href="http://post.news.tom.com/s/9A000AB13632.html?source=HP_TOPIC" target="_blank">湖北一家三代义务摆渡120年(图)</a>·<a href="http://post.news.tom.com/s/FD0009063598.html?source=HP_TOPIC" target="_blank"   >重庆平均身高低于全国</a></li>
+<li>·<a href="http://post.news.tom.com/s/48000AD73521.html?source=HP_TOPIC" target="_blank">男子拟3年招千名大学生烤红薯</a>·<a href="http://post.news.tom.com/s/F00009793175.html?source=HP_TOPIC" target="_blank">农民告作协主席剽窃作品</a></li>
+
+
+<li>·<a href="http://slides.discovery.tom.com/vw/232396-1.html?source=HP_TOPIC" target="_blank">全球知名性感内衣秀火爆上演</a>·<a href="http://slides.discovery.tom.com/vw/232381-1.html?source=HP_TOPIC" target="_blank">历史上的春宫图到底啥样</a></li>
+<li>·<a href="http://post-s.news.tom.com/s/6B000A943116.html?source=HP_TOPIC" target="_blank">男子联手小三谋杀新婚妻子</a>·<a href="http://post-s.news.tom.com/s/FE0009223021.html?source=HP_TOPIC" target="_blank">做黑窑苦力12年后见生人就跪</a></li>
+</ul>
+</div>
+</div>
+<div class="colc">
+<!--include virtual="/static/D/008D/660ROMSA.html"-->
+<div class="bbstation">
+<h3><a href="http://club.uhoop.tom.com/?source=HP_LTYZ" class="toBbs" target="_blank">蓝徒E站</a><a href="http://nbl.tom.com/?source=HP_LTYZ" class="toNbl" target="_blank">nbl</a><a href="http://nba.sports.tom.com/?source=HP_LTYZ" class="toNba" target="_blank">nba</a></h3>
+<div class="picnews">
+<a href="http://nba.tom.com/?source=HP_LTYZ" target="_blank"><img src="http://nba.tom.com/uldf/2010/1113/huanglin/e.jpg" alt="米勒23分火箭胜步行者" width="220" height="92" ></a>
+<a href="http://nba.tom.com/?source=HP_LTYZ" target="_blank">米勒23分火箭胜步行者</a>
+</div>
+<div class="con">
+	<ul>
+<li><span title="新闻"></span><a href="http://nba.tom.com/2010-11-13/00RE/09211942.html?source=HP_LTYZ" target="_blank">阿联盖帽创纪录沃尔两双 奇才惜败山猫</a></li>
+<li><span title="新闻"></span><a href="http://cba.sports.tom.com/?source=HP_LTYZ" target="_blank">佛山迎来重量级外援 前火箭詹姆斯亮相</a></span></li>
+<li><span title="新闻"></span><a href="http://cba.sports.tom.com/2010-11-12/0OS4/85025284.html?source=HP_LTYZ" target="_blank">CBA14叛徒：孙悦没良心 宏远元老遭骂</a></li>
+<li class="tvico"><span title="UU会"></span><a href="http://my.uhoop.tom.com/space.php?do=event&id=13213&source=HP_LTYZ" target="_blank">竞猜：周末英超第13轮比赛胜负大猜想</a></li>
+<li class="tvsico"><span title="论坛"></span><a href="http://my.uhoop.tom.com/space.php?uid=513722833&do=poll&pid=487&source=HP_LTYZ" target="_blank">投票：姚明受伤后 火箭还会连败几场？</a></li>
+<li class="tvfico"><span title="活动"></span><a href="http://my.uhoop.tom.com/space.php?do=event&id=13203&source=HP_LTYZ" target="_blank">活动：竞猜中国男篮亚运首战赢uu会积分</a></li>
+	</ul>
+</div>
+</div>
+
+<h3 class="zjl"><a href="http://addpic.news.tom.com/html/tasklist_0_1.html" target="_blank">征集令</a></h3>
+<div class="picsmod">
+<div class="pic">
+	<a href="http://addpic.nba.sports.tom.com/vw-task/4836-0.html?source=HP_DAILY" target="_blank"><img src="http://nba.tom.com/uldf/2010/1112/malin/100100.jpg" alt="艾弗森私密照" /></a>
+	<a href="http://addpic.nba.sports.tom.com/vw-task/4836-0.html?source=HP_DAILY" target="_blank" class="link">艾弗森私密照</a>
+</div>
+<div class="pic right">
+<a href="http://addpic.yule.tom.com/vw-task/4824-0.html?source=HP_DAILY" target="_blank"><img src="http://yule.tom.com/uldf/2010/1112/caiyingzhe/100.jpg"  alt="猫样女星的魅力" /></a>
+<a href="http://addpic.yule.tom.com/vw-task/4824-0.html?source=HP_DAILY" class="link" target="_blank">猫样女星的魅力</a>
+</div>
+</div>
+<ul class="wcup">
+<li><a href="http://addpic.yule.tom.com/vw-task/4825-0.html?source=HP_DAILY" target="_blank">明星豪放生活照大曝光</a></li>
+<li><a href="http://addpic.yule.tom.com/vw-task/4822-0.html?source=HP_DAILY" target="_blank">圈内最会装嫩的女星</a></li>
+
+<li><a href="http://addpic.uhoop.tom.com/vw-task/4829-0.html?source=HP_DAILY" target="_blank">篮球宝贝晒私照性感百变</a></li>
+</ul>
+
+</div>
+</div>
+	<!--}end toprow-->
+
+
+<!-- 通栏2 开始 -->
+<script src="http://js.pub.tom.com/09-hp/tomhp-fc2.js"> </script>
+<!-- 通栏2 结束 -->
+
+
+	<!--{start modA-->
+<div class="tommod modA">
+<div class="cola">
+<div class="picsOfToday">
+<h3><a href="http://news.tom.com/pics/" target="_blank">今日画报</a></h3>
+<div class="picsmod">
+
+
+
+<div class="pic">
+<a href="http://slideshow.news.tom.com/vw/232302-1.html?source=HP_PIC" target="_blank"><img src="http://news.tom.com/uimg/2010/11/13/yanjing/1289604734924_6549.jpg" alt="" width="80" height="80" border="0"/></a><a href="http://slideshow.news.tom.com/vw/232302-1.html?source=HP_PIC" target="_blank">超雷人实拍</a>
+</div>
+
+
+<div class="pic right">
+<a href="http://discovery.tom.com/static/L/002L/4TOVIJOV.html?source=HP_PIC" target="_blank"><img src="http://discovery.tom.com/uimg/2010/11/13/yanjing/1289612332181_3482.jpg" alt="" width="80" height="80" border="0"/></a><a href="http://discovery.tom.com/static/L/002L/4TOVIJOV.html?source=HP_PIC" target="_blank">如此男士内裤</a>
+</div>
+
+
+<div class="pic">
+<a href="http://post-social.news.tom.com/s/E8000AA33511.html?source=HP_PIC" target="_blank"><img src="http://news.tom.com/uimg/2010/11/13/yanjing/1289610272966_6824.jpg" alt="" width="80" height="80" border="0"/></a><a href="http://post-social.news.tom.com/s/E8000AA33511.html?source=HP_PIC" target="_blank">足球宝贝丑闻</a>
+</div>
+
+<div class="pic right">
+<a href="http://story.news.tom.com/piclist-1-0.html?source=HP_PIC" target="_blank"><img src="http://discovery.tom.com/uimg/2010/11/13/yanjing/1289606665925_4628.jpg" alt="" width="80" height="80" border="0"/></a><a href="http://story.news.tom.com/piclist-1-0.html?source=HP_PIC" target="_blank">僵尸化妆过程</a>
+</div>
+
+
+
+
+<div class="pic">
+<a href="http://images.yule.tom.com/vw/232194-1.html?source=HP_PIC" target="_blank"><img src="http://music.ent.tom.com/uimg/2010/11/13/caiyingzhe/1289606168311_2045.jpg" alt="" width="80" height="80" border="0"/></a><a href="http://images.yule.tom.com/vw/232194-1.html?source=HP_PIC" target="_blank">绝不整容女星</a>
+</div>
+
+
+<div class="pic right">
+<a href="http://images.yule.tom.com/vw/232196-1.html?source=HP_PIC" target="_blank"><img src="http://music.ent.tom.com/uimg/2010/11/13/caiyingzhe/1289606155928_2255.jpg" alt="" width="80" height="80" border="0"/></a><a href="http://images.yule.tom.com/vw/232196-1.html?source=HP_PIC" target="_blank">有心计的女星</a>
+</div>
+
+
+
+
+<div class="pic">
+<a href="http://yule.tom.com/zhuanti/top10/sshh.html?source=HP_PIC" target="_blank"><img src="http://music.yule.tom.com/uimg/2010/11/13/caiyingzhe/1289606144296_1916.jpg" alt="" width="80" height="80" border="0"/></a><a href="http://yule.tom.com/zhuanti/top10/sshh.html?source=HP_PIC" target="_blank">明星的私生活</a>
+</div>
+
+
+<div class="pic right">
+<a href="http://yule.tom.com/zhuanti/top10/sexbody.html?source=HP_PIC" target="_blank"><img src="http://music.yule.tom.com/uimg/2010/11/13/caiyingzhe/1289606133130_2004.jpg" alt="" width="80" height="80" border="0"/></a><a href="http://yule.tom.com/zhuanti/top10/sexbody.html?source=HP_PIC" target="_blank">女星美丽排行</a>
+</div>
+
+
+</div>
+</div>
+<!-- t -->
+<div class="tomad">
+<!-- 首页button  开始 -->
+<script src="http://js.pub.tom.com/09-hp/tomhp-bt.js"> </script>
+<!-- 首页button  结束 -->
+</div>
+</div>
+<div class="colb">
+<ul class="newslist" >
+<li><a href="http://nba.tom.com/?source=HP_GUANZHU"  target="_blank" class="theTitle">NBA</a>|<a href="http://nba.tom.com/2010-11-13/00RE/09843401.html?source=HP_GUANZHU" target="_blank">阿联盖帽创生涯纪录</a> <a href="http://nba.tom.com/2010-11-13/00QP/84220933.html?source=HP_GUANZHU" target="_blank">姚明失宠20大表现</a> <a href="http://nba.tom.com/2010-11-13/00QQ/84299558.html?source=HP_GUANZHU" target="_blank">图说-看科比被修理</a></li>
+<li><a href="http://uhoop.tom.com/?source=HP_GUANZHU" target="_blank" class="theTitle">uhoop</a></span>|<a href="http://club.uhoop.tom.com/forum-29-1.html?source=HP_GUANZHU" target="_blank">范甘迪复出可助火箭走上争冠之旅</a> <a href="http://quiz.uhoop.tom.com/User_Asksingle.php?qid=30867&source=HP_GUANZHU" target="_blank">中国德比战姚明何处受伤离场？</a></li>
+<li><a href="http://sports.tom.com/hoop/index.html?source=HP_GUANZHU" target="_blank" class="theTitle">篮球</a>|<a href="http://cba.sports.tom.com/2010-11-13/0OS4/83230741.html?source=HP_GUANZHU" target="_blank">山东新帅取开门红</a> <a href="http://cba.sports.tom.com/2010-11-12/0OQP/39661244.html?source=HP_GUANZHU" target="_blank">辽宁试训前火箭控卫</a> <a href="http://cba.sports.tom.com/2010-11-12/0R2T/34196921.html?source=HP_GUANZHU" target="_blank">韩国男篮一哥亮相广州</a></li>
+<li><a href="http://sports.tom.com/" target="_blank" class="theTitle">体育</a>|<a href="http://sports.tom.com/yj/?source=HP_GUANZHU" target="_blank"   >AC米兰寻枪目标达9人</a>  <a href="http://sports.tom.com/xj/?source=HP_GUANZHU" target="_blank"   >穆里尼奥遭两场禁赛</a> <a href="http://sports.tom.com/zc/index.html?source=HP_GUANZHU" target="_blank"   >建业宣布唐尧东下课</a></li>
+<li><a href="http://yule.tom.com/" target="_blank" class="theTitle" >娱乐</a>|<a href="http://post.yule.tom.com/s/92000B263277.html?source=HP_GUANZHU" target="_blank">陈豪佘诗曼力压黎耀祥邓萃雯</a> <a href="http://yule.tom.com/2010-11-13/1239/00330228.html?source=HP_GUANZHU" target="_blank">天娱艺人录祝福歌为俞灏明庆生</a></li>
+<li><a href="http://yule.tom.com/pop/" target="_blank" class="theTitle">八卦</a>|<a href="http://post.yule.tom.com/s/48000AD73519.html?source=HP_GUANZHU" target="_blank">林青霞身材发福卖房攒千万私房钱</a> <a href="http://yule.tom.com/2010-11-13/000E/01377512.html?source=HP_GUANZHU" target="_blank">周杰伦被曝演唱会上拉肚子</a></li>
+<li><a href="http://yule.tom.com/movie/?source=HP_GUANZHU" target="_blank" class="theTitle" >影视</a>|<a href="http://yule.tom.com/tv/?source=HP_GUANZHU" target="_blank">《画皮》陈怡蓉白发造型惊悚曝光</a> <a href="http://yule.tom.com/movie/?source=HP_GUANZHU" target="_blank">《哈7》海量幕后场景照</a></li>
+<li>
+<iframe frameborder="0" scrolling="no" marginheight="0" width="479" height="26" marginwidth="0" src="http://www.tom.com/index2010huanqiu.html"  allowTransparency="true" charset=></iframe>
+</li>
+<li><a href="http://auto.tom.com/" target="_blank" class="theTitle" >汽车</a>|<a href="http://auto.tom.com/quwen2.html?source=HP_GUANZHU" target="_blank">日本车模甜美冷艳哪个更诱惑</a> <a href="http://post.auto.tom.com/s/gallery_390009013738.html?source=HP_GUANZHU" target="_blank">宝马女马诺被富二代张狂炫耀</a></li>
+<li><a href="http://club.tom.com?source=HP_GUANZHU" target="_blank" class="theTitle" >社区</a>|<a href="http://club.discovery.tom.com/item_809_231746_0_0.html?source=HP_GUANZHU" target="_blank">历数13位“偷吃”的美国总统</a>  <a href="http://club.discovery.tom.com/item_766_38481_0_0.html?source=HP_GUANZHU" target="_blank">自然界十种最凶猛的食虫草</a></li>
+</ul>
+<!--{start latest-->
+<div class="thelatest">
+<style type="text/css">
+#zgqjfzlul20090216 li {display:none;}
+</style>
+<div class="thetitle">
+<h3>在过去的几分钟里……</h3>
+<a href="#" onclick="Index20090216zgqjfzl.gotoNextPage();return false;" class="reflash" >刷新</a>
+<a href="http://www.tom.com/guanzhu/" target="_blank">同时被关注的文章</a>
+</div>
+<ul id="zgqjfzlul20090216">
+   <li>·<a href="http://post-s.news.tom.com/s/AF0009193167.html?source=HP_LATEST" target="_blank" >雷人 武汉大学校中女孩大胆一幕</a></li>
+   <li>·<a href="http://sports.tom.com/2010-11-13/0H0L/82515773.html?source=HP_LATEST" target="_blank" >国米1500万低价揽4将</a></li>
+   <li>·<a href="http://auto.tom.com/2010-11-12/0DB1/00095960.html?source=HP_LATEST" target="_blank" >逍客新车上市即降1.8万元</a></li>
+   <li>·<a href="http://slides.discovery.tom.com/vw/232381-1.html?source=HP_LATEST" target="_blank" >历史上的春宫图到底有多“黄”</a></li>
+   <li>·<a href="http://club.yule.tom.com/item_158_314520_0_0.html?source=HP_LATEST" target="_blank" >费翔美国纽约豪宅生活</a></li>
+   <li>·<a href="http://sports.tom.com/2010-11-13/0M5U/01382981.html?source=HP_LATEST" target="_blank" >转会：本特纳欲逃离阿森纳</a></li>
+   <li>·<a href="http://slideshow.news.tom.com/vw/232407-1.html?source=HP_LATEST" target="_blank" >曝光日本BT的性产业链</a></li>
+   <li>·<a href="http://post-s.news.tom.com/s/9A000AB13628.html?source=HP_LATEST" target="_blank" >揭秘印度双胞胎高产村</a></li>
+   <li>·<a href="http://post.news.tom.com/s/6B000A943073.html?source=HP_LATEST" target="_blank" >街坊教4岁男孩抽烟只为取乐</a></li>
+   <li>·<a href="http://club.news.tom.com/item_1067_538852_0_0.html?source=HP_LATEST" target="_blank" >2010世界最佳水下摄影</a></li>
+   <li>·<a href="http://club.yule.tom.com/item_158_314632_0_0.html?source=HP_LATEST" target="_blank" >布兰妮今年街拍收集</a></li>
+   <li>·<a href="http://yule.tom.com/2010-11-13/000E/03221249.html?source=HP_LATEST" target="_blank" >张静初自爆曾经烂醉如泥</a></li>
+   <li>·<a href="http://yule.tom.com/2010-11-12/000E/01430174.html?source=HP_LATEST" target="_blank" >小春采儿迪斯尼完婚 红酒取代鱼翅</a></li>
+   <li>·<a href="http://test.she.tom.com/static-page/8028_cover.html?source=HP_LATEST" target="_blank" >用什么办法能结交更多的异性</a></li>
+   <li>·<a href="http://news.tom.com/2010-11-07/OKVL/86043261.html?source=HP_LATEST" target="_blank" >周鸿祎称360吃亏不算太大</a></li>
+   <li>·<a href="http://club.news.tom.com/item_1067_537704_0_0.html?source=HP_LATEST" target="_blank" >全球男人最垂涎的女人</a></li>
+   <li>·<a href="http://post.news.tom.com/s/0B0008E02910.html?source=HP_LATEST" target="_blank" >“雷锋精神”进四川公考试题</a></li>
+   <li>·<a href="http://club.news.tom.com/item_1067_538928_0_0.html?source=HP_LATEST" target="_blank" >央视十佳主持身份揭秘</a></li>
+   <li>·<a href="http://yule.tom.com/2010-11-13/1239/84501782.html?source=HP_LATEST" target="_blank" >毛阿敏孙楠献唱亚运主题曲</a></li>
+   <li>·<a href="http://post.news.tom.com/s/1F00090E3381.html?source=HP_LATEST" target="_blank" >90后女生相亲骂男方破车房子小</a></li>
+   <li>·<a href="http://it.tom.com/a/11646324.shtml?source=HP_LATEST" target="_blank" >惠普1625万美元和解欺诈指控</a></li>
+   <li>·<a href="http://slides.discovery.tom.com/vw/232395-1.html?source=HP_LATEST" target="_blank" >2010中国国际珠宝展北京开幕</a></li>
+   <li>·<a href="http://post-s.news.tom.com/s/1B0009042991.html?source=HP_LATEST" target="_blank" >广西6岁艾滋孤儿独自生活</a></li>
+   <li>·<a href="http://slides.discovery.tom.com/vw/232392-1.html?source=HP_LATEST" target="_blank" >英国荷兰遭遇狂风暴雨天气</a></li>
+   <li>·<a href="http://club.yule.tom.com/item_158_314608_0_0.html?source=HP_LATEST" target="_blank" >因减肥而杯具的女星</a></li>
+   <li>·<a href="http://post.news.tom.com/s/1F00090E3430.html?source=HP_LATEST" target="_blank" >民警强奸卖淫女获刑六年半</a></li>
+   <li>·<a href="http://slideshow.news.tom.com/vw/232125-1.html?source=HP_LATEST" target="_blank" >男子嫖娼叫板警方舌战记者</a></li>
+   <li>·<a href="http://sports.tom.com/2010-11-11/0M5U/00878495.html?source=HP_LATEST" target="_blank" >转会：红军球探考察巴西锋煞</a></li>
+   <li>·<a href="http://images.yule.tom.com/vw/232335-1.html?source=HP_LATEST" target="_blank" >邵兵硬汉造型被爆是混搭高手</a></li>
+   <li>·<a href="http://it.tom.com/a/11646293.shtml?source=HP_LATEST" target="_blank" >微软大股东贝莱德抛售股份</a></li>
+   <li>·<a href="http://post.sports.tom.com/s/A500093B4912.html?source=HP_LATEST" target="_blank" >广州亚运会开幕式十大看点</a></li>
+   <li>·<a href="http://post.news.tom.com/s/8700090F4844.html?source=HP_LATEST" target="_blank" >社科院紧急研究“3Q之战”</a></li>
+   <li>·<a href="http://story.news.tom.com/vw/64455-1.html?source=HP_LATEST" target="_blank" >传说中的“十三姨”</a></li>
+   <li>·<a href="http://it.tom.com/a/11646301.shtml?source=HP_LATEST" target="_blank" >汉王展示全球首款彩屏电纸书</a></li>
+   <li>·<a href="http://yule.tom.com/2010-11-12/000E/86025566.html?source=HP_LATEST" target="_blank" >章子怡传火炬受热捧 与郎朗奏金曲</a></li>
+   <li>·<a href="http://auto.tom.com/2010-11-13/0D5C/08235323.html?source=HP_LATEST" target="_blank" >全新入门级跑车宝马Z2曝光</a></li>
+   <li>·<a href="http://html.dushu.tom.com/html/new_book/82/485/index.htm?source=HP_LATEST" target="_blank" >孔子发小兼车夫眼中的圣人</a></li>
+   <li>·<a href="http://slideshow.news.tom.com/vw/232400-1.html?source=HP_LATEST" target="_blank" >捷克男女大学生穿内衣做清洁工</a></li>
+   <li>·<a href="http://post.news.tom.com/s/4C000A8F2858.html?source=HP_LATEST" target="_blank" >缅甸大选军人议席保留25%</a></li>
+   <li>·<a href="http://test.yule.tom.com/static-page/8026_cover.html?source=HP_LATEST" target="_blank" >吃西瓜解密你的恋爱必杀技</a></li>
+   <li>·<a href="http://it.tom.com/a/11648723.shtml?source=HP_LATEST" target="_blank" >移动推全球通预存话费换手机</a></li>
+   <li>·<a href="http://story.news.tom.com/vw/64465-1.html?source=HP_LATEST" target="_blank" >错以为是照片的逼真画作</a></li>
+   <li>·<a href="http://it.tom.com/a/11646304.shtml?source=HP_LATEST" target="_blank" >联想CEO：明年发布乐Pad</a></li>
+   <li>·<a href="http://html.dushu.tom.com/html/new_book/82/451/index.htm?source=HP_LATEST" target="_blank" >一部迄今为止最精彩的作品</a></li>
+   <li>·<a href="http://story.news.tom.com/vw/64411-1.html?source=HP_LATEST" target="_blank" >一个老处男的心酸经历</a></li>
+   <li>·<a href="http://yule.tom.com/2010-11-13/000E/01556300.html?source=HP_LATEST" target="_blank" >古巨基腰伤严重 坐起需人撑扶</a></li>
+   <li>·<a href="http://post.sports.tom.com/s/63000AD23597.html?source=HP_LATEST" target="_blank" >一提郭晶晶霍启刚就不开腔</a></li>
+   <li>·<a href="http://yule.tom.com/2010-11-13/000E/01008471.html?source=HP_LATEST" target="_blank" >周慧敏小腹平坦未见孕迹</a></li>
+   <li>·<a href="http://post-s.news.tom.com/s/C90009243336.html?source=HP_LATEST" target="_blank" >纵观不同年代的示爱方式</a></li>
+   <li>·<a href="http://yule.tom.com/2010-11-13/001R/08625427.html?source=HP_LATEST" target="_blank" >《守卫者传奇》上映一天口碑佳</a></li>
+   <li>·<a href="http://sports.tom.com/2010-11-12/0M5U/83863103.html?source=HP_LATEST" target="_blank" >转会：阿森纳将签下新杰拉德</a></li>
+   <li>·<a href="http://test.news.tom.com/static-page/20930_cover.html?source=HP_LATEST" target="_blank" >不可思议的梦境恋爱测验</a></li>
+   <li>·<a href="http://post.sports.tom.com/s/B1000AD83011.html?source=HP_LATEST" target="_blank" >中国足坛10大潜规则(图)</a></li>
+   <li>·<a href="http://post.news.tom.com/s/F600094D3174.html?source=HP_LATEST" target="_blank" >日本决定新设沿岸监视部队</a></li>
+   <li>·<a href="http://sports.tom.com/2010-11-12/0R1Q/65747102.html?source=HP_LATEST" target="_blank" >温家宝将出席亚运会开幕式</a></li>
+   <li>·<a href="http://post.sports.tom.com/s/5F000AC63395.html?source=HP_LATEST" target="_blank" >细数国安赛季十大感动瞬间</a></li>
+   <li>·<a href="http://html.hjsm.tom.com/html/new_book/14/209/index.htm?source=HP_LATEST" target="_blank" >荡气回肠的铁血故事</a></li>
+   <li>·<a href="http://html.dushu.tom.com/html/new_book/82/447/index.htm?source=HP_LATEST" target="_blank" >最有力量的文字记录历史</a></li>
+   <li>·<a href="http://auto.tom.com/2010-11-12/0DB4/03381873.html?source=HP_LATEST" target="_blank" >奥德赛综合优惠1万元</a></li>
+   <li>·<a href="http://html.hjsm.tom.com/html/new_book/0/802/index.htm?source=HP_LATEST" target="_blank" >红粉修罗帐，白骨人断肠</a></li>
+</ul>
+</div>
+
+<script type="text/javascript">
+(function() {
+Index20090216zgqjfzl = {
+  containerId: "zgqjfzlul20090216",
+  pageNo: 1,
+  pageSize: 12,
+  totalCount: -1,
+  pageCount: 0,
+  items: [],
+  init: function() {
+    if (this.totalCount == -1) {
+      var c = document.getElementById(this.containerId);
+      if (c) {
+        var lis = c.getElementsByTagName("LI");
+        if (lis.length > 0) {
+          this.totalCount = lis.length;
+          this.items = lis;
+        } else {
+          return;
+        }
+      } else {
+        return;
+      }
+    }
+    //显示现在的items
+    for (var i = 0; i < this.pageSize; i++) {
+      var item = this.items[i];
+      if (item) {
+        item.style.display = "block";
+      }
+    }
+  },
+  gotoNextPage: function() {
+    this.pageCount = (this.totalCount % this.pageSize == 0) ?  parseInt(this.totalCount / this.pageSize) : parseInt(this.totalCount / this.pageSize + 1);
+    var nextPage = this.pageNo + 1 > this.pageCount ? 1 : this.pageNo + 1;
+    //隐藏以前的items
+    for (var i = 0; i < this.pageSize; i++) {
+      var item = this.items[(this.pageNo - 1) * this.pageSize + i];
+      if (item) {
+        item.style.display = "none";
+      }
+    }
+    //显示现在的items
+    for (var i = 0; i < this.pageSize; i++) {
+      var item = this.items[(nextPage - 1) * this.pageSize + i];
+      if (item) {
+        item.style.display = "block";
+      }
+    }
+    this.pageNo = nextPage;
+  }
+};
+Index20090216zgqjfzl.init();
+})();
+</script>
+<!--}end latest t-->
+</div>
+<div class="colc">
+<h3><a href="http://discovery.tom.com/" target="_blank">汇奇闻</a></h3>
+<div class="picsmod">
+<div class="pic">
+<a href="http://news.tom.com/static/2/OKT2/51NCB8VQ.html?source=HP_HAPPY" target="_blank"><img src="http://i1.tomoimg.cn/uldf/2010/1113/yanjing/84.jpg"  alt="十年来的世界小姐谁最美"  /></a>
+<a href="http://news.tom.com/static/2/OKT2/51NCB8VQ.html?source=HP_HAPPY" class="link" target="_blank">世界小姐谁最美</a>
+</div>
+<div class="pic right">
+<a href="http://social.news.tom.com/rmtp/index.html?source=HP_HAPPY " target="_blank"><img src="http://i1.tomoimg.cn/uldf/2010/1113/yanjing/83.jpg"  alt="6岁女遭父母“烙刑”"  /></a>
+<a href="http://social.news.tom.com/rmtp/index.html?source=HP_HAPPY " class="link" target="_blank">女童遭父母烙刑</a>
+</div>
+<div class="pic">
+<a href="http://club.discovery.tom.com/item_809_231934_0_0.html?source=HP_HAPPY" target="_blank"><img src="http://news.tom.com/uldf/2010/1113/xuyang/t1.jpg"  alt="野生动物摄影"  /></a>
+<a href="http://club.discovery.tom.com/item_809_231934_0_0.html?source=HP_HAPPY" class="link" target="_blank">野生动物摄影</a>
+</div>
+<div class="pic right">
+<a href="http://uhoop.tom.com/pic.html?source=HP_HAPPY" target="_blank"><img src="http://uhoop.tom.com/uldf/2010/1112/xushiyao/100100L2.jpg"  alt="名模变网球宝贝"  /></a>
+<a href="http://uhoop.tom.com/pic.html?source=HP_HAPPY" class="link" target="_blank">名模变网球宝贝</a>
+</div>
+</div>
+<ul class="listnews" >
+<li><a href="http://news.tom.com/china/?source=HP_HAPPY" target="_blank" class="theTitle">国内</a>|<a href="http://post.news.tom.com/s/74000B072997.html?source=HP_HAPPY" target="_blank">10岁男孩街头卖艺表演“斩首”</a></li>
+<li><a href="http://news.tom.com/world/?source=HP_HAPPY" target="_blank" class="theTitle">国际</a>|<a href="http://news.tom.com/2010-11-12/OKVG/84661866.html?source=HP_HAPPY" target="_blank">乌克兰妇女脱衣抗议判妇女石刑</a></li>
+<li><a href="http://yule.tom.com/pop/index.html?source=HP_HAPPY" target="_blank" class="theTitle">明星</a></span>|<a href="http://yule.tom.com/zhuanti/movie/nen.html?source=HP_HAPPY" target="_blank">“嫩”是女星追求的王道 </a></li>
+<li><a href="http://yule.tom.com/newspic/celebrity/index.html?source=HP_HAPPY" target="_blank" class="theTitle">八卦</a>|<a href="http://yule.tom.com/zhuanti/top10/sythc.html?source=HP_HAPPY" target="_blank">女星玉体横陈施媚术</a></li>
+<li><strong><a href="http://show.news.tom.com/?source=HP_HAPPY" target="_blank" class="theTitle">爱秀</a></strong>|<a href="http://show.tom.com/vw/28604-1.html?source=HP_HAPPY" target="_blank">曝35岁女教师与14岁男生禁忌之爱</a></li>
+<!--include virtual="/static/E/008E/61BJNI41.html"-->
+<!--include virtual="/static/E/008E/61BJOAUO.html"-->
+<li><a href="http://club.news.tom.com/forum_208_0_0_0_0.html?source=HP_HAPPY" target="_blank" class="theTitle">军事</a>|<a href="http://club.news.tom.com/item_208_811830_0_0.html?source=HP_HAPPY" target="_blank">震撼！麦加圣地形同战场(组图)</a></li>
+<li><a href="http://club.news.tom.com/forum_1165_0_0_1_0.html?source=HP_HAPPY" target="_blank" class="theTitle">历史</a>|<a href="http://club.discovery.tom.com/item_869_18428_0_0.html?source=HP_HAPPY" target="_blank">探秘西西里岛僵尸状木乃伊</a></li>
+<li><a href="http://html.hjsm.tom.com/?source=HP_HAPPY" target="_blank" class="theTitle">小说</a>|<a href="http://html.dushu.tom.com/html/new_book/74/87/index.htm?source=HP_HUANJIAN" target="_blank">奇妙不可思议的同床异梦婚姻</a></li>
+<li><a href="http://html.dushu.tom.com/?source=HP_HAPPY" target="_blank" class="theTitle">读书</a>|<a href="http://html.hjsm.tom.com/html/new_book/73/62/index.htm?source=HP_HUANJIAN" target="_blank">末世降临大陆 战火纷争四起</a></li>
+</ul>
+</div>
+</div>
+	<!--}end modA-->
+
+
+<!-- 首页通栏3  开始 -->
+	<script src="http://js.pub.tom.com/09-hp/tomhp-fc3.js"> </script>
+<!-- 首页通栏3  结束 -->
+
+
+	<!--{start mod uhoop-->
+<div class="tommod modB">
+<div class="cola">
+<div class="everydayup">
+<h3><a href="http://study.uhoop.tom.com/?source=HP_KW" target="_blank">每日提高</a></h3>
+<div class="con">
+
+<div class="picnews">
+<a href="http://study.uhoop.tom.com/User_CourseExamnew.php?exam_id=265&source=HP_KW" target="_blank"><img src="http://uhoop.tom.com/uldf/2010/1112/zhangran/751.jpg" alt="如何才能在内线轻松完成得分？" /></a>
+<div class="para">
+<p>考考你：<a href="http://study.uhoop.tom.com/User_CourseExamnew.php?exam_id=265&source=HP_KW" target="_blank">如何才能在内线轻松完成得分？</a></p>
+<a href="http://study.uhoop.tom.com/User_CourseExamnew.php?exam_id=265&source=HP_KW" target="_blank" class="bn" >我要挑战</a></p>
+</div>
+</div>
+<ul class="question">
+<li class="title"><span class="s1">题目</span><span class="s2">答错率</span></li>
+
+<li class="ques"><span class="s1"><a href="http://quiz.uhoop.tom.com/User_Asksingle.php?qid=30864&source=HP_KW" target="_blank">·何人嫌火箭战绩烂</a></span><span class="s2"><strong>10.1%</strong></span></li>
+
+<li class="ques"><span class="s1"><a href="http://quiz.uhoop.tom.com/User_Asksingle.php?qid=30863&source=HP_KW" target="_blank">·阿里纳斯因何诈伤？</a></span><span class="s2"><strong>73.42%</strong></span></li>
+
+<li class="ques"><span class="s1"><a href="http://quiz.uhoop.tom.com/User_Asksingle.php?qid=30842&source=HP_KW" target="_blank">·谁成火箭全队难题</a></span><span class="s2"><strong>12.04%</strong></span></li>
+
+<li class="ques"><span class="s1"><a href="http://quiz.uhoop.tom.com/User_Asksingle.php?qid=30413&source=HP_KW" target="_blank">·何人当选最佳中锋</a></span><span class="s2"><strong>24.74%</strong></span></li>
+
+<li class="ques"><span class="s1"><a href="http://quiz.uhoop.tom.com/User_Asksingle.php?qid=30865&source=HP_KW" target="_blank">·姚明受伤成就了谁</a></span><span class="s2"><strong>77.78%</strong></span></li>
+
+<li class="bns"><a href="http://quiz.uhoop.tom.com/User_Welcome.php?source=HP_KW" target="_blank" class="isay" >我要挑战</a><a href="http://quiz.uhoop.tom.com/User_Question.php?source=HP_KW" target="_blank" class="itry" >我要出题</a></li>
+</ul>
+</div>
+</div>
+
+<div class="search">
+<h5>百度搜索</h5>
+<iframe height="25" frameborder="0" scrolling="no" width="170" src="http://unstat.baidu.com/bdun.bsc?tn=tomcom_pg&cv=0&cid=1129793&csid=521&bgcr=E8F1F8&ftcr=000000&urlcr=0000ff&tbsz=80&insiteurl=&defid=99" hspace="0" vspace="0" framespacing="0" marginheight="0" marginwidth="0" id="baiduframe" align=center></iframe>
+</div>
+</div>
+<div class="colb">
+<div class="uhoop">
+<h2 class="maintitle"><a href="http://uhoop.tom.com/?source=HP_KW" target="_blank">uhoop</a></h2>
+<h3 class="subtitles"><a href="http://study.uhoop.tom.com/?source=HP_KW" target="_blank">培训</a>|<a href="http://zhidao.uhoop.tom.com/?source=HP_KW" target="_blank">专家答疑</a>|<a href="http://club.uhoop.tom.com/?source=HP_KW" target="_blank">篮徒e站</a>|<a href="http://tao.uhoop.tom.com/?source=HP_KW" target="_blank">淘客</a>|<a href="http://quiz.uhoop.tom.com/?source=HP_KW" target="_blank">辞典</a>|<a href="http://guess.uhoop.tom.com/?source=HP_KW" target="_blank">竞猜</a></h3>
+<div class="conleft">
+<div class="picnews">
+<a href="http://uhoop.tom.com/pic.html?source=HP_KW" target="_blank"><img src="http://uhoop.tom.com/uldf/2010/1113/gaoge/140.jpg" alt="七大冲动男：大虫踢裆" /></a>
+<a href="http://uhoop.tom.com/pic.html?source=HP_KW" target="_blank" class="link">七大冲动男：大虫踢裆</a>
+</div>
+<div class="uchome">
+<script src="http://my-static.uhoop.tom.com/jspiece/uu_tom.js" charset="utf-8" ></script>
+</div>
+<!--include virtual="/static/S/007S/61BMHF8C.html"-->
+</div>
+<div class="conright">
+<div class="newslist">
+<h3><a href="http://club.uhoop.tom.com/viewthread.php?tid=68458&source=HP_GUANZHU" target="_blank">莫雷钦定火箭未来核心人选</a></h3>
+<ul class="newslist">
+<li>·<a href="http://club.uhoop.tom.com/viewthread.php?tid=68452&source=HP_KW" target="_blank">火箭受困控卫之伤寻求大交易</a> <a href="http://club.uhoop.tom.com/viewthread.php?tid=68453&source=HP_KW" target="_blank">火箭走6留1震惊联盟</a></li>
+<li>·<a href="http://club.uhoop.tom.com/viewthread.php?tid=68454&source=HP_KW" target="_blank">休城控卫顶替绝对核心</a> <a href="http://club.uhoop.tom.com/viewthread.php?tid=68455&source=HP_KW" target="_blank">顶级劲旅豪抛射手交换马丁</a></li>
+<li>·<a href="http://club.uhoop.tom.com/viewthread.php?tid=68457&source=HP_KW" target="_blank">火箭豪抛姚明可换潜力巨星</a> <a href="http://club.uhoop.tom.com/viewthread.php?tid=68459&source=HP_KW" target="_blank">三大顶级射手惊天互换</a></li>
+<li>·<a href="http://club.uhoop.tom.com/viewthread.php?tid=68449&source=HP_KW" target="_blank">艾弗森独家私密照惊天曝光</a> <a href="http://club.uhoop.tom.com/viewthread.php?tid=68448&source=HP_KW" target="_blank">本赛季行情飙升的妖人</a></li>
+<li>·<a href="http://uhoop.tom.com/club/picmore.html?source=HP_KW" target="_blank">裸露妖女诱惑闪电侠上当</a> <a href="http://club.uhoop.tom.com/forumdisplay.php?fid=32&source=HP_KW" target="_blank">火辣妖女为名利出卖魔兽</a></li>
+<li>·<a href="http://quiz.uhoop.tom.com/User_Asksingle.php?qid=30843&source=HP_KW" target="_blank">黄蜂欲用佩贾交易何人？</a> <a href="http://quiz.uhoop.tom.com/User_Asksingle.php?qid=30339&source=HP_KW" target="_blank">巴蒂尔在白宫给谁挡拆？</a></li>
+<li>·<a href="http://study.uhoop.tom.com/?source=HP_KW" target="_blank">【培训】</a><a href="http://study.uhoop.tom.com/User_CourseIntro.php?cid=53&source=HP_KW" target="_blank">如何成为最佳防守人</a> <a href="http://study.uhoop.tom.com/User_CourseIntro.php?cid=257&source=HP_KW" target="_blank">考考你传球的多变性</a></li>
+<li>·<a href="http://zhidao.uhoop.tom.com/?source=HP_KW" target="_blank">【专家】</a><a href="http://zhidao.uhoop.tom.com/bbs/viewthread.php?tid=9242&source=HP_KW" target="_blank">隆多蜕变源于什么</a> <a href="http://zhidao.uhoop.tom.com/bbs/viewthread.php?tid=9247&source=HP_KW" target="_blank">火箭求败，意在总冠军</a></li>
+<li>·<a href="http://uhoop.tom.com/pic.html?source=HP_KW" target="_blank">【幻灯】</a><a href="http://uhoop.tom.com/pic/list.html?source=HP_KW" target="_blank">绿军三巨头珍藏合影</a> <a href="http://uhoop.tom.com/picmore/list.html?source=HP_KW" target="_blank">宝贝拍性感杂志月历</a></li>
+<li>·<a>【活动】</a><a href="http://yc.sports.tom.com/ycmeinv.html?source=NVA_she" target="_blank">英超美女主播招募</a> <a href="http://my.uhoop.tom.com/space.php?do=event&id=13212&source=HP_KW" target="_blank">玩晒图揭秘亚运开幕式</a></li>
+</ul>
+</div>
+
+<script src="http://news.tom.com/script/guess/guess_tom_index.js?123"></script>
+
+</div>
+</div>
+</div>
+<div class="colc nba">
+<h3><a href="http://yc.sports.tom.com/?source=HP_YC" target="_blank">英超</a></h3>
+
+<div class="picsmod">
+
+
+
+
+
+                
+<div class="pic qb">
+<a href="http://tv.tom.com/App_User_Video.php?video_id=10362&source=HP_YC" target="_blank"><img src="http://sports.tom.com/uldf/2010/1111/wangji/11111.jpg" alt="" width="100" height="100" border="0"/></a><a href="http://tv.tom.com/App_User_Video.php?video_id=10362&source=HP_YC" target="_blank"  class="link">英超第十二轮全部赛事集锦</a>
+</div>
+
+
+
+
+
+                
+<div class="pic right qb">
+<a href="http://tv.tom.com/App_User_Video.php?video_id=10333&source=HP_YC" target="_blank"><img src="http://sports.tom.com/uimg/2010/11/11/liyang/1289432650808_4981.jpg" alt="" width="100" height="100" border="0"/></a><a href="http://tv.tom.com/App_User_Video.php?video_id=10333&source=HP_YC" target="_blank"  class="link">苏东评德比战：平局略显沉闷</a>
+</div>
+</div>
+
+<ul class="tvnewslist" >
+            <li><a href="http://tv.tom.com/App_User_Video.php?video_id=10331&source=HP_YC" target="_blank">第十二轮：曼城VS曼联全场集锦</a></li>
+            <li><a href="http://tv.tom.com/App_User_Video.php?video_id=10329&source=HP_YC" target="_blank">第十二轮：狼队VS枪手全场集锦</a></li>
+            <li><a href="http://tv.tom.com/App_User_Video.php?video_id=10323&source=HP_YC" target="_blank">第12轮：蓝军VS富勒姆全场集锦</a></li>
+            <li><a href="http://tv.tom.com/App_User_Video.php?video_id=10325&source=HP_YC" target="_blank">第12轮：维冈VS利物浦全场集锦</a></li>
+<li><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2917,18147,18140&cid=0,0,0&sid=18890&advid=1963&camid=2969&show=ignore&url=http://afp.adpolestar.net/adpolestar/wayl/;ad=3E3FD679_C469_CB2C_5CF2_E88EA0CB3AA9;ap=0;pu=csadbj;/?http://www.qiaodan.com?source=HP_AOYUN_PICS" target="_blank">新生倒计时</a></li>
+</ul>
+
+<div class="ad">
+<!-- 首页巨幅1 开始 -->
+<script src="http://js.pub.tom.com/09-hp/tomhp-jf1.js"> </script>
+<!-- 首页巨幅1 结束 -->
+</div>
+</div>
+</div>
+	<!--}end mod uhoop-->
+
+	<!--{start mod sports-->
+<!--}start modE-->
+<div class="tommod modE">
+<div class="cola">
+<div class="ad">
+<!-- 首页巨幅3  开始 -->
+<script src="http://js.pub.tom.com/09-hp/tomhp-jf3.js"></script>
+<!-- 首页巨幅3  结束 -->
+</div>
+</div>
+
+<div class="colb">
+<!--体育-导航-->
+<h2 class="maintitle"><a href="http://sports.tom.com/?source=HP_SPORT1" target="_blank">体育</a></h2>
+<h3 class="subtitles"><a href="http://nba.tom.com/?source=HP_SPORT1" target="_blank">NBA</a>|<a href="http://nba.tom.com/yaoming/index.html?source=HP_SPORT1" target="_blank">姚明</a>|<a href="http://sports.tom.com/yc/?source=HP_SPORT1" target="_blank">英超</a>|<a href="http://sports.tom.com/yj/?source=HP_SPORT1" target="_blank">意甲</a>|<a href="http://sports.tom.com/zc/?source=HP_SPORT1" target="_blank">国内</a></h3>
+<div class="conleft">
+<!--体育-图-->
+<div class="picnews">
+	<a href="http://sports.tom.com/allpics.html" target="_blank"><img src="http://sports.tom.com/uldf/2010/1112/yangyue/tomtu.jpg"  alt="章子怡郎朗亚运演出"  /></a>
+	<a href="http://sports.tom.com/allpics.html" target="_blank" class="link">章子怡郎朗亚运演出</a>
+</div>
+<!--体育-文字左-->
+<ul class="newslist">
+<li><a href="http://bild.sports.tom.com/vw/232228-1.html?source=HP_SPORTS3" target="_blank">兽兽与“伪娘”同台</a></li>
+<li><a href="http://bild.sports.tom.com/vw/232232-1.html?source=HP_SPORTS3" target="_blank">穆帅惨变“大便”玩偶</a></li>
+<li><a href="http://bild.sports.tom.com/vw/232231-1.html?source=HP_SPORTS3" target="_blank">辣妹亮相机场酷劲十足</a></li>
+<li><a href="http://bild.sports.tom.com/vw/232230-1.html?source=HP_SPORTS3" target="_blank">德乙惊现“露阴爪”</a></li>
+<li><a href="http://bild.sports.tom.com/vw/232227-1.html?source=HP_SPORTS3" target="_blank">盘点意甲中的八大光棍</a></li>
+<li><a href="http://bild.sports.tom.com/vw/231988-1.html?source=HP_SPORTS3" target="_blank">C罗卡卡车展获赠豪车</a></li>
+<li><a href="http://bild.sports.tom.com/vw/231742-1.html?source=HP_SPORTS3" target="_blank">艾弗森土耳其新生涯</a></li>
+</ul>
+</div>
+<div class="conright">
+<!--体育-文字上-->
+<h3><A href="http://nba.tom.com/2010-11-13/000H/11068621.html?source=HP_SPORTS1" target="_blank">官网MVP榜蜂王居首</a>
+  <a href="http://nba.tom.com/2010-11-13/00RL/00854404.html?source=HP_SPORTS1" target="_blank">艾弗森欧战首秀改期</a></h3>
+<ul class="newslist top">
+<li>·<A href="http://nba.tom.com/2010-11-13/000F/10134794.html?source=HP_SPORTS1" target="_blank">洛里两大优势可任首发 小钢炮替补给力助火箭升空</a></li>
+<li>·<a href="http://post.nba.tom.com/s/CF0009234458.html?source=HP_SPORTS1" target="_blank">马丁用行动回报莫雷信任 火箭代理老大拒绝掉链子</a></li>
+<li>·<A href="http://nba.tom.com/2010-11-13/000F/00078543.html?source=HP_SPORTS1" target="_blank">费根：火箭交易勒夫没戏 休城引进丹皮尔意义不大</a></li>
+<li>·<a href="http://nba.tom.com/2010-11-13/00RK/05542045.html?source=HP_SPORTS1" target="_blank">皮尔斯伤口撒盐贬损詹姆斯 皇帝“名言”惨遭恶搞</a></li>
+<li>·<A href="http://nba.tom.com/2010-11-13/00RM/04321056.html?source=HP_SPORTS1" target="_blank">李左肘伤口感染将休战两周 与尼克斯一战代价惨重</a></li>
+</ul>
+<!--体育-文字下-->
+<ul class="newslist">
+<li>·<a href="http://sports.tom.com/2010-11-13/0H0L/82515773.html?source=HP_SPORT1" target="_blank">10媒：米兰寻枪目标多达9位 国米1500万低价揽4将</a></li>
+<li>·<a href="http://post.sports.tom.com/s/5F000AC63405.html?source=HP_SPORT1" target="_blank">足协人士：反赌已接近结尾 部分涉案者年底前结案</a></li>
+<li>·<a href="http://post.sports.tom.com/s/F2000B052900.html?source=HP_SPORT1" target="_blank">亚运会首个大冷门 女乒团体小组赛郭跃首战1-3负</a></li>
+<li>·<a href="http://post.sports.tom.com/s/CD000AB03717.html?source=HP_SPORT1" target="_blank">射击项目首金产生 中国队卫冕10米气步枪女团冠军</a></li>
+<li>·<a href="http://post.sports.tom.com/s/48000AD73522.html?source=HP_SPORT1" target="_blank">快讯：中国武术选手袁晓超获广州亚运会首枚金牌</a></li>
+<li>·<a href="http://sports.tom.com/2010-11-13/0M5U/01382981.html?source=HP_SPORT1" target="_blank">转会：本特纳欲逃离阿森纳 曼城冬季补血首选哲科</a></li>
+</ul>
+</div>
+</div>
+
+<div class="colc matchnews">
+<h3><a href="http://yule.tom.com/newspic/titan/index.html" target="_blank">赛事聚集</a></h3>
+<div class="picsmod">
+<!--综合体育-图左-->
+<div class="pic">
+<a href="http://yule.tom.com/newspic/titan/index.html?source=HP_SPORTS2" target="_blank"><img src="http://yule.tom.com/uimg/2010/11/12/taixinhua/1289527952115_3958.jpg" alt="" width="100" height="100" border="0"/></a>
+<a href="http://yule.tom.com/newspic/titan/index.html?source=HP_SPORTS2" target="_blank" class="link">历届亚运开幕式</a>
+</div>
+<!--综合体育-图右-->
+<div class="pic right">
+	<a href="http://pic.nba.tom.com/vw/232380-1.html?source=HP_SPORTS2" target="_blank"><img src="http://sports.tom.com/uldf/2010/1112/malin/000.jpg"   alt="湖人止步连胜" width="100" height="100"   /></a>
+<a href="http://pic.nba.tom.com/vw/232380-1.html?source=HP_SPORTS2" class="link" target="_blank">湖人止步连胜</a>
+</div>
+</div>
+<ul class="newslist" >
+<!--综合体育-文字上-->
+<li><a href="http://pic.nba.tom.com/vw/232380-1.html?source=HP_SPORTS2" target="_blank">掘金迎战湖人 科比夹缝中找生机</a></li>
+<li><a href="http://pic.nba.tom.com/vw/232364-1.html?source=HP_SPORTS2" target="_blank">绿军再胜热火 皇帝鲨鱼反目成仇</a></li>
+<li><a href="http://pic.nba.tom.com/vw/232357-1.html?source=HP_SPORTS2" target="_blank">公牛血洗勇士 罗斯一骑绝尘上篮</a></li>
+<li><a href="http://addpic.nba.sports.tom.com/vw-task/4836-0.html?source=HP_SPORTS2" target="_blank">答案私密照泄露 曾入狱引发游行</a></li>
+<li><a href="http://pic.nba.tom.com/vw/232068-1.html?source=HP_SPORTS2" target="_blank">姚明因伤退场 斯科拉单打易建联</a></li>
+<!--综合体育-文字下-->
+<li><a href="http://post.weiqi.tom.com/s/00000B293588.html?source=HP_WEIQI" target="_blank">围甲李映九身负重托长考超过1小时</a></li>
+
+<li><a href="http://post.weiqi.tom.com/s/79000A9F2993.html?source=HP_WEIQI" target="_blank">唐莉微博秀与可爱儿子的亲密合影</a></li>
+
+<li><a href="http://post.weiqi.tom.com/s/8700090F4863.html?source=HP_WEIQI" target="_blank">老聂直言棋手服兴奋剂无任何意义</a></li>
+
+<li><a href="http://post.weiqi.tom.com/s/28000ADD2905.html?source=HP_WEIQI" target="_blank">美女棋手唐莉初段终于又公开露面</a></li>
+
+<li><a href="http://post.weiqi.tom.com/s/2D000AB22938.html?source=HP_WEIQI" target="_blank">古力乱战不敌李映九重庆重登榜首</a></li>
+</ul>
+</div>
+
+</div>
+<!--}end modE-->
+	<!--}end mod sports-->
+	
+	<!--{start mod ent-->
+<div class="tommod modC">
+<div class="cola">
+	<h3><a href="http://tangyuan.tom.com/" target="_blank">免费体验区</a></h3>
+	<div class="tomty">
+<h4 class="zg"><span><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18398,18398&cid=0,0,0&sid=19206&advid=273&camid=2876&show=ignore&url=http://game.tom.com?source=TY_YX" target="_blank">免费玩游戏</a></span><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18398,18398&cid=0,0,0&sid=19206&advid=273&camid=2876&show=ignore&url=http://game.tom.com?source=TY_YX" target="_blank">战歌游戏</a></h4>
+		<dl>
+			<dt><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18398,18398&cid=0,0,0&sid=19206&advid=273&camid=2876&show=ignore&url=http://game.tom.com/game_reg/?act=frxz_reg6&union_no=000001920022&game_id=32&server_id=frxz3?source=TY_YX" target="_blank"><img src="http://www.tom.com/images/2010/frxz.jpg" alt="既然不是仙 难免有杂念" width='50' height='60' /></a></dt>
+			<dd><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18398,18398&cid=0,0,0&sid=19206&advid=273&camid=2876&show=ignore&url=http://game.tom.com/game_reg/?act=dzpk" target="_blank">最拉风的纸牌游戏</a></dd>
+			<dd><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18398,18398&cid=0,0,0&sid=19206&advid=273&camid=2876&show=ignore&url=http://game.tom.com/game_reg/?act=mcsd1&union_no=000001920020&game_id=29&server_id=mcsd1?source=TY_YX" target="_blank">邀你回到明朝当皇帝</a></dd>
+			<dd><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18398,18398&cid=0,0,0&sid=19206&advid=273&camid=2876&show=ignore&url=http://game.tom.com/game_reg/?act=ftx&union_no=000001920026&game_id=30&server_id=1?source=TY_YX" target="_blank">NBA中国璀璨范特西</a></dd>
+		</dl>
+<h4 class="sk"><span><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18399,18399&cid=0,0,0&sid=19207&advid=273&camid=2876&show=ignore&url=http://skype.tom.com?source=TY_SK" target="_blank">低费打长途</a></span><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18399,18399&cid=0,0,0&sid=19207&advid=273&camid=2876&show=ignore&url=http://skype.tom.com?source=TY_SK" target="_blank">Skype</a></h4>
+		<div class="skcont">
+			<ul>
+				<li>·<a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18399,18399&cid=0,0,0&sid=19207&advid=273&camid=2876&show=ignore&url=http://client.skype.tom.com/product/index.php?adid=packages?source=TY_SK" target="_blank">新环球套餐 打手机巨便宜</a></li>
+				<li>·<a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18399,18399&cid=0,0,0&sid=19207&advid=273&camid=2876&show=ignore&url=http://client.skype.tom.com/skype_zt/?source=TY_SK" target="_blank">Skype-绿色安全 信赖之选</a></li>
+				<li>·<a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18399,18399&cid=0,0,0&sid=19207&advid=273&camid=2876&show=ignore&url=http://skype.tom.com/download/symbian/?source=TY_SK" target="_blank">Skype手机版支持超多机型</a></li>
+				<li>·<a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18399,18399&cid=0,0,0&sid=19207&advid=273&camid=2876&show=ignore&url=http://skype.tom.com/huodong/free/index.html?source=TY_SK" target="_blank">免费打长途 就在您身边</a></li>
+			</ul>
+		</div>
+<h4 class="hj"><span><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18400,18400&cid=0,0,0&sid=19208&advid=273&camid=2876&show=ignore&url=http://html.hjsm.tom.com?source=TY_HJ" target="_blank">免费读小说</a></span><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18400,18400&cid=0,0,0&sid=19208&advid=273&camid=2876&show=ignore&url=http://html.hjsm.tom.com?source=TY_HJ" target="_blank">幻剑书盟</a></h4>
+		<div class="hjcont">
+		<ul>
+			<li><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18400,18400&cid=0,0,0&sid=19208&advid=273&camid=2876&show=ignore&url=http://html.hjsm.tom.com/html/new_book/34/854/index.htm?source=TY_HJ" target="_blank"><img src="http://www.tom.com/images/2010/cover1.jpg" alt="超级农民_飞舞激扬 " width='55' height='70' /></a><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18400,18400&cid=0,0,0&sid=19208&advid=273&camid=2876&show=ignore&url=http://html.hjsm.tom.com/html/new_book/34/854/index.htm?source=TY_HJ" target="_blank">超级农民</a></li>
+			<li><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18400,18400&cid=0,0,0&sid=19208&advid=273&camid=2876&show=ignore&url=http://html.hjsm.tom.com/html/new_book/30/100/index.htm?source=TY_HJ" target="_blank"><img src="http://www.tom.com/images/2010/cover3.jpg" alt="混混小子江湖行_木易" width='55' height='70' border="0" /></a><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18400,18400&cid=0,0,0&sid=19208&advid=273&camid=2876&show=ignore&url=http://html.hjsm.tom.com/html/new_book/30/100/index.htm?source=TY_HJ" target="_blank">混混小子</a></li>
+			<li><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18400,18400&cid=0,0,0&sid=19208&advid=273&camid=2876&show=ignore&url=http://html.hjsm.tom.com/html/new_book/62/659/index.htm?source=TY_HJ" target="_blank"><img src="http://www.tom.com/images/2010/cover2.jpg" alt="至尊武者_天岩" width='55' height='70' /></a><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18400,18400&cid=0,0,0&sid=19208&advid=273&camid=2876&show=ignore&url=http://html.hjsm.tom.com/html/new_book/62/659/index.htm?source=TY_HJ" target="_blank">至尊武者</a></li>
+		</ul>
+		</div>
+<h4 class="wq"><span><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18401,18401&cid=0,0,0&sid=19209&advid=273&camid=2876&show=ignore&url=http://weiqi.sports.tom.com?source=TY_WQ" target="_blank">免费战国手</a></span><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18401,18401&cid=0,0,0&sid=19209&advid=273&camid=2876&show=ignore&url=http://weiqi.sports.tom.com?source=TY_WQ" target="_blank">TOM围棋</a></h4>
+		<div class="wqcont">
+			<p><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18401,18401&cid=0,0,0&sid=19209&advid=273&camid=2876&show=ignore&url=http://weiqi.sports.tom.com/?source=TY_WQ" target="_blank">资讯尽在掌握</a> | <a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18401,18401&cid=0,0,0&sid=19209&advid=273&camid=2876&show=ignore&url=http://club.weiqi.tom.com/forum_111_0_0_0_0.html?source=TY_WQ" target="_blank">纹枰谈古论今</a></p>
+			<p><a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18401,18401&cid=0,0,0&sid=19209&advid=273&camid=2876&show=ignore&url=http://duiyi.sports.tom.com/item/item-list.htm?source=TY_WQ" target="_blank">银两充值快捷</a> | <a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18401,18401&cid=0,0,0&sid=19209&advid=273&camid=2876&show=ignore&url=http://duiyi.tom.com/?source=TY_WQ" target="_blank">手谈以棋会友</a></p>
+		</div>
+	</div>
+</div>
+
+<div class="colb">
+<!--娱乐-导航-->
+<h2 class="maintitle"><a href="http://yule.tom.com/?source=HP_YULE1" target="_blank">娱乐</a></h2>
+<h3 class="subtitles"><a href="http://yule.tom.com/movie/?source=HP_YULE1" target="_blank">电影</a>|<a href="http://yule.tom.com/tv/?source=HP_YULE1" target="_blank">电视</a>|<a href="http://music.yule.tom.com/?source=HP_YULE1" target="_blank">音乐</a>|<a href="http://yule.tom.com/pop/?source=HP_YULE1" target="_blank">明星</a>|<a href="http://yule.tom.com/newspic/index.html?source=HP_YULE1" target="_blank">美图</a>|<a href="Http://gz2010.tom.com?source=HP_YULE1" target="_blank">亚运音乐</a></h3>
+ <!--娱乐-左图-->
+<div class="conleft">
+
+<div class="picnews">
+<a href="http://yule.tom.com/?source=HP_YULE1" target="_blank"><img src="http://yule.tom.com/uldf/2010/1113/caiyingzhe/1401.jpg"  alt="周慧敏小腹平坦未见孕迹"  /></a>
+<a href="http://yule.tom.com/?source=HP_YULE1" target="_blank" class="link">周慧敏小腹平未见孕迹</a>
+</div>
+
+<div class="picnews">
+<a href="http://yule.tom.com/newspic/index.html?source=HP_YULE1" target="_blank"><img src="http://yule.tom.com/uldf/2010/1112/caiyingzhe/140.jpg"  alt="拍激情戏上瘾的明星"  /></a>
+<a href="http://yule.tom.com/newspic/index.html?source=HP_YULE1" target="_blank" class="link">拍激情戏上瘾的明星</a>
+</div>
+
+</div>
+ <!--娱乐-文字-->
+<div class="conright">
+ <!--娱乐-文字上-->
+<h3><a href="http://yule.tom.com/?source=HP_YULE1" target="_blank">阿娇撑姐妹 揭阿Sa郑中基离婚内幕</a></h3>
+<ul class="newslist top" >
+<li>·<a href="http://yule.tom.com/2010-11-13/1239/84285358.html?source=HP_YULE1" target="_blank">宋祖英压轴献唱亚运开幕式</a> <a href="http://post.yule.tom.com/s/63000AD23603.html?source=HP_YULE1" target="_blank">女星争烫怀旧大波浪</a></li>
+<li>·<a href="http://yule.tom.com/2010-11-13/000E/00229503.html?source=HP_YULE1" target="_blank">章子怡身着时光羽裳惊艳</a> <a href="http://yule.tom.com/2010-11-13/001E/00405228.html?source=HP_YULE1" target="_blank">传赵薇加盟湖南“跨年”</a></li>
+<li>·<a href="http://yule.tom.com/2010-11-13/000E/01556300.html?source=HP_YULE1" target="_blank">古巨基腰伤严重坐起需撑扶</a> <a href="http://yule.tom.com/2010-11-13/000E/02184835.html?source=HP_YULE1" target="_blank">张曼玉不屑签婚前协议</a></li>
+<li>·<a href="http://yule.tom.com/2010-11-13/1239/02744303.html?source=HP_YULE1" target="_blank">谢安琪推出首张国语专辑</a> <a href="http://yule.tom.com/2010-11-13/1239/03018044.html?source=HP_YULE1" target="_blank">超级新人田馥甄亮相上海</a></li>
+<li>·<a href="http://yule.tom.com/2010-11-13/000E/03221249.html?source=HP_YULE1" target="_blank">张静初自爆曾经烂醉如泥</a> <a href="http://yule.tom.com/2010-11-13/1239/00683496.html?source=HP_YULE1" target="_blank">摇滚英雄会上海站将怒放</a></li>
+</ul>
+ <!--娱乐-文字下-->
+<ul class="newslist">
+<li>·<a href="http://images.yule.tom.com/vw/232331-1.html?source=HP_YULE1" target="_blank">陈燃获时尚大师青睐</a> <a href="http://post.yule.tom.com/s/63000AD83052.html?source=HP_YULE1" target="_blank">Selina喝伤后第一口可乐</a></li>
+<li>·<a href="http://yule.tom.com/2010-11-12/000E/05847142.html?source=HP_YULE1" target="_blank">刘谦北京机场看书装斯文</a> <a href="http://yule.tom.com/2010-11-12/000E/01886413.html?source=HP_YULE1?source=HP_YULE1" target="_blank">莫文蔚探访归来眉头紧锁</a></li>
+<li>·<a href="http://yule.tom.com/2010-11-12/001E/10180400.html?source=HP_YULE1" target="_blank">《刁蛮俏御医》限制级床戏</a> <a href="http://post.yule.tom.com/s/5A0008FE3708.html?source=HP_YULE1" target="_blank">阿娇与五巨星穿越</a></li>
+<li>·<a href="http://yule.tom.com/2010-11-12/000E/85773325.html?source=HP_YULE1" target="_blank">钟丽缇丰满捧场李小龙签书会</a> <a href="http://images.yule.tom.com/vw/232329-1.html?source=HP_YULE1" target="_blank">张静初高雅复古</a></li>
+<li>·<a href="http://images.yule.tom.com/vw/232250-1.html?source=HP_YULE1" target="_blank">官恩娜天价不出席富豪饭局</a> <a href="http://yule.tom.com/2010-11-12/000E/84925817.html?source=HP_YULE1" target="_blank">关颖露小蛮腰艳光四射</a></li>
+<li>·<a href="http://yule.tom.com/2010-11-12/1239/01218716.html?source=HP_YULE1" target="_blank">孟庭苇旗袍风情有凤来仪</a> <a href="http://yule.tom.com/2010-11-12/001Q/00877759.html?source=HP_YULE1" target="_blank">《战国》2000万奢华场景</a></li>
+</ul>
+</div>
+</div>
+<!--港台风-->
+<div class="colc gtf">
+<h3><a href="http://yule.tom.com/HongKong/index.html?source=HP_YULE2" target="_blank">港台风</a></h3>
+<div class="picnews">
+<a href="http://post.yule.tom.com/s/B1000AD83016.html?source=HP_YULE2" target="_blank"><img src="http://image.post.tom.com/ArticleImage/440/199/DE0009FC2010/1112/1289519640.jpg"   alt="王菲高温穿羽绒出巡 李亚鹏称其微博替代鸦片"   /></a>
+<a href="http://post.yule.tom.com/s/B1000AD83016.html?source=HP_YULE2" target="_blank" class="link">王菲穿羽绒出巡 李亚鹏称其微博上瘾</a>
+</div>
+<div class="picsmod">
+<div class="pic">
+<a href="http://images.yule.tom.com/vw/221084-1.html?source=HP_YULE2" target="_blank"><img src="http://yule.tom.com/uimg/2010/11/13/caiyingzhe/1289606348099_3587.jpg" alt="" width="100" height="100" border="0"/></a><a href="http://images.yule.tom.com/vw/221084-1.html?source=HP_YULE2" target="_blank" class="link">最抠门的大明星</a>
+</div>
+<div class="pic right">
+<a href="http://yule.tom.com/zhuanti/top10/lyhc.html?source=HP_YULE2" target="_blank"><img src="http://yule.tom.com/uimg/2010/11/13/caiyingzhe/1289606337334_3491.jpg" alt="" width="100" height="100" border="0"/></a><a href="http://yule.tom.com/zhuanti/top10/lyhc.html?source=HP_YULE2" target="_blank" class="link">女星的烈焰红唇</a>
+</div>
+</div>
+<ul class="newslist" >
+<li><a href="http://images.yule.tom.com/vw/232016-1.html?source=HP_YULE2" target="_blank">周星驰转爱靓妹 于文凤心死功成身退</a></li>
+<li><a href="http://images.yule.tom.com/vw/232019-1.html?source=HP_YULE2" target="_blank">王菲摆天后架子 李亚鹏心疼爱妻累坏</a></li>
+<li><a href="http://images.yule.tom.com/vw/232014-1.html?source=HP_YULE2" target="_blank">曝光黄日华畸形夫妻生活 温馨不在</a></li>
+<li><a href="http://images.yule.tom.com/vw/232015-1.html?source=HP_YULE2" target="_blank">许志安前女友被甩 患抑郁症发泄情伤</a></li>
+</ul>
+</div>
+<!-- t -->
+</div>
+<!--include virtual="/static/zhoumo_ent.html"-->
+	<!--}end mod ent-->
+
+	<!--{start mod qiyi-->
+<div class="tommod modK">
+<!--赏图-->
+<div class="cola digital">
+<h3><a href="http://yule.tom.com/newspic/index.html" target="_blank">赏图</a></h3>
+
+<!--数码-文字-->
+<ul class="newslist">
+	<li>·<a href="http://yule.tom.com/zhuanti/top10/chuangz.html?source=HP_SHUMA" target="_blank">女星们的早年绝密床照</a></li></UL>
+
+<!--数码-图-->
+<div class="picsmod">
+
+
+
+
+
+<div class="pic">
+<a href="http://yule.tom.com/zhuanti/top10/linglei.html?source=HP_SHUMA" target="_blank"><img src="http://yule.tom.com/uimg/2010/11/13/caiyingzhe/1289606314045_1702.jpg" alt="" width="80" height="80" border="0"/></a>
+<a href="http://yule.tom.com/zhuanti/top10/linglei.html?source=HP_SHUMA" target="_blank">娱乐圈的另类</a>
+</div>
+
+
+
+
+<div class="pic right">
+<a href="http://yule.tom.com/zhuanti/top10/ruhua.html?source=HP_SHUMA" target="_blank"><img src="http://yule.tom.com/uimg/2010/11/13/caiyingzhe/1289606302838_2110.jpg" alt="" width="80" height="80" border="0"/></a>
+<a href="http://yule.tom.com/zhuanti/top10/ruhua.html?source=HP_SHUMA" target="_blank">如花美眷惊艳</a>
+</div>
+
+
+
+
+<div class="pic">
+<a href="http://yule.tom.com/zhuanti/top10/tianmei.html?source=HP_SHUMA" target="_blank"><img src="http://yule.tom.com/uimg/2010/11/13/caiyingzhe/1289606288456_1997.jpg" alt="" width="80" height="80" border="0"/></a>
+<a href="http://yule.tom.com/zhuanti/top10/tianmei.html?source=HP_SHUMA" target="_blank">最甜美女星</a>
+</div>
+
+
+
+
+<div class="pic right">
+<a href="http://images.yule.tom.com/vw/221088-1.html?source=HP_SHUMA" target="_blank"><img src="http://yule.tom.com/uimg/2010/11/13/caiyingzhe/1289606401881_2336.jpg" alt="" width="80" height="80" border="0"/></a>
+<a href="http://images.yule.tom.com/vw/221088-1.html?source=HP_SHUMA" target="_blank">梳辫子的女星</a>
+</div>
+
+
+
+
+<div class="pic">
+<a href="http://images.yule.tom.com/vw/231716-1.html?source=HP_SHUMA" target="_blank"><img src="http://yule.tom.com/uimg/2010/11/13/caiyingzhe/1289606263578_2417.jpg" alt="" width="80" height="80" border="0"/></a>
+<a href="http://images.yule.tom.com/vw/231716-1.html?source=HP_SHUMA" target="_blank">小三潜质女星</a>
+</div>
+
+
+
+
+<div class="pic right">
+<a href="http://images.yule.tom.com/vw/231934-1.html?source=HP_SHUMA" target="_blank"><img src="http://yule.tom.com/uimg/2010/11/13/caiyingzhe/1289606252618_1700.jpg" alt="" width="80" height="80" border="0"/></a>
+<a href="http://images.yule.tom.com/vw/231934-1.html?source=HP_SHUMA" target="_blank">最会装嫩女星</a>
+</div>
+
+</div>
+
+
+
+</div>
+<!--影视-->
+<div class="colb">
+ <!--影视-导航-->
+<h2 class="maintitle"><a href="http://yingshi.tom.com?source=H_YS" target="_blank">影视</a></h2>
+<h3 class="subtitles"><a href="http://yule.qiyi.com/?source=H_YS" target="_blank">娱乐</a>|<a href="http://www.qiyi.com/dianshiju/index.html?source=H_YS" target="_blank">电视剧</a>|<a href="http://www.qiyi.com/dianying/index.html?source=H_YS" target="_blank">电影</a>|<a href="http://www.qiyi.com/zongyi/index.html?source=H_YS" target="_blank">综艺</a>|<a href="http://www.qiyi.com/jilupian/index.html?source=H_YS" target="_blank">纪录片</a>|<a href="http://www.qiyi.com/yinyue/index.html?source=H_YS" target="_blank">音乐</a>|<a href="http://www.qiyi.com/?source=H_YS" target="_blank">更多>></a></h3>
+
+ <!--影视-图文-->
+<div class="contop">
+  <ul class="clearfix">
+  	<li><a href="http://www.qiyi.com/dianshiju/hbezjzw.html?source=H_YS" target="_blank"><img src="http://www.qiyipic.com/dianshiju/fix/ezjzw115.jpg"    alt=""    width="95" height="127" border="0" /></a><a href="http://www.qiyi.com/dianshiju/hbezjzw.html?source=H_YS"title="韩版恶作剧之吻">韩版恶作剧之吻</a><span>纯情女狂追天才美男</span></li>
+  	<li><a href="http://www.qiyi.com/dianshiju/dxnjfj.html?source=H_YS" target="_blank"><img src="http://www.qiyipic.com/common/20101103/e5f3c08c2a6f4e6db978941dfcc92c45.jpg"    alt=""    width="95" height="127" border="0" /></a><a href="http://www.qiyi.com/dianshiju/dxnjfj.html?source=H_YS"title="大西南剿匪记">大西南剿匪记</a><span>泼辣马苏变身女匪</span></li>
+	<li><a href="http://www.qiyi.com/dianying/20101103/n107323.html?source=H_YS" target="_blank"><img src="http://www.qiyipic.com/common/20101106/71ece8f1842f4fba84dbe6245be5ce90.jpg"    alt=""    width="95" height="127" border="0" /></a><a href="http://www.qiyi.com/dianying/20101103/n107323.html?source=H_YS"title="精武风云">精武风云</a><span>甄功夫再续英雄传奇</span></li>
+	<li><a href="http://www.qiyi.com/dianying/20101028/n92525.html?source=H_YS" target="_blank"><img src="http://www.qiyipic.com/dianying/20101031/4b41b2b0d0754cd0b269697aee4d6370.jpg"    alt=""    width="95" height="127" border="0" /></a><a href="http://www.qiyi.com/dianying/20101028/n92525.html?source=H_YS"title="山楂树之恋">山楂树之恋</a><span>最干净的爱情故事</span></li>
+  </ul>
+</div>
+<div class="conbom">
+  <ul class="clearfix">
+  	<li><span>电&nbsp;&nbsp;影</span>|<a href="http://www.qiyi.com/dianying/20100819/n30547.html?source=H_YS" target="_blank">枪王之王</a><a href="http://www.qiyi.com/dianying/20100928/n80740.html?source=H_YS" target="_blank">线人</a><a href="http://www.qiyi.com/dianying/20100520/n13949.html?source=H_YS" target="_blank">月满轩尼诗</a></li>
+  	<li><span>电视剧</span>|<a href="http://www.qiyi.com/dianshiju/neixian.html?source=H_YS" target="_blank">内线</a><a href="http://www.qiyi.com/dianshiju/lmzq.html?source=H_YS" target="_blank">黎明之前</a><a href="http://www.qiyi.com/dianshiju/ybxsddb.html?source=H_YS" target="_blank">永不消逝的电波</a></li>
+	<li><span>电&nbsp;&nbsp;影</span>|<a href="http://www.qiyi.com/dianying/20100909/n32548.html?source=H_YS" target="_blank">唐山大地震</a><a href="http://www.qiyi.com/dianying/20100721/n26097.html?source=H_YS" target="_blank">谍海风云</a><a href="http://www.qiyi.com/dianying/20100925/n40446.html?source=H_YS" target="_blank">荒村公寓</a></li>
+  	<li><span>电视剧</span>|<a href="http://www.qiyi.com/dianshiju/shanghai.html?source=H_YS" target="_blank">上海，上海</a><a href="http://www.qiyi.com/dianshiju/btxj.html?source=H_YS" target="_blank">拜托小姐</a><a href="http://www.qiyi.com/dianshiju/pmzx.html?source=H_YS" target="_blank">泡沫之夏</a></li>
+	<li><span>电&nbsp;&nbsp;影</span>|<a href="http://www.qiyi.com/dianying/20100703/n22989.html?source=H_YS" target="_blank">岁月神偷</a><a href="http://www.qiyi.com/dianying/20100417/n3513.html?source=H_YS" target="_blank">越光宝盒</a><a href="http://www.qiyi.com/dianying/20100726/n26725.html?source=H_YS" target="_blank">决战刹马镇</a></li>
+  	<li><span>电视剧</span>|<a href="http://www.qiyi.com/dianshiju/hzgg2.html?source=H_YS" target="_blank">还珠格格第二部</a><a href="http://www.qiyi.com/dianshiju/sg.html?source=H_YS" target="_blank">三国</a><a href="http://www.qiyi.com/dianshiju/xhlm.html?source=H_YS" target="_blank">红楼梦</a></li>
+	<li><span>纪录片</span>|<a href="http://www.qiyi.com/jilupian/rtdgs.html?source=H_YS" target="_blank">人体的故事</a><a href="http://www.qiyi.com/jilupian/gzc.html?source=H_YS" target="_blank">改装车</a><a href="http://www.qiyi.com/jilupian/dcqbl.html?source=H_YS" target="_blank">搭车去柏林</a></li>
+  	<li><span>综&nbsp;&nbsp;艺</span>|<a href="http://www.qiyi.com/zongyi/wpdjd.html?source=H_YS" target="_blank">王牌大贱谍</a><a href="http://www.qiyi.com/zongyi/kxll.html?source=H_YS" target="_blank">康熙来了</a><a href="http://www.qiyi.com/zongyi/kldby.html?source=H_YS" target="_blank">快乐大本营</a></li>
+	<li><span>音&nbsp;&nbsp;乐</span>|<a href="http://www.qiyi.com/yinyue/20101020/n88017.html?source=H_YS" target="_blank">《天涯共此时》</a><a href="http://www.qiyi.com/yinyue/20101026/n89544.html?source=H_YS" target="_blank">金莎《相思垢》</a></li>
+  	<li><span>综&nbsp;&nbsp;艺</span>|<a href="http://www.qiyi.com/zongyi/ttxs.html?source=H_YS" target="_blank">天天向上</a><a href="http://www.qiyi.com/zongyi/dxslm.html?source=H_YS" target="_blank">大学生了没</a><a href="http://www.qiyi.com/zongyi/wajgc.html?source=H_YS" target="_blank">我爱记歌词</a></li>
+	<li><span>娱&nbsp;&nbsp;乐</span>|<a href="http://yule.qiyi.com/20101112/n124082.html?source=H_YS" target="_blank">张柏芝儿子演戏</a><a href="http://yule.qiyi.com/20101112/n124094.html?source=H_YS" target="_blank">张菲熊抱周杰伦</a></li>
+  	<li><span>动&nbsp;&nbsp;漫</span>|<a href="http://www.qiyi.com/dongman/mhlsdqj.html?source=H_YS" target="_blank">猫和老鼠</a><a href="http://www.qiyi.com/dongman/xyyyhtl.html?source=H_YS" target="_blank">喜羊羊与灰太狼</a><a href="http://www.qiyi.com/dongman/ty.html?source=H_YS" target="_blank">天眼</a></li>
+  </ul>
+</div>
+</div>
+<!--推荐视频-->
+<div class="colc video">
+<h3><a href="http://yingshi.tom.com/?source=H_YS" target="_blank">推荐视频</a></h3>
+ <!--推荐视频-图文-->
+<div class="piclist clearfix">
+	<div class="photo"><a href="http://yule.qiyi.com/20101112/n124088.html?source=H_YS" target="_blank"><img src="http://www.qiyipic.com/yule/20101112/6c7210475177420684ad3dfa6f7b9075.jpg"    alt=""    width="110" height="70" border="0" /></a></div>
+	<dl>
+		<dt><a href="http://yule.qiyi.com/20101112/n124088.html?source=H_YS" target="_blank">大S汪小菲关微博</a></dt>
+		<dd>由于网友恶意攻击，大S汪小菲同时关微博。<a href="http://yule.qiyi.com/20101112/n124088.html?source=H_YS" target="_blank">详细>></a></dd>
+	</dl>
+</div>
+<div class="piclist clearfix">
+	<div class="photo"><a href="http://yule.qiyi.com/ydyy.html?source=H_YS" target="_blank"><img src="http://www.qiyipic.com/yule/20101108/296b769ef9a5414782258f28c878a9b8.jpg"    alt=""    width="110" height="70" border="0" /></a></div>
+	<dl>
+		<dt><a href="http://yule.qiyi.com/ydyy.html?source=H_YS" target="_blank">奇艺广州亚运专题</a></dt>
+		<dd>奇艺娱乐《乐动亚运》专题，同步关注亚运。<a href="http://yule.qiyi.com/ydyy.html?source=H_YS" target="_blank">详细>></a></dd>
+	</dl>
+</div>
+<div class="piclist clearfix">
+	<div class="photo"><a href="http://www.qiyi.com/zongyi/kxll.html?source=H_YS" target="_blank"><img src="http://www.qiyipic.com/zongyi/fix/kxll101110tom.jpg"    alt=""    width="110" height="70" border="0" /></a></div>
+	<dl>
+		<dt><a href="http://www.qiyi.com/zongyi/kxll.html?source=H_YS" target="_blank">康熙来了</a></dt>
+		<dd>女艺人真心话！嫁给哪个男人真的是好眼光呢？<a href="http://www.qiyi.com/zongyi/kxll.html?source=H_YS" target="_blank">详细>></a></dd>
+	</dl>
+</div>
+<div class="piclist clearfix">
+	<div class="photo"><a href="http://www.qiyi.com/zongyi/20101112/n124124.html?source=H_YS" target="_blank"><img src="http://www.qiyipic.com/zongyi/fix/hxyj101111tom.jpg"    alt=""    width="110" height="70" border="0" /></a></div>
+	<dl>
+		<dt><a href="http://www.qiyi.com/zongyi/20101112/n124124.html?source=H_YS" target="_blank">欢喜冤家</a></dt>
+		<dd>老公为何爱上跳钢管？小夫妻人体书法恶作剧！<a href="http://www.qiyi.com/zongyi/20101112/n124124.html?source=H_YS" target="_blank">详细>></a></dd>
+	</dl>
+</div>
+</div>
+</div>
+	<!--}end mod qiyi-->
+
+	<!--{start mod mingxing-->
+<!--}start modG-->
+<div class="tommod modG">
+<div class="cola sheandhe">
+<h3><a>图片库</a></h3>
+<!--她他-文字上-->
+<!--include virtual="/static/T/007T/61DKCAMS.html"-->
+<ul class="newslist">
+<li>·<a href="http://addpic.yule.tom.com/vw-task/4008-0.html?source=HP_HN" target="_blank">全球最让人羡慕的艳遇</a></li>
+<li>·<a href="http://addpic.yule.tom.com/vw-task/4007-0.html?source=HP_HN" target="_blank">2010环球小姐民族风情服饰</a></li>
+<li>·<a href="http://addpic.yule.tom.com/vw-task/4006-0.html?source=HP_HN" target="_blank">身不在江湖却有其传说的女</a></li>
+<li>·<a href="http://addpic.yule.tom.com/vw-task/4003-0.html?source=HP_HN" target="_blank">还珠格格美女明星命运各异</a></li>
+<li>·<a href="http://addpic.yule.tom.com/vw-task/4005-0.html?source=HP_HN" target="_blank">无端“被丑闻”的十大明星</a></li>
+<li>·<a href="http://addpic.yule.tom.com/vw-task/4004-0.html?source=HP_HN" target="_blank">娱乐圈最擅长劈腿的女星</a></li>
+<li>·<a href="http://addpic.yule.tom.com/vw-task/4002-0.html?source=HP_HN" target="_blank">怀孕女明星赚钱不要命</a></li>
+</ul>
+<!--她他-图-->
+<!--include virtual="/static/T/007T/61DKFBOS.html"-->
+<div class="picsmod">
+<div class="pic">
+<a href="http://images.yule.tom.com/vw/229827-1.html?source=HP_HN" target="_blank"><img src="http://music.yule.tom.com/uimg/2010/11/13/caiyingzhe/1289606122068_1868.jpg" alt="" width="100" height="100" border="0"/></a>
+<a href="http://images.yule.tom.com/vw/229827-1.html?source=HP_HN" target="_blank">情史不堪回首</a>
+</div>
+<div class="pic right">
+<a href="http://images.yule.tom.com/vw/231943-1.html?source=HP_HN" target="_blank"><img src="http://music.yule.tom.com/uimg/2010/11/13/caiyingzhe/1289606107798_2078.jpg" alt="" width="100" height="100" border="0"/></a>
+<a href="http://images.yule.tom.com/vw/231943-1.html?source=HP_HN" target="_blank">85后来势汹汹</a>
+
+</div>
+</div>
+<!--她他-文字下-->
+<div class="thetry">
+  <h4><a href="http://yule.tom.com/tv/?source=HP_XBS" target="_blank">新片新剧</a></h4>
+  <p class="landon"><a href="http://images.yule.tom.com/vw/231685-1.html?source=HP_XBS" target="_blank">·《刑警》苗侨伟黄日华斗戏</a></p>
+  <p class="landon"><a href="http://images.yule.tom.com/vw/228565-1.html?source=HP_XBS" target="_blank">·《西风烈》纯爷们警匪大片</a></p>
+  <p class="landon"><a href="http://images.yule.tom.com/vw/227671-1.html?source=HP_XBS" target="_blank">·《逃亡者Plan B》绝命追击</a></p>
+</div>
+</div>
+
+<div class="colb">
+<!--她风尚-导航-->
+<h2 class="maintitle"><a href="http://yule.tom.com/" target="_blank">明星</a></h2>
+<h3 class="subtitles"><a href="http://yule.tom.com/newspic/celebrity/index.html" target="_blank">风头趸</a>|<a href="http://yule.tom.com/zjl/index.html" target="_blank">美图征集</a>|<a href="http://yule.tom.com/newspic/china/index.html" target="_blank">华人制造</a>|<a href="http://yule.tom.com/newspic/yingshi/index.html" target="_blank">大开眼戒</a>|<a href="http://yule.tom.com/newspic/rihan/index.html" target="_blank">日风韩流</a></h3>
+<!--她风尚-图-->
+<div class="conleft">
+<div class="picnews">
+	<a href="http://yule.tom.com/pop/?source=HP_YULE1" target="_blank"><img src="http://image.post.tom.com/ArticleImage/374/280/5D0009CC2010/1112/1289542311.jpg" alt="袁莉大尺度美背惊艳 灵动微笑塑造时尚丽人"  /></a>
+	<a href="http://yule.tom.com/pop/?source=HP_YULE1" target="_blank" class="link">袁莉大尺度美背惊艳</a>
+</div>
+<div class="picnews">
+	<a href="http://yule.tom.com/2010-11-12/001Q/11309641.html?source=HP_YULE1" target="_blank"><img src="http://image.post.tom.com/ArticleImage/483/81/4300119E2010/1112/1289543006.jpg" alt="陈奕迅光棍节“再婚” 与白冰拍温馨婚纱照"  /></a>
+	<a href="http://yule.tom.com/2010-11-12/001Q/11309641.html?source=HP_SHE1" target="_blank" class="link">陈奕迅光棍节“再婚”</a></div>
+</div>
+<div class="conright">
+<!--她风尚-文字上-->
+<h3><a href="http://images.yule.tom.com/vw/232245-1.html?source=HP_YULE1" target="_blank">刘德华纯白西装简约跳脱 尽显天王风范</a></h3>
+<ul class="newslist top" >
+	<li>·<a href="http://images.yule.tom.com/vw/232331-1.html?source=HP_YULE1" target="_blank">陈燃《芭莎珠宝》展中国风</a> <a href="http://yule.tom.com/2010-11-12/000E/05533325.html?source=HP_YULE1" target="_blank">澳洲佳丽性感抢镜</a></li>
+	<li>·<a href="http://images.yule.tom.com/vw/232329-1.html?source=HP_YULE1" target="_blank">张静初高雅复古成焦点</a> <a href="http://yule.tom.com/2010-11-12/000E/85381979.html?source=HP_YULE1" target="_blank">徐子珊露脐装舞动纤腰</a></li>
+	<li>·<a href="http://images.yule.tom.com/vw/228156-1.html?source=HP_SHE1" target="_blank">靠身体无限吸金的女星</a> <a href="http://images.yule.tom.com/vw/228333-1.html?source=HP_YULE1" target="_blank">鲜为人知的明星婚前协议</a></li>
+	<li>·<a href="http://images.yule.tom.com/vw/228392-1.html?source=HP_YULE1" target="_blank">圈内婀娜多姿的女星们</a> <a href="http://images.yule.tom.com/vw/228543-1.html?source=HP_YULE1" target="_blank">圈内最能闹绯闻的女星们</a></li>
+	<li>·<a href="http://images.yule.tom.com/vw/229829-1.html?source=HP_YULE1" target="_blank">细数性感女星美艳浴照</a> <a href="http://images.yule.tom.com/vw/228154-1.html?source=HP_YULE1" target="_blank">曾经卖身偿还债款的女星</a></li>
+</ul>
+<!--她风尚-文字下-->
+<ul class="newslist">
+<li>·<a href="http://yule.tom.com/2010-11-12/001Q/10573662.html?source=HP_SHE1" target="_blank">葛优示范“死法”过关</a> <a href="http://yule.tom.com/2010-11-12/001Q/08878914.html?source=HP_SHE1" target="_blank">赵文卓范冰冰凄美指数逼人</a></li>
+	<li>·<a href="http://yule.tom.com/2010-11-12/001Q/01635244.html?source=HP_SHE1" target="_blank">王柏杰被诬为情割腕</a> <a href="http://yule.tom.com/2010-11-12/001Q/04226247.html?source=HP_SHE1" target="_blank">何炅张杰助阵《我们约会吧》</a></li>
+	<li>·<a href="http://yule.tom.com/2010-11-12/001E/24137944.html?source=HP_SHE1" target="_blank">赵宝刚《男人帮》开机</a> <a href="http://yule.tom.com/2010-11-12/001E/25639674.html?source=HP_SHE1" target="_blank">《桥隆飙》主演陈洁失踪</a></li>
+	<li>·<a href="http://yule.tom.com/2010-11-12/001E/26970076.html?source=HP_SHE1" target="_blank">耿乐儒雅绅士亮相香港</a> <a href="http://yule.tom.com/2010-11-12/001E/27354716.html?source=HP_SHE1" target="_blank">张译想起沈傲君直冒冷汗</a></li>
+	<li>·<a href="http://music.yule.tom.com/2010-11-11/002K/13353083.html?source=HP_SHE1" target="_blank">MV：林俊杰《完美新世界》</a> <a href="http://music.yule.tom.com/2010-11-09/002K/10369800.html?source=HP_SHE1" target="_blank">22位主持人《有我》</a></li>
+	<li>·<a href="http://music.yule.tom.com/2010-11-11/002L/11074729.html?source=HP_SHE1" target="_blank">试听：彭青《向往》</a> <a href="http://music.yule.tom.com/2010-11-12/002L/06888202.html?source=HP_SHE1" target="_blank">尚雯婕付辛博-不能承受的爱</a></li>
+</ul>	
+</div>
+</div>
+
+<div class="colc">
+<div class="tomskype">
+	<h3><a target="_blank" href="http://Skype.tom.com/&amp;source=HP_STARDOLL">skype</a></h3>
+	<div class="skypenews">
+<a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18402,18402&cid=0,0,0&sid=19210&advid=273&camid=2876&show=ignore&url=http://skype.tom.com/download/symbian/" target="_blank"><img src="http://i1.tomoimg.cn/uldf/2010/1109/zhaojingfang/skypenews1.gif"  alt=""  /></a>
+	</div>
+	<div class="skypefree">
+		<strong><span>长途</span>新体验</strong>
+		<input type="text" id="skype_dial_phone_input" value="01012345678" />
+<script>
+						function CheckSkype()
+{
+	return true;
+	var isSkypeInstalled = false;
+	if((navigator.userAgent.indexOf('Safari')  != -1) || 
+		(navigator.userAgent.indexOf('Opera')  != -1))
+	{
+		//Sorry for Safari and Opera
+		return false;
+	}
+	else if((navigator.userAgent.indexOf('Win')  != -1) && 
+		(navigator.userAgent.indexOf('MSIE') != -1) && (parseInt(navigator.appVersion) >= 4 )) 
+	{
+		//Check in IE
+		try
+		{
+			var oSkype = new ActiveXObject("Skype.Detection");
+			isSkypeInstalled = typeof(oSkype) == "object";
+		}
+		catch(e)
+		{
+			return false;
+		}
+		if(isSkypeInstalled)
+		{
+			return true;
+		}
+	}
+	else 
+	{
+		//Check in FireFox
+		var skypeMime = navigator.mimeTypes["application/x-skype"];
+		if(typeof(skypeMime) == "object") 
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	return false;
+}
+
+function FormatPhoneNumber(originalNumber)
+{
+	if(originalNumber.length < 11 || originalNumber.length > 12)
+		return false;
+	
+	var formatNumber = "";
+	if(originalNumber.length == 11)
+	{
+		var reg11 = /[0-9]{11}$/; 
+		if(!reg11.test(originalNumber))
+			return false;
+
+		if(originalNumber.charAt(0) == '0')
+		{
+			//010XXXXXXXX
+			formatNumber = originalNumber;
+		}
+		else if(originalNumber.charAt(0) == '1')
+		{
+			//13XXXXXXXXX
+			formatNumber = "0" + originalNumber;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	else if(originalNumber.length == 12)
+	{
+		var reg12 = /0[0-9]{11}$/;
+		if(!reg12.test(originalNumber))
+			return false;
+		formatNumber = originalNumber;
+	}
+	return formatNumber;
+}
+
+var defPhoneNumber = "01012345678";
+function ClearPhoneNumber()
+{
+	var phoneNumber = document.getElementById('skype_dial_phone_input');
+	if((phoneNumber.value.charAt(0) == '*') && (defPhoneNumber == phoneNumber.value.substr(1)))
+	{
+		phoneNumber.value = "*";
+		phoneNumber.style.color = "#000000";
+		
+		if(window.event)
+		{
+			var r = window.event.srcElement.createTextRange();
+			r.moveStart('character', window.event.srcElement.value.length);
+			r.collapse(true);
+			r.select();
+		}
+	}
+	else if(defPhoneNumber == phoneNumber.value)
+	{
+		phoneNumber.value = "";
+		phoneNumber.style.color = "#000000";
+	}
+	return true;
+}
+
+function LimitInput(evt)
+{
+	var inputKey = 0;
+	if(window.event)
+	{
+		inputKey = window.event.keyCode;
+	}
+	else
+	{
+		inputKey = evt.which;
+	}
+	
+	if((inputKey >= 32 && inputKey < 42) ||
+		 (inputKey > 42 && inputKey < 48) ||
+		 (inputKey >= 58 && inputKey < 127))
+	{
+		return false;
+	}
+	if(inputKey == 13)
+	{
+		Dial();
+		return false;
+	}
+	return true;
+}
+
+function Dial()
+{
+	var phoneNumber = document.getElementById('skype_dial_phone_input');
+	if("" == phoneNumber.value)
+	{
+		alert('请输入您要拨打的电话号码');
+		phoneNumber.focus();
+		return false;
+	}
+	
+	var dialType = 0;
+	var inputNumber = phoneNumber.value;
+	if(phoneNumber.value.charAt(0) == '*')
+	{
+		dialType = 1;
+		inputNumber = phoneNumber.value.substr(1);
+	}
+	else if(phoneNumber.value.charAt(0) == '0' && 
+		phoneNumber.value.charAt(1) == '0')
+	{
+		dialType = 2;
+	}
+	
+	var dialNumber = inputNumber;
+	if(dialType == 0 || dialType == 1)
+	{
+		if(defPhoneNumber == inputNumber)
+		{
+			alert('请输入您要拨打的电话号码');
+			phoneNumber.focus();
+			return false;
+		}
+	
+		dialNumber = FormatPhoneNumber(inputNumber);
+		if(dialNumber == false)
+		{
+			alert('请输入您要拨打的电话号码');
+			phoneNumber.focus();
+			return false;
+		}
+	}
+	
+	if(!CheckSkype())
+	{
+		//oops....
+		alert("没有检测到您的Skype，请您暂停使用拦截Skype.Detection插件的程序。如果您还没有Skype，请先下载安装！");
+		return false;
+	}
+	
+	alert('即将为您接通电话，请准备好耳机或者音箱');
+	try
+	{
+		var callFrame = document.createElement("iframe");
+		document.body.appendChild(callFrame);
+		callFrame.frameborder = "no";
+		callFrame.scrolling = "no";
+		callFrame.width = "0";
+		callFrame.height = "0";
+		
+		if(dialType == 0)
+		{
+			callFrame.src = 'callto://+86' + dialNumber;
+		}
+		else if(dialType == 1)
+		{
+			var randomNumber1 = Math.floor(Math.random() * 10);
+			var randomNumber2 = Math.floor(Math.random() * 10);
+			callFrame.src = 'callto://+990086680' + randomNumber1 + randomNumber2 + dialNumber;
+		}
+		else if(dialType == 2)
+		{
+			callFrame.src = 'callto://' + dialNumber;
+		}
+	}
+	catch(e)
+	{
+		return false;
+	}
+	return true;
+}
+		(function(){
+			var tx=document.getElementById('skype_dial_phone_input');
+			var _v=tx.value;
+			tx.onfocus=function(){this.value==_v?this.value='':this.value;}
+			tx.onblur=function(){this.value==''?this.value=_v:this.value;}
+		})()
+		</script>
+
+		<div><a href="#" onClick="javascript:return Dial();" ></a></div>
+		<p>·<a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18403,18403&cid=0,0,0&sid=19211&advid=273&camid=2876&show=ignore&url=http://download.skype.tom.com/Tom-SkypeSetup4.2.exe" target='_blank'>拨打前请下载客户端</a></p>
+	</div>
+	<div class="skypeico">
+		<strong>本期优惠</strong>
+        <a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18404,18404&cid=0,0,0&sid=19212&advid=273&camid=2876&show=ignore&url=http://shop.skype.tom.com/p_t4pf298.htm" target="_blank"><img src="http://i6.tomoimg.cn/images/2010/skypeico.jpg" alt="中国大陆套餐800分钟包月_本期优惠" /></a>
+		<p><del>原价75元</del>现价68元</p>
+		<a href="http://tom.allyes.com/main/adfclick?db=tom&bid=2826,18404,18404&cid=0,0,0&sid=19212&advid=273&camid=2876&show=ignore&url=http://shop.skype.tom.com/p_t4pf298.htm" target="_blank"><img src="http://i6.tomoimg.cn/images/2010/skypebtn.gif" alt="立即购买" /></a>
+	</div>
+</div>	
+<div class="ad">
+<!-- 巨幅4 开始 -->
+<script src="http://js.pub.tom.com/09-hp/tomhp-jf4.js"> </script>
+<!-- 巨幅4 结束 -->
+</div>
+</div>
+
+</div>
+<!--}end modG-->
+	<!--}end mod mingxing-->
+
+	<!--{start mod social-->
+<!--}start modD-->
+<div class="tommod modD">
+
+<div class="cola stories">
+<h3><a href="http://story.news.tom.com/" target="_blank">故事汇</a></h3>
+<!--故事汇-文字-->
+<ul class="newslist">
+	<li>·<a href="http://story.news.tom.com/vw/64405.html?source=HP_STORY" target="_blank">老色狼送给小色狼的40条忠告</a></li>
+	<li>·<a href="http://story.news.tom.com/vw/64363.html?source=HP_STORY" target="_blank">无耻丈夫讲与小三缠绵细节</a></li>
+	<li>·<a href="http://story.news.tom.com/vw/64456.html?source=HP_STORY" target="_blank">女性胸部审美标准百年变迁</a></li>
+	<li>·<a href="http://story.news.tom.com/vw/64410.html?source=HP_STORY" target="_blank">这年头 活好自己比什么都强</a></li>
+	<li>·<a href="http://story.news.tom.com/vw/64390.html?source=HP_STORY" target="_blank">小三给老公发勾引短信</a></li>
+	<li>·<a href="http://story.news.tom.com/vw/64451.html?source=HP_STORY" target="_blank">武则天物色“男妃”的秘闻</a></li>
+	<li>·<a href="http://story.news.tom.com/vw/64286.html?source=HP_STORY" target="_blank">最吓人的几个恐怖小故事</a></li>
+	<li>·<a href="http://story.news.tom.com/vw/64412.html?source=HP_STORY" target="_blank">传说中的BT爱情小故事：孩子</a></li>
+	<li>·<a href="http://story.news.tom.com/vw/64374.html?source=HP_STORY" target="_blank">不是第三者你却伤我至骨髓</a></li>
+	<li>·<a href="http://story.news.tom.com/vw/64395.html?source=HP_STORY" target="_blank">婚姻已到“双道出轨”边缘</a></li>
+	<li>·<a href="http://story.news.tom.com/vw/64386.html?source=HP_STORY" target="_blank">同居女友梦话说“打掉了”</a></li>
+</ul>
+<!--故事汇-图-->
+<div class="picsmod">
+<div class="pic">
+	<a href="http://story.news.tom.com/piclist-0-0.html?source=HP_STORY" target="_blank"><img src="http://i1.tomoimg.cn/uldf/2010/1113/yanjing/94.jpg"  alt="拯救冷欲男人"  /></a>
+	<a href="http://story.news.tom.com/piclist-0-0.html?source=HP_STORY" target="_blank" class="link" >拯救冷欲男人</a>
+</div>
+<div class="pic right">
+	<a href="http://story.news.tom.com/piclist-4-0.html?source=HP_STORY" target="_blank"><img src="http://i1.tomoimg.cn/uldf/2010/1113/yanjing/93.jpg"  alt="笑趴下的强图"  /></a>
+	<a href="http://story.news.tom.com/piclist-4-0.html?source=HP_STORY" target="_blank" class="link" >把你笑趴下</a>
+</div>
+</div>			
+</div>
+
+
+<div class="colb">
+<!--社会-导航-->
+<h2 class="maintitle"><a href="http://social.news.tom.com/" target="_blank">社会</a></h2>
+<h3 class="subtitles"><a href="http://social.news.tom.com/shtssh/index.html" target="_blank">图说社会</a>|<a href="http://social.news.tom.com/shshgj/index.html" target="_blank">社会广角</a>|<a href="http://social.news.tom.com/shqwys/index.html" target="_blank">奇闻奇事</a>|<a href="http://social.news.tom.com/shfztd/index.html" target="_blank">法制天地</a></h3>	
+
+<div class="conleft">
+<!--社会-图-->
+<div class="picnews">
+  <a href="http://social.news.tom.com/?source=HP_NEWS" target="_blank"><img src="http://i1.tomoimg.cn/uldf/2010/1113/yanjing/77.jpg"  alt="选秀女为出名当众脱光"  /></a>
+  <a href="http://social.news.tom.com/?source=HP_NEWS" target="_blank" class="link">选秀女为出名当众脱光</a>
+</div>			
+<!--社会-文字左-->
+<ul class="newslist">
+         <li><a href="http://show.tom.com/vw/28596-1.html?source=HP_NEWS" target="_blank">广西北海海底洗浴服务</a></li>
+	<li><a href="http://show.tom.com/vw/28593-1.html?source=HP_NEWS" target="_blank">湖南首选最美胸模(图)</a></li>
+	<li><a href="http://show.tom.com/vw/28609-1.html?source=HP_NEWS" target="_blank">西西里岛木乃伊真相</a></li>
+	<li><a href="http://show.tom.com/vw/28595-1.html?source=HP_NEWS" target="_blank">可怜早衰儿酷似外星人</a></li>
+	<li><a href="http://show.tom.com/vw/28600-1.html?source=HP_NEWS" target="_blank">非洲街头血腥暴力实拍</a></li>
+	<li><a href="http://show.tom.com/vw/28602-1.html?source=HP_NEWS" target="_blank">世界顶级人体国旗彩绘</a></li>
+	<li><a href="http://show.tom.com/vw/28608-1.html?source=HP_NEWS" target="_blank">00后超级非主流小孩</a></li>
+</ul>	
+</div>
+<div class="conright">
+<!--社会-文字上-->
+<h3><a href="http://social.news.tom.com/rmtp/index.html?source=HP_NEWS" target="_blank">足球宝贝再陷沐浴丑闻门</a></h3>
+<ul class="newslist top" >
+
+<li>
+·<a href="http://post-social.news.tom.com/s/gallery_080008F73167.html?source=HP_NEWS"  target="_blank" >小三索要青春损失费不成挠民警</a>·<a href="http://post-social.news.tom.com/s/gallery_E4000AEB3095.html?source=HP_NEWS"  target="_blank" >动物kiss也销魂</a></li>
+
+<li>·<a href="http://post-social.news.tom.com/s/gallery_F00009772941.html?source=HP_NEWS" target="_blank">英国惊现真实版“吸血鬼”兄弟</a>·<a href="http://post-social.news.tom.com/s/gallery_6D000A943084.html?source=HP_NEWS" target="_blank">孕妇惨死在医院</a></li>
+
+<li>·<a href="http://post-social.news.tom.com/s/gallery_D5000AC13018.html?source=HP_NEWS"  target="_blank" >监狱净心术 不用“干活”的改造</a>·<a href="http://post-social.news.tom.com/s/gallery_8700090F4871.html?source=HP_NEWS" target="_blank">巴西监狱大暴动</a></li>
+
+<li>·<a href="http://post-social.news.tom.com/s/gallery_93000AA73014.html?source=HP_NEWS"  target="_blank" >6岁女童遭父母“烙刑”</a>·<a href="http://post-social.news.tom.com/s/gallery_92000B263279.html?source=HP_NEWS" target="_blank">网友实拍人体彩绘现场</a></li>
+
+<li>·<a href="http://post-social.news.tom.com/s/gallery_28000ADD2916.html?source=HP_NEWS"  target="_blank" >遭掌掴老菜农接受各方援助</a>·<a href="http://post-social.news.tom.com/s/gallery_92000B263278.html?source=HP_NEWS" target="_blank">萌坏了的小东西</a></li>
+</ul>
+<!--社会-文字下-->
+<ul class="newslist">
+<li>·<a href="http://post-social.news.tom.com/s/AB0009212880.html?source=HP_NEWS" target="_blank">纸币含百万细菌 钞票处理中心负责“洗钱”(图)</a></li>
+<li>·<a href="http://post-social.news.tom.com/s/63000AD83055.html?source=HP_NEWS" target="_blank">女子穿内衣裤12楼跳下当场死亡 屋内曾发生争吵</a></li>
+<li>·<a href="http://post-social.news.tom.com/s/83000B373535.html?source=HP_NEWS" target="_blank">小学生卖废纸攒钱养老虎 动物园长90度鞠躬感谢</a></li>
+<li>·<a href="http://post-social.news.tom.com/s/59000AA23508.html?source=HP_NEWS" target="_blank">金婚老汉嫌弃老伴炒菜太咸 将其掐死后挖坑掩埋</a></li>
+<li>·<a href="http://post-social.news.tom.com/s/FE0009223020.html?source=HP_NEWS" target="_blank">新婚妻子因车祸成废人 恋爱日记成丈夫精神支柱</a></li>
+<li>·<a href="http://post-social.news.tom.com/s/310008DF3494.html?source=HP_NEWS" target="_blank">银行粗心多给了1.8万 取款人将错就错拒还成被告</a></li>
+</ul>
+</div>
+</div>
+
+<div class="colc discovery">
+<h3><a href="http://discovery.tom.com/" target="_blank">探索</a></h3>
+<!--探索-图-->
+<div class="picsmod">
+<div class="pic">
+	<a href="http://discovery.tom.com/static/L/002L/4QHQHOU8.html?source=HP_DISCOVERY" target="_blank"><img src="http://i1.tomoimg.cn/uldf/2010/1113/yanjing/80.jpg"  alt="性感内衣秀火爆上演"  /></a>
+	<a href="http://discovery.tom.com/static/L/002L/4QHQHOU8.html?source=HP_DISCOVERY" target="_blank" class="link" >性感内衣秀火爆上演</a>
+</div>
+<div class="pic right">
+	<a href="http://slides.discovery.tom.com/vw/232346-1.html?source=HP_DISCOVERY" target="_blank"><img src="http://i1.tomoimg.cn/uldf/2010/1113/yanjing/79.jpg"  alt="街头恶搞总有新惊喜"  /></a>
+	<a href="http://slides.discovery.tom.com/vw/232346-1.html?source=HP_DISCOVERY" target="_blank" class="link" >恶搞总有新惊喜</a>
+</div>
+</div>	
+<!--探索-文字-->		
+<ul class="newslist" >
+	<li><a href="http://slides.discovery.tom.com/vw/232266-1.html?source=HP_DISCOVERY" target="_blank">818全球各的超性感天气预报员</a></li>
+	<li><a href="http://slides.discovery.tom.com/vw/232272-1.html?source=HP_DISCOVERY" target="_blank">猛女在家闲不住 路人就尴尬了！</a></li>
+	<li><a href="http://slides.discovery.tom.com/vw/232282-1.html?source=HP_DISCOVERY" target="_blank">图解孕妇体内胎儿各时期发育</a></li>
+	<li><a href="http://slides.discovery.tom.com/vw/232283-1.html?source=HP_DISCOVERY" target="_blank">爆笑：12个最为尴尬的时刻</a></li>
+	<li><a href="http://slides.discovery.tom.com/vw/232337-1.html?source=HP_DISCOVERY" target="_blank">崩溃到死的恶作剧 真是作孽啊</a></li>
+	<li><a href="http://slides.discovery.tom.com/vw/232366-1.html?source=HP_DISCOVERY" target="_blank">饱经战火洗礼的苏丹野生动物</a></li>
+	<li><a href="http://slides.discovery.tom.com/vw/232374-1.html?source=HP_DISCOVERY" target="_blank">给力围脖 让我笑点都变低了(图)</a></li>
+	<li><a href="http://slides.discovery.tom.com/vw/232382-1.html?source=HP_DISCOVERY" target="_blank">希特勒情妇爱娃的清晰彩照</a></li>
+	<li><a href="http://slides.discovery.tom.com/vw/232392-1.html?source=HP_DISCOVERY" target="_blank">高清:英国荷兰遭遇狂风暴雨天气</a></li>
+	<li><a href="http://slides.discovery.tom.com/vw/232396-1.html?source=HP_DISCOVERY" target="_blank">全球知名性感内衣秀火爆上演(图)</a></li>
+</ul>	
+</div>
+	
+</div>
+<!--}end modD-->
+	<!--}end mod social-->
+
+	<!--{start mod sports-->
+<!--include virtual="/static/6/0086/61BHD3BP.html"-->
+	<!--}end mod sports-->
+
+	<!--{start mod auto-->
+<!--}start modF-->
+<div class="tommod modF">
+
+<div class="cola digital">
+<h3><a href="http://it.tom.com/" target="_blank">it</a></h3>
+<div class="picsmod">
+<div class="pic">
+<a href="http://it.tom.com/a/11647853.shtml?source=HP_IT" target="_blank"><img src="http://image.tianjimedia.com/uploadImages/2010/315/FG9PMX9F986N_1.jpg" alt="" width="80" height="60" /></a><a href="http://it.tom.com/a/11647853.shtml?source=HP_IT" target="_blank">三星BX2350</a>
+</div>
+<div class="pic right">
+<a href="http://it.tom.com/a/11648323.shtml?source=HP_IT" target="_blank"><img src="http://image.tianjimedia.com/uploadImages/2010/315/OH928FT5FDVS_L.jpg" alt="" width="80" height="60" /></a><a href="http://it.tom.com/a/11648323.shtml?source=HP_IT" target="_blank">关注超高手机</a>
+</div>
+<div class="pic">
+<a href="http://it.tom.com/a/11616190.shtml?source=HP_IT" target="_blank"><img src="http://image.tianjimedia.com/uploadImages/2010/300/LQ2716A0X9B2_1.jpg" alt="" width="80" height="60" /></a><a href="http://it.tom.com/a/11616190.shtml?source=HP_IT" target="_blank">数码单反相机</a>
+</div>
+<div class="pic right">
+<a href="http://it.tom.com/a/11646671.shtml?source=HP_IT" target="_blank"><img src="http://image.tianjimedia.com/uploadImages/2010/315/63Z3O0QPFSM8_1.jpg" alt="" width="80" height="60" /></a><a href="http://it.tom.com/a/11646671.shtml?source=HP_IT" target="_blank">11月冰箱报价</a>
+</div>
+</div>
+<!--news start-->
+<ul class="newslist">
+<li>·<a href="http://it.tom.com/a/11646671.shtml?source=HP_IT" target="_blank">11月高人气冰箱报价揭秘</a></li>
+<li>·<a href="http://it.tom.com/a/11648256.shtml?source=HP_IT" target="_blank">八款主流电容屏手机大推荐</a></li>
+<li>·<a href="http://it.tom.com/a/11647319.shtml?source=HP_IT" target="_blank">7公斤大容量洗衣机推荐</a></li>
+<li>·<a href="http://it.tom.com/a/11641107.shtml?source=HP_IT" target="_blank">佳明GPS</a></li>
+<li>·<a href="http://it.tom.com/a/11649603.shtml?source=HP_IT" target="_blank">免费获取高交会门票</a></li>
+<li>·<a href="http://it.tom.com/a/11649542.shtml?source=HP_IT" target="_blank">Windows Phone7的七个优势</a></li>
+<li>·<a href="http://it.tom.com/a/11649162.shtml?source=HP_IT" target="_blank">宇瞻内存DDR3 1333内存推荐</a></li>
+<li>·<a href="http://it.tom.com/a/11649082.shtml?source=HP_IT" target="_blank">商务娱乐全能本</a></li>
+</ul>
+<!--news end-->
+</div>
+
+<div class="colb">
+<h2 class="maintitle"><a href="http://auto.tom.com/" target="_blank">汽车</a></h2>
+<!--汽车-导航-->
+<h3 class="subtitles"><a href="http://auto.tom.com/news/?source=HP_auto" target="_blank">行业资讯</a>|<a href="http://auto.tom.com/xinche/?source=HP_auto" target="_blank">新车</a>|<a href="http://auto.tom.com/gouche/?source=HP_auto" target="_blank">购车</a>|<a href="http://auto.tom.com/roadtest/?source=HP_auto" target="_blank">试驾</a>|<a href="http://auto.tom.com/waiting/?source=HP_auto" target="_blank">香约</a>|<a href="http://auto.tom.com/quwen2.html?source=HP_auto" target="_blank">汽车趣闻</a>|<a href="http://data.auto.tom.com/?source=HP_auto" target="_blank">汽车产品库</a></h3>
+<div class="conleft">
+<!--汽车-图-->
+<div class="picnews">
+	<a href="http://auto.tom.com/quwen2.html?source=HP_auto" target="_blank"><img src="http://auto.tom.com/uldf/2010/1113/fengsongmeng/13.jpg" alt="车模大胆着透明内裤上场" /></a>
+	<a href="http://auto.tom.com/quwen2.html?source=HP_auto" target="_blank" class="link">车模大胆着透明内裤上场</a>
+</div>
+<!--汽车-文字左-->
+<ul class="newslist">
+<li><a href="http://auto.tom.com/2010-11-13/0DB0/03659452.html?source=HP_auto" target="_blank">荣威350最高降7500元</a></li>
+<li><a href="http://auto.tom.com/2010-11-13/0DAV/03460782.html?source=HP_auto" target="_blank">奇瑞QQ6可优惠5500元</a></li>
+<li><a href="http://auto.tom.com/2010-11-13/0DB4/03126814.html?source=HP_auto" target="_blank">君威优惠最高8000元</a></li>
+<li><a href="http://auto.tom.com/2010-11-13/0DB0/02495938.html?source=HP_auto" target="_blank">悦达起亚秀尔降8000元</a></li>
+<li><a href="http://auto.tom.com/2010-11-13/0DB0/62351748.html?source=HP_auto" target="_blank">购英朗累计优惠9500元</a></li>
+<li><a href="http://auto.tom.com/2010-11-13/0DB0/02729025.html?source=HP_auto" target="_blank">思域在沪优惠1.5万元</a></li>
+<li><a href="http://auto.tom.com/2010-11-13/0DB0/02947370.html?source=HP_auto" target="_blank">骐达可现金优惠1.6万</a></li>
+</ul>
+</div>
+<div class="conright">
+<!--汽车-文字上-->
+<h3><a href="http://auto.tom.com/2010-11-13/0D5G/02082510.html?source=HP_auto" target="_blank">性价比最重要 18万内4款高性能轿车推荐</a></h3>
+<ul class="newslist top" >
+  <li>·<a href="http://club.auto.tom.com?source=HP_auto" target="_blank">【网友】</a> <a href="http://auto.tom.com/quwen2.html?source=HP_auto" target="_blank">强人如何看交通标志</a> <a href="http://auto.tom.com/ccl.html?source=HP_auto" target="_blank">车模集中营性感胸袭 </a></li>
+  <li>·<a href="http://auto.tom.com/xinche/?source=HP_auto" target="_blank">【网友】</a> <a href="http://post.auto.tom.com/s/gallery_63000AD83047.html?source=HP_auto" target="_blank">裸体美女街头怪异举动 易引发交通事故！</a></li>
+  <li>·<a href="http://auto.tom.com/gouche/?source=HP_auto" target="_blank">【购车】</a> <a href="http://auto.tom.com/2010-11-13/0D5G/05564482.html?source=HP_auto" target="_blank">只花8万元购车 6款高性价比家用车型推荐</a></li>
+  <li>·<a href="http://auto.tom.com/news/?source=HP_auto" target="_blank">【行业】</a> <a href="http://post.auto.tom.com/02001BDC302.html?source=HP_auto" target="_blank">中国电动车发展看上去很美好却前景迷茫</a></li>
+   <li>·<a href="http://auto.tom.com/gouche/?source=HP_auto" target="_blank">【购车】</a> <a href="http://auto.tom.com/2010-11-13/0D5G/04646887.html?source=HP_auto" target="_blank">享受从大开始 10万元级别大空间车型推荐</a></li>
+</ul>
+<!--汽车-文字下-->
+<ul class="newslist">
+         <li>·<a href="http://auto.tom.com/2010-11-13/0D5C/07668208.html?source=HP_auto" target="_blank">保时捷将推Cayman CS</a> <a href="http://auto.tom.com/2010-11-13/0D5C/08827307.html?source=HP_auto" target="_blank">奥迪谋划新旗舰豪华车A9</a></li>
+         <li>·<a href="http://post.auto.tom.com/s/gallery_0500093D3558.html?source=HP_GUANZHU?source=HP_auto" target="_blank">这些车闻趣事让我无语</a> <a href="http://post.auto.tom.com/s/gallery_D40008FE3026.html?source=HP_auto" target="_blank">网络炫富炫豪车的美女们</a></li>         
+         <li>·<a href="http://auto.tom.com/2010-11-13/0D5B/07196304.html?source=HP_auto" target="_blank">新一代途锐本月将上市</a> <a href="http://auto.tom.com/2010-11-13/0D5C/07470660.html?source=HP_auto" target="_blank">奔驰C63 AMG COUPE谍照</a></li>         
+         <li>·<a href="http://auto.tom.com/2010-11-13/0D5B/06981358.html?source=HP_auto" target="_blank">马自达8本月27日下线</a> <a href="http://auto.tom.com/2010-11-13/0D5B/06847952.html?source=HP_auto" target="_blank">2011款速腾11月15日上市</a></li>         
+         <li>·<a href="http://auto.tom.com/2010-11-13/0D5C/60276872.html?source=HP_auto" target="_blank">Jeep全新大切诺基国内发布</a> <a href="http://ctx.tom.com/?source=HP_auto" target="_blank">中国勒芒轻卡耐力赛</a></li>         
+  <li>·组图：<a href="http://auto.tom.com/quwen2.html" target="_blank">趣闻</a>
+            <a href="http://data.auto.tom.com/autopic.htm" target="_blank">汽车</a>
+	  视频：<a href="http://search.auto.tom.com/front1/sFlashList.jsp?pageNum=1" target="_blank">酷车</a>
+	  <a href="http://search.auto.tom.com/front1/autopicList.jsp?type=2" target="_blank">车模</a>
+  <a href="http://search.auto.tom.com/front1/flashList.jsp?pageNum=1&type=2" target="_blank">搞笑</a></li>
+</ul>	
+</div>
+</div>
+
+<div class="colc carsprocucts">
+<h3><a href="http://data.auto.tom.com/?source=HP_QCK" target="_blank">汽车产品库</a></h3>
+<!--汽车产品库-图-->
+<div class="picsmod">
+<div class="pic"><a href="http://data.auto.tom.com/si-16-114-seriesimage1416.htm?type=1&source=HP_QCK " target="_blank"><img src="http://auto.tom.com/uldf/2010/1112/dongxiaoying/tu1.jpg"  alt="南汽名爵 MG6"  /></a>
+ <a href="http://data.auto.tom.com/ss-16-114-series1416.htm?source=HP_QCK " target="_blank"  class="link">南汽名爵 MG6</a></div>
+<div class="pic right">
+	<a href="http://data.auto.tom.com/si-09-110-seriesimage1009.htm?type=1&source=HP_QCK " target="_blank"><img src="http://auto.tom.com/uldf/2010/1112/dongxiaoying/tu222.jpg"  alt="上汽 荣威550"  /></a>
+	<a href="http://data.auto.tom.com/ss-09-110-series1009.htm?source=HP_QCK" target="_blank" class="link" >上汽 荣威550</a></div>
+</div>
+
+<h4><a href="http://data.auto.tom.com/?source=HP_QCK" target="_blank">价格</a></h4>
+<p class="pricerange"><a href="http://search.auto.tom.com/s?priceRange=1&source=HP_QCK" target="_blank">5万以下</a><a href="http://search.auto.tom.com/s?priceRange=2&source=HP_QCK" target="_blank">5-10万</a><a href="http://search.auto.tom.com/s?priceRange=3&source=HP_QCK" target="_blank">10-15万</a><a href="http://search.auto.tom.com/s?priceRange=4&source=HP_QCK" target="_blank">15-25万</a><a href="http://search.auto.tom.com/s?priceRange=5&source=HP_QCK" target="_blank">25-50万</a><a href="http://search.auto.tom.com/s?priceRange=6&source=HP_QCK" target="_blank">50万以上</a></p>
+
+<!--汽车产品库-文字-->
+<ul class="newslist" >
+   <li><a href="http://club.auto.tom.com/item_324_24364_0_0.html?source=HP_QCK" target="_blank">只有你想不到 超酷奔驰smart彩绘小车</a></li>
+   <li><a href="http://club.auto.tom.com/item_38_347844_0_1.html?source=HP_QCK" target="_blank">玩“车震” 网友分享13条雷人恶搞妙招</a></li>
+  <li><a href="http://club.auto.tom.com/item_1132_5905_0_0.html?source=HP_QCK" target="_blank">社会需要爱 TOM乐驰车友特校看望聋童</a></li>
+  <li><a href="http://club.auto.tom.com/item_41_21097_0_1.html?source=HP_QCK" target="_blank">第六届TOM汽车社区“盖楼大赛”启动啦 </a></li>
+</ul>
+
+
+			<div class="checkprice" id="btSearchBoxId">
+				<h5><a href="http://price.bitauto.com/" target="_blank">新车报价查询</a></h5>
+				<a href="http://www.bitauto.com/" target="_blank" class="ycw">易车网</a>
+				<form onsubmit="return false"><select name="bigBrandId"><option  value="-1">请选择品牌</option></select><select name="subBrandId"><option  value="-1">请选择系列</option></select><button name="searchSubmit" class="check" >查询</button></form>
+				<form onsubmit="return false"><input type="text" name="KeyWord" id="KeyWord" class="keyword" value="请输入车型关键词，如：奔腾！"/><button name="searchSubmit" class="check" >查询</button></form>
+
+			</div>
+<script type="text/javascript" src="http://img1.bitauto.com/price/mainjs/bitautoPriceSearch090109v2.js"></script>
+<script type="text/javascript">
+var priceSearch=new btPriceSearch();
+priceSearch.postDUrl="http://price.bitauto.com/tom/keyword.aspx";
+priceSearch.postSUrl="http://price.bitauto.com/tom/brand.aspx";
+priceSearch.cityUrl="http://image.bitauto.com/price/PriceCreateScript/HotCity.js";
+priceSearch.brandUrl="http://img1.bitauto.com/bt/Price/js/autodata/brand.js";
+priceSearch.brandLetter=["国产","进口","其他","全国"];
+priceSearch.inputClueTo=["请输入车型关键字，如：奔腾！","请输入一个以上的字符，如：奔腾！"];
+priceSearch.DealerBizModeArr=[{value:"2",html:"4S店"},{value:"1",html:"特许经销商"},{value:"0",html:"综合店"}];
+priceSearch.load("btSearchBoxId");
+priceSearch.stat();
+</script>
+
+
+
+</div>
+
+</div>
+<!--}end modF-->
+<!--include virtual="/static/zhoumo_auto.html"-->
+	<!--}end mod auto-->
+
+	<!--{start mod hjsm-->
+<!--{start modH-->
+<div class="tommod modH">
+
+<div class="cola thetest">
+<h3><a href="http://test.tom.com/" target="_blank">全民公测</a></h3>
+<ul class="testline">
+
+<li><a href="http://test.yule.tom.com/static-page/8035_cover.html?source=HP_TEST" target="_blank" class="theTitle">你对什么有偷窥欲</a><span class='result'>6325</span></li>
+
+<li><a href="http://test.she.tom.com/static-page/18552_cover.html?source=HP_TEST" target="_blank" class="theTitle">你是哪种男人杀手</a><span class='result'>9337</span></li>
+
+<li><a href="http://test.news.tom.com/static-page/18551_cover.html?source=HP_TEST" target="_blank" class="theTitle">你的事业高峰在哪</a><span class='result'>7129</span></li>
+
+<li><a href="http://test.sports.tom.com/static-page/8032_cover.html?source=HP_TEST" target="_blank" class="theTitle">你虐人绝招是什么</a><span class='result'>8710</span></li>
+
+<li><a href="http://test.she.tom.com/static-page/8031_cover.html?source=HP_TEST" target="_blank" class="theTitle">测验你的火爆脾气</a><span class='result'>7802</span></li>
+
+<li><a href="http://test.news.tom.com/static-page/8030_cover.html?source=HP_TEST" target="_blank" class="theTitle">你的精神年纪多大</a><span class='result'>6675</span></li>
+
+
+</ul>
+<ul class="newslist">
+<li>·<a href="http://test.news.tom.com/static-page/8022_cover.html?source=HP_TEST"  target="_blank">最近的你能摆脱衰运么</a></li>
+<li>·<a href="http://test.she.tom.com/static-page/8024_cover.html?source=HP_TEST"  target="_blank">养花教你如何让爱情长久</a></li>
+<li>·<a href="http://test.yule.tom.com/static-page/8026_cover.html?source=HP_TEST"  target="_blank">吃西瓜解密你的恋爱必杀技</a></li>
+<li>·<a href="http://test.news.tom.com/static-page/8027_cover.html?source=HP_TEST"  target="_blank">你是个心胸狭窄的人吗</a></li>
+<li>·<a href="http://test.she.tom.com/static-page/8028_cover.html?source=HP_TEST"  target="_blank">用什么办法能结交更多的异性</a></li>
+<li>·<a href="http://test.yule.tom.com/static-page/18548_cover.html?source=HP_TEST"  target="_blank">你是《蜡笔小新》中的谁</a></li>
+<li>·<a href="http://test.sports.tom.com/static-page/18549_cover.html?source=HP_TEST"  target="_blank">挖掘潜藏在你身边的桃花精灵</a></li>
+<li>·<a href="http://test.sports.tom.com/static-page/18550_cover.html?source=HP_TEST"  target="_blank">你在别人心里是什么味道</a></li>
+</ul>
+</div>
+
+<div class="colb">
+ <!--幻剑书盟-导航-->
+<h2 class="maintitle"><a href="http://html.hjsm.tom.com/" target="_blank">幻剑书盟</a></h2>
+<h3 class="subtitles"><a href="http://hjsm.tom.com/new_hj/wanben/" target="_blank">精品</a>|<a href="http://html.hjsm.tom.com/wuxia/index.html" target="_blank">武侠军史</a>|<a href="http://html.hjsm.tom.com/qihuan/index.html" target="_blank">幻想悬疑</a>|<a href="http://html.hjsm.tom.com/dushi/index.html" target="_blank">都市丽人</a>|<a href="http://html.hjsm.tom.com/html/list/index-l.html" target="_blank">热点</a></h3>
+ <!--幻剑书盟-图文-->
+<div class="conleft">
+  <div class="picnews">
+    <a href="http://html.hjsm.tom.com/html/new_book/62/659/index.htm?source=HP_HUANJIAN" target="_blank"><img src="http://i1.tomoimg.cn/uldf/2010/1112/tongtj/1.jpg"  alt="至尊武者"  /></a>
+    <a href="http://html.hjsm.tom.com/html/new_book/62/659/index.htm?source=HP_HUANJIAN" target="_blank" class="link">至尊武者</a>
+  </div>
+  <div class="picnews">
+    <a href="http://html.hjsm.tom.com/html/new_book/73/69/index.htm?source=HP_HUANJIAN" target="_blank"><img src="http://i1.tomoimg.cn/uldf/2010/1112/tongtj/2.jpg"  alt="都市逍遥王"  /></a>
+    <a href="http://html.hjsm.tom.com/html/new_book/73/69/index.htm?source=HP_HUANJIAN" target="_blank" class="link">都市逍遥王</a>
+  </div>
+</div>
+<div class="conright">
+  <h3><a href="http://html.hjsm.tom.com/html/new_book/21/190/index.htm?source=HP_HUANJIAN" target="_blank">上古神虫天界化身，平凡少年奇遇之旅</a></h3>
+  <ul class="newslist top" >
+    <li>·<a href="http://html.hjsm.tom.com/html/new_book/24/3/index.htm?source=HP_HUANJIAN" target="_blank">悬疑历史阴谋盗墓开锁，悬念巅峰，史诗巨著</a></li>
+    <li>·<a href="http://html.hjsm.tom.com/html/new_book/6/94/index.htm?source=HP_HUANJIAN" target="_blank">历史可以改变的么？看阿越如何改变大宋历史</a></li>
+    <li>·<a href="http://html.hjsm.tom.com/html/new_book/65/39/index.htm?source=HP_HUANJIAN" target="_blank">东方修真者意外穿越，重生玄奇神秘的魔法界</a></li>
+    <li>·<a href="http://html.hjsm.tom.com/html/new_book/15/100/index.htm?source=HP_HUANJIAN" target="_blank">史上最纯净的爱情，美丽空姐的同居传说</a></li>
+    <li>·<a href="http://html.hjsm.tom.com/html/new_book/28/695/index.htm?source=HP_HUANJIAN " target="_blank">庞大瑰丽的修真世界，铸就非凡的仙缘人生</a></li>
+  </ul>
+  <ul class="newslist">
+    <li>·<a href="http://html.hjsm.tom.com/html/new_book/69/487/index.htm?source=HP_HUANJIAN" target="_blank">凌驾众神之上的强者，掀起毁灭众神的传说</a></li>
+    <li>·<a href="http://html.hjsm.tom.com/html/new_book/65/39/index.htm?source=HP_HUANJIAN" target="_blank">东方修真者穿越神秘魔法界，剑修称霸天地</a></li>
+    <li>·<a href="http://html.hjsm.tom.com/html/new_book/53/508/index.htm?source=HP_HUANJIAN" target="_blank">异界之子龙无极：逍遥自在，踏遍魔幻大陆</a></li>
+    <li>·<a href="http://html.hjsm.tom.com/html/new_book/72/543/index.htm?source=HP_HUANJIAN" target="_blank">穿越异界的绝世圣主，开天辟地的盘古祖师</a></li>
+    <li>·<a href="http://html.hjsm.tom.com/html/new_book/85/804/index.htm?source=HP_HUANJIAN" target="_blank">看现代邋遢小子，如何辗转江湖，颠覆乱世</a></li>
+    <li>·<a href="http://html.hjsm.tom.com/html/new_book/16/791/index.htm?source=HP_HUANJIAN" target="_blank">少年雄霸异世界之旅，一个王者的传奇经历</a></li>
+  </ul>
+</div>
+</div>
+
+<div class="colc reading">
+<h3><a href="http://dushu.tom.com/" target="_blank">读书</a></h3>
+ <!--读书-图文-->
+<div class="picsmod">
+  <div class="pic">
+    <a href="http://html.dushu.tom.com/html/new_book/87/413/index.htm?source=HP_DUSHU" target="_blank"><img src="http://i1.tomoimg.cn/uldf/2010/1112/tongtj/3.jpg"  alt="莫负苍生"  /></a>
+    <a href="http://html.dushu.tom.com/html/new_book/87/413/index.htm?source=HP_DUSHU" target="_blank" class="link" >莫负苍生</a>
+  </div>
+  <div class="pic right">
+    <a href="http://html.dushu.tom.com/html/new_book/86/779/index.htm?source=HP_DUSHU" target="_blank"><img src="http://i1.tomoimg.cn/uldf/2010/1112/tongtj/4.jpg"  alt="男人健康工具箱"  /></a>
+    <a href="http://html.dushu.tom.com/html/new_book/86/779/index.htm?source=HP_DUSHU" target="_blank" class="link" >男人健康工具箱</a>
+  </div>
+</div>
+<ul class="newslist" >
+  <li><a href="http://html.dushu.tom.com/html/new_book/91/668/index.htm?source=HP_DUSHU " target="_blank">房地产的内幕，不为人知的情色交易</a></li>
+  <li><a href="http://html.dushu.tom.com/html/new_book/88/354/index.htm?source=HP_DUSHU " target="_blank">那些颠倒众生、倾国倾城的美女们</a></li>
+  <li><a href="http://html.dushu.tom.com/html/new_book/91/662/index.htm?source=HP_DUSHU " target="_blank">23岁创业，32岁成为百万富翁的神话</a></li>
+  <li><a href="http://html.dushu.tom.com/html/new_book/91/661/index.htm?source=HP_DUSHU " target="_blank">为什么蒋经国终其一生不见儿子一眼</a></li>
+  <li><a href="http://html.dushu.tom.com/html/new_book/91/379/index.htm?source=HP_DUSHU" target="_blank">一名真实刑警记录的重庆大案、要案</a></li>
+  <li><a href="http://html.dushu.tom.com/html/new_book/89/786/index.htm?source=HP_DUSHU" target="_blank">潜规则让你知道该怎么说、该怎么做</a></li>
+  <li><a href="http://html.dushu.tom.com/html/new_book/89/514/index.htm?source=HP_DUSHU" target="_blank">军事家为了情人杀害自己的结发妻子</a></li>
+  <li><a href="http://html.dushu.tom.com/html/new_book/89/527/index.htm?source=HP_DUSHU " target="_blank">市委书记为何邀请我在车内聊天办公</a></li>
+  <li><a href="http://html.dushu.tom.com/html/new_book/91/274/index.htm?source=HP_DUSHU " target="_blank">新版《红楼梦》里你不知道的秘密</a></li>
+  <li><a href="http://html.dushu.tom.com/html/new_book/88/339/index.htm?source=HP_DUSHU" target="_blank">聊聊本·拉登那些鲜为人知的秘史</a></li>
+</ul>
+</div>
+
+</div>
+<!--}end modH-->
+	<!--}end mod hjsm-->
+
+<div class="tomadrow">
+<!-- 通栏4 开始 -->
+<script src="http://js.pub.tom.com/09-hp/tomhp-fc4.js"> </script>
+<!-- 通栏4 结束 -->
+</div>
+
+	<!--{start mod club-->
+<!--{start modI-->
+<div class="tommod modI">
+<div class="cola others">
+<h3><a href="http://show.news.tom.com/" target="_blank">杂谈</a></h3>
+<!--杂谈-4图-->
+<!--include virtual="/static/V/007V/6AQTFF76.html"-->
+<div class="picsmod picsmod2">
+<div class="pic">
+<a href="http://show.tom.com/vw/28586-1.html?source=HP_ISHOW" target="_blank"><img src="http://news.tom.com/uimg/2010/11/13/yanjing/1289605355039_5392.jpg" width="80" height="80" alt="青春记忆" border="0" /></a><a href="http://show.tom.com/vw/28586-1.html?source=HP_ISHOW" target="_blank">青春记忆</a>
+</div>
+<div class="pic right">
+<a href="http://show.tom.com/vw/28580-1.html?source=HP_ISHOW" target="_blank"><img src="http://news.tom.com/uimg/2010/11/13/yanjing/1289605280828_6673.jpg" width="80" height="80" alt="秋日私语" border="0" /></a><a href="http://show.tom.com/vw/28580-1.html?source=HP_ISHOW" target="_blank">秋日私语</a>
+</div>
+<div class="pic">
+<a href="http://show.tom.com/vw/28575-1.html?source=HP_ISHOW" target="_blank"><img src="http://news.tom.com/uimg/2010/11/13/yanjing/1289605165584_5295.jpg" width="80" height="80" alt="美丽人生" border="0" /></a><a href="http://show.tom.com/vw/28575-1.html?source=HP_ISHOW" target="_blank">美丽人生</a>
+</div>
+<div class="pic right">
+<a href="http://show.tom.com/vw/28529-1.html?source=HP_ISHOW" target="_blank"><img src="http://news.tom.com/uimg/2010/11/13/yanjing/1289605070546_4402.jpg" width="80" height="80" alt="极限诱惑" border="0" /></a><a href="http://show.tom.com/vw/28529-1.html?source=HP_ISHOW" target="_blank">极限诱惑</a>
+</div>
+</div>
+<div class="line"></div>
+<!--战歌-2图-->
+<h4><a target="_blank" href="http://game.tom.com/?source=ZGYX">战歌游戏</a></h4>
+<div class="picsmod">
+<div class="pic">
+	<a href="http://game.tom.com/game_reg/?act=mcsd1&union_no=000001920023&game_id=29&server_id=mcsd1" target="_blank"><img src="http://i1.tomoimg.cn/uldf/2010/1105/zhaojingfang/43.jpg"  alt="难免有杂念"  /></a>
+	<a href="http://game.tom.com/game_reg/?act=mcsd1&union_no=000001920023&game_id=29&server_id=mcsd1" target="_blank" class="link" >难免有杂念</a>
+</div>
+<div class="pic right">
+	<a href="http://game.tom.com/game_reg/?act=frxz_reg6&union_no=000001920022&game_id=32&server_id=frxz3" target="_blank"><img src="http://i1.tomoimg.cn/uldf/2010/1105/zhaojingfang/88.jpg"  alt="飘飘欲“仙”"  /></a>
+	<a href="http://game.tom.com/game_reg/?act=frxz_reg6&union_no=000001920022&game_id=32&server_id=frxz3" target="_blank" class="link" >飘飘欲“仙”</a>
+</div>
+</div>
+</div>
+
+<div class="colb">
+<!--社区-导航-->
+<h2 class="maintitle"><a href="http://club.tom.com/?source=HP_CLUB" target="_blank">社区</a></h2>
+<h3 class="subtitles"><a href="http://club.news.tom.com/forum_741_0_0_0_0.html?source=HP_CLUB" target="_blank">话吧</a>|<a href="http://club.news.tom.com/forum_208_0_0_0_0.html?source=HP_CLUB" target="_blank">军事</a>|<a href="http://club.news.tom.com/forum_400_0_0_0_0.html?source=HP_CLUB" target="_blank">图库</a>|<a href="http://club.yule.tom.com/forum_818_0_0_0_0.html?source=HP_CLUB" target="_blank">雷人</a>|<a href="http://club.she.tom.com/forum_99_0_0_0_0.html?source=HP_CLUB" target="_blank">美容</a>|<a href="http://club.she.tom.com/forum_94_0_0_0_0.html?source=HP_CLUB" target="_blank">减肥</a>|<a href="http://club.weiqi.tom.com/forum_111_0_0_0_0.html?source=HP_CLUB" target="_blank">围棋</a></h3>
+<!--社区-图-->
+<div class="conleft">
+  <div class="picnews">
+	<a href="http://club.news.tom.com/item_1067_540010_0_0.html?source=HP_CLUB" target="_blank"><img src="http://news.tom.com/uldf/2010/1113/xuyang/01.jpg"  alt="李冰冰出道前后的巨变"  /></a>
+	<a href="http://club.news.tom.com/item_1067_540010_0_0.html?source=HP_CLUB" target="_blank" class="link">李冰冰出道前后的巨变</a>
+  </div>
+  <div class="picnews">
+	<a href="http://club.discovery.tom.com/item_154_41723_0_0.html?source=HP_CLUB" target="_blank"><img src="http://news.tom.com/uldf/2010/1113/xuyang/02.jpg"  alt="你不了解的内幕：十大科学骗局"  /></a>
+	<a href="http://club.discovery.tom.com/item_154_41723_0_0.html?source=HP_CLUB" target="_blank" class="link">你不了解的科学骗局</a>
+  </div>
+</div>
+<div class="conright">
+<!--社区-文字上-->
+<h3><a href="http://club.she.tom.com/item_929_806_0_0.html?source=HP_CLUB" target="_blank">你真的决定好了嫁个农村的男朋友吗？</a></h3>
+<ul class="newslist top" >
+	<li>·<a href="http://club.yule.tom.com/item_158_314670_0_0.html?source=HP_CLUB" target="_blank">豪门媳妇品味大PK</a> <a href="http://club.discovery.tom.com/item_766_38445_0_0.html?source=HP_CLUB" target="_blank">揭秘树懒孤儿避难所幸福生活</a></li>
+	<li>·<a href="http://club.yule.tom.com/item_818_153821_0_0.html?source=HP_CLUB" target="_blank">一个剩男婚后的悲惨生活</a> <a href="http://club.yule.tom.com/item_818_153793_0_0.html?source=HP_CLUB" target="_blank">街头恶搞总有新惊喜</a></li>
+	<li>·<a href="http://club.news.tom.com/item_1067_540040_0_0.html?source=HP_CLUB" target="_blank">那些艺术真的耀眼</a> <a href="http://club.yule.tom.com/item_158_314654_0_0.html?source=HP_CLUB" target="_blank">现在残了！曾经很萌的那些童星</a></li>
+	<li>·<a href="http://club.she.tom.com/item_74_371763_0_0.html?source=HP_CLUB" target="_blank">必看！写给奔三的80后们</a> <a href="http://club.discovery.tom.com/item_809_231777_0_0.html?source=HP_CLUB" target="_blank">缅甸寺院里的纯金疙瘩</a></li>
+	<li>·<a href="http://club.yule.tom.com/item_818_153767_0_0.html?source=HP_CLUB" target="_blank">像不像你说了算！神似的生物</a> <a href="http://club.she.tom.com/item_929_804_0_0.html?source=HP_CLUB" target="_blank">看程序员如何追美女</a></li>
+</ul>
+<!--社区-文字下-->
+<ul class="newslist">
+	<li>·<a href="http://club.news.tom.com/item_1067_539987_0_0.html?source=HP_CLUB" target="_blank">图揭全球最雷红毯秀！潘金莲穿成蛋花汤(图)</a></li>
+	<li>·<a href="http://club.yule.tom.com/item_156_744231_0_0.html?source=HP_CLUB" target="_blank">阿Sa为新碟庆功没想过再婚 否认与陈伟霆筑爱巢</a></li>
+	<li>·<a href="http://club.discovery.tom.com/item_766_38430_0_0.html?source=HP_CLUB" target="_blank">湖南浏阳淳口发现50年前的公共食堂</a></li>
+	<li>·<a href="http://club.news.tom.com/item_788_42395_0_0.html?source=HP_CLUB" target="_blank">中国军方发威：美国劲头没了日本更是找不着北</a></li>
+	<li>·<a href="http://club.news.tom.com/item_1067_538909_0_0.html?source=HP_CLUB" target="_blank">动物震撼大迁徙 九死一生的旅程</a></li>
+	<li>·<a href="http://club.yule.tom.com/item_818_153727_0_0.html?source=HP_CLUB" target="_blank">女星PS掉皮的腿 说莫文蔚是第一美腿果然不假</a> </li>
+</ul>
+</div>
+</div>
+
+<div class="colc baitai">
+<h3><a href="http://show.news.tom.com/?source=baitai_news" target="_blank">爱秀</a></h3>
+<!--百态-图-->
+<div class="picsmod">
+<div class="pic">
+	<a href="http://show.tom.com/list.php?source=baitai_news" target="_blank"><img src="http://i1.tomoimg.cn/uldf/2010/1113/yanjing/91.jpg"  alt="冰岛极光 刹那芳华"  /></a>
+	<a href="http://show.tom.com/list.php?source=baitai_news" target="_blank" class="link" >冰岛极光芳华</a>
+</div>
+<div class="pic right">
+	<a href="http://news.tom.com/static/2/OKT2/51NCB8VQ1.html?source=baitai_news" target="_blank"><img src="http://i1.tomoimg.cn/uldf/2010/1113/yanjing/81.jpg"  alt="清纯美少女诱惑"  /></a>
+	<a href="http://news.tom.com/static/2/OKT2/51NCB8VQ1.html?source=baitai_news" target="_blank" class="link" >清纯美少女诱惑</a>
+</div>
+</div>
+<!--百态-文字-->
+<ul class="newslist" >
+	<li><a href="http://show.tom.com/vw/28590-1.html?source=baitai_news" target="_blank">黄立行与众女星合影全都火辣！</a></li>
+	<li><a href="http://show.tom.com/vw/28592-1.html?source=baitai_news" target="_blank">惊愕！纽约青少年帮派活动实录</a></li>
+	<li><a href="http://show.tom.com/vw/28594-1.html?source=baitai_news" target="_blank">超级罕见！网友实拍台湾中元鬼节</a></li>
+	<li><a href="http://show.tom.com/vw/28601-1.html?source=baitai_news" target="_blank">汗流浃背！暴搞笑雷人标语</a></li>
+	<li><a href="http://show.tom.com/vw/28606-1.html?source=baitai_news" target="_blank">巨神奇！此人真能飞檐走壁</a></li>
+	<li><a href="http://show.tom.com/vw/28613-1.html?source=baitai_news" target="_blank">西部戈壁 纯净天路通向自由</a></li>
+	<li><a href="http://show.tom.com/vw/28616-1.html?source=baitai_news" target="_blank">绝蜜糖果 甜在味蕾的完美热恋</a></li>
+	<li><a href="http://show.tom.com/vw/28555-1.html?source=baitai_news" target="_blank">世上顶级性感惊艳壁纸！</a></li>
+	<li><a href="http://show.tom.com/vw/28572-1.html?source=baitai_news" target="_blank">爱琴海的完美清晨 你和阳光都在</a></li>
+	<li><a href="http://show.tom.com/vw/28619-1.html?source=baitai_news" target="_blank">纯美冰淇淋 倚在唇边的热情</a></li>
+
+</ul>
+</div>
+
+</div>
+<!--}end modI-->
+	<!--}end mod club-->
+
+</div>
+<!--}end main-->
+<script type="text/javascript">
+document.write('<scr'+'ipt type="text/javascript" src="http://dynamic.tom.com/weather/weather.php?rdm='+(new Date()).getTime()+'"></scr'+'ipt>');
+</script>
+
+<!--{start footer-->
+<div id="tomfooter">
+	<div class="btmnav"><a href="http://www.tomgroup.com/gb2/" target="_blank">TOM集团</a><a href="http://www.tomgroup.com/gb2/tom/TOMInternet.asp" target="_blank">TOM在线</a><a href="http://www.tomoutdoor.com/gb/main.html" target="_blank">TOM户外</a><a href="http://www.eachnet.com/" target="_blank">易趣购物</a><a href="http://www.tom.com/about/about_adv_1.htm" target="_blank">广告服务</a><a href="http://www.tom.com/about/about_pri_1.htm" target="_blank">私隐政策</a><a href="http://www.tom.com/about/about_contact_1.htm" target="_blank">联系我们</a><a href="http://advice.tom.com/?cid=1" target="_blank" >意见建议</a><a href="http://www.tom.com/about/about_hr.htm" target="_blank">TOM招聘</a><a href="http://www.tomgroup.com/eng/index.asp" target="_blank">About TOM Online</a></div>
+
+	<div class="copyright">Copyright &copy; 2010 TOM.COM Corporation,All Rights Reserved 雷霆万钧 <a href="http://www.tom.com/copyright.html" target="_blank">版权声明及版权保护投诉指引</a><br />TOM网站文明办网 文明上网举报电话：010-51572137　举报邮箱: <a href="mailto:jubao@tomonline-inc.com">jubao@tomonline-inc.com</a></div>
+	<div class="licence"><div class="cert"><span>增值电信业务经营许可证 <a href="http://www.miibeian.gov.cn" target="_blank">B2-20040022</a>号</span><span>信息网络传播视听节目许可证号 0105093号</span><span class="netcom">中国网通提供网络带宽</span><span>网络文化经营许可证 文网文 [2003]0067号</span><span><a href="http://news.tom.com/xuke.html" target="_blank">互联网新闻信息服务许可证</a></span><span><a href="http://www.tom.com/temp/yyzz.html" target="_blank">企业法人营业执照</a></span>
+</div></div>
+
+	<div class="certimg"><a href="http://www.itrust.org.cn/yz/rz.asp?wm=3722616798" target="_blank"><img src="http://i7.tomoimg.cn/images/wx.gif" /></a> <a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=0102000103000038" target="_blank"><img src="http://i7.tomoimg.cn/hp/img/b01.gif" /></a> <a href="http://net.china.cn/" target="_blank"><img src="http://i7.tomoimg.cn/hp/img/b02.gif" /></a> <a href="http://www.allyes.com/" target="_blank"><img src="http://i7.tomoimg.cn/hp/img/b03.gif" /></a> <a href="http://www.bj.cyberpolice.cn/index.htm" target="_blank"><img src="http://i7.tomoimg.cn/hp/img/b04.gif" /></a>	<a href="http://www.12321.cn/" target="_blank"><img src="http://i7.tomoimg.cn/uldf/2008/0513/sunyt/b005.gif" /></a>	<a href="http://www.bjjubao.org/index.htm" target="_blank"><img src="http://www.tom.com/images/2010/b06.gif" /></a></div>
+</div>
+<!--}end footer-->
+
+<script src=http://pre.pub.tom.com/tomjs/index.js></script>
+<script src="http://js.pub.tom.com/09-hp/09hp-body.js"> </script>
+<script type="text/javascript" src="http://sc.tom.com/app/960hp.js"></script>
+<script type="text/javascript" src="http://news.tom.com/v2008.js"></script>
+<script src="http://img.news.tom.com/script/wanrui/wwwwanrui.js"></script>
+
+<!-- 漂浮广告碎片start -->
+<style>
+/*miniad*/
+.miniad{width:219px;padding:4px 5px 0;height:259px;overflow:hidden;position:absolute;background:url(http://www.tom.com/images/2010/minibg.png) no-repeat;_background:url(http://www.tom.com/images/2010/minibg2.png) no-repeat;}
+.miniad h3{height:60px;margin-bottom:5px;}
+.miniad h3 a{display:block;width:100%;height:100%;}
+.miniad h4 {font-size:16px;height:24px;line-height:22px;text-align:center;}
+.miniad h4 a{color:#C30303;}
+.miniad p{line-height:22px;color:#333;}
+.miniad p a{color:#333;}
+.miniad .tcon{padding:0 5px 5px;overflow:hidden;zoom:1;}
+.miniad .tnews{float:right;width:85px;}
+.mpicnews{float:left;background-color:#fff;padding:3px;border:1px solid #D5DDE7;margin-right:8px;text-align:center;line-height:22px;}
+.mpicnews img{display:block;width:100px;height:80px;}
+.mpicnews a{color:#333;}
+.miniad ul{clear:both;line-height:22px;color:#05519B;}
+.miniad ul a{color:#05519B;}
+</style>
+
+<script>
+var tag='';
+tag='<div class="miniad"><h3><a href="http://yc.sports.tom.com/?source=HP_TOPIC" target="_blank"><img src="http://sports.tom.com/uldf/2010/0917/qiaojinshuai/yc.jpg"                                                                                                                                                               alt="2010-2011英格兰足球超级联赛"                                                                                                                                                               /></a></h3><div class="tcon">	<div class="mpicnews">		<a href="http://yc.sports.tom.com/2010-11-12/0OOA/52741348.html" target="_blank"><img src="http://sports.tom.com/uldf/2010/1112/qiaojinshuai/7.jpg"                                   

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<category categoryname="应用有效期" comment="应用有效期" enable="true" adminurl="" logohref="menu_left13.gif" url="#">
+		<childcat url="/period/updatePeriod.jsp" catename="修改应用有效期" />
+	</category>	
+	<category categoryname="帮助" comment="帮助" enable="true"
+		adminurl="" logohref="menu_left14.gif" url="#" >
+		<childcat url="http://www.d-heaven.com" target="_blank" catename="联系我们" />
+		<childcat url="/enterprisemanager/admin_product_version.jsp" catename="版本信息" />
+		<childcat url="/mkey/about.jsp" target="_blank" catename="关于" />
+	</category>
+</root>

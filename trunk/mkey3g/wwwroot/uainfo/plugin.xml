@@ -1,0 +1,25 @@
+<category>
+	<id>importuainfo</id>
+	<categoryname>UA信息</categoryname>
+	<comment>UA Info</comment>
+	<initClassName></initClassName>
+	<iplugin></iplugin>
+	<dep></dep>
+	<vos></vos>
+	<permissions>
+		<permission>
+			<id>1</id>
+			<permissionname>管理权限</permissionname>
+			<privacybit>1</privacybit>
+		</permission>
+		<permission>
+			<id>2</id>
+			<permissionname>访问权限</permissionname>
+			<privacybit>2</privacybit>
+		</permission>
+	</permissions>
+	<servletsmapping>
+	 <string>/csvimport.do=importcsvimport</string>
+	 <string>/uaexa.do=uaexa</string>
+	</servletsmapping>
+</category>

@@ -1,0 +1,25 @@
+<category>
+  <id>mipself</id>
+  <categoryname>自服务平台</categoryname>
+  <comment>Self-service Platform</comment>
+  <iplugin>com.dheaven.mip.plugin.mipcontact.MipContactPlugin</iplugin>
+  <ui>
+    <enable>false</enable>
+    <adminurl></adminurl>
+			<url>../mas/self_default.jsp</url>
+    <logohref>icon_9_96</logohref>
+  </ui>
+  <dep>
+  </dep>
+  <vos>
+  </vos>
+  <permissions>
+  	<permission>
+      <id>1</id>
+      <permissionname>管理权限</permissionname>
+      <privacybit>1</privacybit>
+    </permission>
+  </permissions>
+  <servletsmapping>
+  </servletsmapping>
+</category>

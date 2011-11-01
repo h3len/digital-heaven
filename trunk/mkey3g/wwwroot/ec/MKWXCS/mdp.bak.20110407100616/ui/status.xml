@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<msc type="list" line="2" title="开发进度">
+  <head>
+  </head>
+  <body>
+		<item caption="并发审批问题" sndcaption="状态：解决中"/>
+	  <item caption="内网邮件详细时间" sndcaption="状态：完成"/>
+	  <item caption="新建借款" sndcaption="状态：完成"/>
+	  <item caption="收文审批错误" sndcaption="状态：完成"/>
+	  <item caption="内网邮件新建" sndcaption="状态：完成" />
+	  <item caption="内网邮件回复" sndcaption="状态：完成" />
+	  <item caption="通讯录" sndcaption="状态：完成"/>
+  </body>
+
+</msc>

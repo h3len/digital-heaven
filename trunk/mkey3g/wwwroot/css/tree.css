@@ -1,0 +1,82 @@
+.container {
+	position:relative;
+	padding:1px;
+	padding-top:5px;
+	width:13px;
+	height:13px;
+	}
+
+SPAN.clsCollapse{
+	top:3px;
+	padding-left:1px;
+	padding-top:26px;
+	overflow:hidden;
+	line-height:3px;
+	font-size:13px;
+	cursor:hand;
+}
+
+SPAN.clsExpand{
+	padding-left:1px;
+	overflow:hidden;
+	line-height:3px;
+	font-size:13px;
+	padding-top:3px;
+}
+
+SPAN.clsLeaf{
+	top:0px;
+	padding-left:3px;
+	overflow:hidden;
+	line-height:0px;
+	font-size:11px;
+	cursor:normal;
+}
+
+SPAN.clsLabel{
+
+	overflow:hidden;
+	padding-left:3px;
+	padding-top:2px;
+}
+
+SPAN.clsMouseOver{
+	position:relative;
+	overflow:hidden;
+	padding-left:3px;
+	padding-top:2px;
+	cursor:hand;
+	background-color:#eee;
+	border:1px #999 solid;
+}
+
+SPAN.clsMouseOut{
+	position:relative;
+	overflow:hidden;
+	padding-left:3px;
+	padding-top:2px;
+}
+
+SPAN.clsMouseDown{
+	position:relative;
+	overflow:hidden;
+	padding-left:3px;
+	padding-top:2px;
+}
+
+SPAN.clsCurrentHasFocus{
+	position:relative;
+	overflow:hidden;
+	padding-left:3px;
+	padding-top:2px;
+	cursor:hand;
+}
+
+SPAN.clsNotReady{
+	position:relative;
+	overflow:hidden;
+	padding-left:3px;
+	padding-top:2px;
+}
+DIV.focusColor {backgroud-color:red}
+DIV.normalColor {backgroud-color:green}

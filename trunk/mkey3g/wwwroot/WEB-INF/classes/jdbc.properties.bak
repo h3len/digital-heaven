@@ -1,0 +1,7 @@
+jdbc.driverClass=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://192.168.0.222/dongguannew?useUnicode=true&characterEncoding=utf-8&autoReconnect=true
+jdbc.username=root
+jdbc.password=password
+
+hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+hibernate.show_sql=false

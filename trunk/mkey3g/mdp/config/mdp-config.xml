@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration [
+  <!--定义数据源-->
+  <!ENTITY source "www.changping.gov.cn">
+  <!ENTITY path "http://www.changping.gov.cn">
+
+  <!ENTITY source1 "www.cp.gov.cn">
+  <!ENTITY path1 "http://www.cp.gov.cn">
+  
+  <!ENTITY source2 "www.dgaic.gov.cn">
+  <!ENTITY path2 "http://www.dgaic.gov.cn">
+  
+  <!ENTITY source3 "www.dgzmt.gov.cn">
+  <!ENTITY path3 "http://www.dgzmt.gov.cn">
+
+  <!ENTITY source4 "www.jmnews.com.cn">
+  <!ENTITY path4 "http://www.jmnews.com.cn">
+]>
+
+<mdp:configuration xmlns:mdp="http://mdp.d-heaven.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" debug="true" xsi:schemaLocation="http://mdp.d-heaven.com mdp-config.xsd">
+  <mdp:authorization>
+    <mdp:allow source="*"/>
+  </mdp:authorization>
+
+  <mdp:bs-config source="&source4;" encoding="gb2312">
+    <!--江门新闻网_本地新闻主页-->
+    <mdp:bs-page url="&path4;/$" responseTemplate="jmnews/response_index.xsl" encoding="gb2312"/>
+	<mdp:bs-page url="&path4;/web/sort.aspx\?sort_id=\w+" responseTemplate="jmnews/response_local.xsl" encoding="gb2312"/>
+	<!--<mdp:bs-page url="&path4;/c/\w+/\w+/\w+/\w+/c_\w+.shtml" responseTemplate="jmnews/response_content.xsl" encoding="gb2312"/>-->
+	<mdp:bs-page url="&path4;/c/\w+/\w+/\w+/\w+/c_\w+.shtml" responseTemplate="jmnews/response_content_ad.xsl" encoding="gb2312"/>
+  </mdp:bs-config>
+
+  <!--江门新闻网图片-->
+  <mdp:bs-config source="http://image.jmrb.com" encoding="gb2312"/>
+
+  <mdp:bs-config source="&source3;" encoding="UTF-8">
+    <!--樟木头主页-->
+    <mdp:bs-page url="&path3;/publicfiles/business/htmlfiles/dgzmt/index.htm" responseTemplate="zmt/response_index.xsl" encoding="UTF-8"/>
+    <mdp:bs-page url="&path3;/publicfiles//business/htmlfiles/dgzmt/s\d+/index.htm" responseTemplate="zmt/response_notice.xsl" encoding="UTF-8">
+    	<mdp:bs-rule type="regex" regex="&lt;INFO>      &lt;Title>([^&lt;]+)&lt;/Title>      &lt;SubTitle />      (&lt;ExpStr1>([^&lt;]+)&lt;/ExpStr1>|&lt;ExpStr1 />)      &lt;PublishedTime>([^&lt;]+)&lt;/PublishedTime>      (&lt;Source>([^&lt;]+)&lt;/Source>|&lt;Source />)      &lt;ParentCateId>([^&lt;]+)&lt;/ParentCateId>      &lt;InfoURL>([^&lt;]+)&lt;/InfoURL>    &lt;/INFO>" template="&lt;div name=$1 date=$4 href='/publicfiles/business/htmlfiles/$8' />"/>
+    </mdp:bs-page>
+
+    <mdp:bs-page url="&path3;/publicfiles/business/htmlfiles/dgzmt/s\d+/\d+/\d+.htm" responseTemplate="zmt/response_content.xsl" encoding="UTF-8">
+    	</mdp:bs-page>
+  </mdp:bs-config>
+  
+  <mdp:bs-config source="&source2;" encoding="gb2312" cacheTime="0">
+    <mdp:bs-page url="&path2;/$" responseTemplate="test/response_index.xsl" encoding="gb2312">
+    	<mdp:bs-frame url="&path2;/item.jsp?id=25000051&amp;name=消费警示&amp;type=1"/>
+    	<!--<mdp:bs-frame url="&path2;/item.jsp?id=25000046&amp;name=行政公告&amp;type=1"/>-->
+    </mdp:bs-page>
+    <mdp:bs-page url="&path2;/readArticle.jsp" responseTemplate="test/response_content.xsl" encoding="gb2312"/>
+    <mdp:bs-page url="&path2;/item.jsp?id=25000046" responseTemplate="test/response_zfggcontent.xsl" encoding="gb2312"/>
+  </mdp:bs-config>
+  
+  <mdp:bs-config source="wsnj.gdgs.gov.cn" encoding="gb2312" cacheTime="0">
+  	<mdp:bs-page url="http://wsnj.gdgs.gov.cn/aiccps/jsp/pub/searchBase.jsp\?returnUP=true" responseTemplate="test/response_search.xsl" requestTemplate="test/request_searchcx.xsl" encoding="gb2312"/>
+  	<!--<mdp:bs-page url="http://wsnj.gdgs.gov.cn/aiccps/SearchServlet" responseTemplate="test/response_search.xsl" encoding="gb2312"/>-->
+  </mdp:bs-config>
+
+<mdp:bs-config source="&source;" encoding="gb2312">
+    <!--主页-->
+    <mdp:bs-page url="&path;/$" responseTemplate="response_index.xsl" encoding="gb2312">
+      <mdp:bs-frame url="http://www.cp.gov.cn/newver/03xinwen/05redian.asp?c_id=106"/>
+      <mdp:bs-frame url="http://www.cp.gov.cn/newver/03xinwen/03redian.asp"/>
+      <mdp:bs-frame url="http://www.cp.gov.cn/newver/02zhengfu/zfcg.asp?c_id=18"/>
+    </mdp:bs-page>
+  </mdp:bs-config>
+
+
+  <!--政务公开——-->
+  <mdp:bs-config source="xxgk.dg.gov.cn" encoding="utf-8">
+    <!--常平简介-->
+    <mdp:bs-page url="http://xxgk.dg.gov.cn/publicfiles/business/htmlfiles/\d+/\d*.\d*/\d+/\d+.htm" responseTemplate="cpzf/response_xq.xsl" encoding="utf-8"/>
+
+  </mdp:bs-config>
+
+
+  <mdp:bs-config source="&source1;" encoding="gb2312">
+    <!--主页-->
+    <mdp:bs-page url="&path1;/$" responseTemplate="response_index.xsl" encoding="gb2312">
+      <mdp:bs-frame url="http://www.cp.gov.cn/newver/03xinwen/05redian.asp?c_id=106"/>
+      <mdp:bs-frame url="http://www.cp.gov.cn/newver/03xinwen/03redian.asp"/>
+      <mdp:bs-frame url="http://www.cp.gov.cn/newver/02zhengfu/zfcg.asp?c_id=18"/>
+    </mdp:bs-page>
+    <!--政府公告-->
+    <mdp:bs-page url="&path1;/newver/03xinwen/05redian.asp" responseTemplate="cpzf/response_zfgg.xsl" encoding="gb2312"/>
+    <!--政府公告_分页后带参数-->
+    <!--<mdp:bs-page url="&path1;/newver/03xinwen/05redian.asp\?page=\d+&amp;c_id=\d+" responseTemplate="cpzf/response_zfgg.xsl" encoding="gb2312"/>-->
+    <!--公告详情、热点报道详情-->
+    <mdp:bs-page url="&path1;/htm/info/infoshow_\d+.htm" responseTemplate="cpzf/response_zfgg_xq.xsl" encoding="gb18030"/>
+    <!--热点报道-->
+    <mdp:bs-page url="&path1;/newver/03xinwen/03redian.asp" responseTemplate="cpzf/response_rdbd.xsl" encoding="gb2312"/>
+    <!--常平信息-->
+    <mdp:bs-page url="&path1;/newver/03xinwen/news.asp" responseTemplate="cpzf/response_cpxx.xsl" encoding="gb2312"/>
+    <!--常平信息详情-->
+    <mdp:bs-page url="&path1;/htm/news/nshow_\d+.htm" responseTemplate="cpzf/response_zfgg_xq.xsl" encoding="gb18030"/>
+    <!--共青团讯-->
+    <mdp:bs-page url="&path1;/newver/02zhengfu/tx123.asp" responseTemplate="cpzf/response_gqtx.xsl" encoding="gb2312"/>
+    <!--政府采购-->
+    <mdp:bs-page url="&path1;/newver/02zhengfu/zfcg.asp" responseTemplate="cpzf/response_zfcg.xsl" encoding="gb2312"/>
+    <!--镇长信箱-->
+    <mdp:bs-page url="&path1;/newver/07renxian/zzxx.asp" responseTemplate="cpzf/response_zzxx.xsl" requestTemplate="cpzf/request_zzxx.xsl" encoding="gb18030"/>
+    <!--给镇长写信_信箱使用须知-->
+    <mdp:bs-page url="&path1;/newver/07renxian/sendmail1.asp" responseTemplate="cpzf/response_sendmail_warning.xsl" encoding="gb2312"/>
+    <!--给镇长写信-->
+    <mdp:bs-page url="&path1;/newver/07renxian/sendmail2.asp" responseTemplate="cpzf/response_sendmail.xsl" requestTemplate="cpzf/request_sendmail.xsl" encoding="gb2312"/>
+    <!--给镇长写信-提交写信-->
+    <mdp:bs-page url="&path1;/newver/07renxian/Add_Question_ToDB.asp" responseTemplate="cpzf/response_sendmail_ok.xsl" encoding="gb2312">
+      <mdp:bs-rule regex="&lt;script language='javascript'&gt;alert\('([^&apos;]+)'\);" type="regex" template="&lt;div id='servermsg_ok' value='$1'/&gt;"/>
+    </mdp:bs-page>
+    <!--联系我们-->
+    <mdp:bs-page url="&path1;/\?show=lxwm$" responseTemplate="response_index.xsl" encoding="gb2312"/>
+
+  </mdp:bs-config>
+  <mdp:bs-config source="127.0.0.1:8080" encoding="gb2312"/>
+</mdp:configuration>

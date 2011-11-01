@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:annotation>
+		<xsd:documentation><![CDATA[ 数字天堂 MSC 标签定义文件 v1.0 ]]></xsd:documentation>
+	</xsd:annotation>
+	<!--定义根节点-->
+	<xsd:element name="msc">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="menu" minOccurs="0"/>
+				<xsd:element ref="table" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:attribute name="caption" type="xsd:string"/>
+			<xsd:attribute name="type" type="xsd:string" use="required" fixed="table"/>
+<!--			<xsd:attribute name="cache" type="ECacheType"/>-->
+			<xsd:attribute name="id" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--定义菜单-->
+	<xsd:element name="menu">
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="item"/>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+	<!--定义菜单项-->
+	<xsd:element name="item">
+		<xsd:complexType>
+			<xsd:choice>
+				<xsd:element ref="item" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:choice>
+			<xsd:attribute name="href" type="xsd:string"/>
+			<xsd:attribute name="target" type="ETarget"/>
+			<xsd:attribute name="icon" type="xsd:string"/>
+			<xsd:attribute name="caption" type="xsd:string"/>
+			<xsd:attribute name="id" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--定义菜单表格-->
+	<xsd:element name="table">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string"/>
+		</xsd:simpleType>
+	</xsd:element>
+	
+	<!--定义相关枚举值-->
+	<!--
+	<xsd:simpleType name="ECacheType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="forever"/>
+			<xsd:enumeration value="runtime"/>
+			<xsd:enumeration value="smart"/>
+			<xsd:enumeration value="none"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+-->
+	<xsd:simpleType name="ETarget">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="_blank"/>
+			<xsd:enumeration value="_self"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msc type="form">
+  <head/>
+  <body bgcolor="#eff7f7" background="bg0.1.png">
+    <span dock="top" >
+      <img src="top.png"/>
+    </span>
+    <span>
+      <img src="logo.png"/>
+    </span>
+    <br/>
+    <login/>
+    <span dock="bottom" width="100%" align="right">
+      <img src="word.png"/>
+    </span>
+  </body>
+</msc>

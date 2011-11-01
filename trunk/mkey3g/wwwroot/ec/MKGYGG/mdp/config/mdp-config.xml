@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration[
+  <!--高雅广告-->
+  <!ENTITY source_gygg "www.chinagaoya.com">
+  <!--高雅广告-->
+  <!ENTITY path_gygg "http://www.chinagaoya.com">
+]>
+
+<mdp:configuration xmlns:mdp="http://mdp.d-heaven.com"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://mdp.d-heaven.com  mdp-config.xsd">
+
+  <mdp:authorization>
+    <mdp:allow source="*" />
+  </mdp:authorization>
+
+  <!--高雅广告-->
+  <mdp:bs-config source="&source_gygg;" encoding="gb18030" htmlToXmlProvider="JTIDY" parseType="transfer" retryCount="3">
+    <!--首页-->
+    <mdp:bs-page url="&path_gygg;/index1.asp" responseTemplate="gygg/response_index.xsl">
+    </mdp:bs-page>
+    <!--公司简介-->
+    <mdp:bs-page url="&path_gygg;/gsjj.asp" responseTemplate="gygg/response_fwfw.xsl"/>
+    <!--服务范围-->
+    <mdp:bs-page url="&path_gygg;/service1.asp" responseTemplate="gygg/response_fwfw.xsl"/>
+    <mdp:bs-page url="&path_gygg;/service2.asp" responseTemplate="gygg/response_fwfw.xsl"/>
+    <!--最新动态-->
+    <mdp:bs-page url="&path_gygg;/otype.asp\?owen1" responseTemplate="gygg/response_zxdt.xsl"/>
+    <mdp:bs-page url="&path_gygg;/onews.asp\?id=" responseTemplate="gygg/response_zxdt.xsl"/>
+    <!--诚聘精英-->
+    <mdp:bs-page url="&path_gygg;/otype1.asp\?owen1" responseTemplate="gygg/response_zxdt.xsl"/>
+    <!--作品栏-->
+    <mdp:bs-page url="&path_gygg;/photos/type.asp\?typeid=26" responseTemplate="gygg/response_zpl.xsl"/>
+    <mdp:bs-page url="&path_gygg;/photos/display.asp\?id" responseTemplate="gygg/response_zplnr.xsl"/>
+  </mdp:bs-config>
+
+
+</mdp:configuration>

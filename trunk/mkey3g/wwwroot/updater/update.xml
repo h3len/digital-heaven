@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mscsus>
+<models>
+<!--手机系统s6		mscver	sappvers  true只有一个确定	是否强制更新,都是false			新的版本 dappvers="4.0" 固定sappvers="1.0"-->
+		
+		<model pc="Windows" manufacturer="Microsoft" mod="" filename="wsyh.mscp" appid="wsyh" mscver="3.0" dmscver="4.0" dappvers="2.0" sappvers="1.0" screensize="480*640" ynsus="false"/>
+
+		<model pc="WM" pcver="" midp="" cldc="" manufacturer="" mod="" mscver="1.1" dmscver="54.0" filename="GDLT_MOA_240320V0125_ok.cab" appid="gdlt" dappvers="1.1" sappvers="1.0" screensize="240*320" ynsus="false"/>
+
+		<model pc="Windows" pcver="" midp="" cldc="" manufacturer="Microsoft" mod="" mscver="1.0" dmscver="3a.0" filename="GDLT_MOA_240320V0125_ok.cab" 
+		appid="dhJZ2R" dappvers="1.0" sappvers="1.0" screensize="240*320" ynsus="false"/>
+  
+		<model pc="" pcver="" midp="" cldc="" manufacturer="" mod="" mscver="" dmscver="451" filename="ctcc.mscp" appid="ctcc" dappvers="2.0" sappvers="" screensize="" ynsus="true"/>
+	
+</models>
+</mscsus>

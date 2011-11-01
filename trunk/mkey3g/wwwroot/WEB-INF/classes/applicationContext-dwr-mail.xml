@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+           http://www.directwebremoting.org/schema/spring-dwr 
+           http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd"
+	default-autowire="byName" default-lazy-init="true">
+	<!--DWR  -->
+	<bean id="MailConfig"
+		class="com.dheaven.mip.plugin.mail.web.MailConfig"
+		autowire="byName">
+		<dwr:remote javascript="MailConfig" />
+	</bean>
+	<bean id="MipEnterpriseMailConfigWeb"
+		class="com.dheaven.mip.plugin.mail.web.MipEnterpriseMailConfigWeb"
+		autowire="byName">
+		<dwr:remote javascript="MipEnterpriseMailConfigWeb" />
+	</bean>
+	<bean id="PluginEmail"
+		class="com.dheaven.mip.plugin.mail.web.PluginEmail"
+		autowire="byName">
+		<dwr:remote javascript="PluginEmail" />
+	</bean>
+	<!-- 下面的bean是EMA专用 -->
+	<bean id="pushruliAction"
+		class="com.dheaven.mip.plugin.mail.web.PushRulePushtimeAction"
+		autowire="byName">
+		<dwr:remote javascript="PushRule" />
+	</bean>
+
+	<bean id="pushwhitenameAction"
+		class="com.dheaven.mip.plugin.mail.web.PushRuleWhitenameAction"
+		autowire="byName">
+		<dwr:remote javascript="PushWhiteName" />
+	</bean>
+
+	<bean id="pushfilterAction"
+		class="com.dheaven.mip.plugin.mail.web.PushRuleFilterAction"
+		autowire="byName">
+		<dwr:remote javascript="PushFilter" />
+	</bean>
+
+	<dwr:configuration>
+		<dwr:convert type="bean"
+			class="com.dheaven.mip.dataaccess.vo.MipMobileType" />
+		<dwr:convert type="bean"
+			class="com.dheaven.mip.dataaccess.vo.MipBranch" />
+	</dwr:configuration>
+
+</beans>

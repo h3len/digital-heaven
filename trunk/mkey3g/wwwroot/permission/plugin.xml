@@ -1,0 +1,29 @@
+<category>
+  <id>mippermission</id>
+  <categoryname>权限控制</categoryname>
+  <comment>permission</comment>
+  <initClassName>com.dheaven.mip.plugin.permission.InitPermission</initClassName>
+  <iplugin>com.dheaven.mip.plugin.permission.MipPermissionPlugin</iplugin>
+  <ui>
+  <enable>true</enable>
+    <logohref>icon_7_96</logohref>
+    <url>../mas/default.jsp</url>
+    <adminurl></adminurl>
+ </ui>
+
+  <dep>
+  </dep>
+  <vos>
+
+  </vos>
+  <permissions>
+	<permission>
+      <id>1</id>
+      <permissionname>管理权限</permissionname>
+      <privacybit>1</privacybit>
+    </permission>
+  </permissions>
+  <servletsmapping>
+
+</servletsmapping>
+</category>

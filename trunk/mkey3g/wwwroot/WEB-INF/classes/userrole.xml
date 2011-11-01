@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	
+	<permissions permissionsname="移动邮件设置" comment="移动邮件设置" enable="true" id="mipmail">	
+		<permission id="1" permissionname="管理权限" privacybit="1"></permission>
+	</permissions>
+	
+	<permissions permissionsname="企业管理" comment="企业管理" enable="true" id="mipents">	
+		<permission id="1" permissionname="管理权限" privacybit="1"></permission>
+	</permissions>
+	
+	<permissions permissionsname="企业管理员管理" comment="企业管理员管理" enable="true" id="mipentmanager">
+		<permission id="1" permissionname="管理权限" privacybit="1"></permission>
+	</permissions>
+	<permissions permissionsname="角色管理" comment="角色管理" enable="true" id="mirole">
+		<permission id="1" permissionname="管理权限" privacybit="1"></permission>
+	</permissions>
+	<permissions permissionsname="管理员管理" comment="管理员管理" enable="true" id="mipmanager">
+		<permission id="1" permissionname="管理权限" privacybit="1"></permission>
+	</permissions>
+	<permissions permissionsname="日志管理" comment="日志管理" enable="true" id="miplog">
+		<permission id="1" permissionname="访问权限" privacybit="1"></permission>
+	</permissions>
+	
+	<permissions permissionsname="接入告警" comment="接入告警" enable="true" id="miperror">
+		<permission id="1" permissionname="访问权限" privacybit="1"></permission>
+	</permissions>	
+	
+	<permissions permissionsname="短信参数配置" comment="短信参数配置" enable="true" id="mipsms">
+		<permission id="1" permissionname="管理权限" privacybit="1"></permission>
+	</permissions>
+	
+	<permissions permissionsname="平台设置" comment="平台设置" enable="true" id="mipplatsetting">
+		<permission id="1" permissionname="管理权限" privacybit="1"></permission>
+	</permissions>	
+		
+	<permissions permissionsname="手机路由配置" comment="手机路由配置" enable="true" id="miprouter">
+		<permission id="1" permissionname="管理权限" privacybit="1"></permission>
+	</permissions>
+	
+	<permissions permissionsname="通讯能力限额配置" comment="通讯能力限额配置" enable="true" id="mipcmlimit">
+		<permission id="1" permissionname="管理权限" privacybit="1"></permission>
+	</permissions>
+	
+	<permissions permissionsname="活跃用户统计" comment="活跃用户统计" enable="true" id="mipactive">
+		<permission id="1" permissionname="访问权限" privacybit="1"></permission>
+	</permissions>
+	
+	<permissions permissionsname="用户数统计" comment="用户数统计" enable="true" id="mipusercount">
+		<permission id="1" permissionname="访问权限" privacybit="1"></permission>
+	</permissions>	
+	
+	<permissions permissionsname="接入应用统计" comment="接入应用统计" enable="true" id="mipappcount">
+		<permission id="1" permissionname="访问权限" privacybit="1"></permission>
+	</permissions>
+	
+	<permissions permissionsname="注册企业统计" comment="注册企业统计" enable="true" id="mipentcount">
+		<permission id="1" permissionname="访问权限" privacybit="1"></permission>
+	</permissions>
+	
+</root>

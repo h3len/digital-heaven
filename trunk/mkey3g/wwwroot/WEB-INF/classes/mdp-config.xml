@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdp:configuration debug="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdp="http://mdp.d-heaven.com" xsi:schemaLocation="http://mdp.d-heaven.com ..\WebRoot\mdp-config.xsd">
+	
+	<mdp:authorization>
+		<mdp:allow source="*"/>
+	</mdp:authorization>
+	
+	
+	<mdp:bs-config source="sina.com.cn" encoding="gb2312">
+		<!--首页-->
+		<mdp:bs-page url="^http://news.sina.com.cn([/]{0,1})$" encoding="gb2312">
+			<mdp:bs-rule type="tag" caption="【要闻】" startTag="&lt;!--重点新闻1号位 开始--&gt;" endTag="&lt;!--重点新闻1号位 结束--&gt;"/>
+			<mdp:bs-rule type="tag" caption="【国内新闻】" startTag="&lt;div id=&quot;gnxw_list1&quot; class=&quot;news_list_1&quot;&gt;" endTag="&lt;/div&gt;"/>
+		</mdp:bs-page>
+	</mdp:bs-config>
+	
+</mdp:configuration>

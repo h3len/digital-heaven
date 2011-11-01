@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.directwebremoting.org/schema/spring-dwr http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd">
+	<!-- Load Bean -->
+	<bean id="mipMdpLogManager" class="com.dheaven.mip.plugin.mdp.dataaccess.manager.MipMdpLogManager" autowire="byName"/>
+	<bean id="mdpExtentionManager" class="com.dheaven.mip.plugin.mdp.dataaccess.manager.MdpExtentionManager" autowire="byName"/>
+	
+	<bean id="mdpLogsManager" class="com.dheaven.mip.plugin.mdp.dataaccess.manager.MdpLogsManager" autowire="byName"/>
+	
+	
+	<bean id="mipMdpLogServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean class="com.dheaven.mip.plugin.mdp.service.impl.MipMdpLogServiceImpl" autowire="byName"/>
+		</property>
+	</bean>
+	<bean id="mdpExtentionServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean class="com.dheaven.mip.plugin.mdp.service.impl.MdpExtentionServiceImpl" autowire="byName"/>
+		</property>
+	</bean>
+	
+	<bean id="mdpLogsServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean class="com.dheaven.mip.plugin.mdp.service.impl.MdpLogsServiceImpl" autowire="byName"/>
+		</property>
+	</bean>
+	
+	<bean name="comparison" class="com.dheaven.mip.plugin.mdp.tools.ParamsComparison" autowire="byName"/>
+	
+	
+	<!-- DHMI HTTP扩展 -->
+	<bean id="dhmiServletController"
+		class="org.springframework.web.servlet.mvc.ServletWrappingController">
+		<property name="servletClass">
+			<value>com.dheaven.mip.plugin.mdp.web.DHMIServlet</value>
+		</property>
+		<property name="servletName">
+			<value>DHMIServlet</value>
+		</property>
+		<property name="initParameters">
+			<props></props>
+		</property>
+	</bean>
+	
+	
+	
+	<!-- SSO -->
+	<bean id="ssoServletController"
+		class="org.springframework.web.servlet.mvc.ServletWrappingController">
+		<property name="servletClass">
+			<value>com.dheaven.mip.plugin.mdp.sso.SSOServlet</value>
+		</property>
+		<property name="servletName">
+			<value>SSOServlet</value>
+		</property>
+		<property name="initParameters">
+			<props></props>
+		</property>
+	</bean>
+	
+	<!-- WEB管理平台接入日志接口 -->
+	<bean id="MdpLog" class="com.dheaven.mip.plugin.mdp.web.MdpLogsAction"
+		autowire="byName">
+		<dwr:remote javascript="MdpLog" />
+	</bean>
+	
+	<!-- WEB管理平台mdp.properties配置 -->
+	<bean id="GlobalConfig" class="com.dheaven.mip.plugin.mdp.web.GlobalConfigAction"
+		autowire="byName">
+		<dwr:remote javascript="GlobalConfig" />
+	</bean>
+	
+	<!-- WEB管理平台扩展用户绑定接口 -->
+	<bean id="MdpExtentionService" class="com.dheaven.mip.plugin.mdp.web.MdpExtentionService"
+		autowire="byName">
+		<dwr:remote javascript="MdpExtentionService" />
+	</bean>
+	
+	
+	<!-- 适配文件管理DWR -->
+	<bean id="MdpConfig" class="com.dheaven.mip.plugin.mdp.web.MdpConfig" autowire="byName">
+		<dwr:remote javascript="MdpConfig" />
+	</bean>
+	
+	
+</beans>

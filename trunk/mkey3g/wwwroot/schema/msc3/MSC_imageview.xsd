@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:annotation>
+		<xsd:documentation><![CDATA[ 数字天堂 MSC 标签定义文件 v1.0 ]]></xsd:documentation>
+	</xsd:annotation>
+	<!--定义根节点-->
+	<xsd:element name="msc">
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="image" minOccurs="0"/>
+			</xsd:choice>
+			<xsd:attribute name="type" type="xsd:string" use="required" fixed="imageview"/>
+<!--			<xsd:attribute name="cache" type="ECacheType"/>-->
+			<xsd:attribute name="id" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--定义菜单-->
+	<xsd:element name="image">
+		<xsd:complexType>
+			<xsd:attribute name="src" type="xsd:string"/>
+			<xsd:attribute name="id" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!--定义相关枚举值-->
+	<!--
+	<xsd:simpleType name="ECacheType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="forever"/>
+			<xsd:enumeration value="runtime"/>
+			<xsd:enumeration value="smart"/>
+			<xsd:enumeration value="none"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+-->
+</xsd:schema>

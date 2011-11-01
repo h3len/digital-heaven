@@ -1,0 +1,18 @@
+<category>
+  <id>mkeybase</id>
+  <categoryname>MKeyBase</categoryname>
+  <comment>MKeyBase</comment>
+  <initClassName>com.dheaven.mip.mkey.MipMKeyBasePlugin</initClassName>
+  <iplugin>com.dheaven.mip.mkey.MipMKeyBasePlugin</iplugin>
+  <ui>
+  <enable>false</enable>
+ </ui>
+  <dep>
+  </dep>
+  <vos>   
+  </vos>
+  <permissions>
+  </permissions>
+  <servletsmapping>
+  </servletsmapping>
+</category>

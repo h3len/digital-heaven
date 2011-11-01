@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"  elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:element name="msc">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element ref="login" minOccurs="0"/>
+					<xsd:element ref="home"/>
+					<xsd:element ref="defaulturl" minOccurs="0"/>
+					<xsd:element ref="defaultapn" minOccurs="0"/>
+					<xsd:element ref="secure" minOccurs="0"/>
+					<xsd:element ref="auto-disconnect" minOccurs="0"/>
+				</xsd:choice>
+			</xsd:sequence>
+			<xsd:attribute name="appname" type="xsd:string" use="required" />
+			<xsd:attribute name="customname" type="xsd:string" use="required" />
+			<xsd:attribute name="appid" type="PAPPID" use="required" />
+			<xsd:attribute name="appver" type="xsd:string" use="required" />
+			<xsd:attribute name="siid" type="PSIID" use="required" />
+			<xsd:attribute name="debug" type="xsd:boolean"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="login">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute name="href" type="xsd:string" use="required" />
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="home">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute name="href" type="xsd:string" use="required" />
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="defaulturl">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute name="url" type="xsd:string" use="required" />
+			<xsd:attribute name="readonly" type="xsd:boolean" use="required" />
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="defaultapn">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute name="dialtype" type="xsd:string"/>
+			<xsd:attribute name="username" type="xsd:string"/>
+			<xsd:attribute name="password" type="xsd:string"/>
+			<xsd:attribute name="domain" type="xsd:string"/>
+			<xsd:attribute name="apn" type="xsd:string"/>
+			<xsd:attribute name="readonly" type="xsd:boolean"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="secure">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute name="type" type="ESecureType"/>
+			<xsd:attribute name="readonly" type="xsd:boolean"/>
+			<xsd:attribute name="cerfile" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:simpleType name="ESecureType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ssl"/>
+			<xsd:enumeration value="aes"/>
+			<xsd:enumeration value="none"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PSIID">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z0-9]{4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PAPPID">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Za-z0-9]{4-6}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="auto-disconnect">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:string"/>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

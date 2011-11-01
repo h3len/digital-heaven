@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT msc ((head*, body*))>
+<!ATTLIST msc
+	line (1 | 2) "1"
+	maxpage CDATA #REQUIRED
+	pageid CDATA #REQUIRED
+	statusbar_caption CDATA #REQUIRED
+	title CDATA #REQUIRED
+	type CDATA #FIXED "list"
+>
+<!ELEMENT item (#PCDATA | item)*>
+<!ATTLIST item
+	caption CDATA #REQUIRED
+	sndcaption CDATA #IMPLIED
+	href CDATA #IMPLIED
+	icon CDATA #IMPLIED
+	target (_blank | _self) "_blank"
+	value CDATA #IMPLIED
+	selected (true | false) "false"
+>
+<!ELEMENT head (#PCDATA | object | select)*>
+<!ELEMENT object (#PCDATA | select | item | object | input)*>
+<!ATTLIST object
+	type (navigation | toolbar | multiselect | date) "navigation"
+	name CDATA #REQUIRED
+	style CDATA #IMPLIED
+	extendlevel CDATA #IMPLIED
+	fullbody (true | false) "false"
+	caption CDATA #IMPLIED
+	writeable (true | false) "false"
+	value CDATA  #IMPLIED
+	rememberlast (true | false) "false"
+	align (left | right | center | primary | secondary) "left"
+>
+<!ELEMENT select (#PCDATA | option)*>
+<!ATTLIST select
+	name CDATA #IMPLIED
+	style (menu | none) "none"
+	caption CDATA #REQUIRED
+	align (left | right | center) "left"
+	writeable (true | false) "false"
+>
+<!ELEMENT option (#PCDATA)>
+<!ATTLIST option
+	value CDATA #IMPLIED
+	href CDATA #IMPLIED
+	target (_blank | _self) "_blank"
+	selected (true | false) "false"
+>
+<!ELEMENT input (#PCDATA | input)*>
+<!ATTLIST input
+	type (button | radio | text | password | hidden | checkbox | submit | reset) "button"
+	name CDATA #REQUIRED
+	caption CDATA #IMPLIED
+	value CDATA #IMPLIED
+	rememberlast (true | false) "false"
+	readonly (true | false) "false"
+	align (left | right | center | primary | secondary) "left"
+	href CDATA #IMPLIED
+	target (_blank | _self) "_blank"
+	icon CDATA #IMPLIED
+>
+<!ELEMENT body ((item+))>

@@ -1,0 +1,16 @@
+/* -------------------------------------------------------------- 
+   css.css
+   * import css files 导入需要的样式表
+   
+   Based on work by gaojingliang@d-heaven and xujing@d-heaven
+   * Date  : 2008-06-10 
+   * Version: alpha 1.5
+-------------------------------------------------------------- */
+
+@import "reset.css";
+@import "text.css";
+@import "layout.css";
+@import "css/ext-all.css";
+/* Tools element links like .doc will add icon. It base on "elements" folder 链接小图标 需要elements文件夹支持
+@import "elements.css";
+*/

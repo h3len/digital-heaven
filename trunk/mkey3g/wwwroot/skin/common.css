@@ -1,0 +1,82 @@
+/* 閫氱敤鏍峰紡琛�by Gaojingliang 2007.7.3 */
+
+body { font: 12px 瀹嬩綋, Arial, Helvetica, sans-serif; color: #000000; margin:0; padding:0;  background: #FFF;}
+html, body { height : 100%; }
+img { border: 0px;}
+form { margin: 0px; padding: 0px;}
+div, td, p { font: 12px verdana, arail; line-height: 120%;}
+input, select, textarea { font: 12px "Tahoma,瀹嬩綋";}
+a:visited, a:link { color: #000000; text-decoration: none;}
+a:hover { color: #808080; text-decoration:underline;}
+.clear { clear: both;}
+span{line-height:20px;}
+* html #loader { position: absolute;}
+span.notice { color: #F00;}
+form,ul,ol,li,dl,dt,dd {margin: 0; padding: 0; border: 0;}
+ul{list-style-type:none}
+li{ line-height:180%; list-style:none;}
+.img_bold{ padding: 2px; border: 1px solid #CCC; background-color: #FFF; }
+.img_bold a:visited, .img_bold a:link{ padding: 2px; border: 1px solid #CCC; background-color: #FFF; }
+.img_bold a:hover{ padding: 2px; border: 1px solid #333; background-color: #FFF; }
+
+.hand{ cursor:pointer; }
+
+/* div */
+#global_Div { width: 100%; margin: 0px auto; background-color:#FFFFFF;}
+#wrapper { width: 1008px; overflow: hidden; margin: 0px auto;}
+
+/* input */
+.button { height: 20px;}
+.button_gray {background-color: #FEFEFE; border: #666666; height: 20px; border: 1px double}
+.button_red { background-color: #C50000; height: 20px; clip: rect( ); color: #FFFFFF; border: 1px #e1c486 outset}
+.input_180px { background-color: #FFF; border: #484848; height: 18px; border: 1px double; width:180px;}
+.input_h380px { background-color: #FFF; border: #484848; height: 100px; border: 1px double; width:300px;}
+.input_120px { background-color: #FFF; border: #484848; height: 18px; border: 1px double; width:120px; font-size:14px;}
+.input_80px { background-color: #FFF; border: #484848; height: 18px; border: 1px double; width:80px;}
+.input_40px { background-color: #FFF; border: #484848; height: 18px; border: 1px double; width:40px;}
+.input_35px { background-color: #FFF; border: #484848; height: 35px; border: 1px double; width:40px; font-size:24px; font-weight:bold; text-align:center; line-height:35px; color:#FF6600; font-family:Tahoma;}
+.input_20px { background-color: #FFF; border: #484848; height: 20px; border: 1px double; width:20px; font-size:16px; font-weight:bold; text-align:center; line-height:20px; color:#FF6600; font-family:Tahoma;}
+.input_light_120px { background-color: #FFF; border: #D2D2D2; height: 18px; border: 1px double; width:120px;}
+.input_light_80px { background-color: #FFF; border: #D2D2D2; height: 18px; border: 1px double; width:80px;}
+.input_light_40px { background-color: #FFF; border: #D2D2D2; height: 18px; border: 1px double; width:40px;}
+
+/* font&href_color */
+
+.href_12px_white,a.href_12px_white:link,a.href_12px_white:visited{ color: #FFF; text-decoration: none;}
+a.href_12px_white:hover{color:#FFF; text-decoration:underline;}
+.href_12px_blue,a.href_12px_blue:link,a.href_12px_blue:visited{ color: #246DB6; text-decoration: none;}
+a.href_12px_blue:hover{color:#297DD1; text-decoration:underline;}
+.href_12px_oringe,a.href_12px_oringe:link,a.href_12px_oringe:visited{ color: #F68A08; text-decoration: none;}
+a.href_12px_oringe:hover{color:#FF9900; text-decoration:underline;}
+.href_12px_green,a.href_12px_green:link,a.href_12px_green:visited{ color: #54A701; text-decoration: none;}
+a.href_12px_green:hover{color:#66CC00; text-decoration:underline;}
+.href_12px_red,a.href_12px_red:link,a.href_12px_red:visited{ color: #B80000; text-decoration: none;}
+a.href_12px_red:hover{color:#E10000; text-decoration:underline;}
+.href_12px_gray,a.href_12px_gray:link,a.href_12px_gray:visited{font-size: 12px; color: #666666; text-decoration: none;}
+a.href_12px_gray:hover{font-size: 12px;color:#000; text-decoration:underline;}
+
+.href_12px_white_bold,a.href_12px_white_bold:link,a.href_12px_white_bold:visited{ color: #FFF; text-decoration: none; font-weight:bold;}
+a.href_12px_white_bold:hover{color:#FFF; text-decoration:underline; font-weight:bold;}
+.href_12px_blue_bold,a.href_12px_blue_bold:link,a.href_12px_blue_bold:visited{ color: #246DB6; text-decoration: none; font-weight:bold;}
+a.href_12px_blue_bold:hover{color:#297DD1; text-decoration:underline; font-weight:bold;}
+.href_12px_oringe_bold,a.href_12px_oringe_bold:link,a.href_12px_oringe_bold:visited{ color: #F68A08; text-decoration: none; font-weight:bold;}
+a.href_12px_oringe_bold:hover{color:#FF9900; text-decoration:underline; font-weight:bold;}
+.href_12px_green_bold,a.href_12px_green_bold:link,a.href_12px_green_bold:visited{ color: #54A701; text-decoration: none; font-weight:bold;}
+a.href_12px_green_bold:hover{color:#66CC00; text-decoration:underline; font-weight:bold;}
+.href_12px_red_bold,a.href_12px_red_bold:link,a.href_12px_red_bold:visited{ color: #B80000; text-decoration: none; font-weight:bold;}
+a.href_12px_red_bold:hover{color:#E10000; text-decoration:underline; font-weight:bold;}
+
+.href_14px_white,a.href_14px_white:link,a.href_14px_white:visited{font-size: 14px; color: #FFF; text-decoration: none;}
+a.href_14px_white:hover{font-size: 14px;color:#FFF; text-decoration:underline;}
+.href_14px_blue,a.href_14px_blue:link,a.href_14px_blue:visited{font-size: 14px; color: #246DB6; text-decoration: none; font-weight:bold;}
+a.href_14px_blue:hover{font-size: 14px;color:#297DD1; text-decoration:underline; font-weight:bold;}
+.href_14px_oringe,a.href_14px_oringe:link,a.href_14px_oringe:visited{font-size: 14px; color: #F68A08; text-decoration: none;}
+a.href_14px_oringe:hover{font-size: 14px;color:#FF9900; text-decoration:underline;}
+.href_14px_green,a.href_14px_green:link,a.href_14px_green:visited{font-size: 14px; color: #54A701; text-decoration: none;}
+a.href_14px_green:hover{font-size: 14px;color:#66CC00; text-decoration:underline;}
+.href_14px_red,a.href_14px_red:link,a.href_14px_red:visited{font-size: 14px; color: #B80000; text-decoration: none;}
+a.href_14px_red:hover{font-size: 14px;color:#E10000; text-decoration:underline;}
+.href_14px_gray,a.href_14px_gray:link,a.href_14px_gray:visited{font-size: 14px; color: #666666; text-decoration: none; font-weight:bold;}
+a.href_14px_gray:hover{font-size: 14px;color:#000; text-decoration:underline; font-weight:bold;}
+.href_14px_black,a.href_14px_black:link,a.href_14px_black:visited{font-size: 14px; color: #000; text-decoration: none; font-weight:bold;}
+a.href_14px_black:hover{font-size: 14px;color:#FF9900; text-decoration:none; font-weight:bold;}

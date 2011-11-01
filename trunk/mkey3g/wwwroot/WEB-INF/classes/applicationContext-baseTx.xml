@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-autowire="byName" default-merge="true"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+	xmlns:dwra="http://www.directwebremoting.org/schema/spring-dwr-annotations"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+          http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+          http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+          http://www.directwebremoting.org/schema/spring-dwr http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd
+          http://www.directwebremoting.org/schema/spring-dwr-annotations http://www.d-heaven.com/ad/spring-dwr-annotations.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<context:annotation-config />
+	<!-- 告诉spring bean扫描范围 -->
+	<context:component-scan base-package="com.dheaven" />
+
+	<!-- spring mvc annotation -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+	
+	<bean id="sessionFactory"
+		class="com.dheaven.framework.core.AnnotationSessionFactoryBeanExt">
+		<property name="dataSource">
+			<ref bean="dataSource"></ref>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					${hibernate.dialect}
+				</prop>
+				<prop key="hibernate.show_sql">
+					${hibernate.show_sql}
+				</prop>
+				<prop key="hibernate.connection.provider_class">
+					org.hibernate.connection.C3P0ConnectionProvider
+				</prop>
+				<prop key="hibernate.generate_statistics">true</prop>
+				<prop key="hibernate.generate_statistics">true</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="hibernate.cache.use_second_level_cache">
+					true
+				</prop>
+				<prop key="hibernate.cache.provider_class">
+					net.sf.ehcache.hibernate.EhCacheProvider
+				</prop>
+				<prop key="hibernate.connection.provider_class">
+					org.hibernate.connection.C3P0ConnectionProvider
+				</prop>
+				<prop key="hibernate.query.substitutions">
+					true 1, false 0, yes 'Y', no 'N'
+				</prop>
+				<prop
+					key="hibernate.bytecode.use_reflection_optimizer">
+					true
+				</prop>
+				<prop key="hibernate.use_outer_join">true</prop>
+				<prop key="hibernate.prepare_sql">true</prop>
+				<prop key="hibernate.query.factory_class">
+					org.hibernate.hql.ast.ASTQueryTranslatorFactory
+				</prop>
+
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.dheaven.mip.dataaccess.vo.MipClientApp</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipSysuser</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipBranch</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.MipCustomCatalog
+				</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.MipCustomSysuser
+				</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.MipMobileType
+				</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipRole</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipUserRole</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.MipRolePermission
+				</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.MipUserPrivacy
+				</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipConfig</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.MipEnterpriseConfig
+				</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.MipRelationCustomCatalog
+				</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipMsg</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipLogs</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipSysLog</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipSmsData</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipMmsData</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.MipWhiteAndBlackList
+				</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.MipWhiteListConfig
+				</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.MipKeyFilter
+				</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipVisitLog</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.MipWapPushUrl
+				</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipGroup</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.MipGroupUser
+				</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.MipGroupContact
+				</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.MipPersonalUser
+				</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.MipPersonalGroup
+				</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.MipSysUserExtend
+				</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.MipPersonalUserExtend
+				</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipUserCtrl</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.EmaLicenseLog
+				</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.MipSysuserExtention
+				</value>
+				<value>com.dheaven.mip.dataaccess.vo.CheckConfig</value>
+				<value>
+					com.dheaven.mip.dataaccess.vo.MipEnterpriseAdmin
+				</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipMapData</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipPacket</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipUserLogin</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipUserStatistics</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipAdminMailconfig</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipEnterpriseMailConfig</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipPluginApp</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipLdap</value>
+				<value>com.dheaven.mip.dataaccess.vo.MipLdapReflect</value>
+			</list>
+		</property>
+		<property name="configurationClass">
+			<value>org.hibernate.cfg.AnnotationConfiguration</value>
+		</property>
+	</bean>
+
+
+
+	<!-- 事务-->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+
+	<!-- 支持 @Transactional 标记 -->
+	<tx:annotation-driven />
+
+	<!-- 支持 @AspectJ 标记-->
+	<aop:aspectj-autoproxy />
+
+	<!-- 基本事务定义,使用transactionManager作事务管理,默认get*方法的事务为readonly,其余方法按默认设置.
+		默认的设置请参考Spring文档事务一章. -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true"
+				propagation="REQUIRED" />
+			<tx:method name="find*" read-only="true"
+				propagation="REQUIRED" />
+			<tx:method name="*" propagation="REQUIRED" />
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- 以AspectJ方式 定义 AOP -->
+	<aop:config proxy-target-class="true">
+		<aop:advisor pointcut="execution(* com.*..manage.*.*(..))"
+			advice-ref="txAdvice" />
+		<aop:advisor pointcut="execution(* com.*..service.impl.*.*(..))"
+			advice-ref="txAdvice" />
+	</aop:config>
+
+
+	<bean id="baseTxService"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+		abstract="true">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="proxyTargetClass" value="true" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="load*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="create*">PROPAGATION_REQUIRED</prop>
+				<prop key="modify*">PROPAGATION_REQUIRED</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="remove*">PROPAGATION_REQUIRED</prop>
+				<prop key="query">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<dwra:annotation-config />
+	<!--  New DWR capabilities  -->
+	<dwr:controller id="dwrController" debug="true">
+		<dwr:config-param name="activeReverseAjaxEnabled" value="true" />
+	</dwr:controller>
+
+	<dwr:configuration>
+		<dwr:convert type="bean"
+			class="com.dheaven.mip.dataaccess.vo.MipMmsData">
+		</dwr:convert>
+	</dwr:configuration>
+</beans>

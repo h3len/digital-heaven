@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msc type="form"  statusbar_caption="页面树_例子" title="树">
+  <!--页面树-->
+  <body>
+    <object type="multiselect"  align="left" style="formtree" name="name1" caption="树控件" >
+		  <item caption="树真好看" childurl="?action=bs-transfer@mdp&amp;url=http://127.0.0.1:8089/default.jsp">测试</item>
+    </object>
+  </body>
+
+</msc>
