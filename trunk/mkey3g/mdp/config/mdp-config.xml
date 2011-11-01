@@ -15,13 +15,29 @@
 
   <!ENTITY source4 "www.jmnews.com.cn">
   <!ENTITY path4 "http://www.jmnews.com.cn">
+  
+  <!ENTITY source5 "www.jmjgj.gov.cn">
+  <!ENTITY path5 "http://www.jmjgj.gov.cn">
+  
+  <!ENTITY source6 "202.104.205.73">
+  <!ENTITY path6 "http://202.104.205.73">
 ]>
 
 <mdp:configuration xmlns:mdp="http://mdp.d-heaven.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" debug="true" xsi:schemaLocation="http://mdp.d-heaven.com mdp-config.xsd">
   <mdp:authorization>
     <mdp:allow source="*"/>
   </mdp:authorization>
-
+  
+  <mdp:bs-config source="&source6;" encoding="gb2312">
+    <!--江门社保查询-->
+    <mdp:bs-page url="&path6;/$" responseTemplate="jmsb/response_index.xsl" encoding="gb2312"/>
+  </mdp:bs-config>
+  
+  <mdp:bs-config source="&source5;" encoding="gb2312">
+    <!--交通违章查询-->
+    <mdp:bs-page url="&path5;/$" responseTemplate="jtwz/response_index.xsl" encoding="gb2312"/>
+  </mdp:bs-config>
+  
   <mdp:bs-config source="&source4;" encoding="gb2312">
     <!--江门新闻网_本地新闻主页-->
     <mdp:bs-page url="&path4;/$" responseTemplate="jmnews/response_index.xsl" encoding="gb2312"/>
@@ -32,6 +48,7 @@
 
   <!--江门新闻网图片-->
   <mdp:bs-config source="http://image.jmrb.com" encoding="gb2312"/>
+  <mdp:bs-config source="http://images.panjk.com" encoding="gb2312"/>
 
   <mdp:bs-config source="&source3;" encoding="UTF-8">
     <!--樟木头主页-->

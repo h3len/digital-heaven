@@ -12,8 +12,8 @@
   <xsl:variable name="viewimageremote" select="'?action=viewimageremote@mdp&amp;url='"/>
 
   <!--全局基础ip地址-->
-  <xsl:variable name="ip_url">www.jmnews.com.cn</xsl:variable>
-  <xsl:variable name="cp_url">http://www.jmnews.com.cn</xsl:variable>
+  <xsl:variable name="ip_url">202.104.205.73</xsl:variable>
+  <xsl:variable name="cp_url">http://202.104.205.73</xsl:variable>
 
   <!--背景颜色-->
   <xsl:variable name="bgcolor">#deeef8</xsl:variable>
