@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<msc type="from" nologin="true">
+  <body>
+    <img src="logo.jpg"/>
+    <br/>
+    <font>&#160;&#160;</font>
+    <br/>
+    &#160;<img src="kao.jpg"/>
+    <font size='s'><a href='home1.xml'>&#x3010;社保查询&#x3011;</a></font>
+    <!--<br/>
+    <font>&#160;&#160;</font>
+    <br/>
+    <font>&#160;&#160;</font><img src="dian.jpg"/>&#160;<font size='xs'><a href="?action=bs-transfer@mdp&amp;url=http://218.204.223.149:4044/mlabour/logon.jsp&amp;nologin=true" target="_blank">珠海</a></font>
+    <font>&#160;&#160;</font>
+    <img src="dian.jpg"/>&#160;<font size='xs'><a href="?action=bs-transfer@mdp&amp;url=http://m.wxcsmz.com/wapquery/menu/sbt/sbt.jsp?id=60&amp;nologin=true" target="_blank">梅州</a></font>-->
+    <br/>
+    <font>&#160;&#160;</font>
+    <br/>
+    &#160;<img src="kao.jpg"/>
+    <font size='s'><a href='home2.xml'>&#x3010;公积金查询&#x3011;</a></font>
+    <!--<br/>
+  <font>&#160;&#160;</font>
+  <br/>
+  <font>&#160;&#160;</font>
+  <img src="dian.jpg"/>&#160;<font size='xs'><a href="?action=bs-transfer@mdp&amp;url=http://210.73.44.165/search/accumulationFund/accumulationFundSearch.jsp&amp;nologin=true" target="_blank">广州</a></font>
+  <font>&#160;&#160;</font>
+  <img src="dian.jpg"/>&#160;<font size='xs'><a href="?action=bs-transfer@mdp&amp;url=http://m.wxcsmz.com/wapquery/menu/accumulation/accumulation.jsp?id=53&amp;nologin=true" target="_blank">梅州</a></font>-->
+    <!--<font>&#160;&#160;</font>
+    <img src="dian.jpg"/><font size='xs'><a href="?action=bs-transfer@mdp&amp;url=http://wap.dggjj.cn/wml/gjjquery.do&amp;nologin=true" target="_blank">东莞</a></font>-->
+    <br/>
+    <font>&#160;&#160;</font>
+    <br/>
+    &#160;<img src="kao.jpg"/>
+    <font size='s'><a href='home3.xml'>&#x3010;水费查询&#x3011;</a></font>
+    <!--<br/>
+    <font>&#160;&#160;</font>
+    <br/>
+    <font>&#160;&#160;</font>
+    <img src="dian.jpg"/>&#160;<font size='xs'><a href="?action=bs-transfer@mdp&amp;url=http://m.wxcsmz.com/wapquery/menu/sfSelect.jsp?id=52&amp;nologin=true" target="_blank">梅州</a></font>
+  <font>&#160;&#160;</font>
+  <img src="dian.jpg"/>&#160;<font size='xs'><a href="?action=bs-transfer@mdp&amp;url=http://yfwap.uyunfu.com/SfQuery.aspx&amp;nologin=true" target="_blank">云浮</a></font>-->
+    <br/>
+    <font>&#160;&#160;</font>
+    <br/>
+    &#160;<img src="kao.jpg"/>
+    <font size='s'><a href='home4.xml'>&#x3010;电费查询&#x3011;</a></font>
+    <!--<br/>
+    <font>&#160;&#160;</font>
+    <br/>
+    <font>&#160;&#160;</font>
+    <img src="dian.jpg"/>&#160;<font size='xs'><a href="?action=bs-transfer@mdp&amp;url=http://218.204.223.221/zhgwap/gov/bmfwjt/dfcx.jsp&amp;nologin=true" target="_blank">珠海</a></font>
+  <font>&#160;&#160;</font>
+  <img src="dian.jpg"/>&#160;<font size='xs'><a href="?action=bs-transfer@mdp&amp;url=http://wap.12580hz.net/service/conven/view/elecQuery.do&amp;nologin=true" target="_blank">惠州</a></font>
+  <font>&#160;&#160;</font>
+  <img src="dian.jpg"/>&#160;<font size='xs'><a href="?action=bs-transfer@mdp&amp;url=http://m.wxcsmz.com/wapquery/menu/dfcx.jsp?id=50&amp;nologin=true" target="_blank">梅州</a></font>-->
+    <br/>
+    <font>&#160;&#160;</font>
+    <br/>
+    &#160;<img src="kao.jpg"/>
+    <font size='s'><a href='home5.xml'>&#x3010;电影查询&#x3011;</a></font><br/>
+    <font>&#160;&#160;</font>
+    <br/>
+    &#160;&#160;<img src="dian.jpg"/>&#160;<font size='xs'><a href="?action=bs-transfer@mdp&amp;url=http://theater.mtime.com/China_Guangdong_Province_Guangzhou&amp;nologin=true&amp;dheavenRequestTemplate=request_ceshi.xsl" >广州影讯</a></font>
+    
+    <br/>&#160;<br/>&#160;<img src="kao.jpg"/>
+    <font size='s'>
+      <a href="?action=bs-transfer@mdp&amp;url=http://www.gddoftec.gov.cn/&amp;nologin=true">&#x3010;外贸厅&#x3011;</a>
+    </font><br/>&#160;<br/>
+
+    &#160;<img src="kao.jpg"/>
+    <font size='s'>
+      <a href='?action=bs-transfer@mdp&amp;url=http://www.gdsin.net&amp;nologin=true' >&#x3010;地震局&#x3011;</a>
+    </font><br/>
+
+    
+    <!--<strong>
+      煤气查询
+    </strong>
+    <br/>
+    <font>&#160;&#160;</font>
+    <a href="?action=bs-transfer@mdp&amp;url=http://wap.12580hz.net/service/conven/view/coalGasQuery.do&amp;nologin=true" target="_blank">惠州</a>
+    <font>&#160;&#160;</font>
+    <a href="?action=bs-transfer@mdp&amp;url=http://m.wxcsmz.com/wapquery/menu/gas/gas.jsp?id=54&amp;nologin=true" target="_blank">梅州</a>
+    <br/>
+    <font>&#160;&#160;</font>
+    <br/>
+    <strong>
+      手机订报
+    </strong>
+    <br/>
+    <font>&#160;&#160;</font>
+    <a href="?action=bs-transfer@mdp&amp;url=http://211.139.201.121/fspay/subapp/sjdb/post/index.jsp?mobileNumber=null&amp;yesorno=1&amp;nologin=true" target="_blank">佛山</a>-->
+  </body>
+</msc>

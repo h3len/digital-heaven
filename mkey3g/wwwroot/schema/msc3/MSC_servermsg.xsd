@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:element name="msc">
+		<xsd:complexType>
+			<xsd:choice maxOccurs="unbounded">
+				<xsd:element ref="msg"/>
+				<xsd:element ref="script" minOccurs="0"/>
+				<xsd:element ref="requestresult" minOccurs="0"/>
+				<!--				<xsd:element ref="extdata" minOccurs="0" maxOccurs="unbounded"/>-->
+			</xsd:choice>
+			<xsd:attribute name="type" type="xsd:string" use="optional" fixed="servermsg"/>
+			<xsd:attribute name="priority" type="priorityType"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="msg">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:string">
+					<xsd:attribute name="show" type="xsd:boolean"/>
+					<xsd:attribute name="script" type="xsd:string"/>
+					<xsd:attribute name="style" type="styles"/>
+					<xsd:attribute name="buttonstyle" type="buttons"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="script">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:string"/>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="requestresult">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:unsignedInt"/>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<!--
+	<xsd:element name="extdata">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute name="name" type="xsd:string"/>
+			<xsd:attribute name="href" type="xsd:string"/>
+			<xsd:attribute name="hash" type="PBase64MD5"/>
+			<xsd:attribute name="data" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:simpleType name="PBase64MD5">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-zA-Z0-9+/=]{64}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+-->
+	<xsd:simpleType name="buttons">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="OK"/>
+			<xsd:enumeration value="OKCancel"/>
+			<xsd:enumeration value="AbortRetryIgnore"/>
+			<xsd:enumeration value="YesNoCancel"/>
+			<xsd:enumeration value="YesNo"/>
+			<xsd:enumeration value="RetryCancel"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="styles">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="error"/>
+			<xsd:enumeration value="question"/>
+			<xsd:enumeration value="information"/>
+			<xsd:enumeration value="warning"/>
+			<xsd:enumeration value="none"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="priorityType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="low"/>
+			<xsd:enumeration value="high"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

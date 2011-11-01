@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-merge="true" xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.directwebremoting.org/schema/spring-dwr http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd">
+
+
+	<bean id="dhmiConfigManager" class="com.dheaven.mip.plugin.mdpdhmi.dataaccess.manager.DhmiConfigManager" autowire="byName"/>
+	
+	<bean id="dhmiConfigServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean class="com.dheaven.mip.plugin.mdpdhmi.service.impl.DhmiConfigServiceImpl" autowire="byName"/>
+		</property>
+	</bean>
+
+	<bean id="dhmipushServlet" class="org.springframework.web.servlet.mvc.ServletWrappingController">
+		<property name="servletClass">
+			<value>
+				com.dheaven.mip.plugin.mdpdhmi.web.DHMIPushServlet
+			</value>
+		</property>
+		<property name="servletName">
+			<value>DHMIPushServlet</value>
+		</property>
+		<property name="initParameters">
+			<props></props>
+		</property>
+	</bean>
+	<bean id="dhmiworkflowServlet" class="org.springframework.web.servlet.mvc.ServletWrappingController">
+		<property name="servletClass">
+			<value>
+				com.dheaven.mip.plugin.mdpdhmi.web.DHMIWorkFlowServlet
+			</value>
+		</property>
+		<property name="servletName">
+			<value>DHMIWorkFlowServlet</value>
+		</property>
+		<property name="initParameters">
+			<props></props>
+		</property>
+	</bean>
+	<bean id="dhmissoServlet" class="org.springframework.web.servlet.mvc.ServletWrappingController">
+		<property name="servletClass">
+			<value>
+				com.dheaven.mip.plugin.mdpdhmi.web.DHMISSOServlet
+			</value>
+		</property>
+		<property name="servletName">
+			<value>DHMISSOServlet</value>
+		</property>
+		<property name="initParameters">
+			<props></props>
+		</property>
+	</bean>
+	<bean id="dhmiattachmentServlet" class="org.springframework.web.servlet.mvc.ServletWrappingController">
+		<property name="servletClass">
+			<value>
+				com.dheaven.mip.plugin.mdpdhmi.web.DHMIAttachmentServlet
+			</value>
+		</property>
+		<property name="servletName">
+			<value>DHMIAttachmentServlet</value>
+		</property>
+		<property name="initParameters">
+			<props></props>
+		</property>
+	</bean>
+	<bean name="workFlowMdpServiceImpl" class="com.dheaven.mip.plugin.mdpdhmi.service.impl.WorkFlowMdpServiceImpl" autowire="byName"/>
+	
+	<!-- DWR方式配置DHMI配置信息 -->
+	<bean id="DHMIConfigAction" class="com.dheaven.mip.plugin.mdpdhmi.web.DHMIConfigAction" autowire="byName">
+		<dwr:remote javascript="DHMIConfigAction" />
+	</bean>
+	
+</beans>

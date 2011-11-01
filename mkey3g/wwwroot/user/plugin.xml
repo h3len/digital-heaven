@@ -1,0 +1,29 @@
+<category>
+  <id>mip-contact</id>
+  <categoryname>wap contact</categoryname>
+  <comment>Sys Maintenance</comment>
+  <initClassName></initClassName>
+  <iplugin></iplugin>
+	<socketprefix>
+		<prefix>mipcontact</prefix>
+		<dispatcher>com.dheaven.mip.socket.interpreter.ContactCommandNode</dispatcher>
+	</socketprefix>
+  <dep>
+  </dep>
+  <vos>
+  </vos>
+  <permissions>
+   <permission>
+      <id>1</id>
+      <permissionname>管理权限</permissionname>
+      <privacybit>1</privacybit>
+    </permission>
+    <permission>
+      <id>2</id>
+      <permissionname>访问权限</permissionname>
+      <privacybit>2</privacybit>
+    </permission>
+  </permissions>
+  <servletsmapping>
+  </servletsmapping>
+</category>

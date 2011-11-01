@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mdp:configuration debug="true" xmlns:mdp="http://mdp.d-heaven.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mdp.d-heaven.com mdp-config.xsd">
+	<mdp:authorization>
+		<mdp:allow source="*"/>
+	</mdp:authorization>
+  
+  <!-- MDP配置规则 -->
+  <mdp:bs-config source="d-heaven.com" encoding="utf-8">
+
+  </mdp:bs-config>
+
+</mdp:configuration>

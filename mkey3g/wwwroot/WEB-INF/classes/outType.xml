@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<out type="wap11">
+		<docType type="wml" desc="-//WAPFORUM//DTD WML 1.1//EN" dtd="http://www.wapforum.org/DTD/wml_1.1.xml"></docType>
+		<contentType>text/vnd.wap.wml;charset=utf-8</contentType>
+		<responseHeaders>
+			<header key="Pragma" value="no-cache" />
+			<header key="Cache-Control" value="no-cache, must-revalidate" />
+		</responseHeaders>
+		<responseEncoding>utf-8</responseEncoding>
+		<formatXslt>msc3wap1.1.xsl</formatXslt>
+	</out>
+	<out type="wap20">
+		<docType type="html" desc="-//WAPFORUM//DTD XHTML Mobile 1.0//EN" dtd="http://www.wapforum.org/DTD/xhtml-mobile10.dtd"></docType>
+		<contentType>application/vnd.wap.xhtml+xml</contentType>
+		<responseHeaders>
+			<header key="Cache-Control" value="no-cache, must-revalidate" />
+		</responseHeaders>
+		<responseEncoding>utf-8</responseEncoding>
+		<formatXslt>msc3wap2.0.xsl</formatXslt>
+	</out>
+	
+</root>

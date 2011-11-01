@@ -1,0 +1,50 @@
+<msc type="form" statusbar_caption="创建日程安排" title="日程安排" action="?action=updatemipcalendar@mipcalendar">
+<body>
+<ul>
+<li><object type="date" caption="日期" name="date" value="2007-3-22"/></li>
+<li><object type="time" caption="起始" name="starttime" value="9:10:10" format="hh:mm"/></li>
+<li><object type="time" caption="结束" name="endtime" value="10:10:10" format="hh:mm"/></li>
+<li><input type="text" caption="主题" name="topic"/></li>
+<li><input type="text" caption="地址" name="address"/></li>
+<li><textarea caption="内容" name="content"/></li>
+<li><input type="checkbox" caption="是否公开" name="ispublic"/></li>
+<li><select id="abo" caption="是否提醒">
+<option value="-1">不提醒</option>
+<option value="0">0分钟</option>
+<option value="5">5分钟</option>
+<option value="10">10分钟</option>
+<option value="15">15分钟</option>
+<option value="20">20分钟</option>
+<option value="30">30分钟</option>
+<option value="45">45分钟</option>
+<option value="60">1小时</option>
+<option value="120">2小时</option>
+<option value="180">3小时</option>
+<option value="240">4小时</option>
+<option value="300">5小时</option>
+<option value="360">6小时</option>
+<option value="420">7小时</option>
+<option value="480">8小时</option>
+<option value="540">9小时</option>
+<option value="600">10小时</option>
+<option value="660">11小时</option>
+<option value="720">12小时</option>
+<option value="780">13小时</option>
+<option value="840">14小时</option>
+<option value="900">15小时</option>
+<option value="960">16小时</option>
+<option value="1020">17小时</option>
+<option value="1080">18小时</option>
+<option value="1140">19小时</option>
+<option value="1200">20小时</option>
+<option value="1260">21小时</option>
+<option value="1320">22小时</option>
+<option value="1380">23小时</option>
+<option value="1440">1天</option>
+<option value="2880">2天</option>
+<option value="10080">7天</option>
+<option value="20160">14天</option>
+</select></li>
+<li><input type="submit" caption="确认"/></li>
+</ul>
+</body></msc>

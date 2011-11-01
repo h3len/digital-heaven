@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration [
+    <!--社保查询-珠海-->
+    <!ENTITY source1 "218.204.223.149:4044">
+    <!ENTITY path1 "http://218.204.223.149:4044">
+  <!--社保查询-梅州-->
+  <!ENTITY source2 "m.wxcsmz.com">
+  <!ENTITY path2 "http://m.wxcsmz.com">
+  <!--社保查询-韶关-->
+  <!ENTITY source3 "wap.sg12333.cn">
+  <!ENTITY path3 "http://wap.sg12333.cn">
+  <!--社保查询-揭阳-->
+  <!ENTITY source4 "wap.sbt.jymsfw.cn:8080">
+  <!ENTITY path4 "http://wap.sbt.jymsfw.cn:8080">
+  <!--#################################################################################################-->
+  <!--公积金查询-广州-->
+  <!ENTITY source5 "210.73.44.165">
+  <!ENTITY path5 "http://210.73.44.165">
+  <!--公积金查询-东莞-->
+  <!ENTITY source6 "wap.dggjj.cn">
+  <!ENTITY path6 "http://wap.dggjj.cn">
+  <!--公积金查询-梅州-->
+  <!ENTITY source7 "m.wxcsmz.com">
+  <!ENTITY path7 "http://m.wxcsmz.com">
+  <!--公积金查询-云浮-->
+  <!ENTITY source8 "wap.umpay.com">
+  <!ENTITY path8 "http://wap.umpay.com">
+  <!--#################################################################################################-->
+  <!--水费查询-梅州-->
+  <!ENTITY sourcesf1 "m.wxcsmz.com">
+  <!ENTITY pathsf1 "http://m.wxcsmz.com">
+
+  <!--水费查询-云浮-->
+  <!ENTITY sourcesf2 "yfwap.uyunfu.com">
+  <!ENTITY pathsf2 "http://yfwap.uyunfu.com">
+  <!--#################################################################################################-->
+  <!--电费查询-珠海-->
+  <!ENTITY sourcedf1 "218.204.223.221">
+  <!ENTITY pathdf1 "http://218.204.223.221">
+]>
+
+
+<mdp:configuration debug="true" xmlns:mdp="http://mdp.d-heaven.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mdp.d-heaven.com
+ mdp-config.xsd">
+    <mdp:authorization>
+        <mdp:allow source="*"/>
+    </mdp:authorization>
+  <!--############################################社保查询########################################################################-->
+    <!--===============================================社保查询-珠海===========================================-->
+  <mdp:bs-config source="&source1;" encoding="utf-8">
+
+    <mdp:bs-page url="&path1;" responseTemplate="shebaocaxun\zhuhai\response_main.xsl" requestTemplate ="shebaocaxun\zhuhai\request_main.xsl"/>
+    
+  </mdp:bs-config>
+    <!--===============================================社保查询-珠海===========================================-->
+
+  <!--===============================================社保查询-梅州===========================================-->
+  <mdp:bs-config source="&source2;" encoding="utf-8">
+
+    <mdp:bs-page url="&path2;/" responseTemplate="shebaocaxun\meizhou\response_main.xsl"/>
+
+  </mdp:bs-config>
+  <!--===============================================社保查询-梅州===========================================-->
+
+  <!--===============================================社保查询-韶关===========================================-->
+  <mdp:bs-config source="&source3;" encoding="utf-8">
+
+    <mdp:bs-page url="&path3;" responseTemplate="shebaocaxun\meizhou\response_main.xsl"/>
+
+  </mdp:bs-config>
+  <!--===============================================社保查询-韶关===========================================-->
+
+  <!--===============================================社保查询-揭阳===========================================-->
+  <mdp:bs-config source="&source4;" encoding="utf-8">
+
+    <mdp:bs-page url="&path4;" responseTemplate="shebaocaxun\meizhou\response_main.xsl"/>
+
+  </mdp:bs-config>
+  <!--===============================================社保查询-揭阳===========================================-->
+  <!--############################################社保查询########################################################################-->
+
+  <!--############################################公积金查询########################################################################-->
+  <!--===============================================公积金查询-广州===========================================-->
+  <mdp:bs-config source="&source5;" encoding="utf-8">
+
+    <mdp:bs-page url="&path5;" responseTemplate="gongjijinchaxun\guangzhou\response_main.xsl"/>
+
+  </mdp:bs-config>
+  <!--===============================================公积金查询-广州===========================================-->
+
+  <!--===============================================公积金查询-东莞===========================================-->
+  <mdp:bs-config source="&source6;" encoding="utf-8">
+
+    <mdp:bs-page url="&path6;" responseTemplate="gongjijinchaxun\dongguan\response_main.xsl"/>
+
+  </mdp:bs-config>
+  <!--===============================================公积金查询-东莞===========================================-->
+
+  <!--===============================================公积金查询-梅州===========================================-->
+  <mdp:bs-config source="&source7;" encoding="utf-8">
+
+    <mdp:bs-page url="&path7;" responseTemplate="gongjijinchaxun\meizhou\response_main.xsl"/>
+
+  </mdp:bs-config>
+  <!--===============================================公积金查询-梅州===========================================-->
+
+  <!--===============================================公积金查询-云浮===========================================-->
+  <mdp:bs-config source="&source8;" encoding="utf-8">
+
+    <mdp:bs-page url="&path8;" responseTemplate="gongjijinchaxun\yunfu\response_main.xsl"/>
+
+  </mdp:bs-config>
+  <!--===============================================公积金查询-云浮===========================================-->
+  <!--############################################公积金查询########################################################################-->
+
+
+
+  <!--############################################水费查询########################################################################-->
+  <!--===============================================水费查询-梅州===========================================-->
+  <mdp:bs-config source="&sourcesf1;" encoding="utf-8">
+    <!--首页-->
+    <mdp:bs-page url="&pathsf1;/wapquery/menu/sfSelect.jsp\?id=\d+" responseTemplate="sf_search\meizhou\response_main.xsl"/>
+    <!--查询-->
+    <mdp:bs-page url="&pathsf1;/wapquery/menu/sfinterfaceinfo.jsp\?method=post" responseTemplate="sf_search\meizhou\response_search.xsl"/>
+    <mdp:bs-page url="&pathsf1;/wapquery/menu/sfinterfacedetail.jsp" responseTemplate="sf_search\meizhou\response_detail.xsl"/>
+    <mdp:bs-page url="&pathsf1;/wapquery/menu/sfoldwaterselect.jsp" responseTemplate="sf_search\meizhou\response_detail.xsl"/>
+  </mdp:bs-config>
+  <!--===============================================水费查询-梅州===========================================-->
+
+  <!--===============================================水费查询-云浮===========================================-->
+  <mdp:bs-config source="&sourcesf2;" encoding="utf-8">
+    <mdp:bs-page url="&pathsf2;/SfQuery.aspx" responseTemplate="sf_search\yunfu\response_main.xsl" requestTemplate ="sf_search\yunfu\request_search.xsl"/>
+    <mdp:bs-page url="&pathsf2;/Sfinfo.aspx\?hh=(.*)" responseTemplate="sf_search\yunfu\response_main.xsl"/>
+  </mdp:bs-config>
+  <!--===============================================水费查询-云浮===========================================-->
+  <!--############################################水费查询########################################################################-->
+
+  <!--############################################电费查询########################################################################-->
+  
+  <!--===============================================电费查询-珠海===========================================-->
+  <mdp:bs-config source="&sourcedf1;" encoding="utf-8">
+    <mdp:bs-page url="&pathdf1;/zhgwap/gov/bmfwjt/dfcx.jsp" responseTemplate="df_search\zhuhai\response_main.xsl" requestTemplate ="df_search\zhuhai\request_search.xsl"/>
+    <mdp:bs-page url="&pathdf1;/Sfinfo.aspx\?hh=(.*)" responseTemplate="sf_search\yunfu\response_main.xsl"/>
+  </mdp:bs-config>
+
+  <!--===============================================电费查询-珠海===========================================-->
+  <!--############################################电费查询########################################################################-->
+</mdp:configuration>

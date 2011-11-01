@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+ <!-- 
+ <bean id="mdpHandlerMapping" class="com.dheaven.mip.plugin.web.SimpleUrlHandlerMappingExt">
+		<property name="mappings">
+	      <props>
+	  		<prop key="/mdpLogs.do">mdpLogs</prop>
+	  		</props>
+		</property>
+   </bean>
+	
+	
+	<bean name="mdpLogs" class="com.dheaven.mip.plugin.mdp.web.MdpLogsAction" autowire="byName">
+		<property name="mdpLogsServiceImpl">
+	  		 <ref bean="mdpLogsServiceImpl"/>
+	 	</property>
+	</bean> -->
+	
+	<!-- MDP配置 -->
+	<bean id="mdpconfig" class="com.dheaven.mip.plugin.mdp.web.Config" autowire="byName"/>
+	<bean id="sign" class="com.dheaven.mip.plugin.mdp.web.Sign" autowire="byName"/>
+	<!-- MDP HTTP扩展 -->
+	<bean id="mdpInterface" class="com.dheaven.mip.plugin.mdp.web.MdpInterface" autowire="byName"/>
+	<!-- MDP 通用Action -->
+	<bean id="webActionController" class="com.dheaven.mip.plugin.mdp.web.MdpWebAction" autowire="byName"/>
+	
+	
+	<!-- 配置调度方法
+	  <bean id="mdpLogsTask" class="com.dheaven.mip.plugin.mdp.logs.MdpLogsTimer"/>
+	   配置定时器任务 
+	  <bean id="scheduledMdpLogsTask" class="org.springframework.scheduling.timer.ScheduledTimerTask">
+	    <property name="timerTask">
+	      <ref bean="mdpLogsTask"/>
+	    </property>
+	     <property name="period">
+	      <value>86400000</value>
+	    </property>
+	  </bean> -->
+	  
+	  
+	  
+	  <!-- 启动定时器 
+	  <bean id="start" class="org.springframework.scheduling.timer.TimerFactoryBean">
+	    <property name="scheduledTimerTasks">
+	      <list>
+	      <ref bean="scheduledMdpLogsTask"/>
+	    </list>
+	    </property>
+	  </bean>
+	  -->
+	  
+	  
+	  
+	  <!-- mdp新的数据源监控，支持线程池， by yesun 091207 -->
+	<!-- data source monitor
+	<bean name="dataSourceMonitorJob" class="org.springframework.scheduling.quartz.JobDetailBean" autowire="byName">
+	  <property name="jobClass" value="com.dheaven.mip.plugin.mdp.schedule.DataSourceMonitorJob" ></property>
+	  <property name="jobDataAsMap">
+	    <map>
+	      <entry key="mipSysuserServiceImpl" >
+	      	<ref bean="mipSysuserServiceImpl"/>
+	      </entry>
+	      <entry key="mipEnterpriseConfigServiceImpl" >
+	      	<ref bean="mipEnterpriseConfigServiceImpl"/>
+	      </entry>
+	      <entry key="mipBranchServiceImpl" >
+	      	<ref bean="mipBranchServiceImpl"/>
+	      </entry>
+	      <entry key="mdpExtentionServiceImpl" >
+	      	<ref bean="mdpExtentionServiceImpl"/>
+	      </entry>
+	    </map>
+	  </property>
+	</bean>
+	
+	<bean id="simpleTriggerDataSourceMonitor" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+	    <property name="jobDetail" ref="dataSourceMonitorJob" />
+	    2 min 
+	    <property name="startDelay" value="60000" />
+	     repeat every 480 seconds 
+	    <property name="repeatInterval" value="60000" />
+	    <property name="misfireInstruction"  value="1"></property>
+	</bean>-->
+	
+	<!-- 触发轮询
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	    <property name="triggers">
+	        <list>
+	            <ref bean="simpleTriggerDataSourceMonitor" />
+	        </list>
+	    </property>
+	</bean> -->
+	
+	
+</beans>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<msc appid="MKWXCS" appname="广州省移动无线城市" appver="1.0" customername="self" partnerid="DH">
+	<home href="home.xml"/>
+	<!--<login href="login.xml"/>-->
+
+</msc>

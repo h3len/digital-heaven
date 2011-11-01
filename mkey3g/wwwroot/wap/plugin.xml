@@ -1,0 +1,30 @@
+<category>
+  <id>mipwap</id>
+  <categoryname>MIPWAP</categoryname>
+  <comment>mipwap</comment>
+  <initClassName>com.dheaven.mip.plugin.wap.MipWapPlugin</initClassName>
+  <iplugin>com.dheaven.mip.plugin.wap.MipWapPlugin</iplugin>
+  <ui>
+ </ui>
+  <dep>
+  </dep>
+  <vos>
+    <vo>
+      <value>com.dheaven.mip.plugin.wap.dataaccess.vo.MipDevice</value>
+    </vo>
+    <vo>
+      <value>com.dheaven.mip.plugin.wap.dataaccess.vo.MipDeviceUa</value>
+    </vo>
+  </vos>
+  <permissions>
+    <permission>
+      <id>1</id>
+      <permissionname>管理权限</permissionname>
+      <privacybit>1</privacybit>
+    </permission>
+  </permissions>
+  <servletsmapping>
+	 	<string>/wap/default.do=default</string>
+ 		 <string>/wap/appManager.do=appManager</string>
+  </servletsmapping>
+</category>

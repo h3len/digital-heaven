@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+	xmlns:dwra="http://www.directwebremoting.org/schema/spring-dwr-annotations"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+          http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+          http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+          http://www.directwebremoting.org/schema/spring-dwr http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd
+          http://www.directwebremoting.org/schema/spring-dwr-annotations http://www.d-heaven.com/ad/spring-dwr-annotations.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+	default-autowire="byName" default-lazy-init="true">
+
+	<!-- Load Manager -->
+	<bean id="mipAppConfigManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipAppConfigManager"
+		autowire="byName" />
+	<bean id="mipClientAppManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipClientAppManager"
+		autowire="byName" />
+	<bean id="mipUserOfAppManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipUserOfAppManager"
+		autowire="byName" />
+	<bean id="mipMapDataManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipMapDataManager"
+		autowire="byName" />
+	<bean id="mipSysuserManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipSysuserManager"
+		autowire="byName" />
+	<bean id="mipUserCtrlManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipUserCtrlManager"
+		autowire="byName" />
+	<bean id="mipBranchManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipBranchManager"
+		autowire="byName" />
+	<bean id="mipCustomSysuserManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipCustomSysuserManager"
+		autowire="byName" />
+	<bean id="mipCustomCatalogManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipCustomCatalogManager"
+		autowire="byName" />
+	<bean id="mipMobileTypeManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipMobileTypeManager"
+		autowire="byName" />
+	<bean id="mipRoleManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipRoleManager"
+		autowire="byName" />
+	<bean id="mipRolePermissionManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipRolePermissionManager"
+		autowire="byName" />
+	<bean id="mipUserRoleManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipUserRoleManager"
+		autowire="byName" />
+	<bean id="mipUserPrivacyManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipUserPrivacyManager"
+		autowire="byName" />
+	<bean id="mipConfigManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipConfigManager"
+		autowire="byName" />
+	<bean id="mipEnterpriseConfigManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipEnterpriseConfigManager"
+		autowire="byName" />
+	<bean id="mipRelationCustomCatalogManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipRelationCustomCatalogManager"
+		autowire="byName" />
+	<bean id="mipMsgManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipMsgManager"
+		autowire="byName" />
+	<bean id="mipLogsManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipLogsManager"
+		autowire="byName" />
+	<bean id="mipSysLogManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipSysLogManager"
+		autowire="byName" />
+	<bean id="mipSmsDataManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipSmsDataManager"
+		autowire="byName" />
+	<bean id="mipMmsDataManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipMmsDataManager"
+		autowire="byName" />
+	<bean id="mipWhiteAndBlackListManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipWhiteAndBlackListManager"
+		autowire="byName" />
+	<bean id="mipWhiteListConfigManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipWhiteListConfigManager"
+		autowire="byName" />
+	<bean id="mipKeyFilterManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipKeyFilterManager"
+		autowire="byName" />
+	<bean id="mipGroupManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipGroupManager"
+		autowire="byName" />
+	<bean id="mipGroupUserManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipGroupUserManager"
+		autowire="byName" />
+	<bean id="mipGroupContactManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipGroupContactManager"
+		autowire="byName" />
+	<bean id="mipPersonalGroupManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipPersonalGroupManager"
+		autowire="byName" />
+	<bean id="mipPersonalUserManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipPersonalUserManager"
+		autowire="byName" />
+	<bean id="mipSysuserExtendManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipSysuserExtendManager"
+		autowire="byName" />
+	<bean id="mipPersonalUserExtendManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipPersonalUserExtendManager"
+		autowire="byName" />
+
+	<bean id="mipVisitLogManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipVisitLogManager"
+		autowire="byName">
+	</bean>
+	<bean id="mipWapPushUrlManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipWapPushUrlManager"
+		autowire="byName" />
+	<bean id="emaLicenseLogManager"
+		class="com.dheaven.mip.dataaccess.datamanager.EmaLicenseLogManager"
+		autowire="byName" />
+
+	<bean id="mipSysuserExtentionManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipSysuserExtentionManager"
+		autowire="byName" />
+
+	<bean id="mipEnterpriseAdminManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipEnterpriseAdminManager"
+		autowire="byName" />
+
+	<bean id="mipPacketManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipPacketManager"
+		autowire="byName" />
+
+	<bean id="mipUserLoginManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipUserLoginManager"
+		autowire="byName" />
+
+	<bean id="mipUserStatisticsManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipUserStatisticsManager"
+		autowire="byName" />
+
+	<bean id="mipAdminMailconfigManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipAdminMailconfigManager"
+		autowire="byName" />
+
+	<bean id="mipEnterpriseMailConfigManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipEnterpriseMailConfigManager"
+		autowire="byName" />
+	<bean id="mipPluginAppManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipPluginAppManager"
+		autowire="byName" />
+	<bean id="mipUserPushRuleManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipUserPushRuleManager"
+		autowire="byName" />
+	<bean id="mipRouterManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipRouterManager"
+		autowire="byName" />
+	<bean id="mipSmsConfigManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipSmsConfigManager"
+		autowire="byName" />
+	<bean id="mipMmsConfigManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipMmsConfigManager"
+		autowire="byName" />
+	<bean id="mipAppPeriodManager"
+		class="com.dheaven.mip.dataaccess.datamanager.MipAppPeriodManager"
+		autowire="byName" />	
+	<!-- Load Bean -->
+	<bean id="mipPluginAppServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipPluginAppServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipPacketServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipPacketServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+
+	<bean id="mipMapDataServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipMapDataServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipVisitLogServiceImpl"
+		class="com.dheaven.mip.service.impl.MipVisitLogServiceImpl"
+		autowire="byName">
+	</bean>
+
+	<bean id="mipBranchServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipBranchServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipSysuserServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipSysuserServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipUserCtrlServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipUserCtrlServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipCustomSysuserServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipCustomSysuserServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipCustomCatalogServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipCustomCatalogServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="permissionServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.PermissionServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipMobileTypeServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipMobileTypeServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipConfigServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipConfigServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipEnterpriseConfigServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipEnterpriseConfigServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="ssoActionServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.SSOActionServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipMsgServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean class="com.dheaven.mip.service.impl.MipMsgServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipLogsServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipLogsServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipSmsDataServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipSmsDataServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipMmsDataServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipMmsDataServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipWhiteAndBlackListServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipWhiteAndBlackListServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipKeyFilterServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipKeyFilterServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipWapPushUrlServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipWapPushUrlServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipGroupServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipGroupServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipGroupUserServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipGroupUserServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipGroupContactServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipGroupContactServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="communicationAbilityServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.CommunicationAbilityServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipPersonalGroupServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipPersonalGroupServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipPersonalUserServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipPersonalUserServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="emaLicenseLogServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.EmaLicenseLogServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipSysuserExtendServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipSysuserExtendServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+
+	<bean id="mipPersonalUserExtendServiceImpl"
+		parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipPersonalUserExtendServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipSysuserExtentionServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipSysuserExtentionServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipEnterpriseAdminServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipEnterpriseAdminServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+
+	<bean id="mipClientAppServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipClientAppServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+
+	<bean id="mipUserLoginServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipUserLoginServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+
+
+	<bean id="mipUserStatisticsServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipUserStatisticsServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+
+	<bean id="mipAppConfigServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipAppConfigServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipAdminMailconfigServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipAdminMailconfigServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipEnterpriseMailConfigServiceImpl"
+		parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipEnterpriseMailConfigServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipUserPushRuleServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.push.MipUserPushRuleServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipRouterServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipRouterServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	<bean id="mipApsStatisticsServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean
+				class="com.dheaven.mip.service.impl.MipApsStatisticsServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+	
+	<bean id="mipAppPeriodServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean class="com.dheaven.mip.service.impl.MipAppPeriodServiceImpl"
+				autowire="byName" />
+		</property>
+	</bean>
+
+	<bean id="smsSenderDelegator"
+		class="com.dheaven.mip.wireless.sms.SMSSenderDelegator"
+		autowire="byName" />
+	<bean id="ussdSenderDelegator"
+		class="com.dheaven.mip.wireless.ussd.USSDSenderDelegator"
+		autowire="byName" />
+
+
+	<!-- 以下不需要事务 -->
+	<bean id="serverConfig"
+		class="com.dheaven.mip.config.ServerConfig">
+		<constructor-arg>
+			<ref bean="mipConfigServiceImpl" />
+		</constructor-arg>
+		<constructor-arg>
+			<ref bean="mipEnterpriseConfigServiceImpl" />
+		</constructor-arg>
+		<constructor-arg>
+			<ref bean="mipSysuserServiceImpl" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="serverPushServiceImpl"
+		class="com.dheaven.mip.service.push.ServerPushServiceImpl"
+		autowire="byName" />
+
+	<bean name="ldapServiceImpl"
+		class="com.dheaven.mip.ldap.service.impl.LdapServiceImpl"
+		autowire="byName" />
+
+
+	<!-- Socket 服务器部分 Start -->
+	<bean id="mipMainSocketServerLoader"
+		class="com.dheaven.mip.socket.MipMainSocketServerLoader">
+		<constructor-arg>
+			<ref bean="mipSysuserServiceImpl" />
+		</constructor-arg>
+		<constructor-arg>
+			<ref bean="serverConfig" />
+		</constructor-arg>
+	</bean>
+	<!-- Socket 服务器部分 End -->
+
+	<!-- bean id="mailCheckerService" class="com.dheaven.mip.SocketServer.Task.MailCheckerService" autowire="byName"/> -->
+
+
+	<!--<bean id="mipServerLoader" class="com.dheaven.mip.SocketServer.MipServerLoader" autowire="byName"/>
+		bean id="messagePushService" class="com.dheaven.mip.SocketServer.Task.MessagePushService" autowire="byName"/-->
+
+	<!-- //debug 用的快捷路径 -->
+	<bean id="mipDebugServiceImpl"
+		class="com.dheaven.mip.service.impl.MipDebugServiceImpl"
+		autowire="byName" />
+
+
+	<!-- Load Web -->
+	<!-- add by mahm:protype - to -dwr -->
+	<bean id="catalog" class="com.dheaven.mip.web.Catalog"
+		autowire="byName">
+		<dwr:remote javascript="catalog" />
+	</bean>
+	<bean id="group" class="com.dheaven.mip.web.Group"
+		autowire="byName">
+		<dwr:remote javascript="group" />
+	</bean>
+
+	<!--
+		<bean id="logsFacade" class="com.dheaven.mip.web.Logs"
+		autowire="byName">
+		<dwr:remote javascript="Logs" />
+		</bean>
+	-->
+	<bean id="user2Facade" class="com.dheaven.mip.web.User2"
+		autowire="byName">
+		<dwr:remote javascript="User2" />
+	</bean>
+
+	<bean id="BranchAction" class="com.dheaven.mip.web.MipBranchAction"
+		autowire="byName">
+		<dwr:remote javascript="BranchAction" />
+	</bean>
+
+	<bean id="catalogFacade" class="com.dheaven.mip.web.CatalogAction"
+		autowire="byName">
+		<dwr:remote javascript="CatalogAction" />
+	</bean>
+	<bean id="roleFacade" class="com.dheaven.mip.web.RoleAction"
+		autowire="byName">
+		<dwr:remote javascript="RoleAction" />
+	</bean>
+	<bean id="CheckOaLogin" class="com.dheaven.mip.web.CheckOaLogin"
+		autowire="byName">
+		<dwr:remote javascript="CheckOaLogin" />
+	</bean>
+	<bean id="MobileAction" class="com.dheaven.mip.web.MobileAction"
+		autowire="byName">
+		<dwr:remote javascript="MobileAction" />
+	</bean>
+	<bean id="EnterpriseAction"
+		class="com.dheaven.mip.web.MipEnterpriseAction" autowire="byName">
+		<dwr:remote javascript="EnterpriseAction" />
+	</bean>
+	<bean id="MipUserLoginAction"
+		class="com.dheaven.mip.web.MipUserLoginAction" autowire="byName">
+		<dwr:remote javascript="MipUserLoginAction" />
+	</bean>
+	<bean id="MipUserStatisticsAction"
+		class="com.dheaven.mip.web.MipUserStatisticsAction"
+		autowire="byName">
+		<dwr:remote javascript="MipUserStatisticsAction" />
+	</bean>
+	<bean id="MipAdminMailConfigAction"
+		class="com.dheaven.mip.web.MipAdminMailConfigAction"
+		autowire="byName">
+		<dwr:remote javascript="MipAdminMailConfigAction" />
+	</bean>
+	<bean id="MipLdapAction"
+		class="com.dheaven.mip.web.MipLdapAction"
+		autowire="byName">
+		<dwr:remote javascript="MipLdapAction" />
+	</bean>
+		<bean id="MipBlackWhiteAction" class="com.dheaven.mip.web.MipBlackWhiteAction"
+		autowire="byName">
+		<dwr:remote javascript="MipBlackWhiteAction" />
+	</bean>
+	<bean id="LoginCountAction" class="com.dheaven.mip.web.LoginCountAction"
+		autowire="byName">
+		<dwr:remote javascript="LoginCountAction" />
+	</bean>
+	<bean id="MipAppPeriodAction" class="com.dheaven.mip.web.MipAppPeriodAction"
+		autowire="byName">
+		<dwr:remote javascript="MipAppPeriodAction" />
+	</bean>
+	<dwr:configuration>
+		<dwr:convert type="bean"
+			class="com.dheaven.mip.dataaccess.vo.MipMobileType" />
+		<dwr:convert type="bean"
+			class="com.dheaven.mip.dataaccess.vo.MipBranch" />
+		<dwr:convert type="bean"
+			class="com.dheaven.mip.dataaccess.vo.UserExtend" />
+		<dwr:convert type="bean"
+			class="com.dheaven.mip.dataaccess.vo.MipPersonalGroup" />
+		<dwr:convert type="bean"
+			class="com.dheaven.mip.dataaccess.vo.MipGroup" />
+		<dwr:convert type="bean"
+			class="com.dheaven.mip.dataaccess.vo.MipLdap" />
+			<dwr:convert type="bean"
+			class="com.dheaven.mip.dataaccess.vo.MipLdapReflect" />
+	</dwr:configuration>
+
+</beans>

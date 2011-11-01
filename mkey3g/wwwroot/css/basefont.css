@@ -1,0 +1,287 @@
+/*
+Basis Fonts style
+Coding by Yesun
+Date:2006-1-2
+*/
+html{font-size:12px;}
+body{
+	color: #006699;
+	line-height:150%;
+	font-size:12px;
+	margin:0px;
+	padding:0px;
+	text-align:center;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+ul,li,td{
+	font-family:Arial, Helvetica, sans-serif,'����';
+	line-height:150%;
+	color:#000;
+	font-size:12px;
+	margin:0px;
+	padding:0px;
+}
+a..link
+{
+	font-weight:;
+}
+div
+{
+	margin:0px;
+}
+textarea
+{
+	width:220px;
+	height:80px;
+}
+
+.12
+{
+	font-weight:;
+	font-size:12px;
+}
+.14
+{
+	font-weight:;
+	font-size:14px;
+}
+.20
+{
+	font-weight:;
+	font-size:20px;
+}
+.num
+{
+	font-family:Tahoma;
+	font-size:11px;
+	font-weight:;
+	text-decoration:none;
+}
+a.red:link
+{
+	color:#f00;
+}
+a.red:visited
+{
+	color:#f00;
+}
+a.red:link
+{
+	color:red;
+	font-weight:;
+}
+a.red:visited
+{
+	color:red;
+	font-weight:;
+}
+
+a.bloderred:link
+{
+	color:red;
+	font-weight:;
+}
+a.bloderred:visited
+{
+	color:red;
+	font-weight:;
+}
+
+A:link			{font-family: Verdana; font-size: 12px; color: #052968; text-decoration: none}
+A:visited		{font-family: Verdana; font-size: 12px; color: #052968; text-decoration: none}
+A:hover			{font-family: Verdana; font-size: 12px; color: #0074bc; text-decoration: underline}
+A:Active		{font-family: Verdana; font-size: 12px; color: #052968;}
+
+
+
+p{
+	margin-top:0;
+	margin-bottom:0;
+	}
+h1{
+	font-size:14px;
+	font-weight:;
+	margin:0;
+	}
+h2{
+	font-size:12px;
+	font-weight:;
+	margin:0;
+	}
+img 
+{
+	border:0;
+	padding:0px;
+	margin:0px;
+}
+form {
+	margin:0;
+	padding:0;
+}
+input,button
+{
+	height:24px;
+	margin:0px;
+	padding:0px;
+	cursor:pointer;
+}
+ul{
+	margin:0;
+	padding:0;
+	}
+li{
+	margin:0;
+	padding-left:4px;
+	list-style-type:none;
+	}
+br
+{
+	height:5px;
+}
+hr
+{
+	height:1px;
+	color:#000;
+}
+.daohang
+{
+	text-align:left;
+	padding:6px;
+	padding-left:10px;
+	font-size:12px;
+	font-weight:;
+}
+
+a.bigcattitle:link{color: #000;text-decoration:none;font-weight:normal;font-size:13px;}
+a.bigcattitle:hover{color:#f00;text-decoration:none;font-weight:normal;font-size:13px;}
+a.bigcattitle:visited {color: #000;text-decoration:none;font-weight:normal;font-size:13px;}
+
+.vdatetime
+{
+	color:Gray;
+	font-size:11px;
+}
+.star
+{
+	font-size:13px;
+	color:Red;
+	font-weight:;
+}
+.more
+{
+	height:20px;
+	text-align:right;
+	padding-right:20px;
+	font-weight:;
+	margin:10px;
+}
+.pageinfo
+{
+	padding:4px;
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#DFD456', endColorStr='#ffffff', gradientType='1');
+}
+#mainbox
+{
+	width:770px;
+	text-align:center;
+	float:left;
+	/*border:1px #f2f2f2 solid;*/
+}
+#edzhleft
+{
+	padding:15px;
+	text-align:left;
+	background-color:#EAE4A3;
+	width:214px;
+	float:right;
+	border-left:10px #666 solid;
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#eeeeee', endColorStr='#ffffff', gradientType='1');
+}
+#link
+{
+	padding:10px;
+	background-color:#eee;
+	width:770px;
+	height:30px;
+	float:left;
+}
+#bottom
+{
+	width:770px;
+	height:160px;
+	background-color:#f8f8f8;
+	float:left;
+}
+
+
+#bluecorner
+{
+	font-size:0px;
+	height:6px;
+	width:6px;
+	background:url(/images/con-blue.gif) no-repeat left top;
+}
+#grycorner
+{
+	font-size:0px;
+	height:6px;
+	width:6px;
+	background:url(/images/con-gry.gif) no-repeat left top;
+}
+#maincorner
+{
+	font-size:0px;
+	height:6px;
+	width:6px;
+	background:url(/images/con-main.gif) no-repeat left top;
+}
+#oracorner
+{
+	font-size:0px;
+	height:6px;
+	width:6px;
+	background:url(/images/con-ora.gif) no-repeat left top;
+}
+#redcorner
+{
+	font-size:0px;
+	height:6px;
+	width:6px;
+	background:url(/images/con-red.gif) no-repeat left top;
+}
+#yellowcorner
+{
+	font-size:0px;
+	height:6px;
+	width:6px;
+	background:url(/images/con-yellow.gif) no-repeat left top;
+	margin:0px;
+}
+ad
+{
+	float: right;
+	clear: right;
+ 	margin: 0px 25px 0px 0px;
+}
+
+.red
+{
+	color:red;
+}
+.
+{
+	color: #006699;
+}
+.red
+{
+	color:red;
+}
+
+/*----mip v4.5----*/
+.table{border:1px #999 solid;}
+.header{height:22px;background-color:#f2f2f2;}
+.ar{text-align:right;}
+.al{text-align:left;}
+.ac{text-align:center;}
+.mouse{cursor:pointer;}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT msc ((group*, item*))>
+<!ATTLIST msc
+	row (1 | 2 | 3) "3"
+	statusbar_caption CDATA #REQUIRED
+	title CDATA #REQUIRED
+	type CDATA #FIXED "grid"
+>
+<!ELEMENT group ((item+))>
+<!ATTLIST group
+	caption CDATA #REQUIRED
+>
+<!ELEMENT item EMPTY>
+<!ATTLIST item
+	caption CDATA #REQUIRED
+	href CDATA #IMPLIED
+	icon CDATA #REQUIRED
+	target (_blank | _self) "_blank"
+>

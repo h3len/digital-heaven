@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<msc type="form">
+  <head>
+    <title>我的工作</title>
+  </head>
+
+  <body background="bg0.1.png">
+    <span dock="top">
+      <img src="top.png"/>
+    </span>
+   
+    <grid mode="3">
+      <item icon="image/wjs.png" caption="待办工作" href="?action=bs-transfer@mdp&amp;url=http://www.kingoedu.com:8081/OA2010/RCBG/GZDB.aspx" target="_blank"></item>
+      <item icon="image/wjs.png" caption="在办工作" href="?action=bs-transfer@mdp&amp;url=http://www.kingoedu.com:8081/OA2010/RCBG/GZZB.aspx" target="_blank"></item>
+      <item icon="image/wjs.png" caption="已办工作" href="?action=bs-transfer@mdp&amp;url=http://www.kingoedu.com:8081/OA2010/RCBG/GZCX.aspx" target="_blank"></item>
+    </grid>
+  </body>
+
+</msc>

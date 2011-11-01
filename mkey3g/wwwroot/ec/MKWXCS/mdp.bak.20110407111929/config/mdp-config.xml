@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration [
+    <!--社保查询-珠海-->
+    <!ENTITY source1 "218.204.223.149:4044">
+    <!ENTITY path1 "http://218.204.223.149:4044">
+  <!--梅州-->
+  <!ENTITY source2 "m.wxcsmz.com">
+  <!ENTITY path2 "http://m.wxcsmz.com">
+  <!--社保查询-韶关-->
+  <!ENTITY source3 "wap.sg12333.cn">
+  <!ENTITY path3 "http://wap.sg12333.cn">
+  <!--社保查询-揭阳-->
+  <!ENTITY source4 "wap.sbt.jymsfw.cn:8080">
+  <!ENTITY path4 "http://wap.sbt.jymsfw.cn:8080">
+  <!--#################################################################################################-->
+  <!--公积金查询-广州-->
+  <!ENTITY source5 "210.73.44.165">
+  <!ENTITY path5 "http://210.73.44.165">
+  <!--公积金查询-东莞-->
+  <!ENTITY source6 "wap.dggjj.cn">
+  <!ENTITY path6 "http://wap.dggjj.cn">
+
+  <!--公积金查询-云浮-->
+  <!ENTITY source8 "wap.umpay.com">
+  <!ENTITY path8 "http://wap.umpay.com">
+  <!--#################################################################################################-->
+
+  <!--水费查询-云浮-->
+  <!ENTITY sourcesf2 "yfwap.uyunfu.com">
+  <!ENTITY pathsf2 "http://yfwap.uyunfu.com">
+  <!--#################################################################################################-->
+  <!--电费查询-珠海-->
+  <!ENTITY sourcedf1 "218.204.223.221">
+  <!ENTITY pathdf1 "http://218.204.223.221">
+
+  <!--电费查询-惠州-->
+  <!ENTITY sourcedf2 "wap.12580hz.net">
+  <!ENTITY pathdf2 "http://wap.12580hz.net">
+  <!--#################################################################################################-->
+  <!--煤气查询-广州-->
+  <!ENTITY sourcemq1 "gzgas.dratek.net">
+  <!ENTITY pathmq1 "http://gzgas.dratek.net">
+
+  <!--煤气查询-深圳-->
+  <!ENTITY sourcemq2 "120.196.125.11">
+  <!ENTITY pathmq2 "http://120.196.125.11">
+
+  <!--煤气查询-珠海-->
+  <!ENTITY sourcemq3 "218.204.223.245">
+  <!ENTITY pathmq3 "http://218.204.223.245">
+
+
+  <!--手机订报-佛山-->
+  <!ENTITY sourcesjdb "211.139.201.121">
+  <!ENTITY pathsjdb "http://211.139.201.121">
+
+  <!--电影查询-->
+  <!ENTITY source_gzyx "theater.mtime.com">
+  <!--定义前缀-->
+  <!ENTITY path_gzyx "http://theater.mtime.com">
+  
+]>
+
+
+<mdp:configuration debug="true" xmlns:mdp="http://mdp.d-heaven.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mdp.d-heaven.com
+ mdp-config.xsd">
+    <mdp:authorization>
+        <mdp:allow source="*"/>
+    </mdp:authorization>
+  
+  <!--###################################################珠海####################################################-->
+  <mdp:bs-config source="&source1;" encoding="utf-8" htmlToXmlProvider="JTIDY" parseType="transfer" retryCount="3">
+    <!--==========社保查询-珠海======-->
+    <mdp:bs-page url="&path1;" responseTemplate="shebaocaxun\zhuhai\response_main.xsl" requestTemplate ="shebaocaxun/zhuhai/request_main.xsl"/>
+    <!--==========社保查询-珠海======-->
+
+  </mdp:bs-config>
+
+  <!--===============================================电费查询-珠海===========================================-->
+  <mdp:bs-config source="&sourcedf1;" encoding="utf-8" htmlToXmlProvider="JTIDY" parseType="transfer" retryCount="3">
+    <mdp:bs-page url="&pathdf1;/zhgwap/gov/bmfwjt/dfcx.jsp" responseTemplate="df_search/zhuhai/response_main.xsl"/>
+    <mdp:bs-page url="&pathdf1;/zhgwap/gov/bmfwjt/dfinfo.jsp\?method=post" responseTemplate="df_search/zhuhai/response_main.xsl"/>
+  </mdp:bs-config>
+
+  <!--===============================================电费查询-珠海===========================================-->
+
+  <!--===============================================煤气查询-珠海===========================================-->
+  <mdp:bs-config source="&sourcemq3;" encoding="utf-8" htmlToXmlProvider="JTIDY" parseType="transfer" retryCount="3">
+    <mdp:bs-page url="&pathmq3;" responseTemplate="mq_search/zhuhai/response_main.xsl"/>
+    <mdp:bs-page url="&pathmq3;/zhgwap/gov/bmfwjt/dfinfo.jsp\?method=post" responseTemplate="mq_search/zhuhai/response_main.xsl"/>
+  </mdp:bs-config>
+
+  <!--===============================================煤气查询-珠海===========================================-->
+  <!--###################################################珠海####################################################-->
+  <!--##########-->
+  <!--##########-->
+  <!--##########-->
+  <!--###################################################梅州####################################################-->
+  <mdp:bs-config source="&source2;" encoding="utf-8" htmlToXmlProvider="JTIDY" parseType="transfer" retryCount="3">
+    <!--==========社保查询-梅州======-->
+    <mdp:bs-page url="&path2;/wapquery/menu/sbt" responseTemplate="shebaocaxun/meizhou/response_main.xsl" requestTemplate="shebaocaxun/meizhou/request_main.xsl"/>
+    <!--==========社保查询-梅州======-->
+
+    <!--==========公积金查询-梅州======-->
+    <mdp:bs-page url="&path2;/wapquery/menu/accumulation" responseTemplate="gongjijinchaxun/meizhou/response_main.xsl" requestTemplate="gongjijinchaxun/meizhou/request_main.xsl"/>
+    <!--==========公积金查询-梅州======-->
+
+    <!--==========水费查询-梅州======-->
+    <!--首页-->
+    <mdp:bs-page url="&path2;/wapquery/menu/sfSelect.jsp\?id=\d+" responseTemplate="sf_search/meizhou/response_main.xsl" requestTemplate="sf_search/meizhou/request_search.xsl"/>
+    <!--查询-->
+    <mdp:bs-page url="&path2;/wapquery/menu/sfinterfaceinfo.jsp" responseTemplate="sf_search/meizhou/response_search.xsl"/>
+    <mdp:bs-page url="&path2;/wapquery/menu/sfinterfacedetail.jsp" responseTemplate="sf_search/meizhou/response_detail.xsl"/>
+    <mdp:bs-page url="&path2;/wapquery/menu/sfoldwaterselect.jsp" responseTemplate="sf_search/meizhou/response_detail.xsl"/>
+    <!--==========水费查询-梅州======-->
+
+    <!--==========电费查询-梅州======-->
+    <mdp:bs-page url="&path2;/wapquery/menu/dfcx.jsp\?id=\d+" responseTemplate="df_search/meizhou/response_main.xsl" requestTemplate="df_search/meizhou/request_main.xsl"/>
+    <mdp:bs-page url="&path2;/wapquery/menu/dfinfo.jsp" responseTemplate="df_search/meizhou/response_main.xsl"/>
+    <!--==========电费查询-梅州======-->
+
+    <!--==========煤气查询-梅州======-->
+    <mdp:bs-page url="&path2;/wapquery/menu/gas/gas.jsp\?id=\d+" responseTemplate="mq_search/meizhou/response_main.xsl"/>
+    <mdp:bs-page url="&path2;/wapquery/menu/gas/gaslist.jsp\?method=post" responseTemplate="mq_search/meizhou/response_main.xsl"/>
+    <!--==========煤气查询-梅州======-->
+  </mdp:bs-config>
+  <!--###################################################梅州####################################################-->
+  <!--##########-->
+  <!--##########-->
+  <!--##########-->
+  <!--###################################################韶关####################################################-->
+  <mdp:bs-config source="&source3;" encoding="utf-8" htmlToXmlProvider="JTIDY" parseType="transfer" retryCount="3">
+    <!--==========社保查询-韶关======-->
+    <mdp:bs-page url="&path3;" responseTemplate="shebaocaxun/meizhou/response_main.xsl"/>
+    <!--==========社保查询-韶关======-->
+  </mdp:bs-config>
+  <!--###################################################韶关####################################################-->
+  <!--##########-->
+  <!--##########-->
+  <!--##########-->
+  <!--###################################################揭阳####################################################-->
+  <mdp:bs-config source="&source4;" encoding="utf-8" htmlToXmlProvider="JTIDY" parseType="transfer" retryCount="3">
+    <!--==========社保查询-揭阳======-->
+    <mdp:bs-page url="&path4;" responseTemplate="shebaocaxun/meizhou/response_main.xsl"/>
+    <!--==========社保查询-揭阳======-->
+  </mdp:bs-config>
+  <!--###################################################揭阳####################################################-->
+  <!--##########-->
+  <!--##########-->
+  <!--##########-->
+  <!--###################################################广州####################################################-->
+  <mdp:bs-config source="&source5;" encoding="utf-8" htmlToXmlProvider="JTIDY" parseType="transfer" retryCount="3">
+    <!--==========公积金查询-广州======-->
+    <mdp:bs-page url="&path5;" responseTemplate="gongjijinchaxun/guangzhou/response_main.xsl" requestTemplate="gongjijinchaxun/guangzhou/request_main.xsl"/>
+    <!--==========公积金查询-广州======-->
+  </mdp:bs-config>
+   
+  <!--==========煤气查询-广州======-->
+  <mdp:bs-config source="&sourcemq1;" encoding="utf-8" htmlToXmlProvider="JTIDY" parseType="transfer" retryCount="3">
+    <mdp:bs-page url="&pathmq1;" responseTemplate="mq_search/guangzhou/response_main.xsl" requestTemplate="mq_search/guangzhou/request_main.xsl"/>
+  </mdp:bs-config>
+  <mdp:bs-config source ="202.108.112.107:48089" encoding ="utf-8" htmlToXmlProvider="JTIDY" parseType="transfer" retryCount="3">
+    <mdp:bs-page url="http://202.108.112.107:48089"  responseTemplate="mq_search/guangzhou/response_main.xsl" requestTemplate="mq_search/guangzhou/request_search.xsl"/>
+    <mdp:bs-page url="http://202.108.112.107:48089/?isproxy=t&amp;pgtype=xhtml/httpecd_cssservices.gzgas.com:8081/service/login.do" redirectUrl="http://202.108.112.107:48089/?isproxy=t&amp;pgtype=xhtml/httpecd_cssservices.gzgas.com:8081/service/home.do?url="/>
+  </mdp:bs-config>
+  <!--==========煤气查询-广州======-->
+  <!--###################################################广州####################################################-->
+
+  <!--###################################################东莞####################################################-->
+  <mdp:bs-config source="&source6;" encoding="utf-8" htmlToXmlProvider="JTIDY" parseType="transfer" retryCount="3">
+    <!--==========公积金查询-东莞======-->
+    <mdp:bs-page url="&path6;" responseTemplate="gongjijinchaxun/dongguan/response_main.xsl" requestTemplate="gongjijinchaxun/dongguan/request_main.xsl"/>
+    <!--==========公积金查询-东莞======-->
+  </mdp:bs-config>
+  <!--###################################################东莞####################################################-->
+
+  <!--###################################################云浮####################################################-->
+  <mdp:bs-config source="&source8;" encoding="utf-8" htmlToXmlProvider="JTIDY" parseType="transfer" retryCount="3">
+    <!--==========公积金查询-云浮======-->
+    <mdp:bs-page url="&path8;" responseTemplate="gongjijinchaxun/yunfu/response_main.xsl"/>
+    <!--==========公积金查询-云浮======-->
+  </mdp:bs-config>
+  <!--===============================================水费查询-云浮===========================================-->
+  <mdp:bs-config source="&sourcesf2;" encoding="utf-8" htmlToXmlProvider="JTIDY" parseType="transfer" retryCount="3">
+    <mdp:bs-page url="&pathsf2;/SfQuery.aspx" responseTemplate="sf_search/yunfu/response_main.xsl" requestTemplate ="sf_search/yunfu/request_search.xsl"/>
+    <mdp:bs-page url="&pathsf2;/Sfinfo.aspx\?hh=(.*)" responseTemplate="sf_search/yunfu/response_main.xsl"/>
+  </mdp:bs-config>
+  <!--===============================================水费查询-云浮===========================================-->
+  <!--###################################################云浮####################################################-->
+
+
+  <!--###################################################惠州####################################################-->
+
+  <mdp:bs-config source="&sourcedf2;" encoding="utf-8" htmlToXmlProvider="JTIDY" parseType="transfer" retryCount="3">
+    <!--===============================================电费查询-惠州===========================================-->
+    <mdp:bs-page url="&pathdf2;/service/conven/view/elecQuery.do" responseTemplate="df_search/huizhou/response_main.xsl"/>
+    <mdp:bs-page url="&pathdf2;/service/conven/view/elecInfo.do\?method=post" responseTemplate="df_search/huizhou/response_main.xsl"/>
+    <!--===============================================电费查询-惠州===========================================-->
+
+    <!--===============================================煤气查询-惠州===========================================-->
+    <mdp:bs-page url="&pathdf2;/service/conven/view/coalGasQuery.do" responseTemplate="mq_search/huizhou/response_main.xsl"/>
+    <mdp:bs-page url="&pathdf2;/service/conven/view/coalGasInfo.do\?method=post" responseTemplate="mq_search/huizhou/response_detail.xsl"/>
+    <!--===============================================煤气查询-惠州===========================================-->
+  </mdp:bs-config>
+
+  <!--###################################################惠州####################################################-->
+
+
+  <!--###################################################深圳####################################################-->
+  <mdp:bs-config source="&sourcemq2;" encoding="utf-8" htmlToXmlProvider="JTIDY" parseType="transfer" retryCount="3">
+    <!--==========煤气查询======-->
+    <mdp:bs-page url="&pathmq2;" responseTemplate="mq_search/shenzhen/response_main.xsl">
+      <mdp:bs-rule type="tag" startTag="&lt;a" endTag="/a&gt;"></mdp:bs-rule> 
+    </mdp:bs-page>
+    <!--==========煤气查询======-->
+  </mdp:bs-config>
+  <!--###################################################深圳####################################################-->
+
+
+
+  <!--###################################################佛山####################################################-->
+  <mdp:bs-config source="&sourcesjdb;" encoding="utf-8" htmlToXmlProvider="JTIDY" parseType="transfer" retryCount="3">
+    <!--==========手机订报======-->
+    <mdp:bs-page url="&pathsjdb;/fspay/subapp/sjdb" responseTemplate="sjdb/fosan/response_main.xsl" requestTemplate="sjdb/fosan/request_main.xsl">
+    </mdp:bs-page>
+    <!--==========手机订报======-->
+  </mdp:bs-config>
+  <!--###################################################佛山####################################################-->
+
+
+  <!--电影查询-->
+  <mdp:bs-config source="&source_gzyx;" encoding="utf-8" htmlToXmlProvider="JTIDY" parseType="transfer" retryCount="3">
+    <!--<mdp:bs-page url="&path_gzyx;/China_Guangdong_Province_Guangzhou/" responseTemplate="gzyx/response_index.xsl">
+        </mdp:bs-page>-->
+    <!--首页-->
+    <mdp:bs-page url="^&path_gzyx;/China_\w+_Province_\w+/$" responseTemplate="gzyx/response_index.xsl"/>
+    <mdp:bs-page url="^&path_gzyx;/China_\w+/$" responseTemplate="gzyx/response_index.xsl"/>
+    <!--查看售票影片-->
+    <!--<mdp:bs-page url="^&path_gzyx;/China_\w+_Province_\w+/booking/" responseTemplate="gzyx/response_book.xsl"/>-->
+    <mdp:bs-page url="^&path_gzyx;/China_\w+/booking/" responseTemplate="gzyx/response_book.xsl"/>
+    <!--电影院优惠信息-->
+    <!--<mdp:bs-page url="^&path_gzyx;/China_\w+_Province_\w+/discount/" responseTemplate="gzyx/response_discount.xsl"/>-->
+    <mdp:bs-page url="^&path_gzyx;/China_\w+/discount/" responseTemplate="gzyx/response_discount.xsl"/>
+    <!--电影-->
+    <!--<mdp:bs-page url="&path_gzyx;/China_\w+_Province_\w+/movie/" responseTemplate="gzyx/response_all.xsl" encoding="utf-8"/>-->
+    <!--<mdp:bs-page url="&path_gzyx;/China_\w+/movie/" responseTemplate="gzyx/response_all.xsl" encoding="utf-8"/>-->
+    <mdp:bs-page url="^&path_gzyx;/China_\w+/movie" responseTemplate="gzyx/response_all.xsl" encoding="utf-8"/>
+
+    <!--影院-->
+    <!--<mdp:bs-page url="&path_gzyx;/China_\w+_Province_\w+_\w+/\w+" responseTemplate="gzyx/response_fiml.xsl" encoding="utf-8"/>-->
+    <!--<mdp:bs-page url="&path_gzyx;/China_\w+_\w+/\w+" responseTemplate="gzyx/response_fiml.xsl" encoding="utf-8"/>-->
+    <mdp:bs-page url="&path_gzyx;/China_\w+/\d+" responseTemplate="gzyx/response_fiml.xsl" encoding="utf-8"/>
+
+    <!--d电影院-->
+    <!--<mdp:bs-page url="&path_gzyx;/China_\w+_Province_\w+/cinema/" responseTemplate="gzyx/response_cinema.xsl" encoding="utf-8"/>-->
+    <mdp:bs-page url="&path_gzyx;/China_\w+/cinema/" responseTemplate="gzyx/response_cinema.xsl" encoding="utf-8"/>
+  </mdp:bs-config>
+  
+  <!--电影-->
+  <mdp:bs-config source="movie.mtime.com" encoding="utf-8" htmlToXmlProvider="JTIDY" parseType="transfer" retryCount="3">
+    <mdp:bs-page url="^http://movie.mtime.com/\d+/posters_and_images/((\w+\.html)|(\w+\-\d+\.html)|)$" responseTemplate="gzyx/response_movie_img.xsl" encoding="utf-8"/>
+      <mdp:bs-page url="^http://movie.mtime.com/\d+/posters_and_images/member_score/((\w+\.html)|(\w+\-\d+\.html)|)$" responseTemplate="gzyx/response_movie_img.xsl" encoding="utf-8"/>
+
+    <mdp:bs-page url="^http://movie.mtime.com/\d+/((\w+\.html)|(\w+\-\d+\.html)|)$" responseTemplate="gzyx/response_movie_pl.xsl" encoding="utf-8" encodeParameter="false" encodeUrl="false" >
+      <!--增加视屏流的播放地址lch-->
+      <mdp:bs-rule mode="add" type="regex" regex='/flash/newvideoplayer\.swf\?vid=(\d+)&amp;mid=(\d+)"' template="&lt; div name=lch/&gt;"/>
+      <mdp:bs-rule type="tag" startTag="&lt;html" endTag="&lt;/html&gt;"/>
+    </mdp:bs-page>
+
+    <mdp:bs-page url="^http://movie.mtime.com/\d+/trailer/(\d+\.html)$" responseTemplate="gzyx/response_movie_pl.xsl" encoding="utf-8" encodeParameter="false" encodeUrl="false" >
+      <!--增加视屏流的播放地址lch-->
+      <mdp:bs-rule  type="regex" regex="videoPlayerBuilder.push\('play=&quot;true&quot; src=&quot;' \+ jsServer \+ '([^&quot;]+)&quot;'\);" template='&lt;div name=lch&gt;$1&lt;/div&gt;' mode="add"/>
+      <mdp:bs-rule type="tag" startTag="&lt;html" endTag="&lt;/html&gt;"/>
+    </mdp:bs-page>
+    <!--flash/newvideoplayer.swf?vid=29483&amp;mid=106313-->
+    <mdp:bs-page url="^http://movie.mtime.com/company/\d+" responseTemplate="gzyx/response_movie.xsl" encoding="utf-8"/>
+  </mdp:bs-config><!--/((\w+\.html)|(\w+\-\d+\.html))$-->
+
+  <mdp:bs-config source="www.mtime.com" encoding="utf-8">
+     
+  </mdp:bs-config>
+  <!--城市-->
+  <mdp:bs-config source="static1.mtime.cn" encoding="utf-8" htmlToXmlProvider="JTIDY" parseType="transfer" retryCount="3">
+    <mdp:bs-page url="^http://static1.mtime.cn/20101224100533/Utility/Data/TheaterListBoxData.m$" responseTemplate="gzyx/response_sky_city.xsl">
+      <mdp:bs-rule type="regex" regex="NameCn:&quot;(\W+)&quot;,NameEn:&quot;(\w+)&quot;,Districts:\{List:\[\{Id:\d+,NameCn:&quot;\W+&quot;,StringId:&quot;China_(\w+)_Province_(\w+)_\w+&quot;" mode="replace" replacement="&lt;div name=$1 id=$2 province=$3 city=$4/&gt;"/>
+      <mdp:bs-rule type="regex" regex="NameCn:&quot;(\W+)&quot;,NameEn:&quot;(\w+)&quot;,Districts:\{List:\[\{Id:\d+,NameCn:&quot;\W+&quot;,StringId:&quot;China_(\w+)_(\w+)&quot;," mode="replace" replacement="&lt;div name=$1 id=$2 province=$3 city=$4/&gt;"/>
+      <mdp:bs-rule type="regex" regex="NameCn:&quot;(\W+)&quot;,NameEn:&quot;(\w+)&quot;,Districts" mode="replace" replacement="&lt;div name=$1 id=$2 province= city=/&gt;"/>
+    </mdp:bs-page>
+  </mdp:bs-config>
+  <!--图片数据源-->
+  <mdp:bs-config source="img21.mtime.cn" encoding="utf-8"/>
+  <mdp:bs-config source="img21.mtime.com" encoding="utf-8"/>
+  <mdp:bs-config source="img2.mtime.cn" encoding="utf-8"/>
+  <mdp:bs-config source="img2.mtime.com" encoding="utf-8"/>
+  <mdp:bs-config source="img22.mtime.cn" encoding="utf-8"/>
+  <mdp:bs-config source="img22.mtime.com" encoding="utf-8"/>
+  <mdp:bs-config source="img1.mtime.cn" encoding="utf-8"/>
+  <mdp:bs-config source="img1.mtime.com" encoding="utf-8"/>
+  
+  
+  
+</mdp:configuration>

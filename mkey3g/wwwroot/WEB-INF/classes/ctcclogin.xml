@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	
+	<category categoryname="综合办公邮件设置" comment="综合办公邮件设置" enable="true"
+		adminurl="" logohref="menu_left09.gif" url="#">
+		<childcat url="/mail/admin_plat_pushmail.jsp" catename="邮件参数配置" id="mipmail"/>
+	</category>
+	
+	<category categoryname="系统管理" comment="系统管理" enable="true"
+		adminurl="" logohref="menu_left15.gif" url="#">
+		<childcat url="/enterprisemanager/admin_enterprisemanager.jsp" catename="企业管理" id="mipents" />
+		<childcat url="/enterprisemanager/admin_enterpriseadmin.jsp" catename="企业管理员管理" id="mipentmanager"/>
+		<childcat url="/user/admin_userrole.jsp" catename="角色管理 " id="mirole"/>
+		<childcat url="/permission/showManagerUser.jsp" catename="管理员管理 " id="mipmanager"/>
+		<childcat url="/user/admin_logs.jsp" catename="日志管理" id="miplog"/>
+		<childcat url="/mdp/mdp_errors.jsp" catename="接入告警 " id="miperror"/>
+		<childcat url="/uainfo/uainfo.jsp" catename="UA信息管理" />
+	</category>
+	<!--
+	<category categoryname="数据管理" comment="数据管理" enable="true"
+		adminurl="" logohref="menu_left16.gif"
+		url="#">
+		<childcat url="/commonchar/admin_enterprise_commonchar.jsp" catename="信息应用设置" />
+		<childcat url="/enterprise/billingsmanager.jsp" catename="话单查询" />
+	</category>
+	-->
+	<category categoryname="配置管理" comment="配置管理 " enable="true"
+		adminurl="" logohref="menu_left21.gif" url="#" >
+		<childcat url="/sysconfig/admin_cmability_sms.jsp" catename="短信参数配置 " id="mipsms"/>
+		<childcat url="/router/admin_router.jsp" catename="手机路由配置 " id="miprouter"/>
+		<childcat url="/sysconfig/cmlimit_config_app.jsp" catename="通讯能力限额配置" id="mipcmlimit"/>
+		<childcat url="/enterprisemanager/flatform_config.jsp" catename="平台设置" id="mipplatsetting"/>
+		<!--
+		<childcat url="/mas/admin_cmability_mms.jsp" catename="彩信参数配置  " />
+		<childcat url="/mas/admin_cmability_wap.jsp" catename="WAP参数配置 " />
+		<childcat url="/mas/admin_servicenumber.jsp" catename="服务号码配置 " />
+		<childcat url="/mas/admin_device_config.jsp?type=system" catename="系统配置 " />
+		-->
+	</category>
+	<category categoryname="统计管理" comment="统计管理" enable="true"
+		adminurl="" logohref="menu_left20.gif" url="#" >
+		<childcat url="/user/admin_user_statistics.jsp" catename="活跃用户统计" id="mipactive"/>
+        <childcat url="/statistics/user_statistics.jsp" catename="用户数统计" id="mipusercount"/>
+        <childcat url="/statistics/app_statistics.jsp" catename="接入应用统计" id="mipappcount"/>
+        <childcat url="/statistics/enterprise_statistics.jsp" catename="注册企业统计" id="mipentcount"/>
+	</category>
+</root>
+
+
+	
+

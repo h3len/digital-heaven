@@ -1,0 +1,42 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>MDP</ProjectType>
+    <ServerSetting>mkey3g</ServerSetting>
+    <PhoneType>iPhone</PhoneType>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>mdp</RootNamespace>
+    <AssemblyName>mdp</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectGuid>{EAA063CF-7662-46CF-B654-20CF0B96E072}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <None Include="config\mdp-config.xml" />
+    <None Include="logs\readme.txt" />
+    <None Include="template\mdp.xsl" />
+    <None Include="temp\readme.txt" />
+    <None Include="ui\test1.xml" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+	<category categoryname="单位通讯录" comment="通讯录" enable="true"
+		adminurl="" logohref="menu_left03.gif" url="#" >
+		<childcat url="/user/admin_user.jsp" catename="内部通讯录" target="_self"/>
+		<childcat url="/user/personaluser.jsp" catename="外部通讯录" target="_self"/>
+	</category>
+	
+</root>

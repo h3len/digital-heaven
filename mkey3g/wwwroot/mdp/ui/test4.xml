@@ -1,0 +1,7 @@
+﻿<msc type="form" title="form1" action="?action=submit@mdp">
+  <body>
+    <font color="red" bolder="true">TEST 4</font>
+<hr/>
+    <a href="?action=bs-transfer@mdp&amp;url=http://localhost/mdp/index.htm">三种常见流程</a>
+  </body>
+</msc>

@@ -1,0 +1,52 @@
+﻿<msc type="grid" title="导航" row="3">
+  <group caption="门户站">
+    <item icon="classpath:nj.png" caption="搜狐网" href="?action=bs-transfer@mdp&amp;url=http://wap.sohu.com/" />
+    <item icon="classpath:webmail.png" caption="腾讯网" href="?action=bs-transfer@mdp&amp;url=http://wap.qq.com/&amp;encoding=gb2312" />
+    <item icon="classpath:m-oa.png" caption="校内网" href="?action=bs-transfer@mdp&amp;url=http://wap.xiaonei.cn" />
+    <item icon="classpath:webmail.png" caption="3G门户" href="?action=bs-transfer@mdp&amp;url=http://wap.3g.cn" />
+    <item icon="classpath:m-oa.png" caption="人民网" href="?action=bs-transfer@mdp&amp;url=http://wap.people.com.cn" />
+    <item icon="classpath:nj.png" caption="淘宝" href="?action=bs-transfer@mdp&amp;url=http://wap.taobao.com" />
+    <item icon="classpath:webmail.png" caption="WAP世纪" href="?action=bs-transfer@mdp&amp;url=http://waps.cn"/>
+    <item icon="classpath:calendar.png" caption="邦邦网" href="?action=bs-transfer@mdp&amp;url=http://bang.cn"/>
+    <item icon="classpath:bzwd.png" caption="摩网" href="?action=bs-transfer@mdp&amp;url=http://wap.moabc.com"/>
+    <item icon="classpath:webmail.png" caption="彩蛙网" href="?action=bs-transfer@mdp&amp;url=http://caiwap.com"/>
+    <item icon="classpath:calendar.png" caption="乐讯" href="?action=bs-transfer@mdp&amp;url=http://wap.lxyes.com"/>
+    <item icon="classpath:nj.png" caption="动感网" href="?action=bs-transfer@mdp&amp;url=http://wap.mzone.cn"/>
+    <item icon="classpath:webmail.png" caption="空中网" href="?action=bs-transfer@mdp&amp;url=http://kong.net"/>
+    <item icon="classpath:bzwd.png" caption="小虎在线" href="?action=bs-transfer@mdp&amp;url=http://wap.hucn.net/"/>
+    <item icon="classpath:calendar.png" caption="蘑菇门户" href="?action=bs-transfer@mdp&amp;url=http://wap.mogoo.cn"/>
+    <item icon="classpath:bzwd.png" caption="WAP帝国" href="?action=bs-transfer@mdp&amp;url=http://dwap.cn"/>
+    <item icon="classpath:webmail.png" caption="乐酷门户" href="?action=bs-transfer@mdp&amp;url=http://wap.joycool.net/"/>
+</group>
+
+  <group caption="社区类">
+    <item icon="classpath:calendar.png" caption="WAP天下" href="?action=bs-transfer@mdp&amp;url=http://wap.waptx.com" />
+    <item icon="classpath:action.png" caption="3G泡泡" href="?action=bs-transfer@mdp&amp;url=http://mo.pp.cn/" />
+    <item icon="classpath:webmail.png" caption="交友网" href="?action=bs-transfer@mdp&amp;url=http://caiwap.com" />
+    <item icon="classpath:m-oa.png" caption="百合网" href="?action=bs-transfer@mdp&amp;url=http://wap.baihe.com" />
+    <item icon="classpath:nj.png" caption="万蝶移动" href="?action=bs-transfer@mdp&amp;url=http://wap.pdx.cn/" />
+    <item icon="classpath:m-oa.png" caption="稀饭掌上" href="?action=bs-transfer@mdp&amp;url=http://xifan.cn/" />
+  </group>
+  
+  <group caption="搜索类">
+    <item icon="classpath:calendar.png" caption="百度" href="?action=bs-transfer@mdp&amp;url=http://wap.baidu.com" />
+    <item icon="classpath:action.png" caption="google" href="?action=bs-transfer@mdp&amp;url=http://m.google.com" />
+    <item icon="classpath:webmail.png" caption="爱问" href="?action=bs-transfer@mdp&amp;url=http://wap.iask.com" />
+    <item icon="classpath:nj.png" caption="悟空" href="?action=bs-transfer@mdp&amp;url=http://wukong.net" />
+    <item icon="classpath:nj.png" caption="悠悠村" href="?action=bs-transfer@mdp&amp;url=http://wap.uucun.com/" />
+    <item icon="classpath:nj.png" caption="易查" href="?action=bs-transfer@mdp&amp;url=http://yicha.cn" />
+    <item icon="classpath:nj.png" caption="驿动" href="?action=bs-transfer@mdp&amp;url=http://ydon.cn" />
+  </group>
+  <group caption="图片书城">
+    <item icon="classpath:webmail.png" caption="百万图库" href="?action=bs-transfer@mdp&amp;url=http://waphao.com/" />
+    <item icon="classpath:nj.png" caption="好色之图" href="?action=bs-transfer@mdp&amp;url=http://wap.hhao.net/" />
+    <item icon="classpath:bzwd.png" caption="丝之美图" href="?action=bs-transfer@mdp&amp;url=http://leg.yiha.cn/wap/" />
+    <item icon="classpath:webmail.png" caption="移动书城" href="?action=bs-transfer@mdp&amp;url=http://wap.mbook.cn/" />
+    <item icon="classpath:bzwd.png" caption="17K书城" href="?action=bs-transfer@mdp&amp;url=http://wap.17k.com/" />
+    <item icon="classpath:m-oa.png" caption="百阅电子书" href="?action=bs-transfer@mdp&amp;url=http://wap.byread.net/" />
+    <item icon="classpath:calendar.png" caption="12夜书城" href="?action=bs-transfer@mdp&amp;url=http://fywap.net/" />
+    <item icon="classpath:nj.png" caption="WAP读吧" href="?action=bs-transfer@mdp&amp;url=http://fywap.net/" />
+    <item icon="classpath:bzwd.png" caption="12夜书城" href="?action=bs-transfer@mdp&amp;url=http://wapduba.cn" />
+    <item icon="classpath:m-oa.png" caption="书生网" href="?action=bs-transfer@mdp&amp;url=http://wap.shusheng.cn" />
+  </group>
+</msc>

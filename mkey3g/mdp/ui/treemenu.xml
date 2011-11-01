@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<msc type="list" statusbar_caption="请选择部门" title="通讯录">
+	<head>
+		<object type="navigation">
+			<object type="multiselect" align="left" style="treemenu" name="name1" caption="中国长航">
+				<item caption="集团总公司" selected="true">
+					<item caption="集团领导" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=73"/>
+					<item caption="总经理办公室" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=6">
+						<item caption="秘书处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=54"/>
+						<item caption="文档处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=55"/>
+						<item caption="外事处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=56"/>
+						<item caption="政研处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=57"/>
+						<item caption="事务处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=58"/>
+						<item caption="总值班室" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=59"/>
+						<item caption="医务室" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=60"/>
+						<item caption="车队" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=61"/>
+					</item>
+					<item caption="党委办公室" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=7"/>
+					<item caption="机关党委" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=69"/>
+					<item caption="发展计划部" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=8">
+						<item caption="战略处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=74"/>
+						<item caption="投资处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=75"/>
+						<item caption="资产处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=76"/>
+						<item caption="股权处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=77"/>
+						<item caption="市场处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=78"/>
+						<item caption="综合处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=79"/>
+					</item>
+					<item caption="安全生产部" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=9">
+						<item caption="安委办" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=90"/>
+						<item caption="商务处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=91"/>
+						<item caption="航监处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=92"/>
+						<item caption="物流处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=93"/>
+						<item caption="海运处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=94"/>
+						<item caption="生产协调处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=95"/>
+						<item caption="机务处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=96"/>
+						<item caption="安全督查队" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=97"/>
+					</item>
+					<item caption="经济监督部" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=10">
+						<item caption="法律处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=98"/>
+						<item caption="审计处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=99"/>
+						<item caption="经济信息处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=100"/>
+						<item caption="绩效处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=101"/>
+					</item>
+					<item caption="科技部" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=11"/>
+					<item caption="信息化办公室" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=15"/>
+					<item caption="财务部" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=12">
+						<item capton="预算处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=48"/>
+						<item capton="财务管理处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=49"/>
+						<item capton="会计处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=50"/>
+						<item capton="融资处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=51"/>
+						<item capton="风险处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=52"/>
+						<item capton="综合处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=53"/>
+					</item>
+					<item caption="人力资源部" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=13">
+						<item caption="员工处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=62"/>
+						<item caption="薪酬处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=63"/>
+						<item caption="培训处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=64"/>
+						<item caption="保险处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=65"/>
+						<item caption="综合处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=66"/>
+					</item>
+					<item caption="证券部" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=16"/>
+					<item caption="武装部" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=14"/>
+					<item caption="纪委监察室" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=19">
+						<item caption="纪委办" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=84"/>
+						<item caption="案件室" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=85"/>
+						<item caption="廉政室" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=86"/>
+					</item>
+					<item caption="工会" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=20">
+						<item caption="生产部" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=87" target="_blank"/>
+						<item caption="组织部" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=88" target="_blank"/>
+						<item caption="工会办" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=89" target="_blank"/>
+					</item>
+					<item caption="组织干部部" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=17">
+						<item caption="组织处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=70" target="_blank"/>
+						<item caption="干部处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=71" target="_blank"/>
+						<item caption="综合处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=72" target="_blank"/>
+					</item>
+					<item caption="宣传部（企业文化部）" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=18">
+						<item caption="文化处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=80" target="_blank"/>
+						<item caption="宣传处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=81" target="_blank"/>
+						<item caption="长航报编辑部" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=82" target="_blank"/>
+						<item caption="记者部" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=83" target="_blank"/>
+					</item>
+					<item caption="离退休办公室" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=21" target="_blank">
+						<item caption="离休处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=67" target="_blank"/>
+						<item caption="退休处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=68" target="_blank"/>
+					</item>
+					<item caption="机关保卫处" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=102" target="_blank"/>
+					<item caption="测试人员" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=105" target="_blank"/>
+					<item caption="团委" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=103" target="_blank"/>
+					<item caption="测试" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=106" target="_blank"/>
+					<item caption="测试2" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=107" target="_blank"/>
+				</item>
+				<item caption="长航有限公司" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=5" target="_blank"/>
+				<item caption="直属单位" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=4" target="_blank">
+					<item caption="长航凤凰" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=22" target="_blank"/>
+					<item caption="南京公司" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=23" target="_blank"/>
+					<item caption="武汉公司" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=24" target="_blank"/>
+					<item caption="重庆公司" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=25" target="_blank"/>
+					<item caption="上海公司" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=26" target="_blank"/>
+					<item caption="长航重工" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=27" target="_blank"/>
+					<item caption="中长燃公司" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=28" target="_blank"/>
+					<item caption="深圳公司" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=29" target="_blank"/>
+					<item caption="武汉航院" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=3" target="_blank"/>
+					<item caption="芜湖公司" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=30" target="_blank"/>
+					<item caption="燃料总站" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=301" target="_blank"/>
+					<item caption="设计院" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=31" target="_blank"/>
+					<item caption="科研所" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=32" target="_blank"/>
+					<item caption="规划院" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=33" target="_blank"/>
+					<item caption="武汉汽服" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=34" target="_blank"/>
+					<item caption="物资公司" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=35" target="_blank"/>
+					<item caption="工贸公司" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=36" target="_blank"/>
+					<item caption="生活公司" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=37" target="_blank"/>
+					<item caption="工程公司" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=38" target="_blank"/>
+					<item caption="置业公司" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=39" target="_blank"/>
+					<item caption="直属单位" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=4" target="_blank"/>
+					<item caption="长江海外" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=40" target="_blank"/>
+					<item caption="金陵船厂" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=41" target="_blank"/>
+					<item caption="青山船厂" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=42" target="_blank"/>
+					<item caption="江东船厂" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=43" target="_blank"/>
+					<item caption="宜昌船厂" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=44" target="_blank"/>
+					<item caption="港机厂" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=45" target="_blank"/>
+					<item caption="电机厂" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=46" target="_blank"/>
+					<item caption="外经公司" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=47" target="_blank"/>
+					<item caption="长航油运" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=104" target="_blank"/>
+					<item caption="武汉长伟公司" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=108" target="_blank"/>
+					<item caption="武汉南油公司" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=109" target="_blank"/>
+				</item>
+				<item caption="中国外运" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=110" target="_blank">
+					<item caption="信息主管部门" href="http://oa.chinacsc.cn/mainapp/addressbook.nsf/myview?openform&amp;view=vwABbyPos&amp;depid=601" target="_blank"/>
+				</item>
+			</object>
+		</object>
+	</head>
+	<body></body>
+</msc>

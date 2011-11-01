@@ -1,0 +1,25 @@
+<category>
+  <id>mipservermanage</id>
+  <categoryname>业务管理</categoryname>
+  <comment>Service Manage</comment>
+  <iplugin>com.dheaven.mip.plugin.mipcontact.MipContactPlugin</iplugin>
+  <ui>
+    <enable>true</enable>
+    <adminurl></adminurl>
+			<url>../mas/admin_business_manage.jsp</url>
+    <logohref>icon_4_96</logohref>
+  </ui>
+  <dep>
+  </dep>
+  <vos>
+  </vos>
+  <permissions>
+  	<permission>
+      <id>1</id>
+      <permissionname>管理权限</permissionname>
+      <privacybit>1</privacybit>
+    </permission>
+  </permissions>
+  <servletsmapping>
+  </servletsmapping>
+</category>

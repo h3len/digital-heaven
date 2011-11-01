@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msc type="servermsg">
+  <msg show="false"></msg>
+
+  <script>
+
+    application.getActiveWindow().location.href='?action=bs-transfer@mdp&amp;url=http://www.dgzmt.gov.cn/publicfiles/business/htmlfiles/dgzmt/index.htm&amp;nologin=true';
+
+  </script>
+
+</msc>

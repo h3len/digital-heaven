@@ -1,0 +1,22 @@
+<category>
+	<id>userlog</id>
+	<categoryname>用户日志</categoryname>
+	<comment>Sys Maintenance</comment>
+	<initClassName>com.dheaven.mip.plugin.portalifs.init.InitPortalIF</initClassName>
+	<iplugin></iplugin>
+	<dep></dep>
+	<vos></vos>
+	<permissions>
+		<permission>
+			<id>1</id>
+			<permissionname>管理权限</permissionname>
+			<privacybit>1</privacybit>
+		</permission>
+		<permission>
+			<id>2</id>
+			<permissionname>访问权限</permissionname>
+			<privacybit>2</privacybit>
+		</permission>
+	</permissions>
+	<servletsmapping></servletsmapping>
+</category>

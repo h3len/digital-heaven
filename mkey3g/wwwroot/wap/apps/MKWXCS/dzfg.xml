@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msc type="form">
+    <head>
+        <title>广东省地震信息网</title>
+    </head>
+    <body>
+      <img src="dzj.png"/>
+      <br/>
+        <font size="s">
+            <a href="?action=bs-transfer@mdp&amp;url=http://www.gdsin.net&amp;nologin=true">首页</a>|
+            <a href="?action=bs-transfer@mdp&amp;url=http://www.gdsin.net/dizhenzhenqing/dzbigseis.asp&amp;nologin=true">全球最新地震</a>|
+            <a href="?action=bs-transfer@mdp&amp;url=http://www.gdsin.net/seis/seisdkb.htm&amp;nologin=true">省内地震</a>|
+            <a href="zwxw.xml">政务新闻</a>|
+            <a href="?action=bs-transfer@mdp&amp;url=http://www.gdsin.net/dizhenjigou/jigou.asp&amp;nologin=true">机构介绍</a>|
+            <a href="dzkp.xml">地震科普</a>|
+            <a href="?action=bs-transfer@mdp&amp;url=http://www.gdsin.net/dizhenzhuanjia/dzzhuanjia.asp&amp;nologin=true">地震专家</a>|
+            <a href="?action=bs-transfer@mdp&amp;url=http://www.gdsin.net/dizhenzt/dzzt.asp&amp;nologin=true">地震专题</a>|
+            <a href="dzfg.xml">地震法规</a>|
+            <a href="?action=bs-transfer@mdp&amp;url=http://www.gdsin.net/dizhengonggao/gonggao.asp&amp;nologin=true">公示公告</a>|
+            <a href="?action=bs-transfer@mdp&amp;url=http://www.gdsin.net/ZwGk/index0.asp&amp;nologin=true">信息公开</a>
+        </font>
+        <hr/>
+        <span width="100%" align="center">
+            ※
+            <a href="?action=bs-transfer@mdp&amp;url=http://www.gdsin.net/dizhenfagui/dzfaguill.asp?strlb=国家级法规&amp;nologin=true">国家级法规</a>
+            ※
+            <br/>
+            <br/>
+            ※<a href="?action=bs-transfer@mdp&amp;url=http://www.gdsin.net/dizhenfagui/dzfaguill.asp?strlb=广东省法规&amp;nologin=true">广东省法规</a>
+            ※
+        </span>
+    </body>
+</msc>

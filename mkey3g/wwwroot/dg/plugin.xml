@@ -1,0 +1,35 @@
+<category>
+ <aps-config>  
+	<onlinetype>  
+		<client>1</client>
+		<web>0</web>
+		<wap>0</wap>
+	</onlinetype>
+	<pushtype>  
+		<ip-push>1</ip-push>  
+		<emn-push>1</emn-push>  
+		<web-push>0</web-push>  
+		<sms-push>1</sms-push>  
+		<mms-push>0</mms-push>  
+		<wap-push>0</wap-push>  
+		<mail-push>0</mail-push>  
+	</pushtype>
+  </aps-config>
+  <id>mipdg</id>
+  <categoryname>广东移动Wap</categoryname>
+  <comment></comment>
+  <initClassName>com.dheaven.mip.plugin.dg.MipDGPlugin</initClassName>
+  <iplugin>com.dheaven.mip.plugin.dg.MipDGPlugin</iplugin>
+  <ui>
+  <enable>false</enable>
+ </ui>
+  <dep>
+  </dep>
+  <vos>   
+  </vos>
+  <permissions>
+  </permissions>
+  <servletsmapping>
+  <string>/dg/schedule.do=scheduleIntefaceController</string>
+  </servletsmapping>
+</category>

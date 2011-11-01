@@ -1,0 +1,88 @@
+/* -------------------------------------------------------------- 
+   text.css
+   * default href 文字链接表现
+   
+   Based on work by gaojingliang@d-heaven and xujing@d-heaven
+   * Date  : 2008-06-12 
+   * Version: alpha 1.5
+-------------------------------------------------------------- */
+.bold{font-weight:bold;}
+.font_weight { font-weight: 400; }
+.font_weight_bold { font-weight: 800; }
+
+.font_12 { font-size: 12px; }
+.font_13 { font-size: 13px; }
+.font_14 { font-size: 14px; }
+.font_16 { font-size: 16px; }
+
+.red { color: #C00; }
+.green { color: #080; }
+.orange { color: #f60; }
+.gray { color: #666; }
+.white { color: #fff; }
+.blue{color:#246DB6;}
+
+.red a { color: #C00; }
+.green a { color: #080; }
+.orange a { color: #f60; }
+.gray a { color: #666; }
+
+.red a:hover { color: #f60; }
+.green a:hover { color: #f60; }
+.orange a:hover { color: #ff0000; }
+.gray a:hover { color: #f60; }
+
+.white_12,a.white_12:link,a.white_12:visited{ color: #FFF; text-decoration: none;}
+a.white_12:hover{color:#FFF; text-decoration:underline;}
+.blue_12,a.blue_12:link,a.blue_12:visited{ color: #246DB6; text-decoration: none;}
+a.blue_12:hover{color:#297DD1; text-decoration:underline;}
+.orange_12,a.orange_12:link,a.orange_12:visited{ color: #F68A08; text-decoration: none;}
+a.orange_12:hover{color:#FF9900; text-decoration:underline;}
+.green_12,a.green_12:link,a.green_12:visited{ color: #54A701; text-decoration: none;}
+a.green_12:hover{color:#66CC00; text-decoration:underline;}
+.red_12,a.red_12:link,a.red_12:visited{ color: #B80000; text-decoration: none;}
+a.red_12:hover{color:#E10000; text-decoration:underline;}
+.gray_12,a.gray_12:link,a.gray_12:visited{font-size: 12px; color: #666666; text-decoration: none;}
+a.gray_12:hover{font-size: 12px;color:#000; text-decoration:underline;}
+
+.white_12_bold,a.white_12_bold:link,a.white_12_bold:visited{ color: #FFF; text-decoration: none; font-weight:bold;}
+a.white_12_bold:hover{color:#FFF; text-decoration:underline; font-weight:bold;}
+.blue_12_bold,a.blue_12_bold:link,a.blue_12_bold:visited{ color: #246DB6; text-decoration: none; font-weight:bold;}
+a.blue_12_bold:hover{color:#297DD1; text-decoration:underline; font-weight:bold;}
+.orange_12_bold,a.orange_12_bold:link,a.orange_12_bold:visited{ color: #F68A08; text-decoration: none; font-weight:bold;}
+a.orange_12_bold:hover{color:#FF9900; text-decoration:underline; font-weight:bold;}
+.green_12_bold,a.green_12_bold:link,a.green_12_bold:visited{ color: #54A701; text-decoration: none; font-weight:bold;}
+a.green_12_bold:hover{color:#66CC00; text-decoration:underline; font-weight:bold;}
+.red_12_bold,a.red_12_bold:link,a.red_12_bold:visited{ color: #B80000; text-decoration: none; font-weight:bold;}
+a.red_12_bold:hover{color:#E10000; text-decoration:underline; font-weight:bold;}
+
+.white_14,a.white_14:link,a.white_14:visited{font-size: 14px; color: #FFF; text-decoration: none;}
+a.white_14:hover{font-size: 14px;color:#FFF; text-decoration:underline;}
+.blue_14,a.blue_14:link,a.blue_14:visited{font-size: 14px; color: #246DB6; text-decoration: none;}
+a.blue_14:hover{font-size: 14px;color:#297DD1; text-decoration:underline;}
+.orange_14,a.orange_14:link,a.orange_14:visited{font-size: 14px; color: #F68A08; text-decoration: none;}
+a.orange_14:hover{font-size: 14px;color:#FF9900; text-decoration:underline;}
+.green_14,a.green_14:link,a.green_14:visited{font-size: 14px; color: #54A701; text-decoration: none;}
+a.green_14:hover{font-size: 14px;color:#66CC00; text-decoration:underline;}
+.red_14,a.red_14:link,a.red_14:visited{font-size: 14px; color: #B80000; text-decoration: none;}
+a.red_14:hover{font-size: 14px;color:#E10000; text-decoration:underline;}
+.gray_14,a.gray_14:link,a.gray_14:visited{font-size: 14px; color: #666666; text-decoration: none;}
+a.gray_14:hover{font-size: 14px;color:#000; text-decoration:underline;}
+.black_14,a.black_14:link,a.black_14:visited{font-size: 14px; color: #000; text-decoration: none;}
+a.black_14:hover{font-size: 14px;color:#FF9900; text-decoration:none;}
+
+.white_14_bold,a.white_14_bold:link,a.white_14_bold:visited{font-size: 14px; color: #FFF; text-decoration: none; font-weight:bold;}
+a.white_14_bold:hover{font-size: 14px;color:#FFF; text-decoration:underline; font-weight:bold;}
+.blue_14_bold,a.blue_14_bold:link,a.blue_14_bold:visited{font-size: 14px; color: #246DB6; text-decoration: none; font-weight:bold;}
+a.blue_14_bold:hover{font-size: 14px;color:#297DD1; text-decoration:underline; font-weight:bold;}
+.orange_14_bold,a.orange_14_bold:link,a.orange_14_bold:visited{font-size: 14px; color: #F68A08; text-decoration: none; font-weight:bold;}
+a.orange_14_bold:hover{font-size: 14px;color:#FF9900; text-decoration:underline; font-weight:bold;}
+.green_14_bold,a.green_14_bold:link,a.green_14_bold:visited{font-size: 14px; color: #54A701; text-decoration: none; font-weight:bold;}
+a.green_14_bold:hover{font-size: 14px;color:#66CC00; text-decoration:underline; font-weight:bold;}
+.red_14_bold,a.red_14_bold:link,a.red_14_bold:visited{font-size: 14px; color: #B80000; text-decoration: none; font-weight:bold;}
+a.red_14_bold:hover{font-size: 14px;color:#E10000; text-decoration:underline; font-weight:bold;}
+.gray_14_bold,a.gray_14_bold:link,a.gray_14_bold:visited{font-size: 14px; color: #666666; text-decoration: none; font-weight:bold;}
+a.gray_14_bold:hover{font-size: 14px;color:#000; text-decoration:underline; font-weight:bold;}
+.black_14_bold,a.black_14_bold:link,a.black_14_bold:visited{font-size: 14px; color: #000; text-decoration: none; font-weight:bold;}
+a.black_14_bold:hover{font-size: 14px;color:#FF9900; text-decoration:none; font-weight:bold;}
+

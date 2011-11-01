@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+ <globalConfiguration>
+  <parameter name="sendMultiRefs" value="true"/>
+  <parameter name="disablePrettyXML" value="true"/>
+  <parameter name="adminPassword" value="admin"/>
+  <parameter name="attachments.Directory" value=""/>
+  <parameter name="dotNetSoapEncFix" value="true"/>
+  <parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <parameter name="sendXMLDeclaration" value="true"/>
+  <parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <parameter name="sendXsiTypes" value="true"/>
+  <requestFlow>
+   <handler type="java:org.apache.axis.handlers.JWSHandler">
+    <parameter name="scope" value="session"/>
+   </handler>
+   <handler type="java:org.apache.axis.handlers.JWSHandler">
+    <parameter name="scope" value="request"/>
+    <parameter name="extension" value=".jwr"/>
+   </handler>
+  </requestFlow>
+ </globalConfiguration>
+ <handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+
+ <service name="SmsNotification" provider="java:RPC" style="wrapped"
+ 	use="literal">
+ 	<parameter name="wsdlTargetNamespace"
+ 		value="http://www.chinatelecom.com.cn/wsdl/ctcc/sms/notification/v2_1/service" />
+ 	<parameter name="wsdlServiceElement"
+ 		value="SmsNotificationService" />
+ 	<parameter name="schemaQualified"
+ 		value="http://www.chinatelecom.com.cn/schema/ctcc/sms/notification/v2_1/local" />
+ 	<parameter name="schemaUnqualified"
+ 		value="http://www.chinatelecom.com.cn/schema/ctcc/sms/v2_1,http://www.chinatelecom.com.cn/schema/ctcc/common/v2_1" />
+ 	<parameter name="wsdlServicePort" value="SmsNotification" />
+ 	<parameter name="className"
+ 		value="cn.com.chinatelecom.www.wsdl.ctcc.sms.notification.v2_1.service.SmsNotificationBindingSkeleton" />
+ 	<parameter name="wsdlPortType" value="SmsNotification" />
+ 	<parameter name="typeMappingVersion" value="1.2" />
+ 	<parameter name="allowedMethods" value="*" />
+
+ 	<typeMapping
+ 		xmlns:ns="http://www.chinatelecom.com.cn/schema/ctcc/sms/v2_1"
+ 		qname="ns:DeliveryStatus"
+ 		type="java:cn.com.chinatelecom.www.schema.ctcc.sms.v2_1.DeliveryStatus"
+ 		serializer="org.apache.axis.encoding.ser.EnumSerializerFactory"
+ 		deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory"
+ 		encodingStyle="" />
+ 	<typeMapping
+ 		xmlns:ns="http://www.chinatelecom.com.cn/schema/ctcc/sms/v2_1"
+ 		qname="ns:SmsMessage"
+ 		type="java:cn.com.chinatelecom.www.schema.ctcc.sms.v2_1.SmsMessage"
+ 		serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+ 		deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+ 		encodingStyle="" />
+ 	<typeMapping
+ 		xmlns:ns="http://www.chinatelecom.com.cn/schema/ctcc/sms/v2_1"
+ 		qname="ns:DeliveryInformation"
+ 		type="java:cn.com.chinatelecom.www.schema.ctcc.sms.v2_1.DeliveryInformation"
+ 		serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+ 		deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+ 		encodingStyle="" />
+ </service>
+ 
+ <service name="WapPushMessageNotification" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://www.chinatelecom.com.cn/wsdl/ctcc/wap_push/notification/v1_0/service"/>
+      <parameter name="wsdlServiceElement" value="MessageNotificationService"/>
+      <parameter name="schemaQualified" value="http://www.chinatelecom.com.cn/schema/ctcc/wap_push/notification/v1_0/local"/>
+      <parameter name="schemaUnqualified" value="http://www.chinatelecom.com.cn/schema/ctcc/wap_push/v1_0,http://www.chinatelecom.com.cn/schema/ctcc/common/v2_1"/>
+      <parameter name="wsdlServicePort" value="MessageNotification"/>
+      <parameter name="className" value="cn.com.chinatelecom.www.wsdl.ctcc.wap_push.notification.v1_0.service.MessageNotificationBindingSkeleton"/>
+      <parameter name="wsdlPortType" value="MessageNotification"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://www.chinatelecom.com.cn/schema/ctcc/wap_push/v1_0"
+        qname="ns:DeliveryStatus"
+        type="java:cn.com.chinatelecom.www.schema.ctcc.wap_push.v1_0.DeliveryStatus"
+        serializer="org.apache.axis.encoding.ser.EnumSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.chinatelecom.com.cn/schema/ctcc/wap_push/v1_0"
+        qname="ns:DeliveryInformation"
+        type="java:cn.com.chinatelecom.www.schema.ctcc.wap_push.v1_0.DeliveryInformation"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+  
+ <service name="MMSMessageNotification" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://www.chinatelecom.com.cn/wsdl/ctcc/multimedia_messaging/notification/v2_2/service"/>
+      <parameter name="wsdlServiceElement" value="MessageNotificationService"/>
+      <parameter name="schemaQualified" value="http://www.chinatelecom.com.cn/schema/ctcc/multimedia_messaging/notification/v2_2/local"/>
+      <parameter name="schemaUnqualified" value="http://www.chinatelecom.com.cn/schema/ctcc/multimedia_messaging/v2_2,http://www.chinatelecom.com.cn/schema/ctcc/common/v2_1"/>
+      <parameter name="wsdlServicePort" value="MessageNotification"/>
+      <parameter name="className" value="cn.com.chinatelecom.www.wsdl.ctcc.multimedia_messaging.notification.v2_2.service.MessageNotificationBindingSkeleton"/>
+      <parameter name="wsdlPortType" value="MessageNotification"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://www.chinatelecom.com.cn/schema/ctcc/multimedia_messaging/v2_2"
+        qname="ns:DeliveryStatus"
+        type="java:cn.com.chinatelecom.www.schema.ctcc.multimedia_messaging.v2_2.DeliveryStatus"
+        serializer="org.apache.axis.encoding.ser.EnumSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.chinatelecom.com.cn/schema/ctcc/multimedia_messaging/v2_2"
+        qname="ns:MessageReference"
+        type="java:cn.com.chinatelecom.www.schema.ctcc.multimedia_messaging.v2_2.MessageReference"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.chinatelecom.com.cn/schema/ctcc/multimedia_messaging/v2_2"
+        qname="ns:MessagePriority"
+        type="java:cn.com.chinatelecom.www.schema.ctcc.multimedia_messaging.v2_2.MessagePriority"
+        serializer="org.apache.axis.encoding.ser.EnumSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.chinatelecom.com.cn/schema/ctcc/multimedia_messaging/v2_2"
+        qname="ns:DeliveryInformation"
+        type="java:cn.com.chinatelecom.www.schema.ctcc.multimedia_messaging.v2_2.DeliveryInformation"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+
+ <transport name="http">
+  <requestFlow>
+   <handler type="URLMapper"/>
+   <handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </requestFlow>
+  <parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </transport>
+ <transport name="local">
+  <responseFlow>
+   <handler type="LocalResponder"/>
+  </responseFlow>
+ </transport>
+</deployment>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT msc (description?, (object | img)*)>
+<!ATTLIST msc
+	statusbar_caption CDATA #REQUIRED
+	title CDATA #REQUIRED
+	type CDATA #REQUIRED
+>
+<!ELEMENT object EMPTY>
+<!ATTLIST object
+	type CDATA #FIXED "login"
+>
+<!ELEMENT img EMPTY>
+<!ATTLIST img
+	align (left | right | center) "left"
+	src CDATA #REQUIRED
+	height CDATA #IMPLIED
+	width CDATA #REQUIRED
+	href CDATA #IMPLIED
+	target (_blank | _self) "_blank"
+	alt CDATA #IMPLIED
+>

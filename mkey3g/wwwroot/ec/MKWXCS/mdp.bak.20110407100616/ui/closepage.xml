@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<msc type="servermsg">
+  <msg isshow="1" nextaction="closeme">操作成功！</msg>
+</msc>

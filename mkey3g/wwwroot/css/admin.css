@@ -1,0 +1,47 @@
+@import "basefont.css";
+
+
+BODY
+	{
+	font-size: 12px;
+	color: #000000;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	scrollbar-face-color:#eee;
+	scrollbar-highlight-color:#ccc;
+	scrollbar-3dlight-color:#fff;
+	scrollbar-darkshadow-color:#ccc;
+	scrollbar-shadow-color:#666;
+	scrollbar-arrow-color:#039;
+	scrollbar-track-color:#eee;
+}
+P,TABLE, TD, TR {
+	font-size: 12px;
+	color: #000000;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+.white
+{
+	color:#fff;
+	font-size:12px;
+	font-weight:bolder;	
+}
+
+.nav
+{
+	font-size:12px;
+	font-weight:bolder;
+	padding:5px;
+	color:#000;
+	background-color:#eeeeee;
+	/*background:url("../images/header-line.png") no-repeat left bottom;*/
+}
+
+
+

@@ -1,0 +1,29 @@
+<category>
+  <id>miprole</id>
+  <categoryname>权限管理</categoryname>
+  <comment>permission Manager</comment>
+    <iplugin>com.dheaven.mip.plugin.miprole.MipRolePlugin</iplugin>
+   <ui>
+    <enable>false</enable>
+    <adminurl></adminurl>
+    <logohref>icon_8_96</logohref>
+    <url>../user/admin_role.jsp</url>
+  </ui>
+  <socketprefix>
+    <prefix>mipfile</prefix>
+    <dispatcher>com.dheaven.mip.plugin.socket.SocketDispatcher</dispatcher>
+  </socketprefix>
+  <dep>
+  </dep>
+  <vos>
+  </vos>
+  <permissions>
+  <permission>
+      <id>1</id>
+      <permissionname>管理权限</permissionname>
+      <privacybit>1</privacybit>
+    </permission>
+  </permissions>
+  <servletsmapping>
+  </servletsmapping>
+</category>

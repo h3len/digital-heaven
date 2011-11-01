@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!-- Load Manager -->
+	<bean id="mipMailconfigManager" class="com.dheaven.mip.plugin.mail.datamanager.MipMailconfigManager" autowire="byName"/>
+	<bean id="mipMailManager" class="com.dheaven.mip.plugin.mail.datamanager.MipMailManager" autowire="byName"/>
+	<bean id="mipPushrulefilterManager" class="com.dheaven.mip.plugin.mail.datamanager.MipPushrulefilterManager" autowire="byName"/>
+	<bean id="mipPushruletimeManager" class="com.dheaven.mip.plugin.mail.datamanager.MipPushruletimeManager" autowire="byName"/>
+	<bean id="mipPushruletrustlistManager" class="com.dheaven.mip.plugin.mail.datamanager.MipPushruletrustlistManager" autowire="byName"/>
+	<bean id="mipPushruleblocklistManager" class="com.dheaven.mip.plugin.mail.datamanager.MipPushruleblocklistManager" autowire="byName"/>
+	<bean id="mipEnterpriseMailControlManager" class="com.dheaven.mip.plugin.mail.datamanager.MipEnterpriseMailControlManager" autowire="byName"/>
+	<!-- <bean id="mipTrainManager" class="com.dheaven.mip.plugin.mail.datamanager.MipTrainManager" autowire="byName"/> -->
+	
+	<!-- Load Bean -->
+	<bean id="mipMailconfigServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean class="com.dheaven.mip.plugin.mail.service.MipMailconfigServiceImpl" autowire="byName"/>
+		</property>
+	</bean>
+	
+	<bean id="mipEnterpriseMailControlServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean class="com.dheaven.mip.plugin.mail.service.MipEnterpriseMailControlServiceImpl" autowire="byName"/>
+		</property>
+	</bean>
+	
+	<bean id="mipMailServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean class="com.dheaven.mip.plugin.mail.service.MipMailServiceImpl" autowire="byName"/>
+		</property>
+	</bean>
+	<bean id="mipPushrulefilterServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean class="com.dheaven.mip.plugin.mail.service.MipPushrulefilterServiceImpl" autowire="byName"/>
+		</property>
+	</bean>
+	<bean id="mipPushruletimeServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean class="com.dheaven.mip.plugin.mail.service.MipPushruletimeServiceImpl" autowire="byName"/>
+		</property>
+	</bean>
+	<bean id="mipPushruletrustlistServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean class="com.dheaven.mip.plugin.mail.service.MipPushruletrustlistServiceImpl" autowire="byName"/>
+		</property>
+	</bean>
+	
+	<bean id="mipMailStatisticServiceImpl" parent="baseTxService">
+		<property name="target">
+			<bean class="com.dheaven.mip.plugin.mail.service.MipMailStatisticServiceImpl" autowire="byName"/>
+		</property>
+	</bean>
+	
+	<bean id="psmlInterfaceController"
+		class="org.springframework.web.servlet.mvc.ServletWrappingController">
+		<property name="servletClass">
+			<value>com.dheaven.mip.plugin.mail.gegw.properties.local.LocalPoint</value>
+		</property>
+		<property name="servletName">
+			<value>psmlInterfaceServlet</value>
+		</property>
+		<property name="initParameters">
+			<props>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- MailPolling 
+	<bean name="mailPollingJob" class="org.springframework.scheduling.quartz.JobDetailBean" autowire="byName">
+	  <property name="jobClass" value="com.dheaven.mip.plugin.mail.scheduling.MailPollingJob" ></property>
+	  <property name="jobDataAsMap">
+	    <map>
+	      <entry key="mipMailServiceImpl" >
+	      	<ref bean="mipMailServiceImpl"/>
+	      </entry>
+	      <entry key="mipMailconfigServiceImpl" >
+	      	<ref bean="mipMailconfigServiceImpl"/>
+	      </entry>
+	      <entry key="mipEnterpriseMailConfigServiceImpl" >
+	      	<ref bean="mipEnterpriseMailConfigServiceImpl"/>
+	      </entry>
+	      <entry key="mipPushrulefilterServiceImpl" >
+	      	<ref bean="mipPushrulefilterServiceImpl"/>
+	      </entry>
+	      <entry key="mipPushruletrustlistServiceImpl" >
+	      	<ref bean="mipPushruletrustlistServiceImpl"/>
+	      </entry>
+	      <entry key="mipSysuserServiceImpl" >
+	      	<ref bean="mipSysuserServiceImpl"/>
+	      </entry>
+	      <entry key="mipBranchServiceImpl" >
+	      	<ref bean="mipBranchServiceImpl"/>
+	      </entry>
+	      <entry key="mipPushruletimeServiceImpl" >
+	      	<ref bean="mipPushruletimeServiceImpl"/>
+	      </entry>
+	      <entry key="mipConfigServiceImpl" >
+	      	<ref bean="mipConfigServiceImpl"/>
+	      </entry>
+	    </map>
+	  </property>
+	</bean>-->
+	
+	<bean name="mailSoreCleanJob" class="org.springframework.scheduling.quartz.JobDetailBean" autowire="byName">
+	  <property name="jobClass" value="com.dheaven.mip.plugin.mail.scheduling.MailStoreCleanJob" ></property>
+	  <property name="jobDataAsMap">
+	    <map>
+	      <entry key="mipMailServiceImpl" >
+	      	<ref bean="mipMailServiceImpl"/>
+	      </entry>
+	      <entry key="mipMailconfigServiceImpl" >
+	      	<ref bean="mipMailconfigServiceImpl"/>
+	      </entry>
+	      <entry key="mipEnterpriseMailConfigServiceImpl" >
+	      	<ref bean="mipEnterpriseMailConfigServiceImpl"/>
+	      </entry>
+	      <entry key="mipPushrulefilterServiceImpl" >
+	      	<ref bean="mipPushrulefilterServiceImpl"/>
+	      </entry>
+	      <entry key="mipPushruletrustlistServiceImpl" >
+	      	<ref bean="mipPushruletrustlistServiceImpl"/>
+	      </entry>
+	      <entry key="mipSysuserServiceImpl" >
+	      	<ref bean="mipSysuserServiceImpl"/>
+	      </entry>
+	      <entry key="mipBranchServiceImpl" >
+	      	<ref bean="mipBranchServiceImpl"/>
+	      </entry>
+	      <entry key="mipPushruletimeServiceImpl" >
+	      	<ref bean="mipPushruletimeServiceImpl"/>
+	      </entry>
+	      <entry key="mipConfigServiceImpl" >
+	      	<ref bean="mipConfigServiceImpl"/>
+	      </entry>
+	    </map>
+	  </property>
+	</bean>
+	
+	 <!--<bean id="simpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+	    <property name="jobDetail" ref="mailPollingJob" />
+	    2 min 
+	    <property name="startDelay" value="120000" />-->
+	    <!-- repeat every 480 seconds 
+	    <property name="repeatInterval" value="120000" />
+	    <property name="misfireInstruction"  value="1"></property>
+	</bean>-->
+	
+	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+	    <property name="jobDetail" ref="mailSoreCleanJob" />
+	    <!-- run every morning at 1 AM -->
+	    <property name="cronExpression" value="0 0 1 * * ?" />
+	</bean>
+	
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	    <property name="triggers">
+	        <list>
+	            <!--<ref bean="simpleTrigger" />-->
+  	            <ref bean="cronTrigger" />
+	        </list>
+	    </property>
+	</bean>
+	<!-- MailPolling End -->
+	
+	<!-- Socket 服务器部分 Start mas里面需要该功能收发邮件是通过cmpop/cmsmtp,但是EMA不需要可以把该bean注释掉 
+	<bean id="mipMailSocketServerLoader" class="com.dheaven.mip.plugin.mail.socket.MipMailSocketServerLoader">
+		<constructor-arg><ref bean="mipSysuserServiceImpl"/></constructor-arg>
+		<constructor-arg><ref bean="mipBranchServiceImpl"/></constructor-arg>
+		<constructor-arg><ref bean="mipMailconfigServiceImpl"/></constructor-arg>
+		<constructor-arg><ref bean="serverConfig"/></constructor-arg>
+	</bean>-->
+</beans>

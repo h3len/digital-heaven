@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<category categoryname="邮件设置" comment="邮件设置" enable="true"
+		adminurl="" logohref="menu_left09.gif" url="#">
+		<childcat url="/mail/admin_enterprise_mailconfig.jsp" catename="邮箱绑定" />
+		<childcat url="/mail/admin_enterprise_smsmanager.jsp" catename="管理短信" />
+		<childcat url="/mail/admin_plat_pushmail.jsp" catename="邮件参数配置" />
+	</category>
+	<!-- 
+	<category categoryname="通讯录管理" comment="通讯录管理" enable="true"
+		adminurl="" logohref="menu_left10.gif"
+		url="#">
+		<childcat url="/user/admin_user_manager.jsp" catename="联系人管理" />
+		<childcat url="/user/admin_group.jsp" catename="群组管理" />
+		<childcat url="/user/opuser.jsp" catename="导入导出" />
+		<childcat url="/user/sel_setting.jsp" catename="自定义字段" />
+	</category> -->
+	<!--<category categoryname="数据设置" comment="数据设置" enable="true"
+		adminurl="" logohref="menu_left12.gif" url="#" >
+		<childcat url="/minioa/workflow.jsp" catename="公文流程管理" />
+		<childcat url="/askleave/admin_askleavetype_list.jsp" catename="OA类设置" />
+		<childcat url="/commonchar/admin_enterprise_commonchar.jsp" catename="信息应用设置" />
+		<childcat url="/mas/admin_masbizcycle_config.jsp" catename="业务周期配置" />
+		<childcat url="/mas/admin_masdblogcycle_config.jsp" catename="日志保存时间配置" />
+		<childcat url="/mas/admin_plat_db.jsp" catename="DB插件配置" />
+	</category>-->
+	<category categoryname="系统管理" comment="系统管理" enable="true"
+		adminurl="" logohref="menu_left13.gif" url="#" >
+		<childcat url="/user/business_user.jsp" catename="用户管理" />
+		<childcat url="/branchmanager/admin_branchmanager.jsp" catename="部门管理" />
+		<childcat url="/branchmanager/admin_enterprisemanager.jsp" catename="企业管理" />
+		<!--<childcat url="/mas/admin_bizshow.jsp" catename="业务管理" />
+		<childcat url="/user/admin_userrole.jsp" catename="角色管理" />
+		<childcat url="/mas/admin_switch.jsp" catename="系统开关设置" />
+		<childcat url="/mas/admin_appmanage.jsp" catename="应用管理" />
+		<childcat url="/mas/admin_accreditation_upsms.jsp" catename="上行委派" />-->
+	</category>
+	<category categoryname="终端管理 " comment="终端管理" enable="true"
+		adminurl="" logohref="menu_left19.gif" url="#" >
+		<childcat url="/mobile/admin_mobiletype.jsp?type=0" catename="终端信息管理" />
+		<childcat url="/mobile/admin_mobiletype.jsp?type=1" catename="客户端软件版本管理 " />
+	</category>
+	<category categoryname="配置管理" comment="配置管理 " enable="true"
+		adminurl="" logohref="menu_left21.gif" url="#" >
+		<childcat url="/sysconfig/admin_cmability_sms.jsp" catename="短信参数配置 " />
+		<childcat url="/sysconfig/admin_cmability_mms.jsp" catename="彩信参数配置 " />
+		<!--<childcat url="/sysconfig/admin_cmability_wap.jsp" catename="WAP参数配置" />-->
+		<!--<childcat url="/mdp/mdp_ext.jsp" catename="接入配置 " />-->
+		<!--<childcat url="/mdpdhmi/config.jsp" catename="DHMI配置 " />-->
+		<!-- <childcat url="/sysconfig/admin_config_app.jsp" catename="业务系统配置 " /> -->
+		<childcat url="/sysconfig/enterprise_config_app.jsp" catename="业务系统配置" />
+		<childcat id="9" url="/sysconfig/admin_config_app.jsp" catename="插件绑定业务系统" />
+		<childcat url="/router/admin_router.jsp" catename="手机路由配置 " />
+		<childcat url="/push/enterprise_config_push.jsp" catename="系统推送规则配置" />
+		<childcat url="/enterprisemanager/flatform_config.jsp" catename="系统配置" />
+		<!--<childcat url="/sysconfig/admin_config_app.jsp" catename="业务系统配置 " />-->
+		
+	</category>
+	<!--<category categoryname="配置管理" comment="配置管理 " enable="true"
+		adminurl="" logohref="menu_left21.gif" url="#" >
+		<childcat url="/mas/admin_cmability_sms.jsp" catename="短信参数配置 " />
+		<childcat url="/mas/admin_cmability_mms.jsp" catename="彩信参数配置  " />
+		<childcat url="/mas/admin_cmability_wap.jsp" catename="WAP参数配置 " />
+		<childcat url="/mas/admin_servicenumber.jsp" catename="服务号码配置 " />
+		<childcat url="/mas/admin_mess.jsp" catename="MESS信息配置" />
+		<childcat url="/mas/admin_config.jsp" catename="平台设置" />
+		<childcat url="/mas/admin_device_config.jsp?type=system" catename="系统配置 " />
+		<childcat url="/map/map_config.jsp" catename="MAP设置" />
+	</category>-->
+	<category categoryname="系统维护 " comment="系统维护 " enable="true"
+		adminurl="" logohref="menu_left18.gif" url="#" >
+		<!--<childcat url="/mas/admin_capability_manage.jsp" catename="性能管理" />
+		<childcat url="/mas/admin_alarm.jsp" catename="告警管理 " />-->
+		<childcat url="/user/admin_logs.jsp" catename="系统日志 " />
+		<childcat url="/logs/admin_biz_logs_aps.jsp" catename="业务日志" />
+		<childcat url="/mdp/mdp_logs.jsp" catename="接入日志 " />
+		<childcat url="/mdp/mdp_errors.jsp" catename="接入告警 " />
+		<childcat url="/mdp/mdp_config.jsp" catename="适配文件管理 " />
+		<!--<childcat url="/mdp/tools/compare.jsp" target="_blank" catename="参数对比工具 " />-->
+		<childcat url="/user/mip_admin_user_statistics.jsp" catename="使用情况统计表" />
+		<!--<childcat url="/mas/backupdb.jsp" catename="数据备份" />
+		<childcat url="/mas/admin_biz_logs_sms.jsp" catename="业务日志" />
+		<childcat url="/mas/admin_biz_log.jsp" catename="话单查询" />
+		<childcat url="/mas/admin_mas_uphold.jsp" catename="升级维护通知 " />-->
+	</category>
+	<!--<category categoryname="终端管理 " comment="终端管理" enable="true"
+		adminurl="" logohref="menu_left19.gif" url="#" >
+		<childcat url="/mas/admin_mobiletype.jsp?type=0" catename="终端信息管理" />
+		<childcat url="/mas/admin_mobiletype.jsp?type=1" catename="客户端软件版本管理 " />
+	</category>
+	<category categoryname="统计管理" comment="统计管理" enable="true"
+		adminurl="" logohref="menu_left20.gif" url="#" >
+		<childcat url="/enterprise/statlogs.jsp" catename="日志统计" />
+		<childcat url="/mas/stat_alarm.jsp" catename="告警统计" />
+		<childcat url="/mas/admin_bizcount.jsp" catename="统计报表" />
+	</category>-->
+	<category categoryname="帮助" comment="帮助" enable="true"
+		adminurl="" logohref="menu_left14.gif" url="#" >
+		<!--<childcat url="/enterprise/helpdoc.jsp" catename="帮助文档" />
+		<childcat url="/enterprise/question.jsp" catename="常见问题" />-->
+		<childcat url="http://www.d-heaven.com" target="_blank" catename="联系我们" />
+		<childcat url="/enterprisemanager/admin_product_version.jsp" catename="版本信息" />
+		<childcat url="/mkey/about.jsp" target="_blank" catename="关于" />
+	</category>
+</root>
