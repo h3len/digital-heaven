@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msc appid="JTWZ" appname="交通违章查询" appver="1.0" customername="dheaven" partnerid="DHVN" partnername="dheaven" >
+	<home href="home.xml"/>
+	<defaulturl readonly="false" url="http://127.0.0.1:8080/http.do" />
+</msc>
