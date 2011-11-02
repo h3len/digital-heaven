@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<msc type="servermsg">
-  <msg show="false"></msg>
-
-  <script>
-
-    application.getActiveWindow().location.href='?action=bs-transfer@mdp&amp;url=http://202.104.205.73/&amp;nologin=true';
-
-  </script>
-
+<msc type="form">
+	<head/>
+	<body>
+		<a href="?action=bs-transfer@mdp&amp;url=http://202.104.205.73/index.htm&amp;nologin=true">养老保险缴费查询</a><br/>
+		<a href="?action=bs-transfer@mdp&amp;url=http://202.104.205.73/index2.htm&amp;nologin=true">城镇居民医疗保险缴费查询</a><br/>
+		<a href="?action=bs-transfer@mdp&amp;url=http://202.104.205.73/index3.htm&amp;nologin=true">基本医疗保险缴费查询</a><br/>
+		<a href="?action=bs-transfer@mdp&amp;url=http://202.104.205.73/index4.htm&amp;nologin=true">个人医疗帐户划帐信息查询</a><br/>
+	</body>
 </msc>
