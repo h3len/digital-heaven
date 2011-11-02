@@ -11,24 +11,19 @@
                         <xsl:value-of select="//title/."/>
                     </xsl:when>
                     <xsl:otherwise>
-                    江门新闻网--本地新闻
+                    江门社保查询
                     </xsl:otherwise>
                 </xsl:choose>
             </title>
         </head>
         <body>
-	<!--行政公告-->
-        <span width="100%" height="21px" bgcolor="#ffefd4">本地新闻</span>
-            <xsl:apply-templates select ="//td[@class='sort_title14']/div/ul/li[a]" mode="ListLi"/>
+			查询项目：<xsl:value-of select="//table[@width='90%']/tbody/tr/td/div/font/."/><br/><br/><br/>
+			<xsl:apply-templates select="//table[@width='90%']/tbody/tr/td[@align='left']/table/tr/td" mode="zblist"/>
         </body>
     </msc>
   </xsl:template>
-
-  <!--读取标题列表-->
-  <xsl:template match="a" mode="ListLi">
-    <a href="{@href}"><xsl:value-of select ="."/></a>
+  
+  <xsl:template match="td" mode="zblist">
+    <xsl:value-of select="."/><br/>
   </xsl:template>
-
-  <!--去掉标题中font内容 -->
-  <xsl:template match="font" mode="ListLi"><br/></xsl:template>
 </xsl:stylesheet>

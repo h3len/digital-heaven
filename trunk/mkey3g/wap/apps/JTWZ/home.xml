@@ -4,7 +4,7 @@
 
   <script>
 
-    application.getActiveWindow().location.href='?action=bs-transfer@mdp&amp;url=http://www.jmjgj.gov.cn/&amp;nologin=true';
+    application.getActiveWindow().location.href='?action=bs-transfer@mdp&amp;url=http://weizhang.jmjgj.gov.cn/&amp;nologin=true';
 
   </script>
 

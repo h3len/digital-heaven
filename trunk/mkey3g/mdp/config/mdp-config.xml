@@ -16,8 +16,8 @@
   <!ENTITY source4 "www.jmnews.com.cn">
   <!ENTITY path4 "http://www.jmnews.com.cn">
   
-  <!ENTITY source5 "www.jmjgj.gov.cn">
-  <!ENTITY path5 "http://www.jmjgj.gov.cn">
+  <!ENTITY source5 "weizhang.jmjgj.gov.cn">
+  <!ENTITY path5 "http://weizhang.jmjgj.gov.cn">
   
   <!ENTITY source6 "202.104.205.73">
   <!ENTITY path6 "http://202.104.205.73">
@@ -30,12 +30,14 @@
   
   <mdp:bs-config source="&source6;" encoding="gb2312">
     <!--江门社保查询-->
-    <mdp:bs-page url="&path6;/$" responseTemplate="jmsb/response_index.xsl" encoding="gb2312"/>
+    <!--<mdp:bs-page url="&path6;/$" responseTemplate="jmsb/response_index.xsl" requestTemplate="jmsb/request_searchcx.xsl" encoding="gb2312"/>-->
+	<mdp:bs-page url="&path6;/index\w*.htm" responseTemplate="jmsb/response_index.xsl" requestTemplate="jmsb/request_searchcx.xsl" encoding="gb2312"/>
+	<mdp:bs-page url="&path6;/shebaoup\w*.asp" responseTemplate="jmsb/response_local.xsl" encoding="gb2312"/>
   </mdp:bs-config>
   
   <mdp:bs-config source="&source5;" encoding="gb2312">
     <!--交通违章查询-->
-    <mdp:bs-page url="&path5;/$" responseTemplate="jtwz/response_index.xsl" encoding="gb2312"/>
+    <mdp:bs-page url="&path5;/$" responseTemplate="jtwz/response_index.xsl" requestTemplate="jtwz/request_searchcx.xsl" encoding="gb2312"/>
   </mdp:bs-config>
   
   <mdp:bs-config source="&source4;" encoding="gb2312">
