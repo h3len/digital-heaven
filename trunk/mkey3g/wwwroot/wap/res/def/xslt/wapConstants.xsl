@@ -29,7 +29,7 @@
 
 
   <xsl:variable name="wap11Title" select="' - MKey 3G WAP 1.0'"></xsl:variable>
-  <xsl:variable name="wap20Title" select="' - MKey 3G WAP 2.0'"></xsl:variable>
+  <xsl:variable name="wap20Title" select="' - 微迅'"></xsl:variable>
   
   
 </xsl:stylesheet>
