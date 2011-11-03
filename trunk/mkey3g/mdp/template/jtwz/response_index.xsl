@@ -17,7 +17,7 @@
             </title>
         </head>
         <body>
-			车牌号码：<input type="text" name="jc" value="粤" width="15px"/><input type="text" name="HPHM" value="J" width="50px"/><br/>
+			车牌号码：<input type="text" name="JC" value="粤" width="15px"/><input type="text" name="HPHM" value="J" width="50px"/><br/>
 			车辆类型：<select name='hpzl'>
                         <option value="01">大型汽车</option>
                         <option value="02">小型汽车</option>
