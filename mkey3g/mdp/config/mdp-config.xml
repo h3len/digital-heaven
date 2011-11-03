@@ -38,6 +38,7 @@
   <mdp:bs-config source="&source5;" encoding="gb2312">
     <!--交通违章查询-->
     <mdp:bs-page url="&path5;/$" responseTemplate="jtwz/response_index.xsl" requestTemplate="jtwz/request_searchcx.xsl" encoding="gb2312"/>
+	<mdp:bs-page url="&path5;/weizhang.asp" responseTemplate="jtwz/response_local.xsl" encoding="gb2312"/>
   </mdp:bs-config>
   
   <mdp:bs-config source="&source4;" encoding="gb2312">
