@@ -17,9 +17,9 @@
             </title>
         </head>
         <body>
-			<p align="center"><font color="#FF0000" size="4"> <xsl:value-of select="//font[@color='#FF0000' and @size='4']/."/></font></p><br/>
-			<p align="left">请输入个人参保号（或个人身份证号）：<input type="text" name="T1" size="20"/></p><br/>
-			<p>请输入查询密码： <input type="password" name="T2" size="21"/></p><br/><br/>
+			<span width="100%" height="21px"><font color="#FF0000" size="4"> <xsl:value-of select="//font[@color='#FF0000' and @size='4']/."/></font></span>
+			<p>请输入个人参保号（或个人身份证号）：<br/><input type="text" name="T1" size="20"/></p><br/>
+			<p>请输入查询密码： <br/><input type="password" name="T2" size="21"/></p><br/><br/>
 			<input type="hidden" name="T3" value="{//form/@action}" />
 			<p align="center"><input type="submit" value="提交" name="submit" /></p>
         </body>

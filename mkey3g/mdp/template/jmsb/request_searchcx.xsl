@@ -7,7 +7,7 @@
             <url>http://202.104.205.73/<xsl:value-of select="//param[@key='T3']/@value"/></url>
             <method>POST</method>
             <encoding>gb2312</encoding>
-            <params></params>
+            <params><xsl:apply-templates select="//param"/></params>
           </tc>
     </mdp>
   </xsl:template>
